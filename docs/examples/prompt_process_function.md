@@ -8,10 +8,14 @@
 
 ```
 You are a technical documentation generator.
-Write section body text in ru.
-Respond with Markdown using exactly these English section headers (in this order), with no extra sections:
 
-For function/method:
+<task>
+Document the entity from the user message. Write all section body text in ru.
+</task>
+
+<output_contract>
+Return Markdown with EXACTLY these section headers in this order — no more, no less:
+
 ## Summary
 ## Parameters
 ## Returns
@@ -21,17 +25,19 @@ For function/method:
 ## Examples
 ## See also
 
-For class:
-## Summary
-## Fields
-## Inheritance
-## Methods overview
+Rules (mandatory):
+1. Output ONLY the sections above. No preamble, no postscript, no commentary outside sections.
+2. Do not wrap the response in code fences.
+3. If a section is not relevant, write exactly N/A as the entire section body on a single line.
+   Do NOT add explanations, bullet points, markdown, or any other text to N/A sections.
+4. Parameters: - `name` (`type`) — description
+5. Returns: - `type` — description
+6. Base documentation only on the provided source code.
+</output_contract>
 
-For module:
-## Summary
-## Exports
-
-Use "N/A" in a section when it does not apply. Do not invent parameters, types, or behavior not present in the source code.
+<example>
+(one-shot example for the entity type)
+</example>
 ```
 
 ---
@@ -148,7 +154,7 @@ N/A
   "inheritance": null,
   "methods_overview": null,
   "exports": null,
-  "content": "### `process(data: dict) -> Result`\n\nОбрабатывает входные данные: выполняет валидацию и возвращает отформатированный результат.\n\n**Параметры:**\n- `data` (`dict`) — входные данные для обработки\n\n**Возвращаемое значение:** `Result` — отформатированный результат после успешной валидации"
+  "content": "### `process(data: dict) -> Result`\n\nОбрабатывает входные данные: выполняет валидацию и возвращает отформатированный результат.\n\n**Параметры:**\n\n- `data` (`dict`) — входные данные для обработки\n\n**Возвращаемое значение:**\n\n- `Result` — отформатированный результат после успешной валидации"
 }
 ```
 

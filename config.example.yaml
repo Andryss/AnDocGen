@@ -1,0 +1,75 @@
+# AnDocGen — пример конфигурации
+# Скопируйте в config.yaml и настройте под свой проект.
+# Поле implementation в каждом блоке выбирает конкретную реализацию модуля.
+
+project:
+  name: ""
+  description: ""
+
+discovery:
+  implementation: filesystem
+  extensions:
+    - .py
+  exclude_dirs:
+    - __pycache__
+    - .git
+    - .venv
+    - venv
+    - .cache
+    - generated_docs
+    - node_modules
+
+extraction:
+  implementation: ""   # пусто = python_ast при language: python
+  language: python
+
+call_graph:
+  implementation: static
+
+context:
+  implementation: default
+  prompt: sectioned
+  include_source_body: true
+  include_imports: true
+  include_call_graph: true
+  readme_limit: 2000
+  max_context_chars: 32000
+
+generation:
+  implementation: llm
+  provider: ollama  # mock | ollama | openai
+  language: ru
+  incremental: true
+  providers:
+    ollama:
+      base_url: http://localhost:11434
+      model: qwen2.5-coder:7b
+    openai:
+      base_url: https://api.openai.com/v1
+      api_key_env: OPENAI_API_KEY
+      model: gpt-4o-mini
+
+validation:
+  implementation: structured
+  check_completeness: true
+  check_consistency: true
+  check_structure: true
+  check_representation: true
+  check_text_quality: true
+  complexity_warning_threshold: 20
+  min_summary_length: 10
+
+output:
+  implementation: markdown
+  directory: ./generated_docs
+  format: markdown
+  cache_path: ""
+
+reporting:
+  implementation: file
+  logs_dir: ""              # пусто = {output.directory}/logs
+  summary_file: summary.txt
+  detail_file: detail.json
+  trace_file: trace.log
+  log_llm_content: true     # false — только метаданные LLM без текста промптов/ответов
+  trace_max_chars: 12000    # обрезка длинных промптов/ответов в trace.log
