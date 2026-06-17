@@ -23,6 +23,8 @@ class DocumentationWriter(Protocol):
         self,
         project: ProjectModel,
         module_paths: list[str],
+        summaries: dict[str, str] | None = None,
+        language: str = "ru",
         out_dir: Path | None = None,
     ) -> str:
         ...

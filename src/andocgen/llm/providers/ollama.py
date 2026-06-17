@@ -4,9 +4,10 @@ import httpx
 
 
 class OllamaProvider:
-    def __init__(self, base_url: str, model: str) -> None:
+    def __init__(self, base_url: str, model: str, timeout: float = 120.0) -> None:
         self.base_url = base_url.rstrip("/")
         self.model = model
+        self.timeout = timeout
 
     def complete(self, system: str, user: str) -> str:
         url = f"{self.base_url}/api/chat"
@@ -18,7 +19,7 @@ class OllamaProvider:
             ],
             "stream": False,
         }
-        with httpx.Client(timeout=120.0) as client:
+        with httpx.Client(timeout=self.timeout) as client:
             response = client.post(url, json=payload)
             response.raise_for_status()
             data = response.json()

@@ -93,17 +93,21 @@ Return Markdown with EXACTLY these section headers in this order — no more, no
 Rules (mandatory):
 1. Output ONLY the sections above. No preamble, no postscript, no commentary outside sections.
 2. Do not wrap the response in code fences.
-3. If a section is not relevant, write exactly N/A as the entire section body on a single line.
+3. All section body text MUST be in {lang_label}. Do not mix languages.
+4. If a section is not relevant, write exactly N/A as the entire section body on a single line.
    Do NOT add explanations, bullet points, markdown, or any other text to N/A sections.
    Wrong: "N/A — no exceptions raised". Wrong: "**N/A**". Correct: N/A
-4. Parameters section: one line per parameter, exact format:
+5. Parameters section: one line per parameter, exact format:
    - `name` (`type`) — description
    If there are no parameters, write N/A.
-5. Returns section: exactly one line in format:
+   For variadic signatures use `*args` and/or `**kwargs` as parameter names.
+6. Returns section: exactly one line in format:
    - `type` — description
    If there is no return value, write N/A.
-6. Fields and Exports sections use the same list format as Parameters when applicable.
-7. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
+7. Fields and Exports sections use the same list format as Parameters when applicable.
+   For Exports, describe only names listed in `__all__` when provided; descriptions in {lang_label}.
+8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
+9. Examples must use valid calls matching the signature (required arguments must be present).
 </output_contract>
 
 <example>

@@ -37,7 +37,9 @@ class PromptBuilder(Protocol):
 
 
 class ProjectMetadataLoader(Protocol):
-    def load_readme_excerpt(self, project_path: Path, limit: int) -> str | None:
+    def load_readme_excerpt(
+        self, project_path: Path, limit: int, readme_path: str = ""
+    ) -> str | None:
         ...
 
     def load_project_description(self, project_path: Path, config_description: str) -> str:

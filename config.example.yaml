@@ -5,6 +5,7 @@
 project:
   name: ""
   description: ""
+  readme_path: ""   # optional override, e.g. docs/README.md
 
 discovery:
   implementation: filesystem
@@ -39,11 +40,14 @@ generation:
   implementation: llm
   provider: ollama  # mock | ollama | openai
   language: ru
-  incremental: true
+  incremental: false
+  workers: 1        # parallel LLM requests (wave-based); mock: safe at 4+
+  max_retries: 2    # retry on section parse failure
   providers:
     ollama:
       base_url: http://localhost:11434
       model: qwen2.5-coder:7b
+      timeout: 120  # seconds per request
     openai:
       base_url: https://api.openai.com/v1
       api_key_env: OPENAI_API_KEY
@@ -58,6 +62,8 @@ validation:
   check_text_quality: true
   complexity_warning_threshold: 20
   min_summary_length: 10
+  retry_on_blocking: true
+  blocking_fallback: retry   # retry | strip_examples | error
 
 output:
   implementation: markdown
@@ -73,3 +79,4 @@ reporting:
   trace_file: trace.log
   log_llm_content: true     # false — только метаданные LLM без текста промптов/ответов
   trace_max_chars: 12000    # обрезка длинных промптов/ответов в trace.log
+  quiet: false              # true — без прогресса и сводки в консоли

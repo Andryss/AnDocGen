@@ -146,6 +146,7 @@ N/A
 
 
 def test_enrich_parameters_from_context() -> None:
+    from andocgen.generator.block_enricher import BlockEnricher
     from andocgen.models.entities import FunctionModel, ParameterModel
 
     ctx = EntityContext(
@@ -197,7 +198,72 @@ N/A
 N/A
 """
     block = parse_sections(raw, ctx)
+    BlockEnricher().enrich(block, ctx)
     assert len(block.parameters or []) == 2
     assert {p.name for p in block.parameters} == {"a", "b"}
     assert block.returns is not None
     assert block.returns.type == "float"
+
+
+def test_module_exports_only_from_ast_all() -> None:
+    from andocgen.generator.block_enricher import BlockEnricher
+    from andocgen.models.entities import ModuleModel
+
+    raw = """## Summary
+
+Service module.
+
+## Exports
+
+- `OrderService` (`class`) — fake export from LLM
+"""
+    ctx = EntityContext(
+        entity_type="module",
+        entity_name="services.py",
+        entity_id="services.py::module",
+        module_path="services.py",
+        project_name="demo",
+        signature="",
+        module=ModuleModel(path="services.py", exports=[]),
+    )
+    block = parse_sections(raw, ctx)
+    BlockEnricher().enrich(block, ctx)
+    assert block.exports == []
+
+    ctx.module.exports = ["OrderService", "main"]
+    block = parse_sections(raw, ctx)
+    BlockEnricher().enrich(block, ctx)
+    assert block.exports is not None
+    assert [e.name for e in block.exports] == ["OrderService", "main"]
+
+
+def test_module_exports_merge_llm_descriptions() -> None:
+    from andocgen.generator.block_enricher import BlockEnricher
+    from andocgen.models.entities import ModuleModel
+
+    raw = """## Summary
+
+Public API.
+
+## Exports
+
+- `Item` (`class`) — модель позиции
+- `Order` (`class`) — модель заказа
+- `OrderService` (`class`) — fake, not in __all__
+"""
+    ctx = EntityContext(
+        entity_type="module",
+        entity_name="__init__.py",
+        entity_id="__init__.py::module",
+        module_path="__init__.py",
+        project_name="demo",
+        signature="",
+        module=ModuleModel(path="__init__.py", exports=["Item", "Order"]),
+    )
+    block = parse_sections(raw, ctx)
+    BlockEnricher().enrich(block, ctx)
+    assert len(block.exports or []) == 2
+    by_name = {export.name: export for export in block.exports or []}
+    assert by_name["Item"].description == "модель позиции"
+    assert by_name["Order"].type == "class"
+    assert "OrderService" not in by_name

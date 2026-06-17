@@ -23,9 +23,9 @@ class DefaultContextBuilder:
 
         for module in project.modules:
             import_lines = [imp.display() for imp in module.imports] if config.include_imports else []
-            source_body = module.source if config.include_source_body else ""
+            module_source = _module_light_body(module) if config.include_source_body else ""
 
-            module_id = make_entity_id(module.path, "module", module.path)
+            module_id = make_entity_id(module.path, "module", "module")
             contexts.append(
                 EntityContext(
                     entity_type="module",
@@ -35,7 +35,7 @@ class DefaultContextBuilder:
                     project_name=project.name,
                     signature="",
                     source_docstring=module.docstring,
-                    source_body=source_body,
+                    source_body=module_source,
                     imports=import_lines,
                     readme_excerpt=readme_excerpt,
                     previous_output_doc=previous_docs.get(module_id),
@@ -53,7 +53,7 @@ class DefaultContextBuilder:
                         entity_id=class_id,
                         module_path=module.path,
                         project_name=project.name,
-                        signature=f"class {cls.name}({', '.join(cls.bases) or 'object'})",
+                        signature=_class_signature(cls),
                         source_docstring=cls.docstring,
                         source_body=cls.source_body if config.include_source_body else cls.source_snippet,
                         imports=import_lines,
@@ -81,6 +81,8 @@ class DefaultContextBuilder:
                             output_language=output_language,
                             complexity=method.complexity,
                             function=method,
+                            class_model=cls,
+                            module=module,
                         )
                     )
 
@@ -120,3 +122,19 @@ class DefaultContextBuilder:
             if cid in docs_by_id
         ]
         ctx.unresolved_calls = unresolved
+
+
+def _class_signature(cls) -> str:
+    if cls.bases:
+        return f"class {cls.name}({', '.join(cls.bases)})"
+    return f"class {cls.name}"
+
+
+def _module_light_body(module) -> str:
+    lines: list[str] = []
+    if module.exports:
+        lines.append(f"__all__ = {module.exports!r}")
+    top_level = [fn.name for fn in module.functions] + [cls.name for cls in module.classes]
+    if top_level:
+        lines.append("Top-level names: " + ", ".join(top_level))
+    return "\n".join(lines)

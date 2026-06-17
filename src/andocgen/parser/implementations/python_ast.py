@@ -35,6 +35,7 @@ class PythonAstParser:
                 imports=visitor.imports,
                 functions=visitor.functions,
                 classes=visitor.classes,
+                exports=visitor.exports,
                 source=source,
                 content_hash=self._hasher.file_hash(file_path),
             )
@@ -48,6 +49,7 @@ class _ModuleVisitor(ast.NodeVisitor):
         self.imports: list[ImportModel] = []
         self.functions: list[FunctionModel] = []
         self.classes: list[ClassModel] = []
+        self.exports: list[str] = []
 
     def visit_Module(self, node: ast.Module) -> None:
         for item in node.body:
@@ -57,6 +59,8 @@ class _ModuleVisitor(ast.NodeVisitor):
                 self.functions.append(self._parse_function(item))
             elif isinstance(item, ast.ClassDef):
                 self._parse_class(item)
+            elif isinstance(item, ast.Assign):
+                self._maybe_collect_all(item)
 
     def visit_Import(self, node: ast.Import) -> None:
         for alias in node.names:
@@ -69,15 +73,36 @@ class _ModuleVisitor(ast.NodeVisitor):
         names = [a.name for a in node.names]
         self.imports.append(ImportModel(module=module, names=names, level=node.level))
 
+    def _maybe_collect_all(self, node: ast.Assign) -> None:
+        for target in node.targets:
+            if isinstance(target, ast.Name) and target.id == "__all__":
+                if isinstance(node.value, (ast.List, ast.Tuple)):
+                    for elt in node.value.elts:
+                        if isinstance(elt, ast.Constant) and isinstance(elt.value, str):
+                            self.exports.append(elt.value)
+
     def _parse_class(self, node: ast.ClassDef) -> None:
         methods: list[FunctionModel] = []
         fields: list[str] = []
+        field_defs: list[ParameterModel] = []
+        is_dataclass = _is_dataclass(node)
         for item in node.body:
             if isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef)):
                 method = self._parse_function(item, is_method=True, owner_class=node.name)
                 methods.append(method)
             elif isinstance(item, ast.AnnAssign) and isinstance(item.target, ast.Name):
-                fields.append(item.target.id)
+                name = item.target.id
+                fields.append(name)
+                default = self._expr_to_str(item.value) if item.value else None
+                field_defs.append(
+                    ParameterModel(
+                        name=name,
+                        type_annotation=(
+                            self._expr_to_str(item.annotation) if item.annotation else None
+                        ),
+                        default=default,
+                    )
+                )
             elif isinstance(item, ast.Assign):
                 for target in item.targets:
                     if isinstance(target, ast.Name):
@@ -90,6 +115,8 @@ class _ModuleVisitor(ast.NodeVisitor):
                 bases=[self._expr_to_str(b) for b in node.bases],
                 docstring=ast.get_docstring(node),
                 fields=fields,
+                field_defs=field_defs,
+                is_dataclass=is_dataclass,
                 methods=methods,
                 line_start=node.lineno,
                 line_end=end,
@@ -195,6 +222,21 @@ def _extract_decorators(node: ast.FunctionDef | ast.AsyncFunctionDef) -> list[st
             except Exception:
                 decorators.append("unknown")
     return decorators
+
+
+def _is_dataclass(node: ast.ClassDef) -> bool:
+    for decorator in node.decorator_list:
+        if isinstance(decorator, ast.Name) and decorator.id == "dataclass":
+            return True
+        if isinstance(decorator, ast.Attribute) and decorator.attr == "dataclass":
+            return True
+        if isinstance(decorator, ast.Call):
+            func = decorator.func
+            if isinstance(func, ast.Name) and func.id == "dataclass":
+                return True
+            if isinstance(func, ast.Attribute) and func.attr == "dataclass":
+                return True
+    return False
 
 
 def _cyclomatic_complexity(node: ast.AST) -> int:

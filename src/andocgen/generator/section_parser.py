@@ -32,6 +32,9 @@ _MODULE_SECTIONS = ["Summary", "Exports"]
 
 
 def parse_sections(raw_response: str, ctx: EntityContext) -> DocBlock:
+    from andocgen.generator.response_sanitizer import normalize_llm_response
+
+    raw_response = normalize_llm_response(raw_response)
     sections = _split_sections(raw_response)
     required = _required_sections(ctx.entity_type)
     missing = [s for s in required if s not in sections]
@@ -55,32 +58,14 @@ def parse_sections(raw_response: str, ctx: EntityContext) -> DocBlock:
         block.side_effects = _normalize_optional_section(sections["Side effects"])
         block.examples = _normalize_optional_section(sections["Examples"])
         block.see_also = _normalize_optional_section(sections["See also"])
-        _enrich_from_context(block, ctx)
     elif ctx.entity_type == "class":
         block.fields = _parse_parameters(sections["Fields"])
-        block.inheritance = _normalize_optional_section(sections["Inheritance"])
+        block.inheritance = sections["Inheritance"].strip()
         block.methods_overview = _normalize_optional_section(sections["Methods overview"])
     elif ctx.entity_type == "module":
         block.exports = _parse_exports(sections["Exports"])
 
     return block
-
-
-def _enrich_from_context(block: DocBlock, ctx: EntityContext) -> None:
-    if not ctx.function or block.parameters:
-        return
-    fn = ctx.function
-    block.parameters = [
-        ParameterDoc(
-            name=p.name,
-            type=p.type_annotation or "",
-            description="",
-        )
-        for p in fn.parameters
-        if p.name not in ("self", "cls")
-    ]
-    if not block.returns and fn.returns and fn.returns not in ("None", "NoneType"):
-        block.returns = ReturnDoc(type=fn.returns, description="")
 
 
 def _required_sections(entity_type: EntityType) -> list[str]:

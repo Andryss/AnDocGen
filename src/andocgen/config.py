@@ -11,6 +11,7 @@ import yaml
 class ProjectConfig:
     name: str = ""
     description: str = ""
+    readme_path: str = ""
 
 
 @dataclass
@@ -63,6 +64,7 @@ class ContextConfig:
 class OllamaProviderConfig:
     base_url: str = "http://localhost:11434"
     model: str = "llama3"
+    timeout: float = 120.0
 
 
 @dataclass
@@ -78,6 +80,8 @@ class GenerationConfig:
     provider: str = "mock"
     language: str = "ru"
     incremental: bool = True
+    workers: int = 1
+    max_retries: int = 2
     providers: dict[str, Any] = field(default_factory=dict)
 
     @property
@@ -99,6 +103,8 @@ class ValidationConfig:
     check_text_quality: bool = True
     complexity_warning_threshold: int = 20
     min_summary_length: int = 10
+    retry_on_blocking: bool = True
+    blocking_fallback: str = "retry"
 
 
 @dataclass
@@ -118,6 +124,7 @@ class ReportingConfig:
     trace_file: str = "trace.log"
     log_llm_content: bool = True
     trace_max_chars: int = 12000
+    quiet: bool = False
 
 
 @dataclass

@@ -12,10 +12,10 @@ class MockProvider:
     def complete(self, system: str, user: str) -> str:
         ctx = _parse_user_message(user)
         if ctx["entity_type"] == "module":
-            return _module_doc(ctx)
+            return _module_doc(ctx, self.language)
         if ctx["entity_type"] == "class":
-            return _class_doc(ctx)
-        return _function_doc(ctx)
+            return _class_doc(ctx, self.language)
+        return _function_doc(ctx, self.language)
 
 
 def _parse_user_message(user: str) -> dict[str, str]:
@@ -52,9 +52,15 @@ def _extract_section(text: str, title: str) -> str:
     return rest[:next_idx] if next_idx >= 0 else rest
 
 
-def _module_doc(ctx: dict[str, str]) -> str:
+def _summary_desc(docstring: str, fallback: str, language: str) -> str:
+    if docstring and (language != "ru" or re.search(r"[а-яА-ЯёЁ]", docstring)):
+        return docstring
+    return fallback
+
+
+def _module_doc(ctx: dict[str, str], language: str) -> str:
     name = ctx["entity_name"]
-    desc = ctx["docstring"] or f"Модуль `{name}`."
+    desc = _summary_desc(ctx["docstring"], f"Модуль `{name}`.", language)
     return f"""## Summary
 
 {desc}
@@ -65,9 +71,9 @@ N/A
 """
 
 
-def _class_doc(ctx: dict[str, str]) -> str:
+def _class_doc(ctx: dict[str, str], language: str) -> str:
     name = ctx["entity_name"]
-    desc = ctx["docstring"] or f"Класс `{name}`."
+    desc = _summary_desc(ctx["docstring"], f"Класс `{name}`.", language)
     return f"""## Summary
 
 {desc}
@@ -86,10 +92,13 @@ N/A
 """
 
 
-def _function_doc(ctx: dict[str, str]) -> str:
+def _function_doc(ctx: dict[str, str], language: str) -> str:
     name = ctx["entity_name"]
     sig = ctx["signature"]
-    desc = ctx["docstring"] or f"Выполняет операцию `{name.split('.')[-1]}`."
+    short_name = name.split(".")[-1]
+    desc = _summary_desc(
+        ctx["docstring"], f"Выполняет операцию `{short_name}`.", language
+    )
     params = _parse_params_from_signature(sig)
     param_lines = "\n".join(
         f"- `{p['name']}` (`{p['type']}`) — параметр функции" for p in params

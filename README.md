@@ -13,6 +13,9 @@ cp config.example.yaml config.yaml
 
 # Генерация документации
 andocgen ./examples/mini_calculator --config config.example.yaml
+
+# Multi-module пример (mock ~1 с, Ollama ~3–5 мин)
+andocgen ./examples/mini_library --config config.example.yaml
 ```
 
 Результат сохраняется в `generated_docs/` (Markdown, README, logs, cache).
@@ -47,6 +50,9 @@ src/andocgen/
 | `call_graph.implementation` | builder: `static` |
 | `context.implementation` / `context.prompt` | context + prompt builders |
 | `generation.implementation` / `generation.provider` | generator + LLM |
+| `generation.workers` | Параллельные LLM-запросы по волнам call graph (default: 1) |
+| `generation.max_retries` | Повтор при ошибке парсинга секций |
+| `reporting.quiet` | Без прогресса и сводки в консоли |
 | `validation.implementation` | validator: `structured` |
 | `output.implementation` | writer + formatter: `markdown` |
 | `reporting.implementation` | reporter: `file` |
@@ -61,6 +67,7 @@ src/andocgen/
 
 ```bash
 andocgen ./examples/mini_calculator -c config.example.yaml
+andocgen ./examples/mini_library -c config.example.yaml
 andocgen ./examples/mini_api -c config.example.yaml
 pytest
 ```

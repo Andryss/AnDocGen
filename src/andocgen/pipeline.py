@@ -7,19 +7,26 @@ from andocgen.call_graph.factory import create_call_graph_builder
 from andocgen.config import AppConfig
 from andocgen.context.factory import create_context_components
 from andocgen.generator.factory import create_generator_components
-from andocgen.llm.factory import create_llm_provider
+from andocgen.llm.factory import create_llm_provider, create_llm_provider_factory
 from andocgen.models.entities import GenerationError, ParseError, PipelineResult, ProjectModel
 from andocgen.output.factory import create_output_components
 from andocgen.parser.factory import create_parser
 from andocgen.reporting.factory import create_reporter
 from andocgen.reporting.implementations.file_reporter import StageTimer
+from andocgen.reporting.implementations.null_progress import NullProgressReporter
+from andocgen.reporting.progress import ProgressReporter
 from andocgen.scanner.factory import create_scanner
 from andocgen.validator.factory import create_validator
 
 
-def run_pipeline(project_path: Path, config: AppConfig) -> PipelineResult:
+def run_pipeline(
+    project_path: Path,
+    config: AppConfig,
+    progress: ProgressReporter | None = None,
+) -> PipelineResult:
     start = time.perf_counter()
     result = PipelineResult()
+    progress = progress or NullProgressReporter()
 
     scanner = create_scanner(config.discovery)
     parser = create_parser(config.extraction)
@@ -36,11 +43,15 @@ def run_pipeline(project_path: Path, config: AppConfig) -> PipelineResult:
     cache_dir = config.resolve_cache_dir()
     cache = output_components.cache_store.load(cache_dir) if config.generation.incremental else {}
 
+    progress.on_stage(f"AnDocGen — {project_path.name}")
+    progress.on_stage(f"Provider: {config.generation.provider} | workers: {config.generation.workers}")
+
     trace.info(f"AnDocGen run: project={project_path} provider={config.generation.provider}")
     trace.info(f"Output directory: {out_dir}")
 
     with StageTimer(trace, "scan"):
         files = scanner.scan(project_path, config.discovery)
+    progress.on_stage(f"Scanning {len(files)} files...")
     trace.info(f"Found {len(files)} files")
 
     all_module_paths: list[str] = []
@@ -95,7 +106,7 @@ def run_pipeline(project_path: Path, config: AppConfig) -> PipelineResult:
             out_dir.mkdir(parents=True, exist_ok=True)
             readme_path.write_text(
                 output_components.writer.render_project_readme(
-                    readme_project, all_module_paths, out_dir
+                    readme_project, all_module_paths, language=config.generation.language
                 ),
                 encoding="utf-8",
             )
@@ -110,7 +121,7 @@ def run_pipeline(project_path: Path, config: AppConfig) -> PipelineResult:
     )
 
     readme = context_components.metadata_loader.load_readme_excerpt(
-        project_path, config.context.readme_limit
+        project_path, config.context.readme_limit, config.project.readme_path
     )
     previous_docs: dict[str, str] = {}
     if config.generation.incremental:
@@ -128,10 +139,16 @@ def run_pipeline(project_path: Path, config: AppConfig) -> PipelineResult:
         previous_docs=previous_docs,
     )
     ordered = call_graph_builder.order_entities(contexts, graph)
+    progress.on_stage(f"Generating {len(ordered)} entities...")
     trace.info(f"Generating documentation for {len(ordered)} entities")
 
     generator_components = create_generator_components(config.generation, config.output)
     llm = create_llm_provider(config.generation)
+    llm_factory = (
+        create_llm_provider_factory(config.generation)
+        if config.generation.workers > 1
+        else None
+    )
     try:
         with StageTimer(trace, "generate", f"{len(ordered)} entities"):
             blocks, gen_errors = generator_components.document_generator.generate(
@@ -144,6 +161,9 @@ def run_pipeline(project_path: Path, config: AppConfig) -> PipelineResult:
                 context_components.context_builder,
                 context_components.prompt_builder,
                 trace=trace,
+                progress=progress,
+                llm_factory=llm_factory,
+                validation_config=config.validation,
             )
     except RuntimeError as exc:
         result.generation_errors.append(

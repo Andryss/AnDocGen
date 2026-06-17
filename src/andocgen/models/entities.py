@@ -72,6 +72,8 @@ class ClassModel:
     bases: list[str] = field(default_factory=list)
     docstring: str | None = None
     fields: list[str] = field(default_factory=list)
+    field_defs: list[ParameterModel] = field(default_factory=list)
+    is_dataclass: bool = False
     methods: list[FunctionModel] = field(default_factory=list)
     line_start: int = 0
     line_end: int = 0
@@ -99,6 +101,7 @@ class ModuleModel:
     imports: list[ImportModel] = field(default_factory=list)
     functions: list[FunctionModel] = field(default_factory=list)
     classes: list[ClassModel] = field(default_factory=list)
+    exports: list[str] = field(default_factory=list)
     source: str = ""
     content_hash: str = ""
 

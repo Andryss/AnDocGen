@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+
 from andocgen.config import ValidationConfig
 from andocgen.models.entities import (
     DocBlock,
@@ -33,6 +35,13 @@ class StructuredValidator:
                     issues.append(self._warning(block, "Summary is empty"))
                 elif len(block.summary.strip()) < config.min_summary_length:
                     issues.append(self._warning(block, "Summary appears too short"))
+                elif ctx.output_language == "ru" and _mostly_latin(block.summary):
+                    issues.append(
+                        self._warning(
+                            block,
+                            "Summary appears to be in a different language than configured (ru)",
+                        )
+                    )
 
             if config.check_representation and block.summary:
                 if block.summary not in block.content:
@@ -55,7 +64,11 @@ class StructuredValidator:
 
         if config.check_completeness:
             for param in param_names:
+                if param in documented:
+                    continue
                 clean = param.lstrip("*")
+                if param.startswith("*") and _variadic_documented(documented):
+                    continue
                 if clean and clean not in documented:
                     issues.append(self._warning(block, f"Parameter `{clean}` is not documented"))
 
@@ -84,6 +97,9 @@ class StructuredValidator:
                         self._warning(block, f"Rendered content missing parameter `{doc_param.name}`")
                     )
 
+        if config.check_text_quality:
+            issues.extend(_validate_examples(block, ctx))
+
         if (
             config.check_text_quality
             and ctx.complexity
@@ -105,3 +121,37 @@ class StructuredValidator:
             entity_type=block.entity_type,
             entity_name=block.entity_name,
         )
+
+
+def _variadic_documented(documented: set[str]) -> bool:
+    return any(name.startswith("*") or name in ("args", "kwargs") for name in documented)
+
+
+def _mostly_latin(text: str) -> bool:
+    stripped = text.strip()
+    if len(stripped) < 25:
+        return False
+    if re.search(r"[а-яА-ЯёЁ]", stripped):
+        return False
+    letters = [char for char in stripped if char.isalpha()]
+    if len(letters) < 12:
+        return False
+    latin = sum(1 for char in letters if ord(char) < 128)
+    return latin / len(letters) > 0.5
+
+
+def _validate_examples(block: DocBlock, ctx: EntityContext) -> list[ValidationIssue]:
+    from andocgen.generator.entity_validator import validate_entity
+
+    return [
+        ValidationIssue(
+            level=IssueLevel.WARNING,
+            category=IssueCategory.VALIDATION,
+            message=issue.message,
+            module_path=block.module_path,
+            entity_type=block.entity_type,
+            entity_name=block.entity_name,
+        )
+        for issue in validate_entity(block, ctx)
+        if issue.code.startswith("examples_")
+    ]

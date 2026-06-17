@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Callable
+
 from andocgen.config import GenerationConfig
 from andocgen.llm.base import LLMProvider
 from andocgen.llm.providers.mock import MockProvider
@@ -24,9 +26,17 @@ def create_llm_provider(config: GenerationConfig) -> LLMProvider:
         return OllamaProvider(
             base_url=config.ollama.base_url,
             model=config.ollama.model,
+            timeout=config.ollama.timeout,
         )
     return OpenAIProvider(
         base_url=config.openai.base_url,
         api_key_env=config.openai.api_key_env,
         model=config.openai.model,
     )
+
+
+def create_llm_provider_factory(config: GenerationConfig) -> Callable[[], LLMProvider]:
+    def factory() -> LLMProvider:
+        return create_llm_provider(config)
+
+    return factory
