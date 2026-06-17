@@ -86,6 +86,7 @@ class _ModuleVisitor(ast.NodeVisitor):
         fields: list[str] = []
         field_defs: list[ParameterModel] = []
         is_dataclass = _is_dataclass(node)
+        is_namedtuple = _is_namedtuple(node)
         for item in node.body:
             if isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef)):
                 method = self._parse_function(item, is_method=True, owner_class=node.name)
@@ -117,6 +118,7 @@ class _ModuleVisitor(ast.NodeVisitor):
                 fields=fields,
                 field_defs=field_defs,
                 is_dataclass=is_dataclass,
+                is_namedtuple=is_namedtuple,
                 methods=methods,
                 line_start=node.lineno,
                 line_end=end,
@@ -222,6 +224,24 @@ def _extract_decorators(node: ast.FunctionDef | ast.AsyncFunctionDef) -> list[st
             except Exception:
                 decorators.append("unknown")
     return decorators
+
+
+def _is_namedtuple(node: ast.ClassDef) -> bool:
+    for base in node.bases:
+        name = _base_name(base)
+        if name == "NamedTuple":
+            return True
+    return False
+
+
+def _base_name(node: ast.expr) -> str:
+    if isinstance(node, ast.Name):
+        return node.id
+    if isinstance(node, ast.Attribute):
+        return node.attr
+    if isinstance(node, ast.Subscript):
+        return _base_name(node.value)
+    return ""
 
 
 def _is_dataclass(node: ast.ClassDef) -> bool:

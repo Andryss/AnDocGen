@@ -9,6 +9,7 @@ from andocgen.generator.entity_validator import (
     BlockingIssue,
     format_blocking_retry_prompt,
     validate_entity,
+    validate_summary_language,
 )
 from andocgen.generator.implementations.markdown_section_parser import SectionParseError
 from andocgen.generator.response_sanitizer import normalize_llm_response
@@ -56,12 +57,20 @@ class EntityDocumentPipeline:
                         f"{format_blocking_retry_prompt(blocking_issues)}"
                     )
                 elif last_error:
-                    attempt_user = (
-                        f"{user}\n\n## Retry\n\n"
-                        f"Previous response failed parsing: {last_error}\n"
-                        "Return ONLY the required ## sections in the exact format. "
-                        "No JSON, no code fences."
-                    )
+                    if ctx.entity_type == "class":
+                        lang = "Russian" if language == "ru" else language
+                        attempt_user = (
+                            f"{user}\n\n## Retry\n\n"
+                            f"Previous response failed parsing: {last_error}\n"
+                            f"Return ONLY ## Summary in {lang}. No other sections. No code fences."
+                        )
+                    else:
+                        attempt_user = (
+                            f"{user}\n\n## Retry\n\n"
+                            f"Previous response failed parsing: {last_error}\n"
+                            "Return ONLY the required ## sections in the exact format. "
+                            "No JSON, no code fences."
+                        )
 
             if trace:
                 trace.log_llm_request(ctx.entity_id, system, attempt_user)
@@ -72,6 +81,7 @@ class EntityDocumentPipeline:
                 block = self._section_parser.parse(raw, ctx)
                 self._enricher.enrich(block, ctx)
                 blocking_issues = validate_entity(block, ctx)
+                blocking_issues.extend(validate_summary_language(block, ctx))
 
                 if (
                     blocking_issues

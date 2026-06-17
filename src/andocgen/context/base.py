@@ -4,7 +4,8 @@ from pathlib import Path
 from typing import Protocol
 
 from andocgen.config import ContextConfig
-from andocgen.models.entities import CalledEntityDoc, EntityContext, ProjectModel
+from andocgen.context.doc_brief_registry import DocBriefRegistry
+from andocgen.models.entities import CallGraph, EntityContext, ProjectModel
 
 
 class ContextBuilder(Protocol):
@@ -24,6 +25,16 @@ class ContextBuilder(Protocol):
         docs_by_id: dict[str, str],
         callee_ids: list[str],
         unresolved: list[str],
+    ) -> None:
+        ...
+
+    def attach_related_briefs(
+        self,
+        ctx: EntityContext,
+        registry: DocBriefRegistry,
+        callee_ids: list[str],
+        unresolved: list[str],
+        call_graph: CallGraph,
     ) -> None:
         ...
 

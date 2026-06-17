@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from andocgen.call_graph.base import CallGraphBuilder
 from andocgen.config import ContextConfig, GenerationConfig, ValidationConfig
 from andocgen.context.base import ContextBuilder, PromptBuilder
+from andocgen.context.doc_brief_registry import DocBriefRegistry
 from andocgen.generator.base import OutputFormatter, SectionParser
 from andocgen.generator.entity_pipeline import EntityDocumentPipeline
 from andocgen.generator.waves import group_into_waves
@@ -49,6 +50,12 @@ class LlmDocumentGenerator:
         errors: list[GenerationError] = []
         docs_by_id = docs_by_id or {}
         content_by_id: dict[str, str] = {k: v.content for k, v in docs_by_id.items()}
+        registry = DocBriefRegistry()
+        for entity_id, block in docs_by_id.items():
+            ctx_match = next((c for c in ordered_contexts if c.entity_id == entity_id), None)
+            signature = ctx_match.signature if ctx_match else ""
+            entity_type = ctx_match.entity_type if ctx_match else block.entity_type
+            registry.register(entity_id, block.summary, signature, entity_type)
         validation = validation_config or ValidationConfig()
 
         waves = group_into_waves(ordered_contexts, call_graph, call_graph_builder)
@@ -80,7 +87,9 @@ class LlmDocumentGenerator:
                     if context_config.include_call_graph
                     else []
                 )
-                context_builder.attach_callee_docs(ctx, content_by_id, callee_ids, unresolved)
+                context_builder.attach_related_briefs(
+                    ctx, registry, callee_ids, unresolved, call_graph
+                )
 
             entity_label = f"{ctx.entity_type}:{ctx.entity_name}"
             if trace:
@@ -115,6 +124,12 @@ class LlmDocumentGenerator:
                         blocks.append(block)
                         with content_lock:
                             content_by_id[ctx.entity_id] = block.content
+                            registry.register(
+                                ctx.entity_id,
+                                block.summary,
+                                ctx.signature,
+                                ctx.entity_type,
+                            )
                     if err:
                         errors.append(err)
             else:
@@ -127,6 +142,12 @@ class LlmDocumentGenerator:
                             blocks.append(block)
                             with content_lock:
                                 content_by_id[ctx.entity_id] = block.content
+                                registry.register(
+                                    ctx.entity_id,
+                                    block.summary,
+                                    ctx.signature,
+                                    ctx.entity_type,
+                                )
                         if err:
                             errors.append(err)
 

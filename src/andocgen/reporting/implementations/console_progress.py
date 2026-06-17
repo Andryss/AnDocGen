@@ -39,8 +39,10 @@ class ConsoleProgressReporter:
             line = _format_progress_line(
                 current, total, entity_id, ok, avg_sec, eta_sec
             )
-            if not ok or not self._is_tty:
+            if not self._is_tty:
                 print(line, flush=True)
+            elif not ok:
+                print(f"{_CLEAR_LINE}{line}\n", flush=True)
             else:
                 print(f"{_CLEAR_LINE}{line}", end="", flush=True)
                 if current >= total:

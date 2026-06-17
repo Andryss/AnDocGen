@@ -12,7 +12,7 @@ _FUNCTION_SECTIONS = (
     "Examples",
     "See also",
 )
-_CLASS_SECTIONS = ("Summary", "Fields", "Inheritance", "Methods overview")
+_CLASS_SECTIONS = ("Summary",)
 _MODULE_SECTIONS = ("Summary", "Exports")
 
 _FUNCTION_EXAMPLE = """## Summary
@@ -26,7 +26,7 @@ _FUNCTION_EXAMPLE = """## Summary
 
 ## Returns
 
-- `float` — сумма a и b
+- `float` — sum a and b
 
 ## Raises
 
@@ -50,19 +50,7 @@ N/A"""
 
 _CLASS_EXAMPLE = """## Summary
 
-Класс для базовых арифметических операций.
-
-## Fields
-
-- `precision` (`int`) — количество знаков после запятой
-
-## Inheritance
-
-N/A
-
-## Methods overview
-
-N/A"""
+Класс для базовых арифметических операций с числами с плавающей точкой."""
 
 _MODULE_EXAMPLE = """## Summary
 
@@ -78,6 +66,12 @@ class SectionedPromptBuilder:
         lang_label = "Russian" if output_language == "ru" else output_language
         sections, example = self._sections_and_example(entity_type)
         section_headers = "\n".join(f"## {s}" for s in sections)
+        class_note = ""
+        if entity_type == "class":
+            class_note = (
+                "\nFor classes return ONLY ## Summary. "
+                "Fields, Inheritance, and Methods overview are added automatically from AST."
+            )
 
         return f"""You are a technical documentation generator.
 
@@ -89,6 +83,7 @@ Document the entity from the user message. Write all section body text in {lang_
 Return Markdown with EXACTLY these section headers in this order — no more, no less:
 
 {section_headers}
+{class_note}
 
 Rules (mandatory):
 1. Output ONLY the sections above. No preamble, no postscript, no commentary outside sections.
@@ -108,6 +103,7 @@ Rules (mandatory):
    For Exports, describe only names listed in `__all__` when provided; descriptions in {lang_label}.
 8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
 9. Examples must use valid calls matching the signature (required arguments must be present).
+10. Related entities in the user message are brief references only; do not repeat their full documentation.
 </output_contract>
 
 <example>
@@ -133,7 +129,7 @@ Your response must follow the example structure exactly and nothing else."""
         source_parts = []
         if ctx.source_docstring:
             source_parts.append(f"Docstring:\n{ctx.source_docstring}")
-        if ctx.source_body:
+        if ctx.source_body and ctx.entity_type != "class":
             source_parts.append(f"Source body:\n```python\n{ctx.source_body}\n```")
         sections.append(("Source", "\n".join(source_parts) or "(none)"))
 
@@ -144,13 +140,29 @@ Your response must follow the example structure exactly and nothing else."""
             sections.append(("Dependencies", "\n".join(ctx.imports)))
 
         if ctx.called_entities_docs:
-            called = "\n\n".join(f"### {d.name}\n{d.content}" for d in ctx.called_entities_docs)
-            sections.append(("Called entities", called))
+            called = "\n".join(doc.content for doc in ctx.called_entities_docs)
+            sections.append(("Related entities (brief)", called))
+
+        if ctx.base_class_docs:
+            bases = "\n".join(doc.content for doc in ctx.base_class_docs)
+            sections.append(("Base classes (brief)", bases))
+
+        if ctx.class_member_docs:
+            members = "\n".join(doc.content for doc in ctx.class_member_docs)
+            sections.append(("Class members (documented)", members))
+
+        if ctx.module_dependency_docs:
+            deps = "\n".join(doc.content for doc in ctx.module_dependency_docs)
+            sections.append(("Module dependencies (brief)", deps))
+
+        if ctx.module_export_docs:
+            exports = "\n".join(doc.content for doc in ctx.module_export_docs)
+            sections.append(("Exported / top-level (brief)", exports))
 
         if ctx.readme_excerpt:
             sections.append(("Project", f"Name: {ctx.project_name}\nREADME excerpt:\n{ctx.readme_excerpt}"))
 
-        return _truncate_sections(sections, max_chars)
+        return _truncate_sections(sections, max_chars, ctx.entity_type)
 
     @staticmethod
     def _sections_and_example(entity_type: str) -> tuple[tuple[str, ...], str]:
@@ -161,8 +173,10 @@ Your response must follow the example structure exactly and nothing else."""
         return _MODULE_SECTIONS, _MODULE_EXAMPLE
 
 
-def _truncate_sections(sections: list[tuple[str, str]], max_chars: int) -> str:
+def _truncate_sections(sections: list[tuple[str, str]], max_chars: int, entity_type: str) -> str:
     protected = {"Entity", "Source"}
+    if entity_type == "class":
+        protected.add("Class members (documented)")
     rendered = [f"## {title}\n\n{body}" for title, body in sections]
     full = "\n\n".join(rendered)
     if len(full) <= max_chars:

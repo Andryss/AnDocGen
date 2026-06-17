@@ -2,7 +2,24 @@ from __future__ import annotations
 
 from andocgen.generator.block_enricher import BlockEnricher
 from andocgen.generator.section_parser import parse_sections
-from andocgen.models.entities import ClassModel, EntityContext, ModuleModel, ParameterModel
+from andocgen.models.entities import ClassModel, EntityContext, ParameterModel
+
+
+def test_parse_class_summary_only() -> None:
+    ctx = EntityContext(
+        entity_type="class",
+        entity_name="Item",
+        entity_id="models.py::Item",
+        module_path="models.py",
+        project_name="demo",
+        signature="class Item",
+        class_model=ClassModel(name="Item", bases=["Base"]),
+    )
+    raw = "## Summary\n\nData item.\n"
+    block = parse_sections(raw, ctx)
+    BlockEnricher().enrich(block, ctx)
+    assert block.summary == "Data item."
+    assert "Base" in (block.inheritance or "")
 
 
 def test_enrich_class_fields_from_dataclass_ast() -> None:
@@ -26,25 +43,11 @@ def test_enrich_class_fields_from_dataclass_ast() -> None:
     raw = """## Summary
 
 Line item.
-
-## Fields
-
-- `_sku` (`str`) — hallucinated
-- `phantom` (`int`) — bad field
-
-## Inheritance
-
-object
-
-## Methods overview
-
-N/A
 """
     block = parse_sections(raw, ctx)
     BlockEnricher().enrich(block, ctx)
     assert block.fields is not None
     assert [field.name for field in block.fields] == ["sku", "title", "price"]
-    assert block.inheritance == "N/A"
 
 
 def test_enrich_plain_class_clears_llm_fields() -> None:
@@ -60,19 +63,6 @@ def test_enrich_plain_class_clears_llm_fields() -> None:
     raw = """## Summary
 
 Service class.
-
-## Fields
-
-- `_storage` (`InMemoryStorage`) — private
-- `_settings` (`Settings`) — private
-
-## Inheritance
-
-N/A
-
-## Methods overview
-
-N/A
 """
     block = parse_sections(raw, ctx)
     BlockEnricher().enrich(block, ctx)

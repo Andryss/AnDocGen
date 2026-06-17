@@ -46,20 +46,30 @@ class ModuleDocAssembler:
             lines.append("")
 
         toc: list[str] = []
-        if class_blocks:
+        class_names = sorted(
+            {b.entity_name for b in class_blocks} | set(methods_by_class.keys())
+        )
+        if class_names:
             toc.append(f"- [{labels.classes}](#{labels.classes.lower()})")
         if function_blocks:
             toc.append(f"- [{labels.functions}](#{labels.functions.lower()})")
         if toc:
             lines.extend([f"**{labels.contents}:**", "", *toc, ""])
 
-        if class_blocks:
+        if class_names:
             lines.extend([f"## {labels.classes}", ""])
-            for cls in class_blocks:
-                lines.append(format_markdown(cls, language, heading_level=3))
+            class_block_by_name = {b.entity_name: b for b in class_blocks}
+            for class_name in class_names:
+                cls_block = class_block_by_name.get(class_name)
+                if cls_block:
+                    lines.append(format_markdown(cls_block, language, heading_level=3))
+                else:
+                    lines.append(f"### `class {class_name}`")
+                    lines.append("")
+                    lines.append("Документация класса не сгенерирована.")
                 lines.append("")
 
-                class_methods = methods_by_class.get(cls.entity_name, [])
+                class_methods = methods_by_class.get(class_name, [])
                 if class_methods:
                     lines.extend([f"#### {labels.methods}", ""])
                     for method in class_methods:

@@ -59,9 +59,9 @@ def parse_sections(raw_response: str, ctx: EntityContext) -> DocBlock:
         block.examples = _normalize_optional_section(sections["Examples"])
         block.see_also = _normalize_optional_section(sections["See also"])
     elif ctx.entity_type == "class":
-        block.fields = _parse_parameters(sections["Fields"])
-        block.inheritance = sections["Inheritance"].strip()
-        block.methods_overview = _normalize_optional_section(sections["Methods overview"])
+        block.fields = _parse_parameters(sections.get("Fields", "N/A"))
+        block.inheritance = sections.get("Inheritance", "N/A").strip()
+        block.methods_overview = _normalize_optional_section(sections.get("Methods overview", "N/A"))
     elif ctx.entity_type == "module":
         block.exports = _parse_exports(sections["Exports"])
 
@@ -72,7 +72,7 @@ def _required_sections(entity_type: EntityType) -> list[str]:
     if entity_type in ("function", "method"):
         return _FUNCTION_SECTIONS
     if entity_type == "class":
-        return _CLASS_SECTIONS
+        return ["Summary"]
     return _MODULE_SECTIONS
 
 

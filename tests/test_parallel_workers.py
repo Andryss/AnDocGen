@@ -75,6 +75,11 @@ class _NoOpContextBuilder:
     def attach_callee_docs(self, ctx, docs_by_id, callee_ids, unresolved) -> None:
         pass
 
+    def attach_related_briefs(
+        self, ctx, registry, callee_ids, unresolved, call_graph=None
+    ) -> None:
+        pass
+
 
 class _NoOpPromptBuilder:
     def build_system_message(self, language: str, entity_type: str) -> str:

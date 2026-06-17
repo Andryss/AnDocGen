@@ -19,6 +19,32 @@ class BlockingIssue:
     message: str
 
 
+def validate_summary_language(block: DocBlock, ctx: EntityContext) -> list[BlockingIssue]:
+    if ctx.output_language != "ru" or not block.summary.strip():
+        return []
+    if not _mostly_latin(block.summary):
+        return []
+    return [
+        BlockingIssue(
+            code="language_mismatch",
+            message="Summary must be in Russian (ru)",
+        )
+    ]
+
+
+def _mostly_latin(text: str) -> bool:
+    stripped = text.strip()
+    if len(stripped) < 25:
+        return False
+    if re.search(r"[а-яА-ЯёЁ]", stripped):
+        return False
+    letters = [char for char in stripped if char.isalpha()]
+    if len(letters) < 12:
+        return False
+    latin = sum(1 for char in letters if ord(char) < 128)
+    return latin / len(letters) > 0.5
+
+
 def validate_entity(block: DocBlock, ctx: EntityContext) -> list[BlockingIssue]:
     issues: list[BlockingIssue] = []
     if block.entity_type in ("function", "method") and ctx.function:
@@ -60,6 +86,19 @@ def _validate_examples(block: DocBlock, ctx: EntityContext) -> list[BlockingIssu
             )
         )
 
+    module = ctx.module
+    if module is not None:
+        for cls in module.classes:
+            if fn.owner_class and cls.name == fn.owner_class:
+                continue
+            if _class_ctor_without_required_args(examples, cls.name, ctx):
+                issues.append(
+                    BlockingIssue(
+                        code="examples_invalid_ctor",
+                        message=f"Example instantiates `{cls.name}` without constructor arguments",
+                    )
+                )
+
     required = _required_params(fn)
     if required and re.search(rf"\b{re.escape(fn.name)}\s*\(\s*\)", examples):
         issues.append(
@@ -88,6 +127,12 @@ def _class_ctor_without_required_args(
 ) -> bool:
     if not re.search(rf"\b{re.escape(class_name)}\s*\(\s*\)", examples):
         return False
+    cls = _find_class_model(class_name, ctx)
+    if cls is None:
+        return False
+    if cls.is_namedtuple or cls.is_dataclass:
+        required_fields = [field for field in cls.field_defs if field.default is None]
+        return bool(required_fields)
     init_fn = _find_class_init(class_name, ctx)
     if init_fn is None:
         return False
@@ -122,7 +167,7 @@ def _validate_example_type_names(examples: str, ctx: EntityContext) -> list[Bloc
         return []
     issues: list[BlockingIssue] = []
     for cls in module.classes:
-        if not cls.is_dataclass or not cls.field_defs:
+        if (not cls.is_dataclass and not cls.is_namedtuple) or not cls.field_defs:
             continue
         allowed = {field.name for field in cls.field_defs}
         for match in re.finditer(rf"\b{re.escape(cls.name)}\s*\(([^)]*)\)", examples):
@@ -148,5 +193,8 @@ def format_blocking_retry_prompt(issues: list[BlockingIssue]) -> str:
     for issue in issues:
         lines.append(f"- {issue.message}")
     lines.append("")
-    lines.append("Fix Examples to match signatures. Use N/A for Examples if unsure.")
+    if any(issue.code == "language_mismatch" for issue in issues):
+        lines.append("Write Summary in the configured output language.")
+    else:
+        lines.append("Fix Examples to match signatures. Use N/A for Examples if unsure.")
     return "\n".join(lines)

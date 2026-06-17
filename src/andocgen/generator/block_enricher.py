@@ -9,6 +9,8 @@ from andocgen.models.entities import (
     ReturnDoc,
 )
 
+_NOISE_BASES = {"object", "Generic", "TypedDict", "NamedTuple", "Protocol"}
+
 
 class BlockEnricher:
     def enrich(self, block: DocBlock, ctx: EntityContext) -> None:
@@ -16,7 +18,8 @@ class BlockEnricher:
             self.enrich_parameters(block, ctx)
         elif ctx.entity_type == "class":
             self.enrich_class_fields(block, ctx)
-            block.inheritance = self.normalize_inheritance(block.inheritance or "")
+            block.inheritance = self.enrich_inheritance(block.inheritance or "", ctx)
+            block.methods_overview = self.enrich_methods_overview(block.methods_overview or "", ctx)
         elif ctx.entity_type == "module":
             self.enrich_exports(block, ctx)
 
@@ -67,7 +70,8 @@ class BlockEnricher:
             block.fields = []
             return
         cls = ctx.class_model
-        if cls.is_dataclass and cls.field_defs:
+        structured = cls.is_dataclass or cls.is_namedtuple
+        if structured and cls.field_defs:
             llm_fields = {field.name: field for field in (block.fields or [])}
             block.fields = [
                 ParameterDoc(
@@ -88,6 +92,32 @@ class BlockEnricher:
             ]
         else:
             block.fields = []
+
+    def enrich_inheritance(self, section: str, ctx: EntityContext) -> str:
+        if not is_empty_section(section):
+            normalized = self.normalize_inheritance(section)
+            if normalized != "N/A":
+                return normalized
+        if not ctx.class_model or not ctx.class_model.bases:
+            return "N/A"
+        bases = [
+            base
+            for base in ctx.class_model.bases
+            if base.split("[", 1)[0].strip() not in _NOISE_BASES
+        ]
+        if not bases:
+            return "N/A"
+        return "\n".join(f"- `{base}`" for base in bases)
+
+    def enrich_methods_overview(self, section: str, ctx: EntityContext) -> str:
+        if not is_empty_section(section):
+            return section
+        if ctx.class_member_docs:
+            return "\n".join(doc.content for doc in ctx.class_member_docs)
+        if not ctx.class_model:
+            return "N/A"
+        lines = [f"- `{method.name}`" for method in ctx.class_model.methods]
+        return "\n".join(lines) if lines else "N/A"
 
     @staticmethod
     def normalize_inheritance(section: str) -> str:

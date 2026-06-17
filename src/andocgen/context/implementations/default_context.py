@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from andocgen.config import ContextConfig
+from andocgen.context.doc_brief_registry import DocBriefRegistry
 from andocgen.models.entities import (
     CalledEntityDoc,
+    CallGraph,
     EntityContext,
     ProjectModel,
     make_entity_id,
@@ -55,12 +57,13 @@ class DefaultContextBuilder:
                         project_name=project.name,
                         signature=_class_signature(cls),
                         source_docstring=cls.docstring,
-                        source_body=cls.source_body if config.include_source_body else cls.source_snippet,
+                        source_body="",
                         imports=import_lines,
                         readme_excerpt=readme_excerpt,
                         previous_output_doc=previous_docs.get(class_id),
                         output_language=output_language,
                         class_model=cls,
+                        module=module,
                     )
                 )
                 for method in cls.methods:
@@ -104,6 +107,7 @@ class DefaultContextBuilder:
                         output_language=output_language,
                         complexity=fn.complexity,
                         function=fn,
+                        module=module,
                     )
                 )
 
@@ -116,12 +120,117 @@ class DefaultContextBuilder:
         callee_ids: list[str],
         unresolved: list[str],
     ) -> None:
+        del docs_by_id
+        self.attach_callee_briefs(ctx, DocBriefRegistry(), callee_ids, unresolved)
+
+    def attach_callee_briefs(
+        self,
+        ctx: EntityContext,
+        registry: DocBriefRegistry,
+        callee_ids: list[str],
+        unresolved: list[str],
+    ) -> None:
         ctx.called_entities_docs = [
-            CalledEntityDoc(name=cid.split("::")[-1], content=docs_by_id[cid])
+            CalledEntityDoc(
+                name=cid.split("::")[-1],
+                content=registry.brief_line(cid),
+            )
             for cid in callee_ids
-            if cid in docs_by_id
+            if registry.has(cid)
         ]
         ctx.unresolved_calls = unresolved
+
+    def attach_class_method_briefs(
+        self,
+        ctx: EntityContext,
+        registry: DocBriefRegistry,
+    ) -> None:
+        if ctx.entity_type != "class" or not ctx.class_model:
+            return
+        ctx.class_member_docs = []
+        for method in ctx.class_model.methods:
+            method_id = make_entity_id(ctx.module_path, "method", method.qualified_name())
+            ctx.class_member_docs.append(
+                CalledEntityDoc(
+                    name=method.name,
+                    content=registry.brief_line(method_id, method.signature()),
+                )
+            )
+
+    def attach_module_dependency_briefs(
+        self,
+        ctx: EntityContext,
+        registry: DocBriefRegistry,
+        call_graph: CallGraph,
+    ) -> None:
+        if ctx.entity_type != "module" or not ctx.module:
+            return
+        deps = call_graph.module_dependencies.get(ctx.module.path, [])
+        ctx.module_dependency_docs = [
+            CalledEntityDoc(
+                name=dep_path,
+                content=registry.brief_line(
+                    make_entity_id(dep_path, "module", "module"),
+                    dep_path,
+                ),
+            )
+            for dep_path in deps
+        ]
+        ctx.module_export_docs = []
+        export_names = ctx.module.exports or [
+            fn.name for fn in ctx.module.functions
+        ] + [cls.name for cls in ctx.module.classes]
+        seen: set[str] = set()
+        for name in export_names:
+            if name in seen:
+                continue
+            seen.add(name)
+            for entity_type in ("class", "function"):
+                entity_id = make_entity_id(ctx.module.path, entity_type, name)
+                if registry.has(entity_id):
+                    ctx.module_export_docs.append(
+                        CalledEntityDoc(name=name, content=registry.brief_line(entity_id))
+                    )
+                    break
+
+    def attach_base_class_briefs(
+        self,
+        ctx: EntityContext,
+        registry: DocBriefRegistry,
+    ) -> None:
+        if ctx.entity_type != "method" or not ctx.class_model:
+            return
+        ctx.base_class_docs = []
+        module = ctx.module
+        if module is None:
+            return
+        for base in ctx.class_model.bases:
+            base_name = base.split("[", 1)[0].strip()
+            if base_name in ("object", "Generic", "TypedDict", "NamedTuple", "Protocol"):
+                continue
+            for cls in module.classes:
+                if cls.name == base_name:
+                    class_id = make_entity_id(ctx.module_path, "class", cls.name)
+                    ctx.base_class_docs.append(
+                        CalledEntityDoc(
+                            name=base_name,
+                            content=registry.brief_line(class_id, _class_signature(cls)),
+                        )
+                    )
+                    break
+
+    def attach_related_briefs(
+        self,
+        ctx: EntityContext,
+        registry: DocBriefRegistry,
+        callee_ids: list[str],
+        unresolved: list[str],
+        call_graph: CallGraph,
+    ) -> None:
+        self.attach_callee_briefs(ctx, registry, callee_ids, unresolved)
+        self.attach_class_method_briefs(ctx, registry)
+        self.attach_module_dependency_briefs(ctx, registry, call_graph)
+        self.attach_base_class_briefs(ctx, registry)
 
 
 def _class_signature(cls) -> str:

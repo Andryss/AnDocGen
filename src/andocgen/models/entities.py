@@ -74,6 +74,7 @@ class ClassModel:
     fields: list[str] = field(default_factory=list)
     field_defs: list[ParameterModel] = field(default_factory=list)
     is_dataclass: bool = False
+    is_namedtuple: bool = False
     methods: list[FunctionModel] = field(default_factory=list)
     line_start: int = 0
     line_end: int = 0
@@ -168,6 +169,9 @@ class EntityContext:
     imports: list[str] = field(default_factory=list)
     called_entities_docs: list[CalledEntityDoc] = field(default_factory=list)
     base_class_docs: list[CalledEntityDoc] = field(default_factory=list)
+    class_member_docs: list[CalledEntityDoc] = field(default_factory=list)
+    module_dependency_docs: list[CalledEntityDoc] = field(default_factory=list)
+    module_export_docs: list[CalledEntityDoc] = field(default_factory=list)
     readme_excerpt: str | None = None
     previous_output_doc: str | None = None
     output_language: str = "ru"

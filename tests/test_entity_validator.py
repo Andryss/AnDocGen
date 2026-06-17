@@ -12,6 +12,41 @@ from andocgen.models.entities import (
 )
 
 
+def test_no_false_positive_on_namedtuple_empty_ctor() -> None:
+    point_cls = ClassModel(
+        name="Point",
+        is_namedtuple=True,
+        field_defs=[
+            ParameterModel(name="x", type_annotation="int"),
+            ParameterModel(name="y", type_annotation="int"),
+        ],
+    )
+    fn = FunctionModel(
+        name="show",
+        parameters=[ParameterModel(name="self"), ParameterModel(name="p")],
+        is_method=True,
+        owner_class="Viewer",
+    )
+    ctx = EntityContext(
+        entity_type="method",
+        entity_name="Viewer.show",
+        entity_id="main.py::Viewer.show",
+        module_path="main.py",
+        project_name="demo",
+        function=fn,
+        module=ModuleModel(path="main.py", classes=[point_cls]),
+    )
+    block = DocBlock(
+        entity_type="method",
+        entity_name="Viewer.show",
+        module_path="main.py",
+        summary="Shows point.",
+        examples="```python\nPoint()\n```",
+    )
+    issues = validate_entity(block, ctx)
+    assert any(issue.code == "examples_invalid_ctor" for issue in issues)
+
+
 def test_no_false_positive_on_inmemory_storage_ctor() -> None:
     init_fn = FunctionModel(
         name="__init__",

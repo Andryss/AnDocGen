@@ -65,8 +65,14 @@ def test_console_progress_non_tty(capsys) -> None:
     assert "workers=" not in out
 
 
-def test_console_progress_fail_prints_newline(monkeypatch, capsys) -> None:
+def test_console_progress_fail_clears_previous_line(monkeypatch, capsys) -> None:
     monkeypatch.setattr(sys.stdout, "isatty", lambda: True)
     reporter = ConsoleProgressReporter()
-    reporter.on_llm_progress(1, 3, "x::y", 100.0, False)
-    assert "FAIL" in capsys.readouterr().out
+    reporter.on_llm_progress(1, 3, "a.py::ok", 100.0, True)
+    reporter.on_llm_progress(2, 3, "b.py::fail", 100.0, False)
+    out = capsys.readouterr().out
+    assert out.count("FAIL") == 1
+    assert not any("a.py::ok" in line and "b.py::fail" in line for line in out.splitlines())
+    fail_lines = [line for line in out.splitlines() if "b.py::fail" in line]
+    assert len(fail_lines) == 1
+    assert "FAIL" in fail_lines[0]

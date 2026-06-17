@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from andocgen.models.entities import DocBlock, ProjectModel
+from andocgen.models.entities import ClassModel, DocBlock, ModuleModel, ProjectModel
 from andocgen.output.implementations.markdown_writer import MarkdownDocumentationWriter
 from andocgen.output.navigation_writer import group_by_directory, sort_modules
 
@@ -169,3 +169,24 @@ def test_write_emits_directory_readmes(tmp_path) -> None:
     assert (tmp_path / "plugins" / "README.md").exists()
     assert str(tmp_path / "README.md") in written
     assert str(tmp_path / "plugins" / "README.md") in written
+
+
+def test_orphan_methods_rendered_without_class_block() -> None:
+    from andocgen.output.module_doc_assembler import ModuleDocAssembler
+
+    assembler = ModuleDocAssembler()
+    module = ModuleModel(path="main.py", classes=[ClassModel(name="QRCode")])
+    blocks = [
+        DocBlock(
+            entity_type="method",
+            entity_name="QRCode.add_data",
+            module_path="main.py",
+            signature="def add_data(self, data)",
+            summary="Adds data.",
+            content="### `add_data(self, data)`\n\nAdds data.",
+        )
+    ]
+    text = assembler.render_module_doc(module, blocks, language="ru")
+    assert "QRCode" in text
+    assert "add_data" in text
+    assert "не сгенерирована" in text
