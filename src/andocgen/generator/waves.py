@@ -34,7 +34,7 @@ def group_into_waves(
 
     if classes:
         waves.append(classes)
-    for module in modules:
-        waves.append([module])
+    if modules:
+        waves.append(modules)
 
     return waves

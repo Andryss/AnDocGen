@@ -7,7 +7,11 @@ from andocgen.reporting.implementations.console_progress import (
     _format_progress_line,
 )
 from andocgen.reporting.implementations.null_progress import NullProgressReporter
-from andocgen.reporting.progress_format import format_duration, format_duration_fixed
+from andocgen.reporting.progress_format import (
+    compute_progress_eta,
+    format_duration,
+    format_duration_fixed,
+)
 
 
 def test_format_duration_seconds() -> None:
@@ -25,11 +29,22 @@ def test_format_duration_fixed_width() -> None:
 
 
 def test_progress_line_fixed_columns() -> None:
-    line_a = _format_progress_line(1, 40, "cli.py::build_parser", True, 0.0, 120)
-    line_b = _format_progress_line(16, 40, "utils/formatting.py::format_items", True, 5.1, 80)
+    line_a = _format_progress_line(1, 40, "cli.py::build_parser", True, 6.0, 234)
+    line_b = _format_progress_line(16, 40, "utils/formatting.py::format_items", True, 5.1, 122)
     assert len(line_a) == len(line_b)
     assert "workers=" not in line_a
     assert "ETA" in line_a
+    assert "s/ent" in line_a
+
+
+def test_eta_extrapolates_from_wall_clock() -> None:
+    # 8 entities done in 40s wall-clock (parallel); each req ~15s individually.
+    avg, eta = compute_progress_eta(elapsed_sec=40.0, current=8, total=16)
+    assert avg == 5.0
+    assert eta == 40.0
+    per_request_avg = 15.0
+    wrong_eta = per_request_avg * (16 - 8)
+    assert eta < wrong_eta
 
 
 def test_null_progress_is_silent(capsys) -> None:

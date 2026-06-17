@@ -74,3 +74,15 @@ def test_waves_from_call_graph_builder() -> None:
     assert flat.index(make_entity_id("m.py", "function", "b")) < flat.index(
         make_entity_id("m.py", "function", "a")
     )
+
+
+def test_modules_grouped_in_single_wave() -> None:
+    contexts = [
+        _ctx("a.py", "module", "a.py"),
+        _ctx("b.py", "module", "b.py"),
+        _ctx("c.py", "module", "c.py"),
+    ]
+    waves = group_into_waves(contexts, CallGraph(), StaticCallGraphBuilder())
+    assert len(waves) == 1
+    assert len(waves[0]) == 3
+    assert all(c.entity_type == "module" for c in waves[0])

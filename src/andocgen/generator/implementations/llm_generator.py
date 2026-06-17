@@ -107,7 +107,7 @@ class LlmDocumentGenerator:
             return block, err
 
         for wave in waves:
-            wave_workers = 1 if len(wave) == 1 and wave[0].entity_type == "module" else workers
+            wave_workers = workers
             if wave_workers == 1:
                 for ctx in wave:
                     block, err = run_one(ctx)

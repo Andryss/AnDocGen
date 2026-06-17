@@ -2,8 +2,9 @@ from __future__ import annotations
 
 import sys
 import threading
+import time
 
-from andocgen.reporting.progress_format import format_duration_fixed
+from andocgen.reporting.progress_format import compute_progress_eta, format_duration_fixed
 
 _ENTITY_WIDTH = 40
 _CLEAR_LINE = "\r\033[K"
@@ -13,7 +14,7 @@ class ConsoleProgressReporter:
     def __init__(self, quiet: bool = False) -> None:
         self._quiet = quiet
         self._lock = threading.Lock()
-        self._durations: list[float] = []
+        self._start_time: float | None = None
         self._is_tty = sys.stdout.isatty()
 
     def on_stage(self, message: str) -> None:
@@ -31,11 +32,12 @@ class ConsoleProgressReporter:
         if self._quiet:
             return
         with self._lock:
-            self._durations.append(duration_ms)
-            avg_ms = sum(self._durations) / len(self._durations)
-            eta_sec = max(0.0, (total - current) * avg_ms / 1000)
+            if self._start_time is None:
+                self._start_time = time.perf_counter()
+            elapsed_sec = time.perf_counter() - self._start_time
+            avg_sec, eta_sec = compute_progress_eta(elapsed_sec, current, total)
             line = _format_progress_line(
-                current, total, entity_id, ok, avg_ms / 1000, eta_sec
+                current, total, entity_id, ok, avg_sec, eta_sec
             )
             if not ok or not self._is_tty:
                 print(line, flush=True)
@@ -57,7 +59,7 @@ def _format_progress_line(
     counter = f"[{current:>{width}d}/{total}]"
     entity = _fit_text(entity_id, _ENTITY_WIDTH)
     status = "ok  " if ok else "FAIL"
-    avg = f"{avg_sec:5.1f}s/req"
+    avg = f"{avg_sec:5.1f}s/ent"
     eta = f"ETA {format_duration_fixed(eta_sec)}"
     return f"{counter} {entity} {status}  {avg}  {eta}"
 

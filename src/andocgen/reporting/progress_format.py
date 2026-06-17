@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import time
+
 
 def format_duration(seconds: float) -> str:
     if seconds < 60:
@@ -15,3 +17,12 @@ def format_duration(seconds: float) -> str:
 
 def format_duration_fixed(seconds: float, width: int = 6) -> str:
     return format_duration(seconds).rjust(width)
+
+
+def compute_progress_eta(elapsed_sec: float, current: int, total: int) -> tuple[float, float]:
+    """Average wall-clock seconds per completed entity and ETA for the rest."""
+    if current <= 0:
+        return 0.0, 0.0
+    avg_sec = elapsed_sec / current
+    eta_sec = max(0.0, avg_sec * (total - current))
+    return avg_sec, eta_sec
