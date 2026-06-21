@@ -1,0 +1,195 @@
+2026-06-21 16:07:22,777 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_library provider=ollama
+2026-06-21 16:07:22,777 INFO Output directory: examples/mini_library/generated_docs
+2026-06-21 16:07:22,777 INFO [scan] start
+2026-06-21 16:07:22,777 INFO [scan] done (0ms)
+2026-06-21 16:07:22,777 INFO Found 12 files
+2026-06-21 16:07:22,777 INFO [parse] start 12 files
+2026-06-21 16:07:22,777 DEBUG Parsing: __init__.py
+2026-06-21 16:07:22,778 DEBUG   parsed __init__.py: 0 functions, 0 classes
+2026-06-21 16:07:22,778 DEBUG Parsing: cli.py
+2026-06-21 16:07:22,781 DEBUG   parsed cli.py: 2 functions, 0 classes
+2026-06-21 16:07:22,782 DEBUG Parsing: config.py
+2026-06-21 16:07:22,782 DEBUG   parsed config.py: 0 functions, 1 classes
+2026-06-21 16:07:22,782 DEBUG Parsing: exceptions.py
+2026-06-21 16:07:22,782 DEBUG   parsed exceptions.py: 0 functions, 3 classes
+2026-06-21 16:07:22,782 DEBUG Parsing: models.py
+2026-06-21 16:07:22,783 DEBUG   parsed models.py: 0 functions, 2 classes
+2026-06-21 16:07:22,783 DEBUG Parsing: plugins/__init__.py
+2026-06-21 16:07:22,783 DEBUG   parsed plugins/__init__.py: 0 functions, 0 classes
+2026-06-21 16:07:22,783 DEBUG Parsing: plugins/base.py
+2026-06-21 16:07:22,784 DEBUG   parsed plugins/base.py: 0 functions, 1 classes
+2026-06-21 16:07:22,784 DEBUG Parsing: plugins/markdown.py
+2026-06-21 16:07:22,784 DEBUG   parsed plugins/markdown.py: 0 functions, 1 classes
+2026-06-21 16:07:22,784 DEBUG Parsing: services.py
+2026-06-21 16:07:22,785 DEBUG   parsed services.py: 0 functions, 1 classes
+2026-06-21 16:07:22,785 DEBUG Parsing: storage.py
+2026-06-21 16:07:22,786 DEBUG   parsed storage.py: 0 functions, 1 classes
+2026-06-21 16:07:22,786 DEBUG Parsing: utils/__init__.py
+2026-06-21 16:07:22,786 DEBUG   parsed utils/__init__.py: 0 functions, 0 classes
+2026-06-21 16:07:22,786 DEBUG Parsing: utils/formatting.py
+2026-06-21 16:07:22,786 DEBUG   parsed utils/formatting.py: 2 functions, 0 classes
+2026-06-21 16:07:22,786 INFO [parse] done 12 files (9ms)
+2026-06-21 16:07:22,786 INFO [call_graph] start
+2026-06-21 16:07:22,787 INFO [call_graph] done (0ms)
+2026-06-21 16:07:22,787 DEBUG Call graph: 18 nodes, 37 edges
+2026-06-21 16:07:22,787 INFO Generating documentation for 40 entities
+2026-06-21 16:07:22,787 INFO [generate] start 40 entities
+2026-06-21 16:07:22,787 INFO Generating function:build_parser (cli.py::build_parser)
+2026-06-21 16:07:22,787 INFO LLM request entity=cli.py::build_parser system_chars=2039 user_chars=859
+2026-06-21 16:07:31,956 INFO LLM response entity=cli.py::build_parser status=parsed chars=470 duration_ms=9169
+2026-06-21 16:07:31,956 INFO Generating method:Order.total (models.py::Order.total)
+2026-06-21 16:07:31,956 INFO LLM request entity=models.py::Order.total system_chars=2039 user_chars=460
+2026-06-21 16:07:37,412 INFO   blocking validation for models.py::Order.total: Example uses unknown field `price` for `Order` (expected: customer, items, order_id); Example uses unknown field `quantity` for `Order` (expected: customer, items, order_id)
+2026-06-21 16:07:37,412 INFO LLM request entity=models.py::Order.total system_chars=2039 user_chars=752
+2026-06-21 16:07:42,439 INFO   blocking validation for models.py::Order.total: Example uses unknown field `price` for `Order` (expected: customer, items, order_id); Example uses unknown field `quantity` for `Order` (expected: customer, items, order_id)
+2026-06-21 16:07:42,439 INFO LLM request entity=models.py::Order.total system_chars=2039 user_chars=752
+2026-06-21 16:07:47,478 INFO LLM response entity=models.py::Order.total status=parsed chars=396 duration_ms=15522
+2026-06-21 16:07:47,478 INFO Generating method:PluginBase.__init__ (plugins/base.py::PluginBase.__init__)
+2026-06-21 16:07:47,478 INFO LLM request entity=plugins/base.py::PluginBase.__init__ system_chars=2039 user_chars=479
+2026-06-21 16:07:52,767 INFO LLM response entity=plugins/base.py::PluginBase.__init__ status=parsed chars=380 duration_ms=5289
+2026-06-21 16:07:52,767 INFO Generating method:PluginBase.export (plugins/base.py::PluginBase.export)
+2026-06-21 16:07:52,767 INFO LLM request entity=plugins/base.py::PluginBase.export system_chars=2039 user_chars=550
+2026-06-21 16:07:57,844 INFO LLM response entity=plugins/base.py::PluginBase.export status=parsed chars=397 duration_ms=5077
+2026-06-21 16:07:57,844 INFO Generating method:MarkdownExporter.__init__ (plugins/markdown.py::MarkdownExporter.__init__)
+2026-06-21 16:07:57,844 INFO LLM request entity=plugins/markdown.py::MarkdownExporter.__init__ system_chars=2039 user_chars=545
+2026-06-21 16:08:02,884 INFO LLM response entity=plugins/markdown.py::MarkdownExporter.__init__ status=parsed chars=386 duration_ms=5039
+2026-06-21 16:08:02,884 INFO Generating method:MarkdownExporter.export (plugins/markdown.py::MarkdownExporter.export)
+2026-06-21 16:08:02,884 INFO LLM request entity=plugins/markdown.py::MarkdownExporter.export system_chars=2039 user_chars=619
+2026-06-21 16:08:08,321 INFO   blocking validation for plugins/markdown.py::MarkdownExporter.export: Example calls `export()` without required parameters
+2026-06-21 16:08:08,321 INFO LLM request entity=plugins/markdown.py::MarkdownExporter.export system_chars=2039 user_chars=789
+2026-06-21 16:08:13,923 INFO LLM response entity=plugins/markdown.py::MarkdownExporter.export status=parsed chars=463 duration_ms=11040
+2026-06-21 16:08:13,923 INFO Generating method:OrderService.__init__ (services.py::OrderService.__init__)
+2026-06-21 16:08:13,923 INFO LLM request entity=services.py::OrderService.__init__ system_chars=2039 user_chars=742
+2026-06-21 16:08:19,644 INFO LLM response entity=services.py::OrderService.__init__ status=parsed chars=430 duration_ms=5721
+2026-06-21 16:08:19,644 INFO Generating method:OrderService.add_item (services.py::OrderService.add_item)
+2026-06-21 16:08:19,645 INFO LLM request entity=services.py::OrderService.add_item system_chars=2039 user_chars=821
+2026-06-21 16:08:25,592 INFO LLM response entity=services.py::OrderService.add_item status=parsed chars=464 duration_ms=5948
+2026-06-21 16:08:25,592 INFO Generating method:OrderService.create_order (services.py::OrderService.create_order)
+2026-06-21 16:08:25,592 INFO LLM request entity=services.py::OrderService.create_order system_chars=2039 user_chars=776
+2026-06-21 16:08:30,642 INFO   blocking validation for services.py::OrderService.create_order: Example instantiates `OrderService` without constructor arguments
+2026-06-21 16:08:30,642 INFO LLM request entity=services.py::OrderService.create_order system_chars=2039 user_chars=959
+2026-06-21 16:08:35,195 INFO   blocking validation for services.py::OrderService.create_order: Example instantiates `OrderService` without constructor arguments
+2026-06-21 16:08:35,195 INFO LLM request entity=services.py::OrderService.create_order system_chars=2039 user_chars=959
+2026-06-21 16:08:40,170 INFO LLM response entity=services.py::OrderService.create_order status=parsed chars=444 duration_ms=14578
+2026-06-21 16:08:40,170 INFO Generating method:OrderService.summarize (services.py::OrderService.summarize)
+2026-06-21 16:08:40,170 INFO LLM request entity=services.py::OrderService.summarize system_chars=2039 user_chars=826
+2026-06-21 16:08:47,131 INFO   blocking validation for services.py::OrderService.summarize: Example instantiates `OrderService` without constructor arguments
+2026-06-21 16:08:47,131 INFO LLM request entity=services.py::OrderService.summarize system_chars=2039 user_chars=1009
+2026-06-21 16:08:54,705 INFO   blocking validation for services.py::OrderService.summarize: Example instantiates `OrderService` without constructor arguments
+2026-06-21 16:08:54,706 INFO LLM request entity=services.py::OrderService.summarize system_chars=2039 user_chars=1009
+2026-06-21 16:09:01,015 INFO LLM response entity=services.py::OrderService.summarize status=parsed chars=500 duration_ms=20845
+2026-06-21 16:09:01,015 INFO Generating method:InMemoryStorage.__init__ (storage.py::InMemoryStorage.__init__)
+2026-06-21 16:09:01,015 INFO LLM request entity=storage.py::InMemoryStorage.__init__ system_chars=2039 user_chars=523
+2026-06-21 16:09:05,662 INFO LLM response entity=storage.py::InMemoryStorage.__init__ status=parsed chars=340 duration_ms=4647
+2026-06-21 16:09:05,663 INFO Generating method:InMemoryStorage.create (storage.py::InMemoryStorage.create)
+2026-06-21 16:09:05,663 INFO LLM request entity=storage.py::InMemoryStorage.create system_chars=2039 user_chars=620
+2026-06-21 16:09:10,027 INFO LLM response entity=storage.py::InMemoryStorage.create status=parsed chars=340 duration_ms=4364
+2026-06-21 16:09:10,027 INFO Generating method:InMemoryStorage.get (storage.py::InMemoryStorage.get)
+2026-06-21 16:09:10,027 INFO LLM request entity=storage.py::InMemoryStorage.get system_chars=2039 user_chars=610
+2026-06-21 16:09:15,377 INFO LLM response entity=storage.py::InMemoryStorage.get status=parsed chars=375 duration_ms=5350
+2026-06-21 16:09:15,377 INFO Generating method:InMemoryStorage.list_ids (storage.py::InMemoryStorage.list_ids)
+2026-06-21 16:09:15,377 INFO LLM request entity=storage.py::InMemoryStorage.list_ids system_chars=2039 user_chars=501
+2026-06-21 16:09:21,213 INFO LLM response entity=storage.py::InMemoryStorage.list_ids status=parsed chars=414 duration_ms=5836
+2026-06-21 16:09:21,213 INFO Generating function:format_items (utils/formatting.py::format_items)
+2026-06-21 16:09:21,213 INFO LLM request entity=utils/formatting.py::format_items system_chars=2039 user_chars=508
+2026-06-21 16:09:26,083 INFO LLM response entity=utils/formatting.py::format_items status=parsed chars=379 duration_ms=4870
+2026-06-21 16:09:26,084 INFO Generating function:format_price (utils/formatting.py::format_price)
+2026-06-21 16:09:26,084 INFO LLM request entity=utils/formatting.py::format_price system_chars=2039 user_chars=552
+2026-06-21 16:09:32,597 INFO LLM response entity=utils/formatting.py::format_price status=parsed chars=416 duration_ms=6514
+2026-06-21 16:09:32,597 INFO Generating function:main (cli.py::main)
+2026-06-21 16:09:32,597 INFO LLM request entity=cli.py::main system_chars=2039 user_chars=1181
+2026-06-21 16:09:40,227 INFO LLM response entity=cli.py::main status=parsed chars=493 duration_ms=7629
+2026-06-21 16:09:40,227 INFO Generating method:OrderService.quote_total (services.py::OrderService.quote_total)
+2026-06-21 16:09:40,227 INFO LLM request entity=services.py::OrderService.quote_total system_chars=2039 user_chars=980
+2026-06-21 16:09:47,226 INFO   blocking validation for services.py::OrderService.quote_total: Example instantiates `OrderService` without constructor arguments
+2026-06-21 16:09:47,226 INFO LLM request entity=services.py::OrderService.quote_total system_chars=2039 user_chars=1163
+2026-06-21 16:09:53,821 INFO LLM response entity=services.py::OrderService.quote_total status=parsed chars=536 duration_ms=13594
+2026-06-21 16:09:53,821 INFO Generating class:Settings (config.py::Settings)
+2026-06-21 16:09:53,821 INFO LLM request entity=config.py::Settings system_chars=1872 user_chars=355
+2026-06-21 16:09:56,429 INFO LLM response entity=config.py::Settings status=parsed chars=51 duration_ms=2608
+2026-06-21 16:09:56,429 INFO Generating class:MiniLibraryError (exceptions.py::MiniLibraryError)
+2026-06-21 16:09:56,429 INFO LLM request entity=exceptions.py::MiniLibraryError system_chars=1872 user_chars=304
+2026-06-21 16:09:57,738 INFO LLM response entity=exceptions.py::MiniLibraryError status=parsed chars=63 duration_ms=1309
+2026-06-21 16:09:57,739 INFO Generating class:NotFoundError (exceptions.py::NotFoundError)
+2026-06-21 16:09:57,739 INFO LLM request entity=exceptions.py::NotFoundError system_chars=1872 user_chars=324
+2026-06-21 16:10:00,882 INFO LLM response entity=exceptions.py::NotFoundError status=parsed chars=233 duration_ms=3143
+2026-06-21 16:10:00,882 INFO Generating class:ValidationError (exceptions.py::ValidationError)
+2026-06-21 16:10:00,882 INFO LLM request entity=exceptions.py::ValidationError system_chars=1872 user_chars=316
+2026-06-21 16:10:02,838 INFO LLM response entity=exceptions.py::ValidationError status=parsed chars=118 duration_ms=1956
+2026-06-21 16:10:02,838 INFO Generating class:Item (models.py::Item)
+2026-06-21 16:10:02,838 INFO LLM request entity=models.py::Item system_chars=1872 user_chars=361
+2026-06-21 16:10:04,104 INFO LLM response entity=models.py::Item status=parsed chars=70 duration_ms=1265
+2026-06-21 16:10:04,104 INFO Generating class:Order (models.py::Order)
+2026-06-21 16:10:04,104 INFO LLM request entity=models.py::Order system_chars=1872 user_chars=508
+2026-06-21 16:10:06,054 INFO LLM response entity=models.py::Order status=parsed chars=109 duration_ms=1950
+2026-06-21 16:10:06,054 INFO Generating class:PluginBase (plugins/base.py::PluginBase)
+2026-06-21 16:10:06,054 INFO LLM request entity=plugins/base.py::PluginBase system_chars=1872 user_chars=634
+2026-06-21 16:10:12,396 INFO LLM response entity=plugins/base.py::PluginBase status=parsed chars=451 duration_ms=6342
+2026-06-21 16:10:12,396 INFO Generating class:MarkdownExporter (plugins/markdown.py::MarkdownExporter)
+2026-06-21 16:10:12,396 INFO LLM request entity=plugins/markdown.py::MarkdownExporter system_chars=1872 user_chars=665
+2026-06-21 16:10:15,444 INFO LLM response entity=plugins/markdown.py::MarkdownExporter status=parsed chars=193 duration_ms=3048
+2026-06-21 16:10:15,444 INFO Generating class:OrderService (services.py::OrderService)
+2026-06-21 16:10:15,444 INFO LLM request entity=services.py::OrderService system_chars=1872 user_chars=1217
+2026-06-21 16:10:26,223 INFO LLM response entity=services.py::OrderService status=parsed chars=786 duration_ms=10779
+2026-06-21 16:10:26,223 INFO Generating class:InMemoryStorage (storage.py::InMemoryStorage)
+2026-06-21 16:10:26,223 INFO LLM request entity=storage.py::InMemoryStorage system_chars=1872 user_chars=946
+2026-06-21 16:10:38,824 INFO LLM response entity=storage.py::InMemoryStorage status=parsed chars=1007 duration_ms=12601
+2026-06-21 16:10:38,824 INFO Generating module:__init__.py (__init__.py::module)
+2026-06-21 16:10:38,824 INFO LLM request entity=__init__.py::module system_chars=1759 user_chars=734
+2026-06-21 16:10:49,108 INFO LLM response entity=__init__.py::module status=parsed chars=658 duration_ms=10284
+2026-06-21 16:10:49,108 INFO Generating module:cli.py (cli.py::module)
+2026-06-21 16:10:49,109 INFO LLM request entity=cli.py::module system_chars=1759 user_chars=1048
+2026-06-21 16:10:53,996 INFO LLM response entity=cli.py::module status=parsed chars=332 duration_ms=4887
+2026-06-21 16:10:53,996 INFO Generating module:config.py (config.py::module)
+2026-06-21 16:10:53,996 INFO LLM request entity=config.py::module system_chars=1759 user_chars=478
+2026-06-21 16:10:56,143 INFO LLM response entity=config.py::module status=parsed chars=146 duration_ms=2147
+2026-06-21 16:10:56,143 INFO Generating module:exceptions.py (exceptions.py::module)
+2026-06-21 16:10:56,143 INFO LLM request entity=exceptions.py::module system_chars=1759 user_chars=790
+2026-06-21 16:11:01,480 INFO LLM response entity=exceptions.py::module status=parsed chars=382 duration_ms=5337
+2026-06-21 16:11:01,480 INFO Generating module:models.py (models.py::module)
+2026-06-21 16:11:01,480 INFO LLM request entity=models.py::module system_chars=1759 user_chars=631
+2026-06-21 16:11:05,859 INFO LLM response entity=models.py::module status=parsed chars=296 duration_ms=4378
+2026-06-21 16:11:05,859 INFO Generating module:plugins/__init__.py (plugins/__init__.py::module)
+2026-06-21 16:11:05,859 INFO LLM request entity=plugins/__init__.py::module system_chars=1759 user_chars=455
+2026-06-21 16:11:08,822 INFO LLM response entity=plugins/__init__.py::module status=parsed chars=192 duration_ms=2963
+2026-06-21 16:11:08,822 INFO Generating module:plugins/base.py (plugins/base.py::module)
+2026-06-21 16:11:08,822 INFO LLM request entity=plugins/base.py::module system_chars=1759 user_chars=591
+2026-06-21 16:11:12,277 INFO LLM response entity=plugins/base.py::module status=parsed chars=212 duration_ms=3455
+2026-06-21 16:11:12,277 INFO Generating module:plugins/markdown.py (plugins/markdown.py::module)
+2026-06-21 16:11:12,277 INFO LLM request entity=plugins/markdown.py::module system_chars=1759 user_chars=595
+2026-06-21 16:11:15,077 INFO LLM response entity=plugins/markdown.py::module status=parsed chars=201 duration_ms=2800
+2026-06-21 16:11:15,078 INFO Generating module:services.py (services.py::module)
+2026-06-21 16:11:15,078 INFO LLM request entity=services.py::module system_chars=1759 user_chars=953
+2026-06-21 16:11:18,151 INFO LLM response entity=services.py::module status=parsed chars=190 duration_ms=3073
+2026-06-21 16:11:18,151 INFO Generating module:storage.py (storage.py::module)
+2026-06-21 16:11:18,151 INFO LLM request entity=storage.py::module system_chars=1759 user_chars=795
+2026-06-21 16:11:21,752 INFO LLM response entity=storage.py::module status=parsed chars=223 duration_ms=3601
+2026-06-21 16:11:21,752 INFO Generating module:utils/__init__.py (utils/__init__.py::module)
+2026-06-21 16:11:21,752 INFO LLM request entity=utils/__init__.py::module system_chars=1759 user_chars=414
+2026-06-21 16:11:24,744 INFO LLM response entity=utils/__init__.py::module status=parsed chars=225 duration_ms=2992
+2026-06-21 16:11:24,744 INFO Generating module:utils/formatting.py (utils/formatting.py::module)
+2026-06-21 16:11:24,744 INFO LLM request entity=utils/formatting.py::module system_chars=1759 user_chars=623
+2026-06-21 16:11:27,831 INFO LLM response entity=utils/formatting.py::module status=parsed chars=217 duration_ms=3087
+2026-06-21 16:11:27,831 INFO [generate] done 40 entities (245043ms)
+2026-06-21 16:11:27,831 INFO [validate] start
+2026-06-21 16:11:27,832 INFO [validate] done (0ms)
+2026-06-21 16:11:27,832 INFO Validation: 3 warnings, 0 errors
+2026-06-21 16:11:27,832 INFO [write] start
+2026-06-21 16:11:27,836 INFO [write] done (4ms)
+2026-06-21 16:11:27,836 INFO Wrote 15 output files
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/__init__.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/cli.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/config.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/exceptions.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/models.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/plugins/__init__.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/plugins/base.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/plugins/markdown.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/services.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/storage.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/utils/__init__.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/utils/formatting.py.md
+2026-06-21 16:11:27,836 DEBUG   output: examples/mini_library/generated_docs/README.md
+2026-06-21 16:11:27,837 DEBUG   output: examples/mini_library/generated_docs/plugins/README.md
+2026-06-21 16:11:27,837 DEBUG   output: examples/mini_library/generated_docs/utils/README.md
+2026-06-21 16:11:27,837 INFO Pipeline finished in 245.06s

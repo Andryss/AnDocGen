@@ -1,0 +1,14 @@
+AnDocGen run summary
+Timestamp: 2026-06-21T16:11:27.837131
+Processed files: 12
+Skipped files: 0
+Parse errors: 0
+Generation errors: 0
+Validation warnings: 3
+Validation errors: 0
+Output files: 15
+Elapsed seconds: 245.06
+
+Log files:
+  trace: examples/mini_library/generated_docs/logs/trace.log
+  detail: examples/mini_library/generated_docs/logs/detail.json

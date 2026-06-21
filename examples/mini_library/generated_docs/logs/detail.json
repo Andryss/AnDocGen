@@ -1,0 +1,30 @@
+{
+  "parse_errors": [],
+  "generation_errors": [],
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example uses unknown field `price` for `Order` (expected: customer, items, order_id)",
+      "module_path": "models.py",
+      "entity_type": "method",
+      "entity_name": "Order.total"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example uses unknown field `quantity` for `Order` (expected: customer, items, order_id)",
+      "module_path": "models.py",
+      "entity_type": "method",
+      "entity_name": "Order.total"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `OrderService` without constructor arguments",
+      "module_path": "services.py",
+      "entity_type": "method",
+      "entity_name": "OrderService.summarize"
+    }
+  ]
+}
