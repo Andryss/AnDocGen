@@ -1,0 +1,85 @@
+{
+  "parse_errors": [],
+  "generation_errors": [
+    {
+      "module_path": "main.py",
+      "entity_type": "class",
+      "entity_name": "QRCode",
+      "message": "Missing required sections: Fields, Inheritance, Methods overview"
+    }
+  ],
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears to be in a different language than configured (ru)",
+      "module_path": "__init__.py",
+      "entity_type": "function",
+      "entity_name": "run_example"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears to be in a different language than configured (ru)",
+      "module_path": "image/base.py",
+      "entity_type": "method",
+      "entity_name": "BaseImage.pixel_box"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "image/pure.py",
+      "entity_type": "method",
+      "entity_name": "PyPNGImage.drawrect"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "image/styles/colormasks.py",
+      "entity_type": "method",
+      "entity_name": "QRColorMask.get_fg_pixel"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "image/styles/moduledrawers/svg.py",
+      "entity_type": "method",
+      "entity_name": "SvgPathQRModuleDrawer.subpath"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "image/styles/moduledrawers/svg.py",
+      "entity_type": "method",
+      "entity_name": "SvgQRModuleDrawer.el"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "image/svg.py",
+      "entity_type": "method",
+      "entity_name": "SvgFragmentImage.drawrect"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "High cyclomatic complexity (41)",
+      "module_path": "util.py",
+      "entity_type": "function",
+      "entity_name": "_lost_point_level3"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "__main__.py",
+      "entity_type": "module",
+      "entity_name": "__main__.py"
+    }
+  ]
+}

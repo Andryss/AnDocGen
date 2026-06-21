@@ -1,0 +1,14 @@
+AnDocGen run summary
+Timestamp: 2026-06-18T00:24:10.600528
+Processed files: 25
+Skipped files: 0
+Parse errors: 0
+Generation errors: 1
+Validation warnings: 9
+Validation errors: 0
+Output files: 30
+Elapsed seconds: 1751.87
+
+Log files:
+  trace: eval/python-qrcode/generated_docs/logs/trace.log
+  detail: eval/python-qrcode/generated_docs/logs/detail.json

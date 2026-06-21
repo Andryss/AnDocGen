@@ -1,0 +1,82 @@
+# AnDocGen — конфиг для апробации python-qrcode
+# Базируется на config.example.yaml (entity pipeline, validation retry, output split)
+
+project:
+  name: "python-qrcode"
+  description: ""
+  readme_path: "eval/python-qrcode/python-qrcode/README.rst"
+
+discovery:
+  implementation: filesystem
+  extensions:
+    - .py
+  exclude_dirs:
+    - __pycache__
+    - .git
+    - .venv
+    - venv
+    - .cache
+    - generated_docs
+    - node_modules
+    - tests
+
+extraction:
+  implementation: ""   # пусто = python_ast при language: python
+  language: python
+
+call_graph:
+  implementation: static
+
+context:
+  implementation: default
+  prompt: sectioned
+  include_source_body: true
+  include_imports: true
+  include_call_graph: true
+  readme_limit: 2000
+  max_context_chars: 32000
+
+generation:
+  implementation: llm
+  provider: ollama  # mock | ollama | openai
+  language: ru
+  incremental: false
+  workers: 2        # wave-based parallelism; для mock безопасно 4+
+  max_retries: 3    # retry на parse error и blocking validation
+  providers:
+    ollama:
+      base_url: http://localhost:11434
+      model: qwen2.5-coder:7b
+      timeout: 120  # seconds per request
+    openai:
+      base_url: https://api.openai.com/v1
+      api_key_env: OPENAI_API_KEY
+      model: gpt-4o-mini
+
+validation:
+  implementation: structured
+  check_completeness: true
+  check_consistency: true
+  check_structure: true
+  check_representation: true
+  check_text_quality: true
+  complexity_warning_threshold: 20
+  min_summary_length: 10
+  retry_on_blocking: true
+  blocking_fallback: retry   # retry | strip_examples | error
+
+output:
+  implementation: markdown
+  directory: ./eval/python-qrcode/generated_docs
+  format: markdown
+  cache_path: ""
+
+reporting:
+  implementation: file
+  logs_dir: ""              # пусто = {output.directory}/logs
+  summary_file: summary.txt
+  detail_file: detail.json
+  trace_file: trace.log
+  log_llm_content: true     # false — только метаданные LLM без текста промптов/ответов
+  trace_max_chars: 12000    # обрезка длинных промптов/ответов в trace.log
+  quiet: false              # true — без прогресса и сводки в консоли
