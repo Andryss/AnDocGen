@@ -1,0 +1,45 @@
+2026-06-21 15:58:44,470 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_calculator provider=ollama
+2026-06-21 15:58:44,470 INFO Output directory: examples/mini_calculator/generated_docs
+2026-06-21 15:58:44,470 INFO [scan] start
+2026-06-21 15:58:44,470 INFO [scan] done (0ms)
+2026-06-21 15:58:44,470 INFO Found 1 files
+2026-06-21 15:58:44,470 INFO [parse] start 1 files
+2026-06-21 15:58:44,470 DEBUG Parsing: calculator.py
+2026-06-21 15:58:44,474 DEBUG   parsed calculator.py: 2 functions, 1 classes
+2026-06-21 15:58:44,474 INFO [parse] done 1 files (4ms)
+2026-06-21 15:58:44,474 INFO [call_graph] start
+2026-06-21 15:58:44,474 INFO [call_graph] done (0ms)
+2026-06-21 15:58:44,474 DEBUG Call graph: 5 nodes, 0 edges
+2026-06-21 15:58:44,475 INFO Generating documentation for 7 entities
+2026-06-21 15:58:44,475 INFO [generate] start 7 entities
+2026-06-21 15:58:44,475 INFO Generating method:Calculator.__init__ (calculator.py::Calculator.__init__)
+2026-06-21 15:58:44,475 INFO LLM request entity=calculator.py::Calculator.__init__ system_chars=2039 user_chars=268
+2026-06-21 15:58:53,736 INFO LLM response entity=calculator.py::Calculator.__init__ status=parsed chars=290 duration_ms=9261
+2026-06-21 15:58:53,736 INFO Generating method:Calculator.format_result (calculator.py::Calculator.format_result)
+2026-06-21 15:58:53,736 INFO LLM request entity=calculator.py::Calculator.format_result system_chars=2039 user_chars=281
+2026-06-21 15:58:59,165 INFO LLM response entity=calculator.py::Calculator.format_result status=parsed chars=391 duration_ms=5429
+2026-06-21 15:58:59,165 INFO Generating method:Calculator.multiply (calculator.py::Calculator.multiply)
+2026-06-21 15:58:59,165 INFO LLM request entity=calculator.py::Calculator.multiply system_chars=2039 user_chars=249
+2026-06-21 15:59:04,019 INFO LLM response entity=calculator.py::Calculator.multiply status=parsed chars=330 duration_ms=4854
+2026-06-21 15:59:04,020 INFO Generating function:add (calculator.py::add)
+2026-06-21 15:59:04,021 INFO LLM request entity=calculator.py::add system_chars=2039 user_chars=287
+2026-06-21 15:59:09,312 INFO LLM response entity=calculator.py::add status=parsed chars=340 duration_ms=5292
+2026-06-21 15:59:09,312 INFO Generating function:divide (calculator.py::divide)
+2026-06-21 15:59:09,312 INFO LLM request entity=calculator.py::divide system_chars=2039 user_chars=283
+2026-06-21 15:59:16,318 INFO LLM response entity=calculator.py::divide status=parsed chars=481 duration_ms=7005
+2026-06-21 15:59:16,318 INFO Generating class:Calculator (calculator.py::Calculator)
+2026-06-21 15:59:16,318 INFO LLM request entity=calculator.py::Calculator system_chars=1872 user_chars=517
+2026-06-21 15:59:22,331 INFO LLM response entity=calculator.py::Calculator status=parsed chars=297 duration_ms=6013
+2026-06-21 15:59:22,331 INFO Generating module:calculator.py (calculator.py::module)
+2026-06-21 15:59:22,332 INFO LLM request entity=calculator.py::module system_chars=1759 user_chars=557
+2026-06-21 15:59:29,451 INFO LLM response entity=calculator.py::module status=parsed chars=375 duration_ms=7120
+2026-06-21 15:59:29,452 INFO [generate] done 7 entities (44977ms)
+2026-06-21 15:59:29,452 INFO [validate] start
+2026-06-21 15:59:29,452 INFO [validate] done (0ms)
+2026-06-21 15:59:29,452 INFO Validation: 0 warnings, 0 errors
+2026-06-21 15:59:29,452 INFO [write] start
+2026-06-21 15:59:29,452 INFO [write] done (0ms)
+2026-06-21 15:59:29,452 INFO Wrote 2 output files
+2026-06-21 15:59:29,452 DEBUG   output: examples/mini_calculator/generated_docs/calculator.py.md
+2026-06-21 15:59:29,452 DEBUG   output: examples/mini_calculator/generated_docs/README.md
+2026-06-21 15:59:29,452 INFO Pipeline finished in 44.98s
