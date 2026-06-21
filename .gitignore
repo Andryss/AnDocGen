@@ -9,5 +9,7 @@ build/
 generated_docs/
 !examples/**/generated_docs/
 !examples/**/generated_docs/**
+!eval/python-qrcode/generated_docs/
+!eval/python-qrcode/generated_docs/**
 .andocgen_cache/
 config.yaml
