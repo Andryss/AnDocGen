@@ -32,6 +32,10 @@ def create_llm_provider(config: GenerationConfig) -> LLMProvider:
         base_url=config.openai.base_url,
         api_key_env=config.openai.api_key_env,
         model=config.openai.model,
+        project=config.openai.project,
+        timeout=config.openai.timeout,
+        temperature=config.openai.temperature,
+        max_tokens=config.openai.max_tokens,
     )
 
 

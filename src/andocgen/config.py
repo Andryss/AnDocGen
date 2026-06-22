@@ -72,6 +72,10 @@ class OpenAIProviderConfig:
     base_url: str = "https://api.openai.com/v1"
     api_key_env: str = "OPENAI_API_KEY"
     model: str = "gpt-4o-mini"
+    project: str = ""
+    timeout: float = 120.0
+    temperature: float | None = None
+    max_tokens: int | None = None
 
 
 @dataclass

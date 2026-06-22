@@ -6,6 +6,6 @@
 
 | Модуль | Описание |
 |--------|--------------|
-| [__init__.py](__init__.py.md) | Пример пакета мини-API. |
-| [handlers.py](handlers.py.md) | HTTP-like API handlers (простой пример). |
-| [storage.py](storage.py.md) | Ин-Memory key-value storage (ключ-значение) в памяти. |
+| [__init__.py](__init__.py.md) | Модуль примера мини-API. |
+| [handlers.py](handlers.py.md) | Модуль содержит классы для работы с HTTP-подобными API-обработчиками. |
+| [storage.py](storage.py.md) | Модуль хранения данных в оперативной памяти с возможностью нормализации адресов электронной почты. |

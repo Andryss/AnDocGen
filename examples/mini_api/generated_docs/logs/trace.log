@@ -71,3 +71,163 @@
 2026-06-21 16:00:31,226 DEBUG   output: examples/mini_api/generated_docs/storage.py.md
 2026-06-21 16:00:31,226 DEBUG   output: examples/mini_api/generated_docs/README.md
 2026-06-21 16:00:31,226 INFO Pipeline finished in 59.44s
+2026-06-22 21:42:21,573 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api provider=openai
+2026-06-22 21:42:21,573 INFO Output directory: examples/mini_api/generated_docs
+2026-06-22 21:42:21,573 INFO [scan] start
+2026-06-22 21:42:21,573 INFO [scan] done (0ms)
+2026-06-22 21:42:21,573 INFO Found 3 files
+2026-06-22 21:42:21,573 INFO [parse] start 3 files
+2026-06-22 21:42:21,573 DEBUG Parsing: __init__.py
+2026-06-22 21:42:21,573 DEBUG   parsed __init__.py: 0 functions, 0 classes
+2026-06-22 21:42:21,573 DEBUG Parsing: handlers.py
+2026-06-22 21:42:21,575 DEBUG   parsed handlers.py: 0 functions, 2 classes
+2026-06-22 21:42:21,575 DEBUG Parsing: storage.py
+2026-06-22 21:42:21,575 DEBUG   parsed storage.py: 1 functions, 1 classes
+2026-06-22 21:42:21,575 INFO [parse] done 3 files (2ms)
+2026-06-22 21:42:21,575 INFO [call_graph] start
+2026-06-22 21:42:21,575 INFO [call_graph] done (0ms)
+2026-06-22 21:42:21,575 DEBUG Call graph: 7 nodes, 8 edges
+2026-06-22 21:42:21,576 INFO Generating documentation for 13 entities
+2026-06-22 21:42:21,576 INFO [generate] start 13 entities
+2026-06-22 21:42:21,576 INFO Generating method:UserHandler.__init__ (handlers.py::UserHandler.__init__)
+2026-06-22 21:42:21,576 INFO LLM request entity=handlers.py::UserHandler.__init__ system_chars=2039 user_chars=388
+2026-06-22 21:42:21,576 INFO [generate] done 13 entities (0ms)
+2026-06-22 21:42:21,576 ERROR Environment variable YANDEX_API_KEY is not set for OpenAI provider
+2026-06-22 21:53:10,006 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api provider=openai
+2026-06-22 21:53:10,006 INFO Output directory: examples/mini_api/generated_docs
+2026-06-22 21:53:10,006 INFO [scan] start
+2026-06-22 21:53:10,006 INFO [scan] done (0ms)
+2026-06-22 21:53:10,006 INFO Found 3 files
+2026-06-22 21:53:10,006 INFO [parse] start 3 files
+2026-06-22 21:53:10,006 DEBUG Parsing: __init__.py
+2026-06-22 21:53:10,006 DEBUG   parsed __init__.py: 0 functions, 0 classes
+2026-06-22 21:53:10,006 DEBUG Parsing: handlers.py
+2026-06-22 21:53:10,007 DEBUG   parsed handlers.py: 0 functions, 2 classes
+2026-06-22 21:53:10,007 DEBUG Parsing: storage.py
+2026-06-22 21:53:10,008 DEBUG   parsed storage.py: 1 functions, 1 classes
+2026-06-22 21:53:10,008 INFO [parse] done 3 files (2ms)
+2026-06-22 21:53:10,008 INFO [call_graph] start
+2026-06-22 21:53:10,008 INFO [call_graph] done (0ms)
+2026-06-22 21:53:10,008 DEBUG Call graph: 7 nodes, 8 edges
+2026-06-22 21:53:10,008 INFO Generating documentation for 13 entities
+2026-06-22 21:53:10,008 INFO [generate] start 13 entities
+2026-06-22 21:53:10,008 INFO Generating method:UserHandler.__init__ (handlers.py::UserHandler.__init__)
+2026-06-22 21:53:10,008 INFO LLM request entity=handlers.py::UserHandler.__init__ system_chars=2039 user_chars=388
+2026-06-22 21:53:13,004 INFO LLM response entity=handlers.py::UserHandler.__init__ status=parsed chars=280 duration_ms=2996
+2026-06-22 21:53:13,005 INFO Generating method:UserHandler.get_user (handlers.py::UserHandler.get_user)
+2026-06-22 21:53:13,005 INFO LLM request entity=handlers.py::UserHandler.get_user system_chars=2039 user_chars=540
+2026-06-22 21:53:15,140 INFO LLM response entity=handlers.py::UserHandler.get_user status=parsed chars=429 duration_ms=2135
+2026-06-22 21:53:15,140 INFO Generating method:InMemoryStorage.__init__ (storage.py::InMemoryStorage.__init__)
+2026-06-22 21:53:15,141 INFO LLM request entity=storage.py::InMemoryStorage.__init__ system_chars=2039 user_chars=324
+2026-06-22 21:53:17,089 INFO LLM response entity=storage.py::InMemoryStorage.__init__ status=parsed chars=219 duration_ms=1948
+2026-06-22 21:53:17,089 INFO Generating method:InMemoryStorage.create (storage.py::InMemoryStorage.create)
+2026-06-22 21:53:17,090 INFO LLM request entity=storage.py::InMemoryStorage.create system_chars=2039 user_chars=385
+2026-06-22 21:53:19,146 INFO LLM response entity=storage.py::InMemoryStorage.create status=parsed chars=306 duration_ms=2056
+2026-06-22 21:53:19,146 INFO Generating method:InMemoryStorage.get (storage.py::InMemoryStorage.get)
+2026-06-22 21:53:19,146 INFO LLM request entity=storage.py::InMemoryStorage.get system_chars=2039 user_chars=305
+2026-06-22 21:53:22,102 INFO LLM response entity=storage.py::InMemoryStorage.get status=parsed chars=319 duration_ms=2956
+2026-06-22 21:53:22,102 INFO Generating function:normalize_email (storage.py::normalize_email)
+2026-06-22 21:53:22,102 INFO LLM request entity=storage.py::normalize_email system_chars=2039 user_chars=368
+2026-06-22 21:53:25,262 INFO LLM response entity=storage.py::normalize_email status=parsed chars=406 duration_ms=3159
+2026-06-22 21:53:25,262 INFO Generating method:UserHandler.create_user (handlers.py::UserHandler.create_user)
+2026-06-22 21:53:25,262 INFO LLM request entity=handlers.py::UserHandler.create_user system_chars=2039 user_chars=704
+2026-06-22 21:53:27,383 INFO LLM response entity=handlers.py::UserHandler.create_user status=parsed chars=573 duration_ms=2120
+2026-06-22 21:53:27,383 INFO Generating class:ApiResponse (handlers.py::ApiResponse)
+2026-06-22 21:53:27,383 INFO LLM request entity=handlers.py::ApiResponse system_chars=1872 user_chars=272
+2026-06-22 21:53:28,636 INFO LLM response entity=handlers.py::ApiResponse status=parsed chars=44 duration_ms=1253
+2026-06-22 21:53:28,636 INFO Generating class:UserHandler (handlers.py::UserHandler)
+2026-06-22 21:53:28,636 INFO LLM request entity=handlers.py::UserHandler system_chars=1872 user_chars=805
+2026-06-22 21:53:30,807 INFO LLM response entity=handlers.py::UserHandler status=parsed chars=578 duration_ms=2171
+2026-06-22 21:53:30,808 INFO Generating class:InMemoryStorage (storage.py::InMemoryStorage)
+2026-06-22 21:53:30,808 INFO LLM request entity=storage.py::InMemoryStorage system_chars=1872 user_chars=575
+2026-06-22 21:53:32,525 INFO LLM response entity=storage.py::InMemoryStorage status=parsed chars=454 duration_ms=1717
+2026-06-22 21:53:32,525 INFO Generating module:__init__.py (__init__.py::module)
+2026-06-22 21:53:32,525 INFO LLM request entity=__init__.py::module system_chars=1759 user_chars=110
+2026-06-22 21:53:33,323 INFO LLM response entity=__init__.py::module status=parsed chars=53 duration_ms=798
+2026-06-22 21:53:33,323 INFO Generating module:handlers.py (handlers.py::module)
+2026-06-22 21:53:33,323 INFO LLM request entity=handlers.py::module system_chars=1759 user_chars=608
+2026-06-22 21:53:35,406 INFO LLM response entity=handlers.py::module status=parsed chars=227 duration_ms=2082
+2026-06-22 21:53:35,406 INFO Generating module:storage.py (storage.py::module)
+2026-06-22 21:53:35,406 INFO LLM request entity=storage.py::module system_chars=1759 user_chars=565
+2026-06-22 21:53:37,027 INFO LLM response entity=storage.py::module status=parsed chars=377 duration_ms=1620
+2026-06-22 21:53:37,027 INFO [generate] done 13 entities (27019ms)
+2026-06-22 21:53:37,033 INFO [validate] start
+2026-06-22 21:53:37,033 INFO [validate] done (0ms)
+2026-06-22 21:53:37,033 INFO Validation: 0 warnings, 0 errors
+2026-06-22 21:53:37,033 INFO [write] start
+2026-06-22 21:53:37,034 INFO [write] done (1ms)
+2026-06-22 21:53:37,034 INFO Wrote 4 output files
+2026-06-22 21:53:37,034 DEBUG   output: examples/mini_api/generated_docs/__init__.py.md
+2026-06-22 21:53:37,034 DEBUG   output: examples/mini_api/generated_docs/handlers.py.md
+2026-06-22 21:53:37,034 DEBUG   output: examples/mini_api/generated_docs/storage.py.md
+2026-06-22 21:53:37,034 DEBUG   output: examples/mini_api/generated_docs/README.md
+2026-06-22 21:53:37,034 INFO Pipeline finished in 27.03s
+2026-06-22 21:59:01,719 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api provider=openai
+2026-06-22 21:59:01,719 INFO Output directory: examples/mini_api/generated_docs
+2026-06-22 21:59:01,719 INFO [scan] start
+2026-06-22 21:59:01,719 INFO [scan] done (0ms)
+2026-06-22 21:59:01,719 INFO Found 3 files
+2026-06-22 21:59:01,719 INFO [parse] start 3 files
+2026-06-22 21:59:01,719 DEBUG Parsing: __init__.py
+2026-06-22 21:59:01,719 DEBUG   parsed __init__.py: 0 functions, 0 classes
+2026-06-22 21:59:01,719 DEBUG Parsing: handlers.py
+2026-06-22 21:59:01,720 DEBUG   parsed handlers.py: 0 functions, 2 classes
+2026-06-22 21:59:01,720 DEBUG Parsing: storage.py
+2026-06-22 21:59:01,721 DEBUG   parsed storage.py: 1 functions, 1 classes
+2026-06-22 21:59:01,721 INFO [parse] done 3 files (2ms)
+2026-06-22 21:59:01,721 INFO [call_graph] start
+2026-06-22 21:59:01,721 INFO [call_graph] done (0ms)
+2026-06-22 21:59:01,721 DEBUG Call graph: 7 nodes, 8 edges
+2026-06-22 21:59:01,721 INFO Generating documentation for 13 entities
+2026-06-22 21:59:01,721 INFO [generate] start 13 entities
+2026-06-22 21:59:01,721 INFO Generating method:UserHandler.__init__ (handlers.py::UserHandler.__init__)
+2026-06-22 21:59:01,721 INFO LLM request entity=handlers.py::UserHandler.__init__ system_chars=2039 user_chars=388
+2026-06-22 21:59:01,722 INFO Generating method:UserHandler.get_user (handlers.py::UserHandler.get_user)
+2026-06-22 21:59:01,722 INFO LLM request entity=handlers.py::UserHandler.get_user system_chars=2039 user_chars=540
+2026-06-22 21:59:03,976 INFO LLM response entity=handlers.py::UserHandler.__init__ status=parsed chars=290 duration_ms=2255
+2026-06-22 21:59:03,977 INFO Generating method:InMemoryStorage.__init__ (storage.py::InMemoryStorage.__init__)
+2026-06-22 21:59:03,977 INFO LLM request entity=storage.py::InMemoryStorage.__init__ system_chars=2039 user_chars=324
+2026-06-22 21:59:04,455 INFO LLM response entity=handlers.py::UserHandler.get_user status=parsed chars=420 duration_ms=2733
+2026-06-22 21:59:04,456 INFO Generating method:InMemoryStorage.create (storage.py::InMemoryStorage.create)
+2026-06-22 21:59:04,456 INFO LLM request entity=storage.py::InMemoryStorage.create system_chars=2039 user_chars=385
+2026-06-22 21:59:05,811 INFO LLM response entity=storage.py::InMemoryStorage.__init__ status=parsed chars=254 duration_ms=1834
+2026-06-22 21:59:05,812 INFO Generating method:InMemoryStorage.get (storage.py::InMemoryStorage.get)
+2026-06-22 21:59:05,812 INFO LLM request entity=storage.py::InMemoryStorage.get system_chars=2039 user_chars=305
+2026-06-22 21:59:06,009 INFO LLM response entity=storage.py::InMemoryStorage.create status=parsed chars=304 duration_ms=1553
+2026-06-22 21:59:06,009 INFO Generating function:normalize_email (storage.py::normalize_email)
+2026-06-22 21:59:06,009 INFO LLM request entity=storage.py::normalize_email system_chars=2039 user_chars=368
+2026-06-22 21:59:07,875 INFO LLM response entity=storage.py::InMemoryStorage.get status=parsed chars=319 duration_ms=2063
+2026-06-22 21:59:08,362 INFO LLM response entity=storage.py::normalize_email status=parsed chars=383 duration_ms=2353
+2026-06-22 21:59:08,364 INFO Generating method:UserHandler.create_user (handlers.py::UserHandler.create_user)
+2026-06-22 21:59:08,364 INFO LLM request entity=handlers.py::UserHandler.create_user system_chars=2039 user_chars=704
+2026-06-22 21:59:11,034 INFO LLM response entity=handlers.py::UserHandler.create_user status=parsed chars=530 duration_ms=2670
+2026-06-22 21:59:11,035 INFO Generating class:ApiResponse (handlers.py::ApiResponse)
+2026-06-22 21:59:11,035 INFO LLM request entity=handlers.py::ApiResponse system_chars=1872 user_chars=272
+2026-06-22 21:59:11,036 INFO Generating class:UserHandler (handlers.py::UserHandler)
+2026-06-22 21:59:11,036 INFO LLM request entity=handlers.py::UserHandler system_chars=1872 user_chars=805
+2026-06-22 21:59:11,565 INFO LLM response entity=handlers.py::ApiResponse status=parsed chars=44 duration_ms=530
+2026-06-22 21:59:11,565 INFO Generating class:InMemoryStorage (storage.py::InMemoryStorage)
+2026-06-22 21:59:11,565 INFO LLM request entity=storage.py::InMemoryStorage system_chars=1872 user_chars=578
+2026-06-22 21:59:13,704 INFO LLM response entity=storage.py::InMemoryStorage status=parsed chars=437 duration_ms=2139
+2026-06-22 21:59:13,707 INFO LLM response entity=handlers.py::UserHandler status=parsed chars=578 duration_ms=2671
+2026-06-22 21:59:13,707 INFO Generating module:__init__.py (__init__.py::module)
+2026-06-22 21:59:13,707 INFO LLM request entity=__init__.py::module system_chars=1759 user_chars=110
+2026-06-22 21:59:13,708 INFO Generating module:handlers.py (handlers.py::module)
+2026-06-22 21:59:13,708 INFO LLM request entity=handlers.py::module system_chars=1759 user_chars=608
+2026-06-22 21:59:14,763 INFO LLM response entity=__init__.py::module status=parsed chars=53 duration_ms=1056
+2026-06-22 21:59:14,763 INFO Generating module:storage.py (storage.py::module)
+2026-06-22 21:59:14,763 INFO LLM request entity=storage.py::module system_chars=1759 user_chars=547
+2026-06-22 21:59:15,883 INFO LLM response entity=handlers.py::module status=parsed chars=227 duration_ms=2174
+2026-06-22 21:59:16,866 INFO LLM response entity=storage.py::module status=parsed chars=359 duration_ms=2103
+2026-06-22 21:59:16,867 INFO [generate] done 13 entities (15146ms)
+2026-06-22 21:59:16,868 INFO [validate] start
+2026-06-22 21:59:16,868 INFO [validate] done (0ms)
+2026-06-22 21:59:16,868 INFO Validation: 0 warnings, 0 errors
+2026-06-22 21:59:16,868 INFO [write] start
+2026-06-22 21:59:16,871 INFO [write] done (3ms)
+2026-06-22 21:59:16,871 INFO Wrote 4 output files
+2026-06-22 21:59:16,871 DEBUG   output: examples/mini_api/generated_docs/__init__.py.md
+2026-06-22 21:59:16,871 DEBUG   output: examples/mini_api/generated_docs/handlers.py.md
+2026-06-22 21:59:16,871 DEBUG   output: examples/mini_api/generated_docs/storage.py.md
+2026-06-22 21:59:16,871 DEBUG   output: examples/mini_api/generated_docs/README.md
+2026-06-22 21:59:16,871 INFO Pipeline finished in 15.15s
