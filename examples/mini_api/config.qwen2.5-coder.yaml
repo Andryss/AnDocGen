@@ -1,4 +1,4 @@
-# Генерация документации для mini_api (Yandex AI Studio)
+# Генерация документации для mini_api (Ollama)
 project:
   name: mini_api
 
@@ -23,20 +23,16 @@ context:
 
 generation:
   implementation: llm
-  provider: openai
+  provider: ollama
   language: ru
   incremental: false
-  workers: 2
+  workers: 1
   max_retries: 2
   providers:
-    openai:
-      base_url: https://ai.api.cloud.yandex.net/v1
-      api_key_env: YANDEX_API_KEY
-      project: b1gj4mdp1fmb5pkkj1c0
-      model: gpt://b1gj4mdp1fmb5pkkj1c0/yandexgpt-5-lite/latest
-      timeout: 180
-      temperature: 0.3
-      max_tokens: 4000
+    ollama:
+      base_url: http://localhost:11434
+      model: qwen2.5-coder:7b
+      timeout: 120
 
 validation:
   implementation: structured
@@ -45,7 +41,7 @@ validation:
 
 output:
   implementation: markdown
-  directory: ./examples/mini_api/generated_docs
+  directory: ./examples/mini_api/generated_docs_qwen2.5-coder
 
 reporting:
   implementation: file
