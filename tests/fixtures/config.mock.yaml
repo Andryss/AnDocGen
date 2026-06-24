@@ -1,0 +1,47 @@
+# Пример mock-конфигурации для тестов и локальной разработки без LLM.
+# Использование:
+#   andocgen tests/fixtures/project --config tests/fixtures/config.mock.yaml
+
+project:
+  name: sample_project
+
+discovery:
+  implementation: filesystem
+  extensions: [.py]
+  exclude_dirs: [__pycache__, .git, .venv, venv, generated_docs, node_modules]
+
+extraction:
+  language: python
+
+call_graph:
+  implementation: static
+
+context:
+  implementation: default
+  prompt: sectioned
+  include_source_body: true
+  include_imports: true
+  include_call_graph: true
+  max_context_chars: 32000
+
+generation:
+  implementation: llm
+  provider: mock
+  language: ru
+  incremental: false
+  workers: 1
+  max_retries: 2
+
+validation:
+  implementation: structured
+  retry_on_blocking: true
+  blocking_fallback: retry
+
+output:
+  implementation: markdown
+  directory: ./generated_docs
+
+reporting:
+  implementation: file
+  log_llm_content: false
+  quiet: true

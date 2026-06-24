@@ -1,24 +1,23 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 from andocgen.call_graph.factory import create_call_graph_builder
 from andocgen.config import CallGraphConfig, ContextConfig, ExtractionConfig
 from andocgen.context.factory import create_context_components
 from andocgen.models.entities import ProjectModel
 from andocgen.parser.factory import create_parser
 
+from tests.conftest import FIXTURE_PROJECT_API
+
 
 def test_cross_module_call_resolution() -> None:
-    root = Path(__file__).resolve().parents[1] / "examples" / "mini_api"
     parser = create_parser(ExtractionConfig())
     modules = []
     for rel in ("storage.py", "handlers.py"):
-        result = parser.parse(root / rel, root)
+        result = parser.parse(FIXTURE_PROJECT_API / rel, FIXTURE_PROJECT_API)
         assert result.module is not None
         modules.append(result.module)
 
-    project = ProjectModel(project_path=str(root), modules=modules)
+    project = ProjectModel(project_path=str(FIXTURE_PROJECT_API), modules=modules)
     call_graph_builder = create_call_graph_builder(CallGraphConfig())
     graph = call_graph_builder.build(project)
 

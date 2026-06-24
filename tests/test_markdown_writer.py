@@ -39,8 +39,8 @@ def test_render_project_readme_structure() -> None:
     project = ProjectModel(
         project_path="/tmp",
         modules=[],
-        project_name="mini_library",
-        project_description="Small multi-module example for AnDocGen.",
+        project_name="sample_library",
+        project_description="Multi-module fixture project for AnDocGen tests.",
     )
     summaries = {
         "__init__.py": "Мини-библиотека с публичным API.",
@@ -52,8 +52,8 @@ def test_render_project_readme_structure() -> None:
         project, MINI_LIBRARY_PATHS, summaries, language="ru"
     )
 
-    assert text.count("# mini_library") == 1
-    assert "Small multi-module example" in text
+    assert text.count("# sample_library") == 1
+    assert "Multi-module fixture project" in text
     assert "## Корневые модули" in text
     assert "## Пакеты" in text
     assert "[__init__.py](__init__.py.md)" in text
@@ -67,7 +67,7 @@ def test_render_directory_readme() -> None:
     project = ProjectModel(
         project_path="/tmp",
         modules=[],
-        project_name="mini_library",
+        project_name="sample_library",
         project_description="",
     )
     summaries = {
@@ -100,7 +100,7 @@ def test_write_root_readme_not_overwritten(tmp_path) -> None:
             ModuleModel(path="services.py"),
             ModuleModel(path="plugins/base.py"),
         ],
-        project_name="mini_library",
+        project_name="sample_library",
         project_description="Small multi-module example.",
     )
     blocks = [
@@ -130,7 +130,7 @@ def test_write_root_readme_not_overwritten(tmp_path) -> None:
         language="ru",
     )
     root = (tmp_path / "README.md").read_text(encoding="utf-8")
-    assert "# mini_library" in root
+    assert "# sample_library" in root
     assert "## Корневые модули" in root
     assert "## Пакеты" in root
     assert "[plugins/](plugins/README.md)" in root
@@ -142,7 +142,7 @@ def test_write_emits_directory_readmes(tmp_path) -> None:
     project = ProjectModel(
         project_path="/tmp",
         modules=[],
-        project_name="mini_library",
+        project_name="sample_library",
         project_description="Example project.",
     )
     blocks = [
