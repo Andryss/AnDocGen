@@ -6,6 +6,7 @@ from typing import Any
 
 import yaml
 
+ANDOCGEN_DIR = ".andocgen"
 
 @dataclass
 class ProjectConfig:
@@ -24,7 +25,7 @@ class DiscoveryConfig:
             ".git",
             ".venv",
             "venv",
-            ".cache",
+            ".andocgen",
             "generated_docs",
             "node_modules",
         ]
@@ -146,15 +147,18 @@ class AppConfig:
     def resolve_output_dir(self) -> Path:
         return Path(self.output.directory)
 
+    def resolve_andocgen_dir(self) -> Path:
+        return self.resolve_output_dir() / ANDOCGEN_DIR
+
     def resolve_cache_dir(self) -> Path:
         if self.output.cache_path:
             return Path(self.output.cache_path)
-        return self.resolve_output_dir() / ".cache"
+        return self.resolve_andocgen_dir() / "cache"
 
     def resolve_logs_dir(self) -> Path:
         if self.reporting.logs_dir:
             return Path(self.reporting.logs_dir)
-        return self.resolve_output_dir() / "logs"
+        return self.resolve_andocgen_dir() / "logs"
 
 
 def _merge_dataclass(cls: type, data: dict[str, Any] | None) -> Any:

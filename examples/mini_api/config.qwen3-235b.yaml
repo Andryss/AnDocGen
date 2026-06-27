@@ -1,4 +1,4 @@
-# Генерация документации для mini_api (Yandex AI Studio)
+# Генерация документации для mini_api (Yandex AI Studio — Qwen3 235B)
 project:
   name: mini_api
 
@@ -33,7 +33,7 @@ generation:
       base_url: https://ai.api.cloud.yandex.net/v1
       api_key_env: YANDEX_API_KEY
       project: b1gj4mdp1fmb5pkkj1c0
-      model: gpt://b1gj4mdp1fmb5pkkj1c0/gpt-oss-20b/latest
+      model: gpt://b1gj4mdp1fmb5pkkj1c0/qwen3-235b-a22b-fp8/latest
       timeout: 180
       temperature: 0.3
       max_tokens: 4000
@@ -45,7 +45,7 @@ validation:
 
 output:
   implementation: markdown
-  directory: ./examples/mini_api/generated_docs_gpt-oss-20b
+  directory: ./examples/mini_api/generated_docs_qwen3-235b
 
 reporting:
   implementation: file

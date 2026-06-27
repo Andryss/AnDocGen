@@ -32,4 +32,4 @@ def test_mock_config_runs_pipeline(tmp_path: Path) -> None:
     assert not result.parse_errors
     assert not result.generation_errors
     assert (tmp_path / "docs" / "sample.py.md").exists()
-    assert (tmp_path / "docs" / "logs" / "summary.txt").exists()
+    assert (tmp_path / "docs" / ".andocgen" / "logs" / "summary.txt").exists()

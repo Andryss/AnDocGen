@@ -10,5 +10,5 @@ Output files: 4
 Elapsed seconds: 37.98
 
 Log files:
-  trace: examples/mini_api/generated_docs_gpt-oss-20b/logs/trace.log
-  detail: examples/mini_api/generated_docs_gpt-oss-20b/logs/detail.json
+  trace: examples/mini_api/generated_docs_gpt-oss-20b/.andocgen/logs/trace.log
+  detail: examples/mini_api/generated_docs_gpt-oss-20b/.andocgen/logs/detail.json

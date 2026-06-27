@@ -10,5 +10,5 @@ Output files: 4
 Elapsed seconds: 69.23
 
 Log files:
-  trace: examples/mini_api/generated_docs_qwen2.5-coder/logs/trace.log
-  detail: examples/mini_api/generated_docs_qwen2.5-coder/logs/detail.json
+  trace: examples/mini_api/generated_docs_qwen2.5-coder/.andocgen/logs/trace.log
+  detail: examples/mini_api/generated_docs_qwen2.5-coder/.andocgen/logs/detail.json

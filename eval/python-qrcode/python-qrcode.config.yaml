@@ -15,7 +15,7 @@ discovery:
     - .git
     - .venv
     - venv
-    - .cache
+    - .andocgen
     - generated_docs
     - node_modules
     - tests

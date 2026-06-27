@@ -5,7 +5,7 @@ project:
 discovery:
   implementation: filesystem
   extensions: [.py]
-  exclude_dirs: [__pycache__, .git, .venv, venv, generated_docs, node_modules]
+  exclude_dirs: [__pycache__, .git, .venv, venv, .andocgen, generated_docs, node_modules]
 
 extraction:
   language: python

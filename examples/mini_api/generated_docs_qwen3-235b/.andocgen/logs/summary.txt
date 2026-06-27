@@ -1,0 +1,14 @@
+AnDocGen run summary
+Timestamp: 2026-06-27T12:30:37.683195
+Processed files: 3
+Skipped files: 0
+Parse errors: 0
+Generation errors: 0
+Validation warnings: 0
+Validation errors: 0
+Output files: 4
+Elapsed seconds: 46.82
+
+Log files:
+  trace: examples/mini_api/generated_docs_qwen3-235b/.andocgen/logs/trace.log
+  detail: examples/mini_api/generated_docs_qwen3-235b/.andocgen/logs/detail.json

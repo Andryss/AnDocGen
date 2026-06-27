@@ -1,0 +1,14 @@
+AnDocGen run summary
+Timestamp: 2026-06-27T12:31:54.157676
+Processed files: 3
+Skipped files: 0
+Parse errors: 0
+Generation errors: 0
+Validation warnings: 1
+Validation errors: 0
+Output files: 4
+Elapsed seconds: 68.13
+
+Log files:
+  trace: examples/mini_api/generated_docs_deepseek-v4-flash/.andocgen/logs/trace.log
+  detail: examples/mini_api/generated_docs_deepseek-v4-flash/.andocgen/logs/detail.json

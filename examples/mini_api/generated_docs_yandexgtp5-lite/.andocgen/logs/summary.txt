@@ -10,5 +10,5 @@ Output files: 4
 Elapsed seconds: 15.15
 
 Log files:
-  trace: examples/mini_api/generated_docs/logs/trace.log
-  detail: examples/mini_api/generated_docs/logs/detail.json
+  trace: examples/mini_api/generated_docs_yandexgtp5-lite/.andocgen/logs/trace.log
+  detail: examples/mini_api/generated_docs_yandexgtp5-lite/.andocgen/logs/detail.json

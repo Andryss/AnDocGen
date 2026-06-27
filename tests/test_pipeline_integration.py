@@ -24,9 +24,9 @@ def test_pipeline_fixture_project(tmp_path: Path) -> None:
     md = (tmp_path / "docs" / "sample.py.md").read_text(encoding="utf-8")
     assert "## Summary" not in md
     assert "### `def greet" in md or "### `greet" in md
-    assert (tmp_path / "docs" / "logs" / "summary.txt").exists()
-    assert (tmp_path / "docs" / "logs" / "trace.log").exists()
-    trace = (tmp_path / "docs" / "logs" / "trace.log").read_text(encoding="utf-8")
+    assert (tmp_path / "docs" / ".andocgen" / "logs" / "summary.txt").exists()
+    assert (tmp_path / "docs" / ".andocgen" / "logs" / "trace.log").exists()
+    trace = (tmp_path / "docs" / ".andocgen" / "logs" / "trace.log").read_text(encoding="utf-8")
     assert "LLM request" in trace
     assert "--- system prompt ---" in trace
     assert "--- response ---" in trace

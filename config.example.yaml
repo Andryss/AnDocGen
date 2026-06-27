@@ -16,7 +16,7 @@ discovery:
     - .git
     - .venv
     - venv
-    - .cache
+    - .andocgen
     - generated_docs
     - node_modules
 
@@ -69,11 +69,11 @@ output:
   implementation: markdown
   directory: ./generated_docs
   format: markdown
-  cache_path: ""
+  cache_path: ""              # пусто = {output.directory}/.andocgen/cache
 
 reporting:
   implementation: file
-  logs_dir: ""              # пусто = {output.directory}/logs
+  logs_dir: ""              # пусто = {output.directory}/.andocgen/logs
   summary_file: summary.txt
   detail_file: detail.json
   trace_file: trace.log

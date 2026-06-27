@@ -10,5 +10,5 @@ Output files: 2
 Elapsed seconds: 44.98
 
 Log files:
-  trace: examples/mini_calculator/generated_docs/logs/trace.log
-  detail: examples/mini_calculator/generated_docs/logs/detail.json
+  trace: examples/mini_calculator/generated_docs/.andocgen/logs/trace.log
+  detail: examples/mini_calculator/generated_docs/.andocgen/logs/detail.json

@@ -10,5 +10,5 @@ Output files: 30
 Elapsed seconds: 1751.87
 
 Log files:
-  trace: eval/python-qrcode/generated_docs/logs/trace.log
-  detail: eval/python-qrcode/generated_docs/logs/detail.json
+  trace: eval/python-qrcode/generated_docs/.andocgen/logs/trace.log
+  detail: eval/python-qrcode/generated_docs/.andocgen/logs/detail.json
