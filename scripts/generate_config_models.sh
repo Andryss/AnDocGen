@@ -6,9 +6,15 @@ OUTPUT="$ROOT/src/andocgen/generated/config_models.py"
 PYTHON="${PYTHON:-$ROOT/.venv/bin/python}"
 CODEGEN="${CODEGEN:-$ROOT/.venv/bin/datamodel-codegen}"
 
+if [[ ! -x "$PYTHON" ]]; then
+  PYTHON="python3"
+fi
+
 if [[ ! -x "$CODEGEN" ]]; then
   CODEGEN="datamodel-codegen"
 fi
+
+mkdir -p "$(dirname "$OUTPUT")"
 
 "$CODEGEN" \
   --input "$ROOT/config.schema.yaml" \
