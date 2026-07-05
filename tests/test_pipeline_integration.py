@@ -4,7 +4,6 @@ from pathlib import Path
 
 from andocgen.config import AppConfig, load_config
 from andocgen.pipeline import run_pipeline
-
 from tests.conftest import FIXTURE_PROJECT, FIXTURE_PROJECT_LIBRARY, FIXTURES
 
 MOCK_CONFIG = FIXTURES / "config.mock.yaml"

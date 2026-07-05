@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import threading
 import time
-from concurrent.futures import ThreadPoolExecutor
 
 from andocgen.config import ContextConfig, GenerationConfig, ValidationConfig
 from andocgen.generator.implementations.llm_generator import LlmDocumentGenerator

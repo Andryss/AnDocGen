@@ -6,7 +6,6 @@ import pytest
 import yaml
 
 from andocgen.config import load_config
-
 from tests.conftest import FIXTURES
 
 

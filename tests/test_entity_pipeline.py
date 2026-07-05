@@ -6,7 +6,6 @@ from andocgen.generator.implementations.markdown_formatter import MarkdownOutput
 from andocgen.generator.implementations.markdown_section_parser import MarkdownSectionParser
 from andocgen.models.entities import (
     ClassModel,
-    DocBlock,
     EntityContext,
     FunctionModel,
     ModuleModel,

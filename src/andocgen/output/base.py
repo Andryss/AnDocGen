@@ -39,5 +39,10 @@ class CacheStore(Protocol):
 
 
 class PreviousDocLoader(Protocol):
-    def extract(self, output_dir: Path, module_paths: list[str]) -> dict[str, str]:
+    def extract(
+        self,
+        output_dir: Path,
+        module_paths: list[str],
+        language: str = "ru",
+    ) -> dict[str, str]:
         ...

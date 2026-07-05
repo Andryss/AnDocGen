@@ -5,19 +5,23 @@ from pathlib import Path
 import yaml
 from pydantic import ConfigDict
 
-from andocgen.config_models import (
+from andocgen.generated.config_models import (
     AndocgenConfiguration,
     CallGraphConfig,
     ContextConfig,
     DiscoveryConfig,
-    ExtractionConfig as _ExtractionConfig,
-    GenerationConfig as _GenerationConfig,
     OllamaProvider,
     OpenAIProvider,
     OutputConfig,
     ProjectConfig,
     ReportingConfig,
     ValidationConfig,
+)
+from andocgen.generated.config_models import (
+    ExtractionConfig as _ExtractionConfig,
+)
+from andocgen.generated.config_models import (
+    GenerationConfig as _GenerationConfig,
 )
 
 ANDOCGEN_DIR = ".andocgen"

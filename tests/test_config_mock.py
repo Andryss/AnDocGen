@@ -6,8 +6,7 @@ import yaml
 
 from andocgen.config import load_config
 from andocgen.pipeline import run_pipeline
-
-from tests.conftest import FIXTURES, FIXTURE_PROJECT
+from tests.conftest import FIXTURE_PROJECT, FIXTURES
 
 MOCK_CONFIG = FIXTURES / "config.mock.yaml"
 
@@ -20,7 +19,6 @@ def test_mock_config_loads_expected_fields() -> None:
     assert config.generation.provider == "mock"
     assert config.generation.language == "ru"
     assert config.generation.incremental is False
-    assert config.output.format == "markdown"
 
 
 def test_mock_config_runs_pipeline(tmp_path: Path) -> None:

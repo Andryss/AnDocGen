@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import time
-
 
 def format_duration(seconds: float) -> str:
     if seconds < 60:

@@ -45,12 +45,12 @@ class LlmDocumentGenerator:
         progress: ProgressReporter | None = None,
         llm_factory: Callable[[], LLMProvider] | None = None,
         validation_config: ValidationConfig | None = None,
+        seed_registry: DocBriefRegistry | None = None,
     ) -> tuple[list[DocBlock], list[GenerationError]]:
         blocks: list[DocBlock] = []
         errors: list[GenerationError] = []
         docs_by_id = docs_by_id or {}
-        content_by_id: dict[str, str] = {k: v.content for k, v in docs_by_id.items()}
-        registry = DocBriefRegistry()
+        registry = seed_registry or DocBriefRegistry()
         for entity_id, block in docs_by_id.items():
             ctx_match = next((c for c in ordered_contexts if c.entity_id == entity_id), None)
             signature = ctx_match.signature if ctx_match else ""
@@ -123,7 +123,6 @@ class LlmDocumentGenerator:
                     if block:
                         blocks.append(block)
                         with content_lock:
-                            content_by_id[ctx.entity_id] = block.content
                             registry.register(
                                 ctx.entity_id,
                                 block.summary,
@@ -141,7 +140,6 @@ class LlmDocumentGenerator:
                         if block:
                             blocks.append(block)
                             with content_lock:
-                                content_by_id[ctx.entity_id] = block.content
                                 registry.register(
                                     ctx.entity_id,
                                     block.summary,

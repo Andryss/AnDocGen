@@ -19,10 +19,16 @@ jobs:
       - name: Install dependencies
         run: pip install -e ".[dev]"
 
+      - name: Lint
+        run: ruff check src tests
+
+      - name: Smoke test CLI
+        run: andocgen --help
+
       - name: Verify generated config models
         run: |
           ./scripts/generate_config_models.sh
-          git diff --exit-code src/andocgen/config_models.py
+          git diff --exit-code src/andocgen/generated/config_models.py
 
-      - name: Run tests
-        run: pytest
+      - name: Run tests with coverage gate
+        run: pytest --cov=andocgen --cov-report=term-missing --cov-fail-under=85

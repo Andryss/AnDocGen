@@ -14,5 +14,10 @@ class ParseResult:
 
 
 class SourceParser(Protocol):
-    def parse(self, file_path: Path, project_root: Path) -> ParseResult:
+    def parse(
+        self,
+        file_path: Path,
+        project_root: Path,
+        content_hash: str | None = None,
+    ) -> ParseResult:
         ...

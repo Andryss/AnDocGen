@@ -1,16 +1,16 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from enum import Enum
+from enum import StrEnum
 from typing import Literal
 
 
-class IssueLevel(str, Enum):
+class IssueLevel(StrEnum):
     WARNING = "warning"
     ERROR = "error"
 
 
-class IssueCategory(str, Enum):
+class IssueCategory(StrEnum):
     PARSE = "parse"
     GENERATION = "generation"
     VALIDATION = "validation"
@@ -259,6 +259,7 @@ class PipelineResult:
     generation_errors: list[GenerationError] = field(default_factory=list)
     issues: list[ValidationIssue] = field(default_factory=list)
     elapsed_seconds: float = 0.0
+    dry_run_entities: int = 0
     summary_log_path: str | None = None
     detail_log_path: str | None = None
     trace_log_path: str | None = None

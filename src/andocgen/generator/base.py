@@ -3,9 +3,10 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Protocol
 
+from andocgen.call_graph.base import CallGraphBuilder
 from andocgen.config import ContextConfig, GenerationConfig, ValidationConfig
 from andocgen.context.base import ContextBuilder, PromptBuilder
-from andocgen.call_graph.base import CallGraphBuilder
+from andocgen.context.doc_brief_registry import DocBriefRegistry
 from andocgen.llm.base import LLMProvider
 from andocgen.models.entities import (
     CallGraph,
@@ -33,6 +34,7 @@ class DocumentGenerator(Protocol):
         progress: ProgressReporter | None = None,
         llm_factory: Callable[[], LLMProvider] | None = None,
         validation_config: ValidationConfig | None = None,
+        seed_registry: DocBriefRegistry | None = None,
     ) -> tuple[list[DocBlock], list[GenerationError]]:
         ...
 

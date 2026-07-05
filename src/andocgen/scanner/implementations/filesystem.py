@@ -4,7 +4,6 @@ import hashlib
 from pathlib import Path
 
 from andocgen.config import DiscoveryConfig
-from andocgen.scanner.base import ProjectScanner
 
 
 class FilesystemScanner:

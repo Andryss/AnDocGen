@@ -5,7 +5,6 @@ from andocgen.config import CallGraphConfig, ContextConfig, ExtractionConfig
 from andocgen.context.factory import create_context_components
 from andocgen.models.entities import ProjectModel
 from andocgen.parser.factory import create_parser
-
 from tests.conftest import FIXTURE_PROJECT_API
 
 

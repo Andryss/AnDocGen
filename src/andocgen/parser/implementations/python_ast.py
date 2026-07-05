@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ast
+import hashlib
 from pathlib import Path
 
 from andocgen.models.entities import (
@@ -11,14 +12,19 @@ from andocgen.models.entities import (
     ParameterModel,
 )
 from andocgen.parser.base import ParseResult
-from andocgen.scanner.implementations.filesystem import FilesystemScanner
+
+
+def _file_hash(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 class PythonAstParser:
-    def __init__(self) -> None:
-        self._hasher = FilesystemScanner()
-
-    def parse(self, file_path: Path, project_root: Path) -> ParseResult:
+    def parse(
+        self,
+        file_path: Path,
+        project_root: Path,
+        content_hash: str | None = None,
+    ) -> ParseResult:
         rel_path = str(file_path.relative_to(project_root))
         try:
             source = file_path.read_text(encoding="utf-8")
@@ -37,7 +43,7 @@ class PythonAstParser:
                 classes=visitor.classes,
                 exports=visitor.exports,
                 source=source,
-                content_hash=self._hasher.file_hash(file_path),
+                content_hash=content_hash or _file_hash(file_path),
             )
         )
 

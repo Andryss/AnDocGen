@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 
 from andocgen.i18n.labels import LocaleLabels, get_labels
-from andocgen.models.entities import DocBlock, ParameterDoc
+from andocgen.models.entities import DocBlock
 
 _NA_PATTERN = re.compile(r"^N/A(?:\.|$|\s|-)", re.IGNORECASE)
 _EMPTY_PHRASES = re.compile(

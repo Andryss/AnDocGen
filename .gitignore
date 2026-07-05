@@ -12,5 +12,7 @@ generated_docs/
 !eval/python-qrcode/generated_docs/
 !eval/python-qrcode/generated_docs/**
 .andocgen_cache/
+.coverage
+htmlcov/
 config.yaml
 .env

@@ -36,7 +36,7 @@ context:
 
 generation:
   implementation: llm
-  provider: ollama
+  provider: mock
   language: ru
   incremental: false
   workers: 1
@@ -55,7 +55,6 @@ validation:
   implementation: structured
   check_completeness: true
   check_consistency: true
-  check_structure: true
   check_representation: true
   check_text_quality: true
   complexity_warning_threshold: 20
@@ -66,7 +65,6 @@ validation:
 output:
   implementation: markdown
   directory: ./generated_docs
-  format: markdown
   cache_path: ""
 
 reporting:

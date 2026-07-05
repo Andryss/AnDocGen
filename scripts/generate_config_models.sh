@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-OUTPUT="$ROOT/src/andocgen/config_models.py"
+OUTPUT="$ROOT/src/andocgen/generated/config_models.py"
 PYTHON="${PYTHON:-$ROOT/.venv/bin/python}"
 CODEGEN="${CODEGEN:-$ROOT/.venv/bin/datamodel-codegen}"
 
@@ -23,7 +23,7 @@ fi
 "$PYTHON" <<PY
 from pathlib import Path
 
-path = Path("${ROOT}/src/andocgen/config_models.py")
+path = Path("${ROOT}/src/andocgen/generated/config_models.py")
 text = path.read_text(encoding="utf-8")
 header = (
     "# AUTO-GENERATED from config.schema.yaml — do not edit manually.\n"

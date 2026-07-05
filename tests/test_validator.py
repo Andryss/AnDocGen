@@ -1,8 +1,14 @@
 from __future__ import annotations
 
-from andocgen.models.entities import DocBlock, EntityContext, FunctionModel, ParameterDoc, ParameterModel
-from andocgen.validator.factory import create_validator
 from andocgen.config import ValidationConfig
+from andocgen.models.entities import (
+    DocBlock,
+    EntityContext,
+    FunctionModel,
+    ParameterDoc,
+    ParameterModel,
+)
+from andocgen.validator.factory import create_validator
 
 
 def test_phantom_parameter_error() -> None:

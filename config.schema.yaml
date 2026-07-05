@@ -279,10 +279,6 @@ $defs:
         type: boolean
         default: true
         description: Проверять соответствие документации фактической сигнатуре сущности.
-      check_structure:
-        type: boolean
-        default: true
-        description: Проверять структуру ответа модели (зарезервировано, пока не применяется).
       check_representation:
         type: boolean
         default: true
@@ -334,10 +330,6 @@ $defs:
         examples:
           - ./generated_docs
           - ./docs
-      format:
-        type: string
-        default: markdown
-        description: Формат выходных файлов (зарезервировано; фактически задаётся implementation).
       cache_path:
         type: string
         default: ""

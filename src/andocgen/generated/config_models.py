@@ -270,10 +270,6 @@ class ValidationConfig(BaseModel):
         True,
         description='Проверять соответствие документации фактической сигнатуре сущности.',
     )
-    check_structure: bool | None = Field(
-        True,
-        description='Проверять структуру ответа модели (зарезервировано, пока не применяется).',
-    )
     check_representation: bool | None = Field(
         True,
         description='Проверять наличие ключевых разделов в итоговом представлении.',
@@ -318,10 +314,6 @@ class OutputConfig(BaseModel):
         './generated_docs',
         description='Корневой каталог для сохранения сгенерированных файлов.',
         examples=['./generated_docs', './docs'],
-    )
-    format: str | None = Field(
-        'markdown',
-        description='Формат выходных файлов (зарезервировано; фактически задаётся implementation).',
     )
     cache_path: str | None = Field(
         '',

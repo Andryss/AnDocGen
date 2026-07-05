@@ -4,7 +4,7 @@ from collections import defaultdict
 from pathlib import PurePosixPath
 
 from andocgen.i18n.labels import LocaleLabels, get_labels
-from andocgen.models.entities import DocBlock, ModuleModel, ProjectModel
+from andocgen.models.entities import DocBlock, ProjectModel
 
 
 def package_dirs(groups: dict[str, list[str]]) -> list[str]:

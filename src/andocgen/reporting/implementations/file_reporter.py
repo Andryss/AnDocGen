@@ -164,7 +164,7 @@ class StageTimer:
         self._detail = detail
         self._start = time.perf_counter()
 
-    def __enter__(self) -> "StageTimer":
+    def __enter__(self) -> StageTimer:
         self._trace.log_stage(self._stage, f"start {self._detail}".strip())
         return self
 

@@ -9,7 +9,6 @@ from andocgen.models.entities import (
     EntityContext,
     FunctionModel,
     ModuleModel,
-    ProjectModel,
     make_entity_id,
 )
 

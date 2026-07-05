@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import re
-
 from andocgen.config import ValidationConfig
 from andocgen.models.entities import (
     DocBlock,
@@ -10,6 +8,8 @@ from andocgen.models.entities import (
     IssueLevel,
     ValidationIssue,
 )
+from andocgen.validation.rules.entity_rules import validate_entity_examples
+from andocgen.validation.rules.text_quality import mostly_latin
 
 
 class StructuredValidator:
@@ -35,7 +35,7 @@ class StructuredValidator:
                     issues.append(self._warning(block, "Summary is empty"))
                 elif len(block.summary.strip()) < config.min_summary_length:
                     issues.append(self._warning(block, "Summary appears too short"))
-                elif ctx.output_language == "ru" and _mostly_latin(block.summary):
+                elif ctx.output_language == "ru" and mostly_latin(block.summary):
                     issues.append(
                         self._warning(
                             block,
@@ -98,7 +98,7 @@ class StructuredValidator:
                     )
 
         if config.check_text_quality:
-            issues.extend(_validate_examples(block, ctx))
+            issues.extend(_example_warnings(block, ctx))
 
         if (
             config.check_text_quality
@@ -127,22 +127,7 @@ def _variadic_documented(documented: set[str]) -> bool:
     return any(name.startswith("*") or name in ("args", "kwargs") for name in documented)
 
 
-def _mostly_latin(text: str) -> bool:
-    stripped = text.strip()
-    if len(stripped) < 25:
-        return False
-    if re.search(r"[а-яА-ЯёЁ]", stripped):
-        return False
-    letters = [char for char in stripped if char.isalpha()]
-    if len(letters) < 12:
-        return False
-    latin = sum(1 for char in letters if ord(char) < 128)
-    return latin / len(letters) > 0.5
-
-
-def _validate_examples(block: DocBlock, ctx: EntityContext) -> list[ValidationIssue]:
-    from andocgen.generator.entity_validator import validate_entity
-
+def _example_warnings(block: DocBlock, ctx: EntityContext) -> list[ValidationIssue]:
     return [
         ValidationIssue(
             level=IssueLevel.WARNING,
@@ -152,6 +137,6 @@ def _validate_examples(block: DocBlock, ctx: EntityContext) -> list[ValidationIs
             entity_type=block.entity_type,
             entity_name=block.entity_name,
         )
-        for issue in validate_entity(block, ctx)
+        for issue in validate_entity_examples(block, ctx)
         if issue.code.startswith("examples_")
     ]

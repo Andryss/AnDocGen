@@ -52,7 +52,6 @@ validation:
   implementation: structured
   check_completeness: true
   check_consistency: true
-  check_structure: true
   check_representation: true
   check_text_quality: true
   complexity_warning_threshold: 20
@@ -63,7 +62,6 @@ validation:
 output:
   implementation: markdown
   directory: ./eval/python-qrcode/generated_docs
-  format: markdown
   cache_path: ""
 
 reporting:

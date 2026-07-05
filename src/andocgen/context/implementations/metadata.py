@@ -2,8 +2,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from andocgen.context.base import ProjectMetadataLoader
-
 
 class DefaultProjectMetadataLoader:
     def load_readme_excerpt(
