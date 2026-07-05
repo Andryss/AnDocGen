@@ -1,11 +1,9 @@
-# AnDocGen — пример конфигурации
-# Скопируйте в config.yaml и настройте под свой проект.
-# Поле implementation в каждом блоке выбирает конкретную реализацию модуля.
+# yaml-language-server: $schema=./config.schema.yaml
 
 project:
   name: ""
   description: ""
-  readme_path: ""   # optional override, e.g. docs/README.md
+  readme_path: ""
 
 discovery:
   implementation: filesystem
@@ -21,7 +19,7 @@ discovery:
     - node_modules
 
 extraction:
-  implementation: ""   # пусто = python_ast при language: python
+  implementation: ""
   language: python
 
 call_graph:
@@ -38,16 +36,16 @@ context:
 
 generation:
   implementation: llm
-  provider: ollama  # mock | ollama | openai
+  provider: ollama
   language: ru
   incremental: false
-  workers: 1        # parallel LLM requests (wave-based); mock: safe at 4+
-  max_retries: 2    # retry on section parse failure
+  workers: 1
+  max_retries: 2
   providers:
     ollama:
       base_url: http://localhost:11434
       model: qwen2.5-coder:7b
-      timeout: 120  # seconds per request
+      timeout: 120
     openai:
       base_url: https://api.openai.com/v1
       api_key_env: OPENAI_API_KEY
@@ -63,20 +61,20 @@ validation:
   complexity_warning_threshold: 20
   min_summary_length: 10
   retry_on_blocking: true
-  blocking_fallback: retry   # retry | strip_examples | error
+  blocking_fallback: retry
 
 output:
   implementation: markdown
   directory: ./generated_docs
   format: markdown
-  cache_path: ""              # пусто = {output.directory}/.andocgen/cache
+  cache_path: ""
 
 reporting:
   implementation: file
-  logs_dir: ""              # пусто = {output.directory}/.andocgen/logs
+  logs_dir: ""
   summary_file: summary.txt
   detail_file: detail.json
   trace_file: trace.log
-  log_llm_content: true     # false — только метаданные LLM без текста промптов/ответов
-  trace_max_chars: 12000    # обрезка длинных промптов/ответов в trace.log
-  quiet: false              # true — без прогресса и сводки в консоли
+  log_llm_content: true
+  trace_max_chars: 12000
+  quiet: false

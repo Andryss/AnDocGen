@@ -32,20 +32,16 @@ context:
 
 generation:
   implementation: llm
-  provider: openai
+  provider: ollama
   language: ru
   incremental: false
-  workers: 2
+  workers: 1
   max_retries: 2
   providers:
-    openai:
-      base_url: https://ai.api.cloud.yandex.net/v1
-      api_key_env: YANDEX_API_KEY
-      project: b1gj4mdp1fmb5pkkj1c0
-      model: gpt://b1gj4mdp1fmb5pkkj1c0/qwen3-235b-a22b-fp8/latest
-      timeout: 180
-      temperature: 0.3
-      max_tokens: 4000
+    ollama:
+      base_url: http://localhost:11434
+      model: qwen2.5-coder:7b
+      timeout: 120
 
 validation:
   implementation: structured
@@ -54,7 +50,7 @@ validation:
 
 output:
   implementation: markdown
-  directory: ./examples/mini_api/generated_docs_qwen3-235b
+  directory: ./examples/mini_api/generated_docs
 
 reporting:
   implementation: file

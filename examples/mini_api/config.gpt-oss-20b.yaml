@@ -1,11 +1,20 @@
-# Генерация документации для mini_api (Yandex AI Studio)
+# yaml-language-server: $schema=../../config.schema.yaml
+
 project:
   name: mini_api
 
 discovery:
   implementation: filesystem
-  extensions: [.py]
-  exclude_dirs: [__pycache__, .git, .venv, venv, .andocgen, generated_docs, node_modules]
+  extensions:
+    - .py
+  exclude_dirs:
+    - __pycache__
+    - .git
+    - .venv
+    - venv
+    - .andocgen
+    - generated_docs
+    - node_modules
 
 extraction:
   language: python

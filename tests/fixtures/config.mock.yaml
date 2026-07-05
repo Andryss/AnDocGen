@@ -1,14 +1,19 @@
-# Пример mock-конфигурации для тестов и локальной разработки без LLM.
-# Использование:
-#   andocgen tests/fixtures/project --config tests/fixtures/config.mock.yaml
+# yaml-language-server: $schema=../../config.schema.yaml
 
 project:
   name: sample_project
 
 discovery:
   implementation: filesystem
-  extensions: [.py]
-  exclude_dirs: [__pycache__, .git, .venv, venv, generated_docs, node_modules]
+  extensions:
+    - .py
+  exclude_dirs:
+    - __pycache__
+    - .git
+    - .venv
+    - venv
+    - generated_docs
+    - node_modules
 
 extraction:
   language: python

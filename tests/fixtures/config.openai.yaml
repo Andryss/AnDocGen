@@ -1,13 +1,19 @@
-# Пример OpenAI-совместимой конфигурации для тестов.
-# Секрет задаётся через переменную окружения api_key_env.
+# yaml-language-server: $schema=../../config.schema.yaml
 
 project:
   name: sample_project
 
 discovery:
   implementation: filesystem
-  extensions: [.py]
-  exclude_dirs: [__pycache__, .git, .venv, venv, generated_docs, node_modules]
+  extensions:
+    - .py
+  exclude_dirs:
+    - __pycache__
+    - .git
+    - .venv
+    - venv
+    - generated_docs
+    - node_modules
 
 extraction:
   language: python

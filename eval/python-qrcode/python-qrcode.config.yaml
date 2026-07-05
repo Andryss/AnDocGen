@@ -1,10 +1,9 @@
-# AnDocGen — конфиг для апробации python-qrcode
-# Базируется на config.example.yaml (entity pipeline, validation retry, output split)
+# yaml-language-server: $schema=../../config.schema.yaml
 
 project:
-  name: "python-qrcode"
+  name: python-qrcode
   description: ""
-  readme_path: "eval/python-qrcode/python-qrcode/README.rst"
+  readme_path: eval/python-qrcode/python-qrcode/README.rst
 
 discovery:
   implementation: filesystem
@@ -21,7 +20,7 @@ discovery:
     - tests
 
 extraction:
-  implementation: ""   # пусто = python_ast при language: python
+  implementation: ""
   language: python
 
 call_graph:
@@ -38,20 +37,16 @@ context:
 
 generation:
   implementation: llm
-  provider: ollama  # mock | ollama | openai
+  provider: ollama
   language: ru
   incremental: false
-  workers: 2        # wave-based parallelism; для mock безопасно 4+
-  max_retries: 3    # retry на parse error и blocking validation
+  workers: 2
+  max_retries: 3
   providers:
     ollama:
       base_url: http://localhost:11434
       model: qwen2.5-coder:7b
-      timeout: 120  # seconds per request
-    openai:
-      base_url: https://api.openai.com/v1
-      api_key_env: OPENAI_API_KEY
-      model: gpt-4o-mini
+      timeout: 120
 
 validation:
   implementation: structured
@@ -63,7 +58,7 @@ validation:
   complexity_warning_threshold: 20
   min_summary_length: 10
   retry_on_blocking: true
-  blocking_fallback: retry   # retry | strip_examples | error
+  blocking_fallback: retry
 
 output:
   implementation: markdown
@@ -73,10 +68,10 @@ output:
 
 reporting:
   implementation: file
-  logs_dir: ""              # пусто = {output.directory}/logs
+  logs_dir: ""
   summary_file: summary.txt
   detail_file: detail.json
   trace_file: trace.log
-  log_llm_content: true     # false — только метаданные LLM без текста промптов/ответов
-  trace_max_chars: 12000    # обрезка длинных промптов/ответов в trace.log
-  quiet: false              # true — без прогресса и сводки в консоли
+  log_llm_content: true
+  trace_max_chars: 12000
+  quiet: false

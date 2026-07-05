@@ -1,0 +1,421 @@
+$schema: http://json-schema.org/draft-07/schema#
+$id: andocgen-config
+title: AnDocGen Configuration
+description: Спецификация конфигурации AnDocGen. Источник истины для полей, типов, дефолтов и описаний.
+type: object
+additionalProperties: false
+$defs:
+  ProjectConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      name:
+        type: string
+        default: ""
+        description: Отображаемое имя проекта; если пусто — используется имя корневого каталога.
+        examples:
+          - ""
+          - my_project
+      description:
+        type: string
+        default: ""
+        description: Краткое описание проекта; если пусто — извлекается из метаданных репозитория.
+      readme_path:
+        type: string
+        default: ""
+        description: Путь к файлу описания проекта относительно корня.
+        examples:
+          - ""
+          - README.md
+          - docs/README.md
+
+  DiscoveryConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      implementation:
+        type: string
+        enum: [filesystem]
+        default: filesystem
+        description: Реализация модуля обнаружения исходных файлов.
+      extensions:
+        type: array
+        items:
+          type: string
+        default: [".py"]
+        description: Список расширений файлов, подлежащих сканированию.
+        examples:
+          - [".py"]
+          - [".py", ".pyi"]
+      exclude_dirs:
+        type: array
+        items:
+          type: string
+        default:
+          - __pycache__
+          - .git
+          - .venv
+          - venv
+          - .andocgen
+          - generated_docs
+          - node_modules
+        description: Имена каталогов, исключаемых из обхода файловой системы.
+
+  ExtractionConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      implementation:
+        type: string
+        enum: ["", python_ast]
+        default: ""
+        description: Реализация синтаксического разбора; пустое значение — автоматический выбор по полю language.
+        examples:
+          - ""
+          - python_ast
+      language:
+        type: string
+        enum: [python]
+        default: python
+        description: Язык исходного кода документируемого проекта.
+        examples:
+          - python
+
+  CallGraphConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      implementation:
+        type: string
+        enum: [static]
+        default: static
+        description: Реализация построения графа вызовов между сущностями.
+
+  ContextConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      implementation:
+        type: string
+        enum: [default]
+        default: default
+        description: Реализация сборщика контекста для каждой сущности.
+      prompt:
+        type: string
+        enum: [sectioned]
+        default: sectioned
+        description: Реализация формирования запроса к языковой модели.
+      include_source_body:
+        type: boolean
+        default: true
+        description: Включать полный текст исходного фрагмента в контекст модели.
+      include_imports:
+        type: boolean
+        default: true
+        description: Включать объявления зависимостей и импортов в контекст.
+      include_call_graph:
+        type: boolean
+        default: true
+        description: Включать сведения о связанных сущностях и неразрешённых вызовах.
+      readme_limit:
+        type: integer
+        default: 2000
+        description: Максимальная длина фрагмента описания проекта в символах.
+        examples:
+          - 2000
+          - 4000
+      max_context_chars:
+        type: integer
+        default: 32000
+        description: Максимальная длина пользовательской части запроса в символах.
+        examples:
+          - 32000
+          - 64000
+
+  OllamaProvider:
+    type: object
+    additionalProperties: false
+    properties:
+      base_url:
+        type: string
+        default: http://localhost:11434
+        description: Базовый URL HTTP API провайдера Ollama.
+        examples:
+          - http://localhost:11434
+      model:
+        type: string
+        default: llama3
+        description: Идентификатор модели на стороне провайдера.
+        examples:
+          - llama3
+          - qwen2.5-coder:7b
+      timeout:
+        type: number
+        default: 120.0
+        description: Таймаут одного HTTP-запроса в секундах.
+        examples:
+          - 120
+          - 300
+
+  OpenAIProvider:
+    type: object
+    additionalProperties: false
+    properties:
+      base_url:
+        type: string
+        default: https://api.openai.com/v1
+        description: Базовый URL API, совместимого с протоколом OpenAI.
+        examples:
+          - https://api.openai.com/v1
+      api_key_env:
+        type: string
+        default: OPENAI_API_KEY
+        description: Имя переменной окружения, из которой читается ключ доступа.
+        examples:
+          - OPENAI_API_KEY
+      model:
+        type: string
+        default: gpt-4o-mini
+        description: Идентификатор модели на стороне провайдера.
+        examples:
+          - gpt-4o-mini
+          - gpt-4o
+      project:
+        type: string
+        default: ""
+        description: Идентификатор проекта у облачного провайдера.
+        examples:
+          - ""
+      timeout:
+        type: number
+        default: 120.0
+        description: Таймаут клиента в секундах.
+        examples:
+          - 120
+      temperature:
+        type: ["number", "null"]
+        default: null
+        description: Параметр случайности генерации.
+        examples:
+          - null
+          - 0.7
+      max_tokens:
+        type: ["integer", "null"]
+        default: null
+        description: Верхний предел длины ответа в токенах.
+        examples:
+          - null
+          - 4096
+
+  Providers:
+    type: object
+    additionalProperties: false
+    properties:
+      ollama:
+        $ref: "#/$defs/OllamaProvider"
+      openai:
+        $ref: "#/$defs/OpenAIProvider"
+
+  GenerationConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      implementation:
+        type: string
+        enum: [llm]
+        default: llm
+        description: Реализация модуля генерации документации.
+      provider:
+        type: string
+        enum: [mock, ollama, openai]
+        default: mock
+        description: Провайдер языковой модели для генерации текста.
+        examples:
+          - mock
+          - ollama
+          - openai
+      language:
+        type: string
+        default: ru
+        description: Язык создаваемой документации.
+        examples:
+          - ru
+          - en
+      incremental:
+        type: boolean
+        default: true
+        description: Пропускать файлы, не изменившиеся с предыдущего прогона.
+      workers:
+        type: integer
+        default: 1
+        description: Число параллельных запросов к модели в пределах одной волны зависимостей.
+        examples:
+          - 1
+          - 4
+      max_retries:
+        type: integer
+        default: 2
+        description: Число повторных попыток при ошибке разбора ответа или блокирующей валидации.
+        examples:
+          - 2
+          - 3
+      providers:
+        $ref: "#/$defs/Providers"
+
+  ValidationConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      implementation:
+        type: string
+        enum: [structured]
+        default: structured
+        description: Реализация модуля проверки сгенерированной документации.
+      check_completeness:
+        type: boolean
+        default: true
+        description: Проверять полноту описания параметров и возвращаемых значений.
+      check_consistency:
+        type: boolean
+        default: true
+        description: Проверять соответствие документации фактической сигнатуре сущности.
+      check_structure:
+        type: boolean
+        default: true
+        description: Проверять структуру ответа модели (зарезервировано, пока не применяется).
+      check_representation:
+        type: boolean
+        default: true
+        description: Проверять наличие ключевых разделов в итоговом представлении.
+      check_text_quality:
+        type: boolean
+        default: true
+        description: Проверять качество текста — длину, язык и показатели сложности.
+      complexity_warning_threshold:
+        type: integer
+        default: 20
+        description: Порог метрики сложности, при превышении которого выдаётся предупреждение.
+        examples:
+          - 20
+          - 30
+      min_summary_length:
+        type: integer
+        default: 10
+        description: Минимальная длина краткого описания до выдачи предупреждения.
+        examples:
+          - 10
+      retry_on_blocking:
+        type: boolean
+        default: true
+        description: Повторять генерацию при блокирующих замечаниях предварительной проверки.
+      blocking_fallback:
+        type: string
+        enum: [retry, strip_examples, error]
+        default: retry
+        description: Стратегия обработки после исчерпания повторов при блокирующих замечаниях.
+        examples:
+          - retry
+          - strip_examples
+          - error
+
+  OutputConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      implementation:
+        type: string
+        enum: [markdown]
+        default: markdown
+        description: Реализация модуля записи документации на диск.
+      directory:
+        type: string
+        default: ./generated_docs
+        description: Корневой каталог для сохранения сгенерированных файлов.
+        examples:
+          - ./generated_docs
+          - ./docs
+      format:
+        type: string
+        default: markdown
+        description: Формат выходных файлов (зарезервировано; фактически задаётся implementation).
+      cache_path:
+        type: string
+        default: ""
+        description: Каталог кэша контрольных сумм; пустое значение — каталог по умолчанию под output.directory.
+        examples:
+          - ""
+
+  ReportingConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      implementation:
+        type: string
+        enum: [file]
+        default: file
+        description: Реализация модуля отчётности о прогоне.
+      logs_dir:
+        type: string
+        default: ""
+        description: Каталог журналов прогона; пустое значение — каталог по умолчанию под output.directory.
+        examples:
+          - ""
+      summary_file:
+        type: string
+        default: summary.txt
+        description: Имя файла краткой текстовой сводки прогона.
+        examples:
+          - summary.txt
+      detail_file:
+        type: string
+        default: detail.json
+        description: Имя файла структурированного отчёта о замечаниях и ошибках.
+        examples:
+          - detail.json
+      trace_file:
+        type: string
+        default: trace.log
+        description: Имя файла подробной трассировки этапов и запросов.
+        examples:
+          - trace.log
+      log_llm_content:
+        type: boolean
+        default: true
+        description: Записывать в трассировку полный текст запросов и ответов модели.
+        examples:
+          - true
+          - false
+      trace_max_chars:
+        type: integer
+        default: 12000
+        description: Максимальная длина записываемого фрагмента запроса или ответа в трассировке.
+        examples:
+          - 12000
+          - 24000
+      quiet:
+        type: boolean
+        default: false
+        description: Подавлять вывод прогресса и итоговой сводки в консоль.
+        examples:
+          - false
+          - true
+
+properties:
+  project:
+    $ref: "#/$defs/ProjectConfig"
+  discovery:
+    $ref: "#/$defs/DiscoveryConfig"
+  extraction:
+    $ref: "#/$defs/ExtractionConfig"
+  call_graph:
+    $ref: "#/$defs/CallGraphConfig"
+  context:
+    $ref: "#/$defs/ContextConfig"
+  generation:
+    $ref: "#/$defs/GenerationConfig"
+  validation:
+    $ref: "#/$defs/ValidationConfig"
+  output:
+    $ref: "#/$defs/OutputConfig"
+  reporting:
+    $ref: "#/$defs/ReportingConfig"

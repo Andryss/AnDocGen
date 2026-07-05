@@ -25,7 +25,8 @@ andocgen ./examples/mini_library --config config.example.yaml
 ```text
 src/andocgen/
 ├── pipeline.py         # оркестрация через фабрики модулей
-├── config.py           # implementation в каждом блоке конфигурации
+├── config.py           # load_config() и helper-методы
+├── config_models.py    # Pydantic-модели (генерируются из config.schema.yaml)
 ├── scanner/            # base.py, factory.py, implementations/
 ├── parser/
 ├── call_graph/
@@ -41,7 +42,17 @@ src/andocgen/
 
 ## Конфигурация
 
-Скопируйте `config.example.yaml` в `config.yaml`. Основные блоки:
+Скопируйте `config.example.yaml` в `config.yaml`.
+
+**Спецификация:** [`config.schema.yaml`](config.schema.yaml) — единственный источник истины для полей, типов, дефолтов и описаний. Pydantic-модели в `src/andocgen/config_models.py` генерируются из неё:
+
+```bash
+./scripts/generate_config_models.sh
+```
+
+Для автодополнения в IDE установите расширение [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) (Red Hat) — в `config.example.yaml` уже указана директива `$schema`.
+
+Основные блоки:
 
 | Блок | Назначение |
 |------|------------|
@@ -83,4 +94,4 @@ pytest
 ## Требования
 
 - Python 3.11+
-- Зависимости: typer, rich, pyyaml, httpx
+- Зависимости: typer, rich, pyyaml, httpx, pydantic

@@ -41,4 +41,5 @@ pandoc docs/evaluation.md -o evaluation.docx
 | [../README.md](../README.md) | Установка, запуск `andocgen`, обзор структуры кода              |
 | [../src/andocgen/](../src/andocgen/) | Исходный код                                                    |
 | [../config.example.yaml](../config.example.yaml) | Пример конфигурации                                             |
+| [../config.schema.yaml](../config.schema.yaml) | JSON Schema спецификация конфигурации (source of truth)         |
 | [../examples/](../examples/) | Примеры для генерации и апробации                               |
