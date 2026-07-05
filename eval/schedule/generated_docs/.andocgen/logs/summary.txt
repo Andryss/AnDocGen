@@ -1,0 +1,14 @@
+AnDocGen run summary
+Timestamp: 2026-07-05T18:57:28.173458
+Processed files: 1
+Skipped files: 0
+Parse errors: 0
+Generation errors: 0
+Validation warnings: 11
+Validation errors: 0
+Output files: 2
+Elapsed seconds: 349.43
+
+Log files:
+  trace: eval/schedule/generated_docs/.andocgen/logs/trace.log
+  detail: eval/schedule/generated_docs/.andocgen/logs/detail.json

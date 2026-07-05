@@ -1,0 +1,94 @@
+{
+  "parse_errors": [],
+  "generation_errors": [],
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Job` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.at"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "High cyclomatic complexity (25)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.at"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Job` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.days"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.hours"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Job` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.minutes"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.seconds"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Job` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.should_run"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Job` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.until"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Job` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.weeks"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.weeks"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "__init__.py",
+      "entity_type": "class",
+      "entity_name": "ScheduleValueError"
+    }
+  ]
+}

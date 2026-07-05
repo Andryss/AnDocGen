@@ -1,0 +1,198 @@
+{
+  "parse_errors": [],
+  "generation_errors": [],
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Cache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Cache.__contains__"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Cache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Cache.__iter__"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Cache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Cache.clear"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Cache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Cache.get"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Cache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Cache.pop"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Cache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Cache.setdefault"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `FIFOCache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "FIFOCache.popitem"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `LFUCache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "LFUCache.__setitem__"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `RRCache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "RRCache.__delitem__"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Cache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "RRCache.choice"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `RRCache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "RRCache.popitem"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `TLRUCache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "TLRUCache.__getitem__"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "_DefaultSize.__setitem__"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "_DefaultSize.pop"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "_TimedCache.expire"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "_cachedmethod.py",
+      "entity_type": "method",
+      "entity_name": "_WrapperBase.__call__"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example calls `_none()` without required parameters",
+      "module_path": "_cachedmethod.py",
+      "entity_type": "function",
+      "entity_name": "_none"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "func.py",
+      "entity_type": "method",
+      "entity_name": "_UnboundTTLCache.maxsize"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `LFUCache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "LFUCache.clear"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `RRCache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "RRCache.clear"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `_TimedCache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "_TimedCache.get"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `_TimedCache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "_TimedCache.pop"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "_TimedCache.setdefault"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `TLRUCache` without constructor arguments",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "TLRUCache.clear"
+    }
+  ]
+}

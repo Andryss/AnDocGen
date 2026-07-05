@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../../config.schema.yaml
+
+project:
+  name: humanize
+  description: ""
+  readme_path: eval/humanize/humanize/README.md
+
+discovery:
+  implementation: filesystem
+  extensions:
+    - .py
+  exclude_dirs:
+    - __pycache__
+    - .git
+    - .venv
+    - venv
+    - .andocgen
+    - generated_docs
+    - node_modules
+    - tests
+    - docs
+    - scripts
+
+extraction:
+  implementation: ""
+  language: python
+
+call_graph:
+  implementation: static
+
+context:
+  implementation: default
+  prompt: sectioned
+  include_source_body: true
+  include_imports: true
+  include_call_graph: true
+  readme_limit: 2000
+  max_context_chars: 32000
+
+generation:
+  implementation: llm
+  provider: ollama
+  language: ru
+  incremental: false
+  workers: 2
+  max_retries: 3
+  providers:
+    ollama:
+      base_url: http://localhost:11434
+      model: qwen2.5-coder:7b
+      timeout: 120
+
+validation:
+  implementation: structured
+  check_completeness: true
+  check_consistency: true
+  check_representation: true
+  check_text_quality: true
+  complexity_warning_threshold: 20
+  min_summary_length: 10
+  retry_on_blocking: true
+  blocking_fallback: retry
+
+output:
+  implementation: markdown
+  directory: ./eval/humanize/generated_docs
+  cache_path: ""
+
+reporting:
+  implementation: file
+  logs_dir: ""
+  summary_file: summary.txt
+  detail_file: detail.json
+  trace_file: trace.log
+  log_llm_content: true
+  trace_max_chars: 12000
+  quiet: false

@@ -1,0 +1,29 @@
+{
+  "parse_errors": [],
+  "generation_errors": [
+    {
+      "module_path": "number.py",
+      "entity_type": "function",
+      "entity_name": "intword",
+      "message": "Missing required sections: See also"
+    }
+  ],
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "High cyclomatic complexity (33)",
+      "module_path": "time.py",
+      "entity_type": "function",
+      "entity_name": "naturaldelta"
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "High cyclomatic complexity (25)",
+      "module_path": "time.py",
+      "entity_type": "function",
+      "entity_name": "precisedelta"
+    }
+  ]
+}
