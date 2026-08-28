@@ -1,7 +1,7 @@
 # Модуль `handlers.py`
 
 
-Модуль с обработчиками HTTP-подобного API, включающий классы для представления ответов и управления пользователями.
+Модуль с обработчиками HTTP-подобного API, включающим класс для управления пользователями.
 
 **Содержание:**
 
@@ -11,7 +11,7 @@
 
 ### `class ApiResponse`
 
-Класс для представления ответов от API.
+N/A
 
 **Поля:**
 
@@ -20,67 +20,50 @@
 
 ### `class UserHandler`
 
-Класс для управления пользовательскими операциями API.
+Класс для управления пользователями через API.
 
 #### Методы
 
 ##### `__init__(storage: InMemoryStorage) -> None`
 
-Инициализирует объект `UserHandler` с параметром `storage`.
+Инициализирует экземпляр класса UserHandler с объектом хранилища.
 
 **Параметры:**
 
-- `storage` (`InMemoryStorage`) — хранилище для управления пользователями
+- `storage` (`InMemoryStorage`) — объект хранилища для управления пользователями
 
 **Примеры:**
 
-```python
-storage = InMemoryStorage()
-user_handler = UserHandler(storage)
-```
+user_handler = UserHandler(InMemoryStorage())
 
 ##### `get_user(user_id: int) -> ApiResponse`
 
-Извлекает информацию о пользователе по его ID и возвращает отформатированный ответ.
+Получает пользователя по идентификатору.
 
 **Параметры:**
 
-- `user_id` (`int`) — уникальный идентификатор пользователя
+- `user_id` (`int`) — идентификатор пользователя
 
 **Возвращаемое значение:**
 
-- `ApiResponse` — ответ с информацией о пользователе или ошибкой, если пользователь не найден
+- `ApiResponse` — ответ сервера с пользователем или ошибкой
 
 **Примеры:**
 
-```python
-user_handler = UserHandler(storage=InMemoryStorage())
-response = user_handler.get_user(1)
-print(response)  # ApiResponse(status=200, body={'id': 1, 'name': 'John Doe', ...})
-```
+user_handler.get_user(123)
 
 ##### `create_user(name: str, email: str) -> ApiResponse`
 
-Создает нового пользователя и возвращает информацию о нем.
+Сущность `UserHandler.create_user` описана по сигнатуре и структуре исходного кода.
 
 **Параметры:**
 
-- `name` (`str`) — имя пользователя
-- `email` (`str`) — адрес электронной почты пользователя
+- `name` (`str`) — —
+- `email` (`str`) — —
 
 **Возвращаемое значение:**
 
-- `ApiResponse` — ответ сервера с статусом 201 и телом {"id": user_id}
-
-**Примеры:**
-
-```python
-response = UserHandler.create_user("John Doe", "john.doe@example.com")
-```
-
-**Смотрите также:**
-
-- `normalize_email(email: str) -> str`
+- `ApiResponse` — —
 
 
 ---

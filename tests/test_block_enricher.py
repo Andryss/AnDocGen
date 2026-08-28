@@ -15,7 +15,7 @@ def test_parse_class_summary_only() -> None:
         signature="class Item",
         class_model=ClassModel(name="Item", bases=["Base"]),
     )
-    raw = "## Summary\n\nData item.\n"
+    raw = '{"summary": "Data item."}'
     block = parse_sections(raw, ctx)
     BlockEnricher().enrich(block, ctx)
     assert block.summary == "Data item."
@@ -40,10 +40,7 @@ def test_enrich_class_fields_from_dataclass_ast() -> None:
             ],
         ),
     )
-    raw = """## Summary
-
-Line item.
-"""
+    raw = '{"summary": "Line item."}'
     block = parse_sections(raw, ctx)
     BlockEnricher().enrich(block, ctx)
     assert block.fields is not None
@@ -60,10 +57,7 @@ def test_enrich_plain_class_clears_llm_fields() -> None:
         signature="class OrderService",
         class_model=ClassModel(name="OrderService", is_dataclass=False),
     )
-    raw = """## Summary
-
-Service class.
-"""
+    raw = '{"summary": "Service class."}'
     block = parse_sections(raw, ctx)
     BlockEnricher().enrich(block, ctx)
     assert block.fields == []

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 from andocgen.config import ValidationConfig
 from andocgen.generator.entity_pipeline import EntityDocumentPipeline
 from andocgen.generator.implementations.markdown_formatter import MarkdownOutputFormatter
@@ -59,38 +61,24 @@ def _method_context() -> EntityContext:
 
 
 def _valid_response(examples: str) -> str:
-    return f"""## Summary
-
-Creates an order.
-
-## Parameters
-
-- `customer` (`str`) — customer name
-
-## Returns
-
-- `Order` — created order
-
-## Raises
-
-N/A
-
-## Edge cases
-
-N/A
-
-## Side effects
-
-N/A
-
-## Examples
-
-{examples}
-
-## See also
-
-N/A
-"""
+    return json.dumps(
+        {
+            "summary": "Creates an order.",
+            "parameters": [
+                {
+                    "name": "customer",
+                    "type": "str",
+                    "description": "customer name",
+                }
+            ],
+            "returns": {"type": "Order", "description": "created order"},
+            "raises": "N/A",
+            "edge_cases": "N/A",
+            "side_effects": "N/A",
+            "examples": examples,
+            "see_also": "N/A",
+        }
+    )
 
 
 def test_pipeline_retries_on_blocking_examples() -> None:

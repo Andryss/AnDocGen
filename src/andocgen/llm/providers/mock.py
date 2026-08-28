@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 
 
@@ -61,35 +62,13 @@ def _summary_desc(docstring: str, fallback: str, language: str) -> str:
 def _module_doc(ctx: dict[str, str], language: str) -> str:
     name = ctx["entity_name"]
     desc = _summary_desc(ctx["docstring"], f"Модуль `{name}`.", language)
-    return f"""## Summary
-
-{desc}
-
-## Exports
-
-N/A
-"""
+    return json.dumps({"summary": desc, "exports": []}, ensure_ascii=False)
 
 
 def _class_doc(ctx: dict[str, str], language: str) -> str:
     name = ctx["entity_name"]
     desc = _summary_desc(ctx["docstring"], f"Класс `{name}`.", language)
-    return f"""## Summary
-
-{desc}
-
-## Fields
-
-N/A
-
-## Inheritance
-
-N/A
-
-## Methods overview
-
-N/A
-"""
+    return json.dumps({"summary": desc}, ensure_ascii=False)
 
 
 def _function_doc(ctx: dict[str, str], language: str) -> str:
@@ -100,44 +79,32 @@ def _function_doc(ctx: dict[str, str], language: str) -> str:
         ctx["docstring"], f"Выполняет операцию `{short_name}`.", language
     )
     params = _parse_params_from_signature(sig)
-    param_lines = "\n".join(
-        f"- `{p['name']}` (`{p['type']}`) — параметр функции" for p in params
-    ) or "N/A"
     ret_type = _parse_return_type(sig)
-    ret_line = f"- `{ret_type}` — результат операции" if ret_type else "N/A"
 
-    return f"""## Summary
-
-{desc}
-
-## Parameters
-
-{param_lines}
-
-## Returns
-
-{ret_line}
-
-## Raises
-
-N/A
-
-## Edge cases
-
-N/A
-
-## Side effects
-
-N/A
-
-## Examples
-
-N/A
-
-## See also
-
-N/A
-"""
+    return json.dumps(
+        {
+            "summary": desc,
+            "parameters": [
+                {
+                    "name": param["name"],
+                    "type": param["type"],
+                    "description": "параметр функции",
+                }
+                for param in params
+            ],
+            "returns": (
+                {"type": ret_type, "description": "результат операции"}
+                if ret_type
+                else None
+            ),
+            "raises": "N/A",
+            "edge_cases": "N/A",
+            "side_effects": "N/A",
+            "examples": "N/A",
+            "see_also": "N/A",
+        },
+        ensure_ascii=False,
+    )
 
 
 def _parse_params_from_signature(signature: str) -> list[dict[str, str]]:

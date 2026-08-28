@@ -1,5 +1,5 @@
 AnDocGen run summary
-Timestamp: 2026-06-21T15:59:29.453013
+Timestamp: 2026-08-29T00:47:37.805815
 Processed files: 1
 Skipped files: 0
 Parse errors: 0
@@ -7,7 +7,7 @@ Generation errors: 0
 Validation warnings: 0
 Validation errors: 0
 Output files: 2
-Elapsed seconds: 44.98
+Elapsed seconds: 40.93
 
 Log files:
   trace: examples/mini_calculator/generated_docs/.andocgen/logs/trace.log

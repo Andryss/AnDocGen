@@ -18,6 +18,7 @@ class StaticCallGraphBuilder:
     def build(self, project: ProjectModel) -> CallGraph:
         graph = CallGraph()
         module_index = _build_module_index(project)
+        entity_index = _build_entity_index(project)
         import_maps = {m.path: _build_import_map(m, module_index) for m in project.modules}
 
         for module in project.modules:
@@ -40,7 +41,7 @@ class StaticCallGraphBuilder:
             for fn in _iter_functions(module):
                 caller_id = _function_node_id(module.path, fn)
                 for call in fn.calls:
-                    callee_id = _resolve_call(call, module.path, import_map, module_index)
+                    callee_id = _resolve_call(call, module.path, fn, import_map, entity_index)
                     graph.edges.append(
                         CallGraphEdge(
                             caller_id=caller_id,
@@ -108,6 +109,17 @@ def _function_node_id(module_path: str, fn: FunctionModel) -> str:
     return make_entity_id(module_path, "method" if fn.is_method else "function", fn.qualified_name())
 
 
+def _build_entity_index(project: ProjectModel) -> set[str]:
+    ids: set[str] = set()
+    for module in project.modules:
+        for fn in module.functions:
+            ids.add(make_entity_id(module.path, "function", fn.name))
+        for cls in module.classes:
+            for method in cls.methods:
+                ids.add(make_entity_id(module.path, "method", method.qualified_name()))
+    return ids
+
+
 def _build_module_index(project: ProjectModel) -> dict[str, str]:
     index: dict[str, str] = {}
     for module in project.modules:
@@ -159,29 +171,38 @@ def _build_import_map(module: ModuleModel, module_index: dict[str, str]) -> dict
 def _resolve_call(
     call: str,
     module_path: str,
+    caller: FunctionModel,
     import_map: dict[str, str],
-    module_index: dict[str, str],
+    entity_index: set[str],
 ) -> str | None:
     if "." in call:
         parts = call.split(".")
         base = parts[0]
         attr = parts[-1]
+        if base in ("self", "cls") and caller.owner_class:
+            return _find_entity_in_module(
+                module_path,
+                f"{caller.owner_class}.{attr}",
+                entity_index,
+            )
         if base in import_map:
             target_module = import_map[base]
-            return _find_entity_in_module(target_module, attr, module_index)
+            return _find_entity_in_module(target_module, attr, entity_index)
         if len(parts) == 2:
-            return _find_entity_in_module(module_path, call, module_index)
+            return _find_entity_in_module(module_path, call, entity_index)
         return None
 
     if call in import_map:
         target_module = import_map[call]
-        return _find_entity_in_module(target_module, call, module_index)
+        return _find_entity_in_module(target_module, call, entity_index)
 
-    return _find_entity_in_module(module_path, call, module_index)
+    return _find_entity_in_module(module_path, call, entity_index)
 
 
-def _find_entity_in_module(module_path: str, name: str, module_index: dict[str, str]) -> str | None:
+def _find_entity_in_module(module_path: str, name: str, entity_index: set[str]) -> str | None:
     if "." in name:
         class_name, method_name = name.rsplit(".", 1)
-        return make_entity_id(module_path, "method", f"{class_name}.{method_name}")
-    return make_entity_id(module_path, "function", name)
+        candidate = make_entity_id(module_path, "method", f"{class_name}.{method_name}")
+        return candidate if candidate in entity_index else None
+    candidate = make_entity_id(module_path, "function", name)
+    return candidate if candidate in entity_index else None

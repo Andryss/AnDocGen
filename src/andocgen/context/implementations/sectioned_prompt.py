@@ -15,61 +15,39 @@ _FUNCTION_SECTIONS = (
 _CLASS_SECTIONS = ("Summary",)
 _MODULE_SECTIONS = ("Summary", "Exports")
 
-_FUNCTION_EXAMPLE = """## Summary
+_FUNCTION_EXAMPLE = """{
+  "summary": "Складывает два числа и возвращает результат.",
+  "parameters": [
+    {"name": "a", "type": "float", "description": "первое слагаемое"},
+    {"name": "b", "type": "float", "description": "второе слагаемое"}
+  ],
+  "returns": {"type": "float", "description": "сумма a и b"},
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}"""
 
-Складывает два числа и возвращает результат.
+_CLASS_EXAMPLE = """{
+  "summary": "Класс для базовых арифметических операций с числами с плавающей точкой."
+}"""
 
-## Parameters
-
-- `a` (`float`) — первое слагаемое
-- `b` (`float`) — второе слагаемое
-
-## Returns
-
-- `float` — sum a and b
-
-## Raises
-
-N/A
-
-## Edge cases
-
-N/A
-
-## Side effects
-
-N/A
-
-## Examples
-
-N/A
-
-## See also
-
-N/A"""
-
-_CLASS_EXAMPLE = """## Summary
-
-Класс для базовых арифметических операций с числами с плавающей точкой."""
-
-_MODULE_EXAMPLE = """## Summary
-
-Модуль калькулятора с базовыми операциями.
-
-## Exports
-
-N/A"""
+_MODULE_EXAMPLE = """{
+  "summary": "Модуль калькулятора с базовыми операциями.",
+  "exports": []
+}"""
 
 
 class SectionedPromptBuilder:
     def build_system_message(self, output_language: str, entity_type: str) -> str:
         lang_label = "Russian" if output_language == "ru" else output_language
         sections, example = self._sections_and_example(entity_type)
-        section_headers = "\n".join(f"## {s}" for s in sections)
+        schema_fields = "\n".join(f"- {s}" for s in sections)
         class_note = ""
         if entity_type == "class":
             class_note = (
-                "\nFor classes return ONLY ## Summary. "
+                "\nFor classes return ONLY the JSON fields shown for classes. "
                 "Fields, Inheritance, and Methods overview are added automatically from AST."
             )
 
@@ -80,27 +58,19 @@ Document the entity from the user message. Write all section body text in {lang_
 </task>
 
 <output_contract>
-Return Markdown with EXACTLY these section headers in this order — no more, no less:
+Return a JSON object with EXACTLY these top-level fields:
 
-{section_headers}
+{schema_fields}
 {class_note}
 
 Rules (mandatory):
-1. Output ONLY the sections above. No preamble, no postscript, no commentary outside sections.
-2. Do not wrap the response in code fences.
-3. All section body text MUST be in {lang_label}. Do not mix languages.
-4. If a section is not relevant, write exactly N/A as the entire section body on a single line.
-   Do NOT add explanations, bullet points, markdown, or any other text to N/A sections.
-   Wrong: "N/A — no exceptions raised". Wrong: "**N/A**". Correct: N/A
-5. Parameters section: one line per parameter, exact format:
-   - `name` (`type`) — description
-   If there are no parameters, write N/A.
-   For variadic signatures use `*args` and/or `**kwargs` as parameter names.
-6. Returns section: exactly one line in format:
-   - `type` — description
-   If there is no return value, write N/A.
-7. Fields and Exports sections use the same list format as Parameters when applicable.
-   For Exports, describe only names listed in `__all__` when provided; descriptions in {lang_label}.
+1. Output ONLY valid JSON. No preamble, no postscript, no commentary outside JSON.
+2. Do not wrap the response in code fences. Do not return Markdown headings.
+3. All string values MUST be in {lang_label}. Do not mix languages.
+4. If a string field is not relevant, write exactly "N/A".
+5. Parameters must be an array of objects with string fields: name, type, description.
+6. Returns must be null or an object with string fields: type, description.
+7. Exports must be an array of objects with string fields: name, type, description.
 8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
 9. Examples must use valid calls matching the signature (required arguments must be present).
 10. Related entities in the user message are brief references only; do not repeat their full documentation.

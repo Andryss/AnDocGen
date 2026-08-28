@@ -43,3 +43,562 @@
 2026-06-21 15:59:29,452 DEBUG   output: examples/mini_calculator/generated_docs/calculator.py.md
 2026-06-21 15:59:29,452 DEBUG   output: examples/mini_calculator/generated_docs/README.md
 2026-06-21 15:59:29,452 INFO Pipeline finished in 44.98s
+2026-08-29 00:40:44,899 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_calculator provider=mock dry_run=False
+2026-08-29 00:40:44,900 INFO Output directory: generated_docs
+2026-08-29 00:40:44,900 INFO [scan] start
+2026-08-29 00:40:44,901 INFO [scan] done (0ms)
+2026-08-29 00:40:44,901 INFO Found 1 files
+2026-08-29 00:40:44,901 INFO [parse] start 1 files
+2026-08-29 00:40:44,901 DEBUG Parsing: calculator.py
+2026-08-29 00:40:44,902 DEBUG   parsed calculator.py: 2 functions, 1 classes
+2026-08-29 00:40:44,902 INFO [parse] done 1 files (1ms)
+2026-08-29 00:40:44,902 INFO [call_graph] start
+2026-08-29 00:40:44,902 INFO [call_graph] done (0ms)
+2026-08-29 00:40:44,902 DEBUG Call graph: 5 nodes, 0 edges
+2026-08-29 00:40:44,903 INFO Generating documentation for 7 entities
+2026-08-29 00:40:44,903 INFO [generate] start 7 entities
+2026-08-29 00:40:44,903 INFO Generating method:Calculator.__init__ (calculator.py::Calculator.__init__)
+2026-08-29 00:40:44,903 INFO LLM request entity=calculator.py::Calculator.__init__ system_chars=1682 user_chars=222
+2026-08-29 00:40:44,903 DEBUG LLM request entity=calculator.py::Calculator.__init__
+--- system prompt ---
+You are a technical documentation generator.
+
+<task>
+Document the entity from the user message. Write all section body text in Russian.
+</task>
+
+<output_contract>
+Return a JSON object with EXACTLY these top-level fields:
+
+- Summary
+- Parameters
+- Returns
+- Raises
+- Edge cases
+- Side effects
+- Examples
+- See also
+
+
+Rules (mandatory):
+1. Output ONLY valid JSON. No preamble, no postscript, no commentary outside JSON.
+2. Do not wrap the response in code fences. Do not return Markdown headings.
+3. All string values MUST be in Russian. Do not mix languages.
+4. If a string field is not relevant, write exactly "N/A".
+5. Parameters must be an array of objects with string fields: name, type, description.
+6. Returns must be null or an object with string fields: type, description.
+7. Exports must be an array of objects with string fields: name, type, description.
+8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
+9. Examples must use valid calls matching the signature (required arguments must be present).
+10. Related entities in the user message are brief references only; do not repeat their full documentation.
+</output_contract>
+
+<example>
+{
+  "summary": "Складывает два числа и возвращает результат.",
+  "parameters": [
+    {"name": "a", "type": "float", "description": "первое слагаемое"},
+    {"name": "b", "type": "float", "description": "второе слагаемое"}
+  ],
+  "returns": {"type": "float", "description": "сумма a и b"},
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}
+</example>
+
+Your response must follow the example structure exactly and nothing else.
+--- user prompt ---
+## Entity
+
+Type: method
+Name: Calculator.__init__
+Module: calculator.py
+Signature: def __init__(precision: int = 2) -> None
+Cyclomatic complexity: 1
+
+## Source
+
+Source body:
+```python
+        self.precision = precision
+```
+2026-08-29 00:40:44,903 INFO LLM response entity=calculator.py::Calculator.__init__ status=parsed chars=299 duration_ms=0
+2026-08-29 00:40:44,903 DEBUG LLM response (parsed, 0ms) entity=calculator.py::Calculator.__init__
+--- response ---
+{"summary": "Выполняет операцию `__init__`.", "parameters": [{"name": "precision", "type": "int", "description": "параметр функции"}], "returns": {"type": "None", "description": "результат операции"}, "raises": "N/A", "edge_cases": "N/A", "side_effects": "N/A", "examples": "N/A", "see_also": "N/A"}
+2026-08-29 00:40:44,904 INFO Generating method:Calculator.format_result (calculator.py::Calculator.format_result)
+2026-08-29 00:40:44,904 INFO LLM request entity=calculator.py::Calculator.format_result system_chars=1682 user_chars=235
+2026-08-29 00:40:44,904 DEBUG LLM request entity=calculator.py::Calculator.format_result
+--- system prompt ---
+You are a technical documentation generator.
+
+<task>
+Document the entity from the user message. Write all section body text in Russian.
+</task>
+
+<output_contract>
+Return a JSON object with EXACTLY these top-level fields:
+
+- Summary
+- Parameters
+- Returns
+- Raises
+- Edge cases
+- Side effects
+- Examples
+- See also
+
+
+Rules (mandatory):
+1. Output ONLY valid JSON. No preamble, no postscript, no commentary outside JSON.
+2. Do not wrap the response in code fences. Do not return Markdown headings.
+3. All string values MUST be in Russian. Do not mix languages.
+4. If a string field is not relevant, write exactly "N/A".
+5. Parameters must be an array of objects with string fields: name, type, description.
+6. Returns must be null or an object with string fields: type, description.
+7. Exports must be an array of objects with string fields: name, type, description.
+8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
+9. Examples must use valid calls matching the signature (required arguments must be present).
+10. Related entities in the user message are brief references only; do not repeat their full documentation.
+</output_contract>
+
+<example>
+{
+  "summary": "Складывает два числа и возвращает результат.",
+  "parameters": [
+    {"name": "a", "type": "float", "description": "первое слагаемое"},
+    {"name": "b", "type": "float", "description": "второе слагаемое"}
+  ],
+  "returns": {"type": "float", "description": "сумма a и b"},
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}
+</example>
+
+Your response must follow the example structure exactly and nothing else.
+--- user prompt ---
+## Entity
+
+Type: method
+Name: Calculator.format_result
+Module: calculator.py
+Signature: def format_result(value: float) -> str
+Cyclomatic complexity: 1
+
+## Source
+
+Source body:
+```python
+        return f"{value:.{self.precision}f}"
+```
+2026-08-29 00:40:44,904 INFO LLM response entity=calculator.py::Calculator.format_result status=parsed chars=301 duration_ms=0
+2026-08-29 00:40:44,904 DEBUG LLM response (parsed, 0ms) entity=calculator.py::Calculator.format_result
+--- response ---
+{"summary": "Выполняет операцию `format_result`.", "parameters": [{"name": "value", "type": "float", "description": "параметр функции"}], "returns": {"type": "str", "description": "результат операции"}, "raises": "N/A", "edge_cases": "N/A", "side_effects": "N/A", "examples": "N/A", "see_also": "N/A"}
+2026-08-29 00:40:44,904 INFO Generating method:Calculator.multiply (calculator.py::Calculator.multiply)
+2026-08-29 00:40:44,904 INFO LLM request entity=calculator.py::Calculator.multiply system_chars=1682 user_chars=203
+2026-08-29 00:40:44,904 DEBUG LLM request entity=calculator.py::Calculator.multiply
+--- system prompt ---
+You are a technical documentation generator.
+
+<task>
+Document the entity from the user message. Write all section body text in Russian.
+</task>
+
+<output_contract>
+Return a JSON object with EXACTLY these top-level fields:
+
+- Summary
+- Parameters
+- Returns
+- Raises
+- Edge cases
+- Side effects
+- Examples
+- See also
+
+
+Rules (mandatory):
+1. Output ONLY valid JSON. No preamble, no postscript, no commentary outside JSON.
+2. Do not wrap the response in code fences. Do not return Markdown headings.
+3. All string values MUST be in Russian. Do not mix languages.
+4. If a string field is not relevant, write exactly "N/A".
+5. Parameters must be an array of objects with string fields: name, type, description.
+6. Returns must be null or an object with string fields: type, description.
+7. Exports must be an array of objects with string fields: name, type, description.
+8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
+9. Examples must use valid calls matching the signature (required arguments must be present).
+10. Related entities in the user message are brief references only; do not repeat their full documentation.
+</output_contract>
+
+<example>
+{
+  "summary": "Складывает два числа и возвращает результат.",
+  "parameters": [
+    {"name": "a", "type": "float", "description": "первое слагаемое"},
+    {"name": "b", "type": "float", "description": "второе слагаемое"}
+  ],
+  "returns": {"type": "float", "description": "сумма a и b"},
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}
+</example>
+
+Your response must follow the example structure exactly and nothing else.
+--- user prompt ---
+## Entity
+
+Type: method
+Name: Calculator.multiply
+Module: calculator.py
+Signature: def multiply(x: int, y: int) -> int
+Cyclomatic complexity: 1
+
+## Source
+
+Source body:
+```python
+        return x * y
+```
+2026-08-29 00:40:44,905 INFO LLM response entity=calculator.py::Calculator.multiply status=parsed chars=355 duration_ms=0
+2026-08-29 00:40:44,905 DEBUG LLM response (parsed, 0ms) entity=calculator.py::Calculator.multiply
+--- response ---
+{"summary": "Выполняет операцию `multiply`.", "parameters": [{"name": "x", "type": "int", "description": "параметр функции"}, {"name": "y", "type": "int", "description": "параметр функции"}], "returns": {"type": "int", "description": "результат операции"}, "raises": "N/A", "edge_cases": "N/A", "side_effects": "N/A", "examples": "N/A", "see_also": "N/A"}
+2026-08-29 00:40:44,905 INFO Generating function:add (calculator.py::add)
+2026-08-29 00:40:44,905 INFO LLM request entity=calculator.py::add system_chars=1682 user_chars=241
+2026-08-29 00:40:44,905 DEBUG LLM request entity=calculator.py::add
+--- system prompt ---
+You are a technical documentation generator.
+
+<task>
+Document the entity from the user message. Write all section body text in Russian.
+</task>
+
+<output_contract>
+Return a JSON object with EXACTLY these top-level fields:
+
+- Summary
+- Parameters
+- Returns
+- Raises
+- Edge cases
+- Side effects
+- Examples
+- See also
+
+
+Rules (mandatory):
+1. Output ONLY valid JSON. No preamble, no postscript, no commentary outside JSON.
+2. Do not wrap the response in code fences. Do not return Markdown headings.
+3. All string values MUST be in Russian. Do not mix languages.
+4. If a string field is not relevant, write exactly "N/A".
+5. Parameters must be an array of objects with string fields: name, type, description.
+6. Returns must be null or an object with string fields: type, description.
+7. Exports must be an array of objects with string fields: name, type, description.
+8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
+9. Examples must use valid calls matching the signature (required arguments must be present).
+10. Related entities in the user message are brief references only; do not repeat their full documentation.
+</output_contract>
+
+<example>
+{
+  "summary": "Складывает два числа и возвращает результат.",
+  "parameters": [
+    {"name": "a", "type": "float", "description": "первое слагаемое"},
+    {"name": "b", "type": "float", "description": "второе слагаемое"}
+  ],
+  "returns": {"type": "float", "description": "сумма a и b"},
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}
+</example>
+
+Your response must follow the example structure exactly and nothing else.
+--- user prompt ---
+## Entity
+
+Type: function
+Name: add
+Module: calculator.py
+Signature: def add(a: float, b: float) -> float
+Cyclomatic complexity: 1
+
+## Source
+
+Docstring:
+Add two numbers.
+Source body:
+```python
+    """Add two numbers."""
+    return a + b
+```
+2026-08-29 00:40:44,905 INFO LLM response entity=calculator.py::add status=parsed chars=356 duration_ms=0
+2026-08-29 00:40:44,905 DEBUG LLM response (parsed, 0ms) entity=calculator.py::add
+--- response ---
+{"summary": "Выполняет операцию `add`.", "parameters": [{"name": "a", "type": "float", "description": "параметр функции"}, {"name": "b", "type": "float", "description": "параметр функции"}], "returns": {"type": "float", "description": "результат операции"}, "raises": "N/A", "edge_cases": "N/A", "side_effects": "N/A", "examples": "N/A", "see_also": "N/A"}
+2026-08-29 00:40:44,905 INFO Generating function:divide (calculator.py::divide)
+2026-08-29 00:40:44,905 INFO LLM request entity=calculator.py::divide system_chars=1682 user_chars=234
+2026-08-29 00:40:44,906 DEBUG LLM request entity=calculator.py::divide
+--- system prompt ---
+You are a technical documentation generator.
+
+<task>
+Document the entity from the user message. Write all section body text in Russian.
+</task>
+
+<output_contract>
+Return a JSON object with EXACTLY these top-level fields:
+
+- Summary
+- Parameters
+- Returns
+- Raises
+- Edge cases
+- Side effects
+- Examples
+- See also
+
+
+Rules (mandatory):
+1. Output ONLY valid JSON. No preamble, no postscript, no commentary outside JSON.
+2. Do not wrap the response in code fences. Do not return Markdown headings.
+3. All string values MUST be in Russian. Do not mix languages.
+4. If a string field is not relevant, write exactly "N/A".
+5. Parameters must be an array of objects with string fields: name, type, description.
+6. Returns must be null or an object with string fields: type, description.
+7. Exports must be an array of objects with string fields: name, type, description.
+8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
+9. Examples must use valid calls matching the signature (required arguments must be present).
+10. Related entities in the user message are brief references only; do not repeat their full documentation.
+</output_contract>
+
+<example>
+{
+  "summary": "Складывает два числа и возвращает результат.",
+  "parameters": [
+    {"name": "a", "type": "float", "description": "первое слагаемое"},
+    {"name": "b", "type": "float", "description": "второе слагаемое"}
+  ],
+  "returns": {"type": "float", "description": "сумма a и b"},
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}
+</example>
+
+Your response must follow the example structure exactly and nothing else.
+--- user prompt ---
+## Entity
+
+Type: function
+Name: divide
+Module: calculator.py
+Signature: def divide(a: float, b: float) -> float | None
+Cyclomatic complexity: 2
+
+## Source
+
+Source body:
+```python
+    if b == 0:
+        return None
+    return a / b
+```
+2026-08-29 00:40:44,906 INFO LLM response entity=calculator.py::divide status=parsed chars=366 duration_ms=0
+2026-08-29 00:40:44,906 DEBUG LLM response (parsed, 0ms) entity=calculator.py::divide
+--- response ---
+{"summary": "Выполняет операцию `divide`.", "parameters": [{"name": "a", "type": "float", "description": "параметр функции"}, {"name": "b", "type": "float", "description": "параметр функции"}], "returns": {"type": "float | None", "description": "результат операции"}, "raises": "N/A", "edge_cases": "N/A", "side_effects": "N/A", "examples": "N/A", "see_also": "N/A"}
+2026-08-29 00:40:44,906 INFO Generating class:Calculator (calculator.py::Calculator)
+2026-08-29 00:40:44,906 INFO LLM request entity=calculator.py::Calculator system_chars=1427 user_chars=414
+2026-08-29 00:40:44,906 DEBUG LLM request entity=calculator.py::Calculator
+--- system prompt ---
+You are a technical documentation generator.
+
+<task>
+Document the entity from the user message. Write all section body text in Russian.
+</task>
+
+<output_contract>
+Return a JSON object with EXACTLY these top-level fields:
+
+- Summary
+
+For classes return ONLY the JSON fields shown for classes. Fields, Inheritance, and Methods overview are added automatically from AST.
+
+Rules (mandatory):
+1. Output ONLY valid JSON. No preamble, no postscript, no commentary outside JSON.
+2. Do not wrap the response in code fences. Do not return Markdown headings.
+3. All string values MUST be in Russian. Do not mix languages.
+4. If a string field is not relevant, write exactly "N/A".
+5. Parameters must be an array of objects with string fields: name, type, description.
+6. Returns must be null or an object with string fields: type, description.
+7. Exports must be an array of objects with string fields: name, type, description.
+8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
+9. Examples must use valid calls matching the signature (required arguments must be present).
+10. Related entities in the user message are brief references only; do not repeat their full documentation.
+</output_contract>
+
+<example>
+{
+  "summary": "Класс для базовых арифметических операций с числами с плавающей точкой."
+}
+</example>
+
+Your response must follow the example structure exactly and nothing else.
+--- user prompt ---
+## Entity
+
+Type: class
+Name: Calculator
+Module: calculator.py
+Signature: class Calculator
+
+## Source
+
+Docstring:
+Performs basic arithmetic operations.
+
+## Class members (documented)
+
+- `def __init__(precision: int = 2) -> None` — Выполняет операцию `__init__`.
+- `def multiply(x: int, y: int) -> int` — Выполняет операцию `multiply`.
+- `def format_result(value: float) -> str` — Выполняет операцию `format_result`.
+2026-08-29 00:40:44,906 INFO LLM response entity=calculator.py::Calculator status=parsed chars=34 duration_ms=0
+2026-08-29 00:40:44,906 DEBUG LLM response (parsed, 0ms) entity=calculator.py::Calculator
+--- response ---
+{"summary": "Класс `Calculator`."}
+2026-08-29 00:40:44,906 INFO Generating module:calculator.py (calculator.py::module)
+2026-08-29 00:40:44,906 INFO LLM request entity=calculator.py::module system_chars=1290 user_chars=410
+2026-08-29 00:40:44,907 DEBUG LLM request entity=calculator.py::module
+--- system prompt ---
+You are a technical documentation generator.
+
+<task>
+Document the entity from the user message. Write all section body text in Russian.
+</task>
+
+<output_contract>
+Return a JSON object with EXACTLY these top-level fields:
+
+- Summary
+- Exports
+
+
+Rules (mandatory):
+1. Output ONLY valid JSON. No preamble, no postscript, no commentary outside JSON.
+2. Do not wrap the response in code fences. Do not return Markdown headings.
+3. All string values MUST be in Russian. Do not mix languages.
+4. If a string field is not relevant, write exactly "N/A".
+5. Parameters must be an array of objects with string fields: name, type, description.
+6. Returns must be null or an object with string fields: type, description.
+7. Exports must be an array of objects with string fields: name, type, description.
+8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
+9. Examples must use valid calls matching the signature (required arguments must be present).
+10. Related entities in the user message are brief references only; do not repeat their full documentation.
+</output_contract>
+
+<example>
+{
+  "summary": "Модуль калькулятора с базовыми операциями.",
+  "exports": []
+}
+</example>
+
+Your response must follow the example structure exactly and nothing else.
+--- user prompt ---
+## Entity
+
+Type: module
+Name: calculator.py
+Module: calculator.py
+
+## Source
+
+Docstring:
+Simple calculator module.
+Source body:
+```python
+Top-level names: add, divide, Calculator
+```
+
+## Exported / top-level (brief)
+
+- `def add(a: float, b: float) -> float` — Выполняет операцию `add`.
+- `def divide(a: float, b: float) -> float | None` — Выполняет операцию `divide`.
+- `class Calculator` — Класс `Calculator`.
+2026-08-29 00:40:44,907 INFO LLM response entity=calculator.py::module status=parsed chars=53 duration_ms=0
+2026-08-29 00:40:44,907 DEBUG LLM response (parsed, 0ms) entity=calculator.py::module
+--- response ---
+{"summary": "Модуль `calculator.py`.", "exports": []}
+2026-08-29 00:40:44,907 INFO [generate] done 7 entities (4ms)
+2026-08-29 00:40:44,907 INFO [validate] start
+2026-08-29 00:40:44,907 INFO [validate] done (0ms)
+2026-08-29 00:40:44,907 INFO Validation: 0 warnings, 0 errors
+2026-08-29 00:40:44,907 INFO [write] start
+2026-08-29 00:40:44,908 INFO [write] done (1ms)
+2026-08-29 00:40:44,908 INFO Wrote 2 output files
+2026-08-29 00:40:44,909 DEBUG   output: generated_docs/calculator.py.md
+2026-08-29 00:40:44,909 DEBUG   output: generated_docs/README.md
+2026-08-29 00:40:44,909 INFO Pipeline finished in 0.01s
+2026-08-29 00:46:56,874 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_calculator provider=ollama dry_run=False
+2026-08-29 00:46:56,874 INFO Output directory: examples/mini_calculator/generated_docs
+2026-08-29 00:46:56,874 INFO [scan] start
+2026-08-29 00:46:56,874 INFO [scan] done (1ms)
+2026-08-29 00:46:56,874 INFO Found 1 files
+2026-08-29 00:46:56,874 INFO [parse] start 1 files
+2026-08-29 00:46:56,874 DEBUG Parsing: calculator.py
+2026-08-29 00:46:56,876 DEBUG   parsed calculator.py: 2 functions, 1 classes
+2026-08-29 00:46:56,876 INFO [parse] done 1 files (1ms)
+2026-08-29 00:46:56,876 INFO [call_graph] start
+2026-08-29 00:46:56,876 INFO [call_graph] done (0ms)
+2026-08-29 00:46:56,876 DEBUG Call graph: 5 nodes, 0 edges
+2026-08-29 00:46:56,876 INFO Generating documentation for 7 entities
+2026-08-29 00:46:56,876 INFO [generate] start 7 entities
+2026-08-29 00:46:56,876 INFO Generating method:Calculator.__init__ (calculator.py::Calculator.__init__)
+2026-08-29 00:46:56,876 INFO LLM request entity=calculator.py::Calculator.__init__ system_chars=1682 user_chars=222
+2026-08-29 00:47:02,258 INFO LLM request entity=calculator.py::Calculator.__init__ system_chars=1682 user_chars=376
+2026-08-29 00:47:05,695 INFO LLM response entity=calculator.py::Calculator.__init__ status=parsed chars=353 duration_ms=8819
+2026-08-29 00:47:05,695 INFO Generating method:Calculator.format_result (calculator.py::Calculator.format_result)
+2026-08-29 00:47:05,695 INFO LLM request entity=calculator.py::Calculator.format_result system_chars=1682 user_chars=235
+2026-08-29 00:47:09,447 INFO LLM response entity=calculator.py::Calculator.format_result status=parsed chars=398 duration_ms=3752
+2026-08-29 00:47:09,447 INFO Generating method:Calculator.multiply (calculator.py::Calculator.multiply)
+2026-08-29 00:47:09,447 INFO LLM request entity=calculator.py::Calculator.multiply system_chars=1682 user_chars=203
+2026-08-29 00:47:15,544 INFO LLM request entity=calculator.py::Calculator.multiply system_chars=1682 user_chars=357
+2026-08-29 00:47:19,568 INFO LLM response entity=calculator.py::Calculator.multiply status=parsed chars=403 duration_ms=10121
+2026-08-29 00:47:19,568 INFO Generating function:add (calculator.py::add)
+2026-08-29 00:47:19,568 INFO LLM request entity=calculator.py::add system_chars=1682 user_chars=241
+2026-08-29 00:47:23,670 INFO LLM response entity=calculator.py::add status=parsed chars=398 duration_ms=4102
+2026-08-29 00:47:23,670 INFO Generating function:divide (calculator.py::divide)
+2026-08-29 00:47:23,671 INFO LLM request entity=calculator.py::divide system_chars=1682 user_chars=234
+2026-08-29 00:47:28,811 INFO LLM request entity=calculator.py::divide system_chars=1682 user_chars=388
+2026-08-29 00:47:33,273 INFO LLM response entity=calculator.py::divide status=parsed chars=590 duration_ms=9602
+2026-08-29 00:47:33,273 INFO Generating class:Calculator (calculator.py::Calculator)
+2026-08-29 00:47:33,273 INFO LLM request entity=calculator.py::Calculator system_chars=1427 user_chars=488
+2026-08-29 00:47:34,154 INFO LLM response entity=calculator.py::Calculator status=parsed chars=61 duration_ms=881
+2026-08-29 00:47:34,154 INFO Generating module:calculator.py (calculator.py::module)
+2026-08-29 00:47:34,154 INFO LLM request entity=calculator.py::module system_chars=1290 user_chars=476
+2026-08-29 00:47:37,803 INFO LLM response entity=calculator.py::module status=parsed chars=533 duration_ms=3649
+2026-08-29 00:47:37,803 INFO [generate] done 7 entities (40927ms)
+2026-08-29 00:47:37,803 INFO [validate] start
+2026-08-29 00:47:37,803 INFO [validate] done (0ms)
+2026-08-29 00:47:37,803 INFO Validation: 0 warnings, 0 errors
+2026-08-29 00:47:37,803 INFO [write] start
+2026-08-29 00:47:37,804 INFO [write] done (1ms)
+2026-08-29 00:47:37,805 INFO Wrote 2 output files
+2026-08-29 00:47:37,805 DEBUG   output: examples/mini_calculator/generated_docs/calculator.py.md
+2026-08-29 00:47:37,805 DEBUG   output: examples/mini_calculator/generated_docs/README.md
+2026-08-29 00:47:37,805 INFO Pipeline finished in 40.93s

@@ -1,5 +1,22 @@
 {
   "parse_errors": [],
   "generation_errors": [],
-  "validation_issues": []
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "handlers.py",
+      "entity_type": "class",
+      "entity_name": "ApiResponse"
+    },
+    {
+      "level": "warning",
+      "category": "generation",
+      "message": "fallback_generated",
+      "module_path": "handlers.py",
+      "entity_type": "method",
+      "entity_name": "UserHandler.create_user"
+    }
+  ]
 }

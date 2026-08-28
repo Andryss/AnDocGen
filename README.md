@@ -9,16 +9,25 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
 
-cp config.example.yaml config.yaml
+andocgen init
 
 # Генерация документации
-andocgen ./examples/mini_calculator --config config.example.yaml
+andocgen generate ./examples/mini_calculator --config config.yaml
 
 # Multi-module пример (mock ~1 с, Ollama ~3–5 мин)
-andocgen ./examples/mini_library --config config.example.yaml
+andocgen generate ./examples/mini_library --config config.yaml
 ```
 
 Результат сохраняется в `generated_docs/` (Markdown, README, logs, cache).
+
+Для проверки без записи файлов используйте:
+
+```bash
+andocgen inspect ./examples/mini_calculator --config config.yaml
+andocgen generate ./examples/mini_calculator --config config.yaml --dry-run
+```
+
+Если нужно сохранить отчёты dry-run, добавьте `--write-report`.
 
 ## Структура программной реализации
 
@@ -62,7 +71,7 @@ src/andocgen/
 | `context.implementation` / `context.prompt` | context + prompt builders |
 | `generation.implementation` / `generation.provider` | generator + LLM |
 | `generation.workers` | Параллельные LLM-запросы по волнам call graph (default: 1) |
-| `generation.max_retries` | Повтор при ошибке парсинга секций |
+| `generation.max_retries` | Повтор при ошибке разбора JSON-ответа |
 | `reporting.quiet` | Без прогресса и сводки в консоли |
 | `validation.implementation` | validator: `structured` |
 | `output.implementation` | writer + formatter: `markdown` |
@@ -77,10 +86,13 @@ src/andocgen/
 ## Примеры
 
 ```bash
-andocgen ./examples/mini_calculator -c config.example.yaml
-andocgen ./examples/mini_library -c config.example.yaml
-andocgen ./examples/mini_api -c config.example.yaml
+andocgen config validate -c config.example.yaml
+andocgen inspect ./examples/mini_calculator -c config.example.yaml
+andocgen generate ./examples/mini_calculator -c config.example.yaml
+andocgen eval ./examples/mini_calculator -c config.example.yaml --output eval_reports
+andocgen generate ./examples/mini_library -c config.example.yaml
 pytest
+ruff check .
 ```
 
 ## Документация проекта

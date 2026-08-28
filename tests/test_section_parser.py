@@ -18,38 +18,20 @@ def _ctx(entity_type: str = "function") -> EntityContext:
 
 
 def test_parse_valid_function_response() -> None:
-    raw = """## Summary
-
-Adds numbers.
-
-## Parameters
-
-- `a` (`float`) — first operand
-- `b` (`float`) — second operand
-
-## Returns
-
-- `float` — sum
-
-## Raises
-
-N/A
-
-## Edge cases
-
-N/A
-
-## Side effects
-
-N/A
-
-## Examples
-
-N/A
-
-## See also
-
-N/A
+    raw = """
+{
+  "summary": "Adds numbers.",
+  "parameters": [
+    {"name": "a", "type": "float", "description": "first operand"},
+    {"name": "b", "type": "float", "description": "second operand"}
+  ],
+  "returns": {"type": "float", "description": "sum"},
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}
 """
     block = parse_sections(raw, _ctx())
     assert block.summary == "Adds numbers."
@@ -60,85 +42,49 @@ N/A
 
 
 def test_parse_missing_section_raises() -> None:
-    raw = "## Summary\n\nOnly summary.\n"
+    raw = '{"summary": "Only summary."}'
     with pytest.raises(SectionParseError):
         parse_sections(raw, _ctx())
 
 
-def test_parse_ollama_style_parameters() -> None:
-    raw = """## Summary
-
-Adds numbers.
-
-## Parameters
-
-- **a**: (float) first operand
-- **b**: (float) second operand
-
-## Returns
-
-- **float**: sum of operands
-
-## Raises
-
-N/A
-
-## Edge cases
-
-N/A
-
-## Side effects
-
-N/A
-
-## Examples
-
-N/A
-
-## See also
-
-N/A
+def test_parse_json_parameters_with_optional_metadata() -> None:
+    raw = """
+{
+  "summary": "Adds numbers.",
+  "parameters": [
+    {"name": "a", "type": "float", "description": "first operand", "optional": false},
+    {"name": "b", "type": "float", "description": "second operand", "optional": true, "default": "0"}
+  ],
+  "returns": {"type": "float", "description": "sum of operands"},
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}
 """
     block = parse_sections(raw, _ctx())
     assert len(block.parameters or []) == 2
     assert block.parameters[0].name == "a"
     assert block.parameters[0].type == "float"
+    assert block.parameters[1].optional is True
+    assert block.parameters[1].default == "0"
     assert block.returns is not None
     assert block.returns.type == "float"
 
 
 def test_parse_na_with_extra_text_treated_as_empty() -> None:
-    raw = """## Summary
-
-Adds numbers.
-
-## Parameters
-
-- `a` (`float`) — first operand
-
-## Returns
-
-- `float` — sum
-
-## Raises
-
-N/A — no exceptions
-
-## Edge cases
-
-N/A
-
-## Side effects
-
-N/A
-
-## Examples
-
-N/A
-
-## See also
-
-N/A
+    raw = """
+{
+  "summary": "Adds numbers.",
+  "parameters": [{"name": "a", "type": "float", "description": "first operand"}],
+  "returns": {"type": "float", "description": "sum"},
+  "raises": "N/A — no exceptions",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}
 """
     block = parse_sections(raw, _ctx())
     assert block.raises == "N/A"
@@ -165,37 +111,17 @@ def test_enrich_parameters_from_context() -> None:
             returns="float",
         ),
     )
-    raw = """## Summary
-
-Adds numbers.
-
-## Parameters
-
-N/A
-
-## Returns
-
-N/A
-
-## Raises
-
-N/A
-
-## Edge cases
-
-N/A
-
-## Side effects
-
-N/A
-
-## Examples
-
-N/A
-
-## See also
-
-N/A
+    raw = """
+{
+  "summary": "Adds numbers.",
+  "parameters": [],
+  "returns": null,
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}
 """
     block = parse_sections(raw, ctx)
     BlockEnricher().enrich(block, ctx)
@@ -209,13 +135,13 @@ def test_module_exports_only_from_ast_all() -> None:
     from andocgen.generator.block_enricher import BlockEnricher
     from andocgen.models.entities import ModuleModel
 
-    raw = """## Summary
-
-Service module.
-
-## Exports
-
-- `OrderService` (`class`) — fake export from LLM
+    raw = """
+{
+  "summary": "Service module.",
+  "exports": [
+    {"name": "OrderService", "type": "class", "description": "fake export from LLM"}
+  ]
+}
 """
     ctx = EntityContext(
         entity_type="module",
@@ -241,15 +167,15 @@ def test_module_exports_merge_llm_descriptions() -> None:
     from andocgen.generator.block_enricher import BlockEnricher
     from andocgen.models.entities import ModuleModel
 
-    raw = """## Summary
-
-Public API.
-
-## Exports
-
-- `Item` (`class`) — модель позиции
-- `Order` (`class`) — модель заказа
-- `OrderService` (`class`) — fake, not in __all__
+    raw = """
+{
+  "summary": "Public API.",
+  "exports": [
+    {"name": "Item", "type": "class", "description": "модель позиции"},
+    {"name": "Order", "type": "class", "description": "модель заказа"},
+    {"name": "OrderService", "type": "class", "description": "fake, not in __all__"}
+  ]
+}
 """
     ctx = EntityContext(
         entity_type="module",

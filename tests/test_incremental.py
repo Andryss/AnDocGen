@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+import shutil
 from pathlib import Path
 
 from andocgen.config import load_config
 from andocgen.pipeline import run_pipeline
-from tests.conftest import FIXTURE_PROJECT_API, FIXTURES
+from tests.conftest import FIXTURE_PROJECT_API, FIXTURE_PROJECT_INCREMENTAL_CALLERS, FIXTURES
 
 MOCK_CONFIG = FIXTURES / "config.mock.yaml"
 
@@ -48,3 +49,23 @@ def test_incremental_regenerates_only_changed_module(tmp_path: Path) -> None:
         assert set(result.skipped_files) == {"__init__.py", "storage.py"}
     finally:
         handlers_path.write_text(original, encoding="utf-8")
+
+
+def test_incremental_regenerates_callers_of_changed_entities(tmp_path: Path) -> None:
+    project_dir = tmp_path / "project"
+    shutil.copytree(FIXTURE_PROJECT_INCREMENTAL_CALLERS / "v1", project_dir)
+    config = load_config(MOCK_CONFIG)
+    config.output.directory = str(tmp_path / "docs")
+    config.generation.incremental = True
+
+    first = run_pipeline(project_dir, config)
+    assert not first.generation_errors
+    assert set(first.processed_files) == {"handlers.py", "storage.py"}
+
+    shutil.copyfile(FIXTURE_PROJECT_INCREMENTAL_CALLERS / "v2" / "storage.py", project_dir / "storage.py")
+
+    second = run_pipeline(project_dir, config)
+
+    assert not second.generation_errors
+    assert set(second.processed_files) == {"handlers.py", "storage.py"}
+    assert second.skipped_files == []

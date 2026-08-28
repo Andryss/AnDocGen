@@ -46,6 +46,12 @@ show_missing = true
 [tool.ruff]
 line-length = 120
 target-version = "py311"
+exclude = [
+    "eval",
+    "examples/*/generated_docs*",
+    "generated_docs",
+    "htmlcov",
+]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]

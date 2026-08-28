@@ -11,6 +11,7 @@ from andocgen.generator.entity_validator import (
     validate_entity,
     validate_summary_language,
 )
+from andocgen.generator.fallback import build_fallback_block
 from andocgen.generator.implementations.markdown_section_parser import SectionParseError
 from andocgen.generator.response_sanitizer import normalize_llm_response
 from andocgen.llm.base import LLMProvider
@@ -62,14 +63,13 @@ class EntityDocumentPipeline:
                         attempt_user = (
                             f"{user}\n\n## Retry\n\n"
                             f"Previous response failed parsing: {last_error}\n"
-                            f"Return ONLY ## Summary in {lang}. No other sections. No code fences."
+                            f"Return ONLY a valid JSON object with the `summary` string in {lang}. No code fences."
                         )
                     else:
                         attempt_user = (
                             f"{user}\n\n## Retry\n\n"
                             f"Previous response failed parsing: {last_error}\n"
-                            "Return ONLY the required ## sections in the exact format. "
-                            "No JSON, no code fences."
+                            "Return ONLY the required JSON object. No Markdown and no code fences."
                         )
 
             if trace:
@@ -122,12 +122,8 @@ class EntityDocumentPipeline:
                     trace.log_llm_response(ctx.entity_id, raw, duration_ms, parsed=False)
 
         duration_ms = (time.perf_counter() - start) * 1000
-        message = last_error or (
-            blocking_issues[0].message if blocking_issues else "Generation failed"
-        )
-        return None, GenerationError(
-            module_path=ctx.module_path,
-            entity_type=ctx.entity_type,
-            entity_name=ctx.entity_name,
-            message=message,
-        ), duration_ms
+        block = build_fallback_block(ctx, raw)
+        block.content = self._output_formatter.format(block, language)
+        if trace:
+            trace.info(f"  fallback generated for {ctx.entity_id}")
+        return block, None, duration_ms

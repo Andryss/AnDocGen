@@ -34,7 +34,7 @@ class CacheStore(Protocol):
     def load(self, cache_dir: Path) -> dict[str, str]:
         ...
 
-    def update(self, cache_dir: Path, modules: list[ModuleModel]) -> None:
+    def update(self, cache_dir: Path, modules: list[ModuleModel], blocks: list[DocBlock] | None = None) -> None:
         ...
 
 

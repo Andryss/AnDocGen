@@ -1,3 +1,8 @@
 {
-  "calculator.py": "6c0857faf3eb50ef38550531a264a14050cedb5e279c77618127996715a4f45f"
+  "files": {
+    "calculator.py": {
+      "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
+      "doc_hash": "475851e338b37ca8d25d33d85e9a0460c595fa747da6697eb83c7d99cbcd1026"
+    }
+  }
 }

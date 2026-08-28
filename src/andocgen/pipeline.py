@@ -10,7 +10,18 @@ from andocgen.context.factory import create_context_components
 from andocgen.context.previous_doc_registry import seed_registry_from_previous_docs
 from andocgen.generator.factory import create_generator_components
 from andocgen.llm.factory import create_llm_provider, create_llm_provider_factory
-from andocgen.models.entities import GenerationError, ParseError, PipelineResult, ProjectModel
+from andocgen.models.entities import (
+    CallGraph,
+    DocBlock,
+    GenerationError,
+    IssueCategory,
+    IssueLevel,
+    ParseError,
+    PipelineResult,
+    ProjectModel,
+    ValidationIssue,
+    make_entity_id,
+)
 from andocgen.output.factory import create_output_components
 from andocgen.parser.factory import create_parser
 from andocgen.reporting.factory import create_reporter
@@ -27,6 +38,7 @@ def run_pipeline(
     progress: ProgressReporter | None = None,
     *,
     dry_run: bool = False,
+    write_reports: bool = True,
 ) -> PipelineResult:
     start = time.perf_counter()
     result = PipelineResult()
@@ -38,7 +50,7 @@ def run_pipeline(
     context_components = create_context_components(config.context)
     output_components = create_output_components(config.output)
     validator = create_validator(config.validation)
-    reporter = create_reporter(config.reporting)
+    reporter = create_reporter(config.reporting) if write_reports else _NullReporter()
 
     trace = reporter.create_trace_logger(config)
 
@@ -159,7 +171,10 @@ def run_pipeline(
     )
     ordered = call_graph_builder.order_entities(contexts, graph)
     if config.generation.incremental:
-        ordered = [ctx for ctx in ordered if ctx.module_path in changed_paths]
+        affected_paths = _affected_paths(changed_modules, graph)
+        result.processed_files = sorted(affected_paths)
+        result.skipped_files = sorted(path for path in all_module_paths if path not in affected_paths)
+        ordered = [ctx for ctx in ordered if ctx.module_path in affected_paths]
 
     progress.on_stage(f"{'Would generate' if dry_run else 'Generating'} {len(ordered)} entities...")
     trace.info(f"{'Dry-run' if dry_run else 'Generating'} documentation for {len(ordered)} entities")
@@ -221,11 +236,13 @@ def run_pipeline(
         return reporter.write_reports(result, config)
 
     result.generation_errors.extend(gen_errors)
+    result.doc_blocks = blocks
     for err in gen_errors:
         trace.error(f"Generation error {err.module_path} {err.entity_name}: {err.message}")
 
     with StageTimer(trace, "validate"):
         result.issues = validator.validate(blocks, contexts, config.validation)
+        result.issues.extend(_fallback_issues(blocks))
     trace.info(
         f"Validation: {len(result.warnings)} warnings, {len(result.errors)} errors"
     )
@@ -241,7 +258,7 @@ def run_pipeline(
                 language=config.generation.language,
             )
         result.output_files = output_files
-        output_components.cache_store.update(cache_dir, changed_modules)
+        output_components.cache_store.update(cache_dir, changed_modules, blocks)
         trace.info(f"Wrote {len(output_files)} output files")
         for path in output_files:
             trace.debug(f"  output: {path}")
@@ -249,3 +266,72 @@ def run_pipeline(
     result.elapsed_seconds = time.perf_counter() - start
     trace.info(f"Pipeline finished in {result.elapsed_seconds:.2f}s")
     return reporter.write_reports(result, config)
+
+
+class _NullTraceLogger:
+    def info(self, message: str) -> None:
+        pass
+
+    def debug(self, message: str) -> None:
+        pass
+
+    def error(self, message: str) -> None:
+        pass
+
+    def log_stage(self, stage: str, detail: str = "", duration_ms: float | None = None) -> None:
+        pass
+
+    def log_llm_request(self, entity_id: str, system: str, user: str) -> None:
+        pass
+
+    def log_llm_response(self, entity_id: str, response: str, duration_ms: float, parsed: bool) -> None:
+        pass
+
+
+class _NullReporter:
+    def write_reports(self, result: PipelineResult, config: AppConfig) -> PipelineResult:
+        return result
+
+    def create_trace_logger(self, config: AppConfig) -> _NullTraceLogger:
+        return _NullTraceLogger()
+
+
+def _fallback_issues(blocks: list[DocBlock]) -> list[ValidationIssue]:
+    return [
+        ValidationIssue(
+            level=IssueLevel.WARNING,
+            category=IssueCategory.GENERATION,
+            message="fallback_generated",
+            module_path=block.module_path,
+            entity_type=block.entity_type,
+            entity_name=block.entity_name,
+        )
+        for block in blocks
+        if block.fallback
+    ]
+
+
+def _affected_paths(changed_modules: list, graph: CallGraph) -> set[str]:
+    affected_ids = _changed_entity_ids(changed_modules)
+    queue = list(affected_ids)
+    while queue:
+        current = queue.pop(0)
+        for edge in graph.edges:
+            if edge.callee_id != current or edge.caller_id in affected_ids:
+                continue
+            affected_ids.add(edge.caller_id)
+            queue.append(edge.caller_id)
+    return {entity_id.split("::", 1)[0] for entity_id in affected_ids}
+
+
+def _changed_entity_ids(changed_modules: list) -> set[str]:
+    ids: set[str] = set()
+    for module in changed_modules:
+        ids.add(make_entity_id(module.path, "module", "module"))
+        for cls in module.classes:
+            ids.add(make_entity_id(module.path, "class", cls.name))
+            for method in cls.methods:
+                ids.add(make_entity_id(module.path, "method", method.qualified_name()))
+        for fn in module.functions:
+            ids.add(make_entity_id(module.path, "function", fn.name))
+    return ids

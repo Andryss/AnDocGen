@@ -224,6 +224,7 @@ class DocBlock:
     inheritance: str | None = None
     methods_overview: str | None = None
     exports: list[ExportDoc] | None = None
+    fallback: bool = False
 
 
 @dataclass
@@ -260,6 +261,7 @@ class PipelineResult:
     issues: list[ValidationIssue] = field(default_factory=list)
     elapsed_seconds: float = 0.0
     dry_run_entities: int = 0
+    doc_blocks: list[DocBlock] = field(default_factory=list)
     summary_log_path: str | None = None
     detail_log_path: str | None = None
     trace_log_path: str | None = None

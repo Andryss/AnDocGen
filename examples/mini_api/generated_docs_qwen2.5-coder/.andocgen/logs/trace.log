@@ -68,3 +68,78 @@
 2026-06-24 22:46:47,057 DEBUG   output: examples/mini_api/generated_docs_qwen2.5-coder/storage.py.md
 2026-06-24 22:46:47,057 DEBUG   output: examples/mini_api/generated_docs_qwen2.5-coder/README.md
 2026-06-24 22:46:47,057 INFO Pipeline finished in 69.23s
+2026-08-29 00:45:35,753 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api provider=ollama dry_run=False
+2026-08-29 00:45:35,753 INFO Output directory: examples/mini_api/generated_docs_qwen2.5-coder
+2026-08-29 00:45:35,754 INFO [scan] start
+2026-08-29 00:45:35,755 INFO [scan] done (1ms)
+2026-08-29 00:45:35,755 INFO Found 3 files
+2026-08-29 00:45:35,755 INFO [parse] start 3 files
+2026-08-29 00:45:35,755 DEBUG Parsing: __init__.py
+2026-08-29 00:45:35,755 DEBUG   parsed __init__.py: 0 functions, 0 classes
+2026-08-29 00:45:35,755 DEBUG Parsing: handlers.py
+2026-08-29 00:45:35,756 DEBUG   parsed handlers.py: 0 functions, 2 classes
+2026-08-29 00:45:35,756 DEBUG Parsing: storage.py
+2026-08-29 00:45:35,757 DEBUG   parsed storage.py: 1 functions, 1 classes
+2026-08-29 00:45:35,757 INFO [parse] done 3 files (2ms)
+2026-08-29 00:45:35,757 INFO [call_graph] start
+2026-08-29 00:45:35,757 INFO [call_graph] done (0ms)
+2026-08-29 00:45:35,757 DEBUG Call graph: 7 nodes, 8 edges
+2026-08-29 00:45:35,757 INFO Generating documentation for 13 entities
+2026-08-29 00:45:35,757 INFO [generate] start 13 entities
+2026-08-29 00:45:35,757 INFO Generating method:UserHandler.__init__ (handlers.py::UserHandler.__init__)
+2026-08-29 00:45:35,757 INFO LLM request entity=handlers.py::UserHandler.__init__ system_chars=1682 user_chars=388
+2026-08-29 00:45:39,724 INFO LLM request entity=handlers.py::UserHandler.__init__ system_chars=1682 user_chars=542
+2026-08-29 00:45:43,135 INFO LLM response entity=handlers.py::UserHandler.__init__ status=parsed chars=417 duration_ms=7379
+2026-08-29 00:45:43,136 INFO Generating method:UserHandler.get_user (handlers.py::UserHandler.get_user)
+2026-08-29 00:45:43,136 INFO LLM request entity=handlers.py::UserHandler.get_user system_chars=1682 user_chars=540
+2026-08-29 00:45:49,052 INFO LLM request entity=handlers.py::UserHandler.get_user system_chars=1682 user_chars=694
+2026-08-29 00:45:53,238 INFO LLM response entity=handlers.py::UserHandler.get_user status=parsed chars=432 duration_ms=10103
+2026-08-29 00:45:53,238 INFO Generating method:InMemoryStorage.__init__ (storage.py::InMemoryStorage.__init__)
+2026-08-29 00:45:53,238 INFO LLM request entity=storage.py::InMemoryStorage.__init__ system_chars=1682 user_chars=324
+2026-08-29 00:45:56,247 INFO LLM response entity=storage.py::InMemoryStorage.__init__ status=parsed chars=296 duration_ms=3009
+2026-08-29 00:45:56,248 INFO Generating method:InMemoryStorage.create (storage.py::InMemoryStorage.create)
+2026-08-29 00:45:56,248 INFO LLM request entity=storage.py::InMemoryStorage.create system_chars=1682 user_chars=385
+2026-08-29 00:46:00,087 INFO LLM response entity=storage.py::InMemoryStorage.create status=parsed chars=393 duration_ms=3840
+2026-08-29 00:46:00,088 INFO Generating function:normalize_email (storage.py::normalize_email)
+2026-08-29 00:46:00,088 INFO LLM request entity=storage.py::normalize_email system_chars=1682 user_chars=368
+2026-08-29 00:46:04,586 INFO LLM request entity=storage.py::normalize_email system_chars=1682 user_chars=522
+2026-08-29 00:46:08,519 INFO LLM response entity=storage.py::normalize_email status=parsed chars=427 duration_ms=8431
+2026-08-29 00:46:08,519 INFO Generating method:UserHandler.create_user (handlers.py::UserHandler.create_user)
+2026-08-29 00:46:08,519 INFO LLM request entity=handlers.py::UserHandler.create_user system_chars=1682 user_chars=662
+2026-08-29 00:46:17,312 INFO LLM request entity=handlers.py::UserHandler.create_user system_chars=1682 user_chars=816
+2026-08-29 00:46:22,602 INFO LLM request entity=handlers.py::UserHandler.create_user system_chars=1682 user_chars=816
+2026-08-29 00:46:27,791 INFO LLM response entity=handlers.py::UserHandler.create_user status=parse_failed chars=775 duration_ms=19272
+2026-08-29 00:46:27,791 INFO   fallback generated for handlers.py::UserHandler.create_user
+2026-08-29 00:46:27,791 INFO Generating method:InMemoryStorage.get (storage.py::InMemoryStorage.get)
+2026-08-29 00:46:27,792 INFO LLM request entity=storage.py::InMemoryStorage.get system_chars=1682 user_chars=305
+2026-08-29 00:46:31,131 INFO LLM response entity=storage.py::InMemoryStorage.get status=parsed chars=428 duration_ms=3339
+2026-08-29 00:46:31,132 INFO Generating class:ApiResponse (handlers.py::ApiResponse)
+2026-08-29 00:46:31,132 INFO LLM request entity=handlers.py::ApiResponse system_chars=1427 user_chars=272
+2026-08-29 00:46:31,581 INFO LLM response entity=handlers.py::ApiResponse status=parsed chars=22 duration_ms=449
+2026-08-29 00:46:31,582 INFO Generating class:UserHandler (handlers.py::UserHandler)
+2026-08-29 00:46:31,582 INFO LLM request entity=handlers.py::UserHandler system_chars=1427 user_chars=697
+2026-08-29 00:46:32,433 INFO LLM response entity=handlers.py::UserHandler status=parsed chars=65 duration_ms=852
+2026-08-29 00:46:32,434 INFO Generating class:InMemoryStorage (storage.py::InMemoryStorage)
+2026-08-29 00:46:32,434 INFO LLM request entity=storage.py::InMemoryStorage system_chars=1427 user_chars=585
+2026-08-29 00:46:33,432 INFO LLM response entity=storage.py::InMemoryStorage status=parsed chars=73 duration_ms=998
+2026-08-29 00:46:33,432 INFO Generating module:__init__.py (__init__.py::module)
+2026-08-29 00:46:33,432 INFO LLM request entity=__init__.py::module system_chars=1290 user_chars=110
+2026-08-29 00:46:34,145 INFO LLM response entity=__init__.py::module status=parsed chars=70 duration_ms=713
+2026-08-29 00:46:34,145 INFO Generating module:handlers.py (handlers.py::module)
+2026-08-29 00:46:34,145 INFO LLM request entity=handlers.py::module system_chars=1290 user_chars=562
+2026-08-29 00:46:36,611 INFO LLM response entity=handlers.py::module status=parsed chars=355 duration_ms=2466
+2026-08-29 00:46:36,611 INFO Generating module:storage.py (storage.py::module)
+2026-08-29 00:46:36,611 INFO LLM request entity=storage.py::module system_chars=1290 user_chars=476
+2026-08-29 00:46:39,638 INFO LLM response entity=storage.py::module status=parsed chars=419 duration_ms=3026
+2026-08-29 00:46:39,638 INFO [generate] done 13 entities (63881ms)
+2026-08-29 00:46:39,638 INFO [validate] start
+2026-08-29 00:46:39,638 INFO [validate] done (0ms)
+2026-08-29 00:46:39,639 INFO Validation: 2 warnings, 0 errors
+2026-08-29 00:46:39,639 INFO [write] start
+2026-08-29 00:46:39,641 INFO [write] done (2ms)
+2026-08-29 00:46:39,642 INFO Wrote 4 output files
+2026-08-29 00:46:39,642 DEBUG   output: examples/mini_api/generated_docs_qwen2.5-coder/__init__.py.md
+2026-08-29 00:46:39,642 DEBUG   output: examples/mini_api/generated_docs_qwen2.5-coder/handlers.py.md
+2026-08-29 00:46:39,642 DEBUG   output: examples/mini_api/generated_docs_qwen2.5-coder/storage.py.md
+2026-08-29 00:46:39,642 DEBUG   output: examples/mini_api/generated_docs_qwen2.5-coder/README.md
+2026-08-29 00:46:39,642 INFO Pipeline finished in 63.89s
