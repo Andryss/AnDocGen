@@ -1,7 +1,7 @@
 # Модуль `services.py`
 
 
-Модуль `services.py`, содержащий бизнес-логику для управления заказами.
+Модуль бизнес-логики для работы с заказами.
 
 **Содержание:**
 
@@ -11,24 +11,35 @@
 
 ### `class OrderService`
 
-Класс для управления заказами с использованием хранилища и настроек.
+Класс для координации создания и прайсинга заказов.
 
 #### Методы
 
 ##### `__init__(storage: InMemoryStorage, settings: Settings | None = None) -> None`
 
-Инициализирует экземпляр класса OrderService с указанным хранилищем и настройками.
+Инициализирует экземпляр OrderService с заданным хранилищем и настройками.
 
 **Параметры:**
 
-- `storage` (`InMemoryStorage`) — объект хранилища
-- `settings` (`Settings | None`) — настройки (по умолчанию `None`)
+- `storage` (`InMemoryStorage`) — Хранилище для хранения заказов.
+- `settings` (`Settings | None`) — Настройки для сервиса. Если не указаны, используется по умолчанию.
+
+**Побочные эффекты:**
+
+Инициализирует внутренние атрибуты _storage и _settings.
 
 **Примеры:**
 
+Создать экземпляр OrderService с заданным хранилищем и настройками.
+
 ```python
-storage = InMemoryStorage()
-service = OrderService(storage, settings=Settings())
+service = OrderService(storage, settings)
+```
+
+Создать экземпляр OrderService с заданным хранилищем без настроек.
+
+```python
+service = OrderService(storage)
 ```
 
 ##### `add_item(order_id: int, item: Item) -> Order`
@@ -38,49 +49,51 @@ service = OrderService(storage, settings=Settings())
 **Параметры:**
 
 - `order_id` (`int`) — ID заказа
-- `item` (`Item`) — добавляемый товар
+- `item` (`Item`) — Товар для добавления
 
 **Возвращаемое значение:**
 
-- `Order` — обновленный заказ
+- `Order` — Обновленный заказ с добавленным товаром
 
 **Исключения:**
 
-- `ValidationError` — если количество товара меньше 1
+ValidationError: если количество товара меньше 1
 
 **Примеры:**
 
+Добавить товар в заказ.
+
 ```python
-order_service = OrderService(storage)
-updated_order = order_service.add_item(123, Item(name="Book", quantity=5))
+order_service.add_item(1, Item(name='Book', price=19.99, quantity=2))
 ```
 
 ##### `create_order(customer: str) -> Order`
 
-Создает заказ для указанного клиента.
+Создает новый заказ для указанного клиента.
 
 **Параметры:**
 
-- `customer` (`str`) — имя клиента, для которого создается заказ
+- `customer` (`str`) — имя клиента
 
 **Возвращаемое значение:**
 
-- `Order` — созданный заказ
+- `Order` — —
 
 **Исключения:**
 
-- `ValidationError` — если имя клиента пустое или состоит только из пробелов
+ValidationError
 
 **Примеры:**
 
+Создать заказ для клиента.
+
 ```python
-# Создание заказа для клиента с именем "John Doe"
-order = OrderService.create_order("John Doe")
+order_service.create_order('Иван')
 ```
 
 ##### `summarize(order_id: int) -> dict[str, str | float]`
 
-Сводит информацию об заказе по его идентификатору.
+Создает сводку заказа по его ID и возвращает её в виде словаря.
 
 **Параметры:**
 
@@ -88,39 +101,39 @@ order = OrderService.create_order("John Doe")
 
 **Возвращаемое значение:**
 
-- `dict[str, str | float]` — словарь с информацией о заказе: имя клиента, количество предметов и подитоговая стоимость
+- `dict[str, str | float]` — словарь с информацией о заказе: имя клиента, количество предметов и подитог
 
 **Примеры:**
 
+Создать сводку по существующему заказу.
+
 ```python
-order_service = OrderService()
-result = order_service.summarize(123)
-print(result)  # {'customer': 'John Doe', 'items': 5, 'subtotal': 99.99}
+order_service.summarize(123)
 ```
 
 ##### `quote_total(order_id: int) -> str`
 
-Вычисляет общий счет для заказа и возвращает его строковое представление.
+Вычисляет и возвращает общий ценник заказа включая налог.
 
 **Параметры:**
 
-- `order_id` (`int`) — уникальный идентификатор заказа
+- `order_id` (`int`) — Идентификатор заказа
 
 **Возвращаемое значение:**
 
-- `str` — общий счет заказа, отформатированный с учетом валюты
+- `str` — Общая стоимость заказа, отформатированная с учетом валюты
 
 **Примеры:**
 
+Вычислить общую стоимость заказа.
+
 ```python
-service = OrderService(storage=InMemoryStorage(), settings=Settings())
-total = service.quote_total(123)
-print(total)  # Пример вывода: $10.50
+order_service.quote_total(123)
 ```
 
 **Смотрите также:**
 
-- `format_price` — Форматирует сумму денег с символом валюты.
+format_price
 
 
 ---

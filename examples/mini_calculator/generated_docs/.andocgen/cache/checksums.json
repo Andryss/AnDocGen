@@ -2,7 +2,49 @@
   "files": {
     "calculator.py": {
       "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
-      "doc_hash": "475851e338b37ca8d25d33d85e9a0460c595fa747da6697eb83c7d99cbcd1026"
+      "doc_hash": "13b909192d2072fb6f199f0e972d5c614a2ebbe6c5ddf1b14992407258b21da2"
+    }
+  },
+  "entities": {
+    "calculator.py::module": {
+      "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "calculator.py::add": {
+      "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
+      "doc_hash": "adfcc4113bbd5c5eff44464c088f71f98d4d24f84f4c0a603edfc718f7e5caab",
+      "dependency_hash": ""
+    },
+    "calculator.py::divide": {
+      "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
+      "doc_hash": "9dccb9b47c9c56f41d36f19a671132a5f6bf94100e2b9749bf610c5ca2cdcd82",
+      "dependency_hash": ""
+    },
+    "calculator.py::Calculator": {
+      "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
+      "doc_hash": "43cfcb4597887fe97a6ca9c84f31e2391fb360d30e34bc1be59801cf47eb2f88",
+      "dependency_hash": ""
+    },
+    "calculator.py::Calculator.__init__": {
+      "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
+      "doc_hash": "9af831bd917bce69a8c96f8bf31f6a3060d1d2bfaf2e7212d545e79f58d6ab05",
+      "dependency_hash": ""
+    },
+    "calculator.py::Calculator.multiply": {
+      "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
+      "doc_hash": "e4069d973ef87f03f7c380c95d7a690b47b802cef6d31359b0cebb065292bbc9",
+      "dependency_hash": ""
+    },
+    "calculator.py::Calculator.format_result": {
+      "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
+      "doc_hash": "4ce7c7da0b00cf7435a1102f706cface082a088e40059798e530bdcd7a9b461b",
+      "dependency_hash": ""
+    },
+    "calculator.py::calculator.py": {
+      "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
+      "doc_hash": "2fe9562a52d4b4d51959f5e7e64f7adf9a81983d69f15f5e17f235058c9e04a4",
+      "dependency_hash": ""
     }
   }
 }

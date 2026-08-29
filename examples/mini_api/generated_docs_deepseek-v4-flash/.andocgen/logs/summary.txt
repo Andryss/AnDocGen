@@ -1,14 +1,16 @@
 AnDocGen run summary
-Timestamp: 2026-08-29T22:45:11.815400
+Timestamp: 2026-08-29T23:55:22.279596
 Processed files: 3
 Skipped files: 0
 Parse errors: 0
 Generation errors: 0
+Fallback generated: 0
 Validation warnings: 0
 Validation errors: 0
 Output files: 4
-Elapsed seconds: 68.18
+Elapsed seconds: 61.54
 
 Log files:
-  trace: examples/mini_api/generated_docs_deepseek-v4-flash/.andocgen/logs/trace.log
-  detail: examples/mini_api/generated_docs_deepseek-v4-flash/.andocgen/logs/detail.json
+  trace: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api/generated_docs_deepseek-v4-flash/.andocgen/logs/trace.log
+  llm_responses: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api/generated_docs_deepseek-v4-flash/.andocgen/logs/llm_responses.jsonl
+  detail: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api/generated_docs_deepseek-v4-flash/.andocgen/logs/detail.json

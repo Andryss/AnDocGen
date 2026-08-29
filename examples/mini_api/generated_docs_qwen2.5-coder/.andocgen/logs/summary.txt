@@ -1,14 +1,16 @@
 AnDocGen run summary
-Timestamp: 2026-08-29T00:46:39.642702
+Timestamp: 2026-08-29T23:57:17.003143
 Processed files: 3
 Skipped files: 0
 Parse errors: 0
 Generation errors: 0
-Validation warnings: 2
+Fallback generated: 0
+Validation warnings: 1
 Validation errors: 0
 Output files: 4
-Elapsed seconds: 63.89
+Elapsed seconds: 50.74
 
 Log files:
-  trace: examples/mini_api/generated_docs_qwen2.5-coder/.andocgen/logs/trace.log
-  detail: examples/mini_api/generated_docs_qwen2.5-coder/.andocgen/logs/detail.json
+  trace: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api/generated_docs_qwen2.5-coder/.andocgen/logs/trace.log
+  llm_responses: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api/generated_docs_qwen2.5-coder/.andocgen/logs/llm_responses.jsonl
+  detail: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api/generated_docs_qwen2.5-coder/.andocgen/logs/detail.json

@@ -1,14 +1,16 @@
 AnDocGen run summary
-Timestamp: 2026-08-29T00:47:37.805815
+Timestamp: 2026-08-29T23:57:52.113243
 Processed files: 1
 Skipped files: 0
 Parse errors: 0
 Generation errors: 0
+Fallback generated: 0
 Validation warnings: 0
 Validation errors: 0
 Output files: 2
-Elapsed seconds: 40.93
+Elapsed seconds: 25.58
 
 Log files:
-  trace: examples/mini_calculator/generated_docs/.andocgen/logs/trace.log
-  detail: examples/mini_calculator/generated_docs/.andocgen/logs/detail.json
+  trace: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_calculator/generated_docs/.andocgen/logs/trace.log
+  llm_responses: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_calculator/generated_docs/.andocgen/logs/llm_responses.jsonl
+  detail: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_calculator/generated_docs/.andocgen/logs/detail.json

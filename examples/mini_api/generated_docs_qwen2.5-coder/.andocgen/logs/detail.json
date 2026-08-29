@@ -8,15 +8,8 @@
       "message": "Summary appears too short",
       "module_path": "handlers.py",
       "entity_type": "class",
-      "entity_name": "ApiResponse"
-    },
-    {
-      "level": "warning",
-      "category": "generation",
-      "message": "fallback_generated",
-      "module_path": "handlers.py",
-      "entity_type": "method",
-      "entity_name": "UserHandler.create_user"
+      "entity_name": "ApiResponse",
+      "detail": null
     }
   ]
 }

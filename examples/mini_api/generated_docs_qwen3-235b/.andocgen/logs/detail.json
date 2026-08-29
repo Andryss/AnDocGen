@@ -8,7 +8,8 @@
       "message": "Summary appears too short",
       "module_path": "handlers.py",
       "entity_type": "class",
-      "entity_name": "ApiResponse"
+      "entity_name": "ApiResponse",
+      "detail": null
     }
   ]
 }

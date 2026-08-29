@@ -134,13 +134,13 @@
 
 ## 3. Примеры входных данных и сгенерированных документов
 
-Примеры сгенерированы провайдером **Ollama** (модель `qwen2.5-coder:7b`, локальный сервер `http://localhost:11434`). Для каждого примера в каталоге проекта лежит файл `config.ollama.yaml` с параметрами генерации; результат сохранён в подкаталоге `generated_docs/` рядом с исходниками.
+Примеры сгенерированы провайдером **Ollama** (модель `qwen2.5-coder:7b`, локальный сервер `http://localhost:11434`). Для `mini_api` используется явный файл `config.qwen2.5-coder.yaml`; результат сохранён в подкаталоге `generated_docs_qwen2.5-coder/` рядом с исходниками.
 
 Запуск (из корня репозитория, после установки пакета и запуска Ollama):
 
 ```bash
 andocgen examples/mini_calculator --config examples/mini_calculator/config.ollama.yaml
-andocgen examples/mini_api --config examples/mini_api/config.ollama.yaml
+andocgen examples/mini_api --config examples/mini_api/config.qwen2.5-coder.yaml
 andocgen examples/mini_library --config examples/mini_library/config.ollama.yaml
 ```
 
@@ -201,7 +201,7 @@ class Calculator:
 
 Мультимодульный пример — каталог `examples/mini_api/`. Модули `handlers.py` и `storage.py` связаны вызовами между файлами; при генерации в контекст сущности попадает документация вызываемых функций из другого модуля.
 
-Прогон: 13 сущностей в 3 файлах, ~59 с. Результат — каталог `examples/mini_api/generated_docs/`:
+Прогон: 13 сущностей в 3 файлах, ~59 с. Результат — каталог `examples/mini_api/generated_docs_qwen2.5-coder/`:
 
 | Файл | Содержание |
 |------|------------|

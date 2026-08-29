@@ -602,3 +602,48 @@ Top-level names: add, divide, Calculator
 2026-08-29 00:47:37,805 DEBUG   output: examples/mini_calculator/generated_docs/calculator.py.md
 2026-08-29 00:47:37,805 DEBUG   output: examples/mini_calculator/generated_docs/README.md
 2026-08-29 00:47:37,805 INFO Pipeline finished in 40.93s
+2026-08-29 23:57:26,538 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_calculator provider=ollama dry_run=False
+2026-08-29 23:57:26,538 INFO Output directory: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_calculator/generated_docs
+2026-08-29 23:57:26,538 INFO [scan] start
+2026-08-29 23:57:26,538 INFO [scan] done (0ms)
+2026-08-29 23:57:26,538 INFO Found 1 files
+2026-08-29 23:57:26,538 INFO [parse] start 1 files
+2026-08-29 23:57:26,539 DEBUG Parsing: calculator.py
+2026-08-29 23:57:26,540 DEBUG   parsed calculator.py: 2 functions, 1 classes
+2026-08-29 23:57:26,540 INFO [parse] done 1 files (1ms)
+2026-08-29 23:57:26,540 INFO [call_graph] start
+2026-08-29 23:57:26,540 INFO [call_graph] done (0ms)
+2026-08-29 23:57:26,540 DEBUG Call graph: 5 nodes, 0 edges
+2026-08-29 23:57:26,540 INFO Generating documentation for 7 entities
+2026-08-29 23:57:26,540 INFO [generate] start 7 entities
+2026-08-29 23:57:26,540 INFO Generating method:Calculator.__init__ (calculator.py::Calculator.__init__)
+2026-08-29 23:57:26,540 INFO LLM request entity=calculator.py::Calculator.__init__ system_chars=1885 user_chars=222
+2026-08-29 23:57:30,205 INFO LLM response entity=calculator.py::Calculator.__init__ status=parsed chars=561 duration_ms=3665
+2026-08-29 23:57:30,206 INFO Generating method:Calculator.format_result (calculator.py::Calculator.format_result)
+2026-08-29 23:57:30,206 INFO LLM request entity=calculator.py::Calculator.format_result system_chars=1885 user_chars=235
+2026-08-29 23:57:34,308 INFO LLM response entity=calculator.py::Calculator.format_result status=parsed chars=613 duration_ms=4102
+2026-08-29 23:57:34,309 INFO Generating method:Calculator.multiply (calculator.py::Calculator.multiply)
+2026-08-29 23:57:34,309 INFO LLM request entity=calculator.py::Calculator.multiply system_chars=1885 user_chars=203
+2026-08-29 23:57:38,118 INFO LLM response entity=calculator.py::Calculator.multiply status=parsed chars=524 duration_ms=3809
+2026-08-29 23:57:38,119 INFO Generating function:add (calculator.py::add)
+2026-08-29 23:57:38,119 INFO LLM request entity=calculator.py::add system_chars=1885 user_chars=241
+2026-08-29 23:57:41,931 INFO LLM response entity=calculator.py::add status=parsed chars=507 duration_ms=3812
+2026-08-29 23:57:41,932 INFO Generating function:divide (calculator.py::divide)
+2026-08-29 23:57:41,932 INFO LLM request entity=calculator.py::divide system_chars=1885 user_chars=234
+2026-08-29 23:57:47,449 INFO LLM response entity=calculator.py::divide status=parsed chars=786 duration_ms=5517
+2026-08-29 23:57:47,450 INFO Generating class:Calculator (calculator.py::Calculator)
+2026-08-29 23:57:47,450 INFO LLM request entity=calculator.py::Calculator system_chars=1521 user_chars=508
+2026-08-29 23:57:48,460 INFO LLM response entity=calculator.py::Calculator status=parsed chars=72 duration_ms=1010
+2026-08-29 23:57:48,461 INFO Generating module:calculator.py (calculator.py::module)
+2026-08-29 23:57:48,461 INFO LLM request entity=calculator.py::module system_chars=1384 user_chars=530
+2026-08-29 23:57:52,107 INFO LLM response entity=calculator.py::module status=parsed chars=540 duration_ms=3646
+2026-08-29 23:57:52,108 INFO [generate] done 7 entities (25568ms)
+2026-08-29 23:57:52,108 INFO [validate] start
+2026-08-29 23:57:52,108 INFO [validate] done (0ms)
+2026-08-29 23:57:52,109 INFO Validation: 0 warnings, 0 errors
+2026-08-29 23:57:52,109 INFO [write] start
+2026-08-29 23:57:52,111 INFO [write] done (2ms)
+2026-08-29 23:57:52,112 INFO Wrote 2 output files
+2026-08-29 23:57:52,113 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_calculator/generated_docs/calculator.py.md
+2026-08-29 23:57:52,113 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_calculator/generated_docs/README.md
+2026-08-29 23:57:52,113 INFO Pipeline finished in 25.58s

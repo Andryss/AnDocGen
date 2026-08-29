@@ -32,7 +32,7 @@
 pip install -e .
 
 andocgen examples/mini_calculator --config examples/mini_calculator/config.ollama.yaml
-andocgen examples/mini_api --config examples/mini_api/config.ollama.yaml
+andocgen examples/mini_api --config examples/mini_api/config.qwen2.5-coder.yaml
 andocgen examples/mini_library --config examples/mini_library/config.ollama.yaml
 
 git submodule update --init eval/python-qrcode/python-qrcode
@@ -40,7 +40,7 @@ git submodule update --init eval/python-qrcode/python-qrcode
 andocgen eval/python-qrcode/python-qrcode/qrcode --config eval/python-qrcode/python-qrcode.config.yaml
 ```
 
-Результаты сохраняются в каталогах `generated_docs/` рядом с исходниками (для примеров из `examples/`) или в `eval/python-qrcode/generated_docs/`.
+Результаты сохраняются в каталогах `generated_docs*` рядом с исходниками (для примеров из `examples/`) или в `eval/python-qrcode/generated_docs/`.
 
 ### 1.4. Критерии оценки прогона
 
@@ -53,7 +53,7 @@ andocgen eval/python-qrcode/python-qrcode/qrcode --config eval/python-qrcode/pyt
 
 ## 2. Примеры успешной генерации
 
-Для каждого примера ниже указаны каталог исходного кода и каталог с результатами прогона (`generated_docs/`). Структура выходных файлов повторяет структуру исходного проекта.
+Для каждого примера ниже указаны каталог исходного кода и каталог с результатами прогона (`generated_docs*`). Структура выходных файлов повторяет структуру исходного проекта.
 
 ### 2.1. Калькулятор (`examples/mini_calculator`)
 
@@ -88,7 +88,7 @@ andocgen eval/python-qrcode/python-qrcode/qrcode --config eval/python-qrcode/pyt
 
 **Исходники:** `examples/mini_api/`
 
-**Результаты прогона:** `examples/mini_api/generated_docs/` — `README.md`, `handlers.py.md`, `storage.py.md`, `__init__.py.md`, логи в `logs/`.
+**Результаты прогона:** `examples/mini_api/generated_docs_qwen2.5-coder/` — `README.md`, `handlers.py.md`, `storage.py.md`, `__init__.py.md`, логи в `logs/`.
 
 **Вход:** три модуля — `handlers.py`, `storage.py`, `__init__.py`.
 

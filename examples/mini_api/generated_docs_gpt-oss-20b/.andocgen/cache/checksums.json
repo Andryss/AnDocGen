@@ -2,15 +2,97 @@
   "files": {
     "__init__.py": {
       "source_hash": "b3e9b4a55859bc1c38442aa80da9a846a61b5f937b8446ecb270329501d740bd",
-      "doc_hash": "9d0cdf7132248b148feba346f866cc42443e9a03a3943b90ca0fb50e0703830f"
+      "doc_hash": "6831724c6df7947daae99087d93d506c0f52f4b75a902fec36a063bbaec9da08"
     },
     "handlers.py": {
       "source_hash": "dbdeebec55d1bf48be5f0dd354932c48afa8a2f4af7bbbe6cd324d1ce3389a4d",
-      "doc_hash": "70ad247467ff89b3c21dbc90f0a8fadebcc498dfa86ac47f4b83b0aeadd82730"
+      "doc_hash": "d0bea1149743452741bfaa80ef4a2fe2c800ad2909d8aff898dff75fd3ae7575"
     },
     "storage.py": {
       "source_hash": "f222ac2bbd89da1ba8d6075f5533285a100dcecd6898f5d7ecfd03bc71587d4f",
-      "doc_hash": "ad3023d031f1e8c7fbaeec0e29d63aaf123859cb13ece2c4d008f38eb3f441b3"
+      "doc_hash": "13977ff4f950279c9e081d9c779569472a0a59b1a71161ee48d3195ca5275770"
+    }
+  },
+  "entities": {
+    "__init__.py::module": {
+      "source_hash": "b3e9b4a55859bc1c38442aa80da9a846a61b5f937b8446ecb270329501d740bd",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "handlers.py::module": {
+      "source_hash": "dbdeebec55d1bf48be5f0dd354932c48afa8a2f4af7bbbe6cd324d1ce3389a4d",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "handlers.py::ApiResponse": {
+      "source_hash": "dbdeebec55d1bf48be5f0dd354932c48afa8a2f4af7bbbe6cd324d1ce3389a4d",
+      "doc_hash": "0deb3f3710c17f67a58fb714b249c2d425b343fa4e4e3e7398f8f1932eb999d2",
+      "dependency_hash": ""
+    },
+    "handlers.py::UserHandler": {
+      "source_hash": "dbdeebec55d1bf48be5f0dd354932c48afa8a2f4af7bbbe6cd324d1ce3389a4d",
+      "doc_hash": "5219240ea8e8a4c39b5a2e9dcf71a50c048e5789f24562da7ab0e4621c2b03d3",
+      "dependency_hash": ""
+    },
+    "handlers.py::UserHandler.__init__": {
+      "source_hash": "dbdeebec55d1bf48be5f0dd354932c48afa8a2f4af7bbbe6cd324d1ce3389a4d",
+      "doc_hash": "d4e76ee7aebb1bd8ce5a802fc7ab03977dc3df79ed49dc5376da9151d3e7ab96",
+      "dependency_hash": ""
+    },
+    "handlers.py::UserHandler.get_user": {
+      "source_hash": "dbdeebec55d1bf48be5f0dd354932c48afa8a2f4af7bbbe6cd324d1ce3389a4d",
+      "doc_hash": "ffe70bebd8d31dc958088640cc3f51ab435e9fa58747cfbad195e33ce152aa1c",
+      "dependency_hash": ""
+    },
+    "handlers.py::UserHandler.create_user": {
+      "source_hash": "dbdeebec55d1bf48be5f0dd354932c48afa8a2f4af7bbbe6cd324d1ce3389a4d",
+      "doc_hash": "a423fa2d4cc4b18a59f1408c1a3cefc71df094ac7029fb23a5d5a8a75971798c",
+      "dependency_hash": "0f37ef18907621490b02bd902cc21d289426b137f1c873135cc6a3cdd96a66b0"
+    },
+    "storage.py::module": {
+      "source_hash": "f222ac2bbd89da1ba8d6075f5533285a100dcecd6898f5d7ecfd03bc71587d4f",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "storage.py::normalize_email": {
+      "source_hash": "f222ac2bbd89da1ba8d6075f5533285a100dcecd6898f5d7ecfd03bc71587d4f",
+      "doc_hash": "2c805d0bcdbbd4d7f4e00fb418b98ff255fa18723f49adc24dbdeb3f87e9ab4a",
+      "dependency_hash": ""
+    },
+    "storage.py::InMemoryStorage": {
+      "source_hash": "f222ac2bbd89da1ba8d6075f5533285a100dcecd6898f5d7ecfd03bc71587d4f",
+      "doc_hash": "8c33043bd14d34e57b9db18840f77d6d448a26ed6decab291ce82bc4e59cc04c",
+      "dependency_hash": ""
+    },
+    "storage.py::InMemoryStorage.__init__": {
+      "source_hash": "f222ac2bbd89da1ba8d6075f5533285a100dcecd6898f5d7ecfd03bc71587d4f",
+      "doc_hash": "1df67ec3b41678880fa0c9eace7d09e5e56fd69a6cb15672cd5ec3fd3d6a8d47",
+      "dependency_hash": ""
+    },
+    "storage.py::InMemoryStorage.get": {
+      "source_hash": "f222ac2bbd89da1ba8d6075f5533285a100dcecd6898f5d7ecfd03bc71587d4f",
+      "doc_hash": "e2567f88f3e9f7cce4865759ddbd4340a74c5e361d4706285c4a0133ada030f8",
+      "dependency_hash": "01add45d09e5ded2e8b1096393fb1154a064889c2cc7d41e2c5ceee738f83e35"
+    },
+    "storage.py::InMemoryStorage.create": {
+      "source_hash": "f222ac2bbd89da1ba8d6075f5533285a100dcecd6898f5d7ecfd03bc71587d4f",
+      "doc_hash": "7b54f71f9c183664f317b6da0f6c153dcda0b94931c0f5ce4704ee8e98a3bc67",
+      "dependency_hash": ""
+    },
+    "__init__.py::__init__.py": {
+      "source_hash": "b3e9b4a55859bc1c38442aa80da9a846a61b5f937b8446ecb270329501d740bd",
+      "doc_hash": "6831724c6df7947daae99087d93d506c0f52f4b75a902fec36a063bbaec9da08",
+      "dependency_hash": ""
+    },
+    "handlers.py::handlers.py": {
+      "source_hash": "dbdeebec55d1bf48be5f0dd354932c48afa8a2f4af7bbbe6cd324d1ce3389a4d",
+      "doc_hash": "695124b83781fca2b4839479bbce3d2f713a2eacff3138bcae5504c4f0bb4c92",
+      "dependency_hash": ""
+    },
+    "storage.py::storage.py": {
+      "source_hash": "f222ac2bbd89da1ba8d6075f5533285a100dcecd6898f5d7ecfd03bc71587d4f",
+      "doc_hash": "32e4d3ee4178c1bfa91c28d0bc950998898e35ab42ad0827ae2475ed329e29f5",
+      "dependency_hash": ""
     }
   }
 }

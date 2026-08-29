@@ -1,7 +1,7 @@
 # Модуль `plugins/markdown.py`
 
 
-Этот модуль содержит плагин для экспорта данных в формат Markdown.
+Модуль плагина для экспорта данных заказов в формат Markdown.
 
 **Содержание:**
 
@@ -11,7 +11,7 @@
 
 ### `class MarkdownExporter(PluginBase)`
 
-Этот класс используется для экспорта сумм заказов в формат Markdown.
+Класс для экспорта данных заказов в формат Markdown.
 
 **Наследование:**
 
@@ -21,17 +21,23 @@
 
 ##### `__init__(*args: Any, **kwargs: Any) -> None`
 
-Инициализирует экземпляр класса MarkdownExporter.
+Инициализирует экземпляр класса MarkdownExporter с заданным заголовком.
 
 **Параметры:**
 
-- `*args` (`Any`) — переменное количество позиционных аргументов
-- `**kwargs` (`Any`) — переменное количество именованных аргументов
+- `*args` (`Any`) — аргументы, передаваемые в родительский класс
+- `**kwargs` (`Any`) — ключевые аргументы, передаваемые в родительский класс
+
+**Побочные эффекты:**
+
+Инициализирует атрибут `heading` с заданным значением.
 
 **Примеры:**
 
+Создать экземпляр MarkdownExporter с заголовком 'Пример'.
+
 ```python
-exporter = MarkdownExporter(heading="Example Heading")
+exporter = MarkdownExporter(heading='Пример')
 ```
 
 ##### `export(data: dict[str, Any]) -> str`
@@ -40,19 +46,18 @@ exporter = MarkdownExporter(heading="Example Heading")
 
 **Параметры:**
 
-- `data` (`dict[str, Any]`) — данные для экспорта, где ключи и значения представлены как строки
+- `data` (`dict[str, Any]`) — словарь данных для экспорта
 
 **Возвращаемое значение:**
 
-- `str` — строка в формате Markdown
+- `str` — строка с данными в формате Markdown
 
 **Примеры:**
 
+Экспортировать данные в Markdown.
+
 ```python
-exporter = MarkdownExporter()
-data = {"name": "John", "age": 30, "city": "New York"}
-markdown_output = exporter.export(data)
-print(markdown_output)
+export({'title': 'Пример', 'content': 'Мини-библиотека'})
 ```
 
 
