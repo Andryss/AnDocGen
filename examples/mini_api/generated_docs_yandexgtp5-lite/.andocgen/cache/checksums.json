@@ -1,5 +1,16 @@
 {
-  "__init__.py": "b3e9b4a55859bc1c38442aa80da9a846a61b5f937b8446ecb270329501d740bd",
-  "handlers.py": "dbdeebec55d1bf48be5f0dd354932c48afa8a2f4af7bbbe6cd324d1ce3389a4d",
-  "storage.py": "f222ac2bbd89da1ba8d6075f5533285a100dcecd6898f5d7ecfd03bc71587d4f"
+  "files": {
+    "__init__.py": {
+      "source_hash": "b3e9b4a55859bc1c38442aa80da9a846a61b5f937b8446ecb270329501d740bd",
+      "doc_hash": "0b7352bc06f1c90624cc3efcb468ecbe0ef87190dbd748ca8cb0b74f3d82c64f"
+    },
+    "handlers.py": {
+      "source_hash": "dbdeebec55d1bf48be5f0dd354932c48afa8a2f4af7bbbe6cd324d1ce3389a4d",
+      "doc_hash": "62292cb0b300b3595dc60159174eb4c742e72059c90e4ad592f6aeb755d33a49"
+    },
+    "storage.py": {
+      "source_hash": "f222ac2bbd89da1ba8d6075f5533285a100dcecd6898f5d7ecfd03bc71587d4f",
+      "doc_hash": "db78beb413239a78f21f585b63e571e28ef81a580523188ac5a7edee3288d1b6"
+    }
+  }
 }
