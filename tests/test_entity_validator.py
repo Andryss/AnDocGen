@@ -5,6 +5,7 @@ from andocgen.models.entities import (
     ClassModel,
     DocBlock,
     EntityContext,
+    ExampleDoc,
     FunctionModel,
     ModuleModel,
     ParameterDoc,
@@ -41,7 +42,7 @@ def test_no_false_positive_on_namedtuple_empty_ctor() -> None:
         entity_name="Viewer.show",
         module_path="main.py",
         summary="Shows point.",
-        examples="```python\nPoint()\n```",
+        examples=[ExampleDoc(description="Build point.", language="python", code="Point()")],
     )
     issues = validate_entity(block, ctx)
     assert any(issue.code == "examples_invalid_ctor" for issue in issues)
@@ -80,7 +81,13 @@ def test_no_false_positive_on_inmemory_storage_ctor() -> None:
         entity_name="InMemoryStorage.create",
         module_path="storage.py",
         summary="Creates order.",
-        examples="```python\nstorage = InMemoryStorage()\nstorage.create('Alice')\n```",
+        examples=[
+            ExampleDoc(
+                description="Create item.",
+                language="python",
+                code="storage = InMemoryStorage()\nstorage.create('Alice')",
+            )
+        ],
     )
     issues = validate_entity(block, ctx)
     assert not any(issue.code == "examples_invalid_ctor" for issue in issues)
@@ -123,7 +130,13 @@ def test_blocking_on_order_service_ctor_without_args() -> None:
         entity_name="OrderService.create_order",
         module_path="services.py",
         summary="Creates order.",
-        examples="```python\nOrderService().create_order('John')\n```",
+        examples=[
+            ExampleDoc(
+                description="Create order.",
+                language="python",
+                code="OrderService().create_order('John')",
+            )
+        ],
     )
     issues = validate_entity(block, ctx)
     assert any(issue.code == "examples_invalid_ctor" for issue in issues)

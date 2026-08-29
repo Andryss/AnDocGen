@@ -27,6 +27,27 @@ class TraceLogger(Protocol):
     ) -> None:
         ...
 
+    def log_llm_attempt(
+        self,
+        *,
+        entity_id: str,
+        entity_type: str,
+        entity_name: str,
+        module_path: str,
+        provider: str,
+        model: str,
+        attempt: int,
+        duration_ms: float,
+        system: str,
+        user: str,
+        raw_response: str,
+        parse_ok: bool,
+        validation_ok: bool,
+        retry_reason: str | None = None,
+        fallback_reason: str | None = None,
+    ) -> None:
+        ...
+
 
 class Reporter(Protocol):
     def write_reports(self, result: PipelineResult, config: AppConfig) -> PipelineResult:

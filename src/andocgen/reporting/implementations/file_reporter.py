@@ -19,9 +19,11 @@ class FileTraceLogger:
         max_chars: int = 12000,
     ) -> None:
         self.log_path = log_path
+        self.llm_responses_path = log_path.parent / "llm_responses.jsonl"
         self.log_llm_content = log_llm_content
         self.max_chars = max_chars
         log_path.parent.mkdir(parents=True, exist_ok=True)
+        self.llm_responses_path.write_text("", encoding="utf-8")
 
         self._logger = logging.getLogger(f"andocgen.trace.{id(self)}")
         self._logger.handlers.clear()
@@ -79,6 +81,48 @@ class FileTraceLogger:
             [("response", response)],
         )
 
+    def log_llm_attempt(
+        self,
+        *,
+        entity_id: str,
+        entity_type: str,
+        entity_name: str,
+        module_path: str,
+        provider: str,
+        model: str,
+        attempt: int,
+        duration_ms: float,
+        system: str,
+        user: str,
+        raw_response: str,
+        parse_ok: bool,
+        validation_ok: bool,
+        retry_reason: str | None = None,
+        fallback_reason: str | None = None,
+    ) -> None:
+        payload = {
+            "entity_id": entity_id,
+            "entity_type": entity_type,
+            "entity_name": entity_name,
+            "module_path": module_path,
+            "provider": provider,
+            "model": model,
+            "attempt": attempt,
+            "duration_ms": round(duration_ms, 3),
+            "parse_ok": parse_ok,
+            "validation_ok": validation_ok,
+            "retry_reason": retry_reason,
+            "fallback_reason": fallback_reason,
+        }
+        if self.log_llm_content:
+            payload["request"] = {
+                "system": self._trunc(system),
+                "user": self._trunc(user),
+            }
+            payload["response"] = {"raw": self._trunc(raw_response)}
+        with self.llm_responses_path.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(payload, ensure_ascii=False) + "\n")
+
     def _trunc(self, text: str) -> str:
         if len(text) <= self.max_chars:
             return text
@@ -113,12 +157,14 @@ class FileReporter:
             f"Skipped files: {len(result.skipped_files)}\n"
             f"Parse errors: {len(result.parse_errors)}\n"
             f"Generation errors: {len(result.generation_errors)}\n"
+            f"Fallback generated: {sum(1 for block in result.doc_blocks if block.fallback)}\n"
             f"Validation warnings: {len(result.warnings)}\n"
             f"Validation errors: {len(result.errors)}\n"
             f"Output files: {len(result.output_files)}\n"
             f"Elapsed seconds: {result.elapsed_seconds:.2f}\n"
             f"\nLog files:\n"
             f"  trace: {trace_path}\n"
+            f"  llm_responses: {trace_path.parent / 'llm_responses.jsonl'}\n"
             f"  detail: {detail_path}\n"
         )
         summary_path.write_text(summary_text, encoding="utf-8")
@@ -134,6 +180,7 @@ class FileReporter:
                     "module_path": i.module_path,
                     "entity_type": i.entity_type,
                     "entity_name": i.entity_name,
+                    "detail": i.detail,
                 }
                 for i in result.issues
             ],

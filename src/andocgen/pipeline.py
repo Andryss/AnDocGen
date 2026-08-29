@@ -103,6 +103,9 @@ def run_pipeline(
                 changed_modules.append(parse_result.module)
                 changed_paths.add(rel)
                 result.processed_files.append(rel)
+                if config.generation.incremental:
+                    reason = "source_changed" if rel in cache else "missing_cache"
+                    trace.debug(f"Incremental reason {rel}: {reason}")
                 trace.debug(
                     f"  parsed {rel}: "
                     f"{len(parse_result.module.functions)} functions, "
@@ -175,6 +178,8 @@ def run_pipeline(
         result.processed_files = sorted(affected_paths)
         result.skipped_files = sorted(path for path in all_module_paths if path not in affected_paths)
         ordered = [ctx for ctx in ordered if ctx.module_path in affected_paths]
+        for path in sorted(affected_paths - changed_paths):
+            trace.debug(f"Incremental reason {path}: dependency_changed")
 
     progress.on_stage(f"{'Would generate' if dry_run else 'Generating'} {len(ordered)} entities...")
     trace.info(f"{'Dry-run' if dry_run else 'Generating'} documentation for {len(ordered)} entities")
@@ -258,7 +263,12 @@ def run_pipeline(
                 language=config.generation.language,
             )
         result.output_files = output_files
-        output_components.cache_store.update(cache_dir, changed_modules, blocks)
+        cache_modules = (
+            [module for module in all_modules if module.path in set(result.processed_files)]
+            if config.generation.incremental
+            else changed_modules
+        )
+        output_components.cache_store.update(cache_dir, cache_modules, blocks, graph)
         trace.info(f"Wrote {len(output_files)} output files")
         for path in output_files:
             trace.debug(f"  output: {path}")
@@ -287,6 +297,27 @@ class _NullTraceLogger:
     def log_llm_response(self, entity_id: str, response: str, duration_ms: float, parsed: bool) -> None:
         pass
 
+    def log_llm_attempt(
+        self,
+        *,
+        entity_id: str,
+        entity_type: str,
+        entity_name: str,
+        module_path: str,
+        provider: str,
+        model: str,
+        attempt: int,
+        duration_ms: float,
+        system: str,
+        user: str,
+        raw_response: str,
+        parse_ok: bool,
+        validation_ok: bool,
+        retry_reason: str | None = None,
+        fallback_reason: str | None = None,
+    ) -> None:
+        pass
+
 
 class _NullReporter:
     def write_reports(self, result: PipelineResult, config: AppConfig) -> PipelineResult:
@@ -305,6 +336,7 @@ def _fallback_issues(blocks: list[DocBlock]) -> list[ValidationIssue]:
             module_path=block.module_path,
             entity_type=block.entity_type,
             entity_name=block.entity_name,
+            detail=block.fallback_reason,
         )
         for block in blocks
         if block.fallback

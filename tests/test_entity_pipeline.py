@@ -75,14 +75,20 @@ def _valid_response(examples: str) -> str:
             "raises": "N/A",
             "edge_cases": "N/A",
             "side_effects": "N/A",
-            "examples": examples,
+            "examples": [
+                {
+                    "description": "Example call.",
+                    "language": "python",
+                    "code": examples,
+                }
+            ] if examples != "N/A" else [],
             "see_also": "N/A",
         }
     )
 
 
 def test_pipeline_retries_on_blocking_examples() -> None:
-    bad = _valid_response("```python\nOrderService().create_order('John')\n```")
+    bad = _valid_response("OrderService().create_order('John')")
     good = _valid_response("N/A")
     pipeline = EntityDocumentPipeline(MarkdownSectionParser(), MarkdownOutputFormatter())
     ctx = _method_context()
@@ -101,11 +107,11 @@ def test_pipeline_retries_on_blocking_examples() -> None:
     assert err is None
     assert block is not None
     assert llm._index == 2
-    assert "OrderService()" not in (block.examples or "")
+    assert block.examples == []
 
 
 def test_pipeline_strip_examples_fallback() -> None:
-    bad = _valid_response("```python\nOrderService().create_order('John')\n```")
+    bad = _valid_response("OrderService().create_order('John')")
     pipeline = EntityDocumentPipeline(MarkdownSectionParser(), MarkdownOutputFormatter())
     ctx = _method_context()
     llm = _SequenceLLM([bad])
@@ -125,4 +131,4 @@ def test_pipeline_strip_examples_fallback() -> None:
 
     assert err is None
     assert block is not None
-    assert block.examples == "N/A"
+    assert block.examples == []

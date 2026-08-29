@@ -50,7 +50,7 @@ validation:
 
 output:
   implementation: markdown
-  directory: ./examples/mini_api/generated_docs_qwen2.5-coder
+  directory: ./generated_docs_qwen2.5-coder
 
 reporting:
   implementation: file

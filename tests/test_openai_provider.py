@@ -126,3 +126,13 @@ def test_complete_uses_class_schema_for_class_prompt(mock_openai_cls: MagicMock)
     kwargs = mock_client.chat.completions.create.call_args.kwargs
     schema = kwargs["response_format"]["json_schema"]["schema"]
     assert schema == OpenAIProvider.docblock_schema("class")
+
+
+def test_function_schema_uses_typed_examples() -> None:
+    schema = OpenAIProvider.docblock_schema()
+    examples = schema["properties"]["examples"]
+
+    assert examples["type"] == "array"
+    item = examples["items"]
+    assert item["required"] == ["description", "language", "code"]
+    assert item["additionalProperties"] is False

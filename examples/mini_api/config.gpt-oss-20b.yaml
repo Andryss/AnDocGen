@@ -54,7 +54,7 @@ validation:
 
 output:
   implementation: markdown
-  directory: ./examples/mini_api/generated_docs_gpt-oss-20b
+  directory: ./generated_docs_gpt-oss-20b
 
 reporting:
   implementation: file

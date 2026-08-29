@@ -8,6 +8,7 @@ from andocgen.models.entities import (
     DocBlock,
     EntityContext,
     EntityType,
+    ExampleDoc,
     ExportDoc,
     ParameterDoc,
     ReturnDoc,
@@ -69,7 +70,7 @@ def _parse_json_response(raw_response: str, ctx: EntityContext) -> DocBlock:
         block.raises = _json_optional_text(payload.get("raises"), "raises")
         block.edge_cases = _json_optional_text(payload.get("edge_cases"), "edge_cases")
         block.side_effects = _json_optional_text(payload.get("side_effects"), "side_effects")
-        block.examples = _json_optional_text(payload.get("examples"), "examples")
+        block.examples = _json_examples(payload.get("examples"))
         block.see_also = _json_optional_text(payload.get("see_also"), "see_also")
     elif ctx.entity_type == "class":
         block.fields = _json_parameters(payload.get("fields", []))
@@ -196,6 +197,38 @@ def _json_exports(value: Any) -> list[ExportDoc]:
             )
         )
     return exports
+
+
+def _json_examples(value: Any) -> list[ExampleDoc]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise SectionParseError("JSON examples must be an array")
+    examples: list[ExampleDoc] = []
+    for item in value:
+        if not isinstance(item, dict):
+            raise SectionParseError("JSON example item must be an object")
+        extra = sorted(set(item) - {"description", "language", "code"})
+        if extra:
+            raise SectionParseError(f"Unexpected JSON example fields: {', '.join(extra)}")
+        missing = [field for field in ("description", "language", "code") if field not in item]
+        if missing:
+            raise SectionParseError(f"Missing JSON example fields: {', '.join(missing)}")
+        description = item.get("description")
+        language = item.get("language")
+        code = item.get("code")
+        if not isinstance(description, str) or not isinstance(language, str) or not isinstance(code, str):
+            raise SectionParseError("JSON example fields must be strings")
+        if not description.strip() or not language.strip() or not code.strip():
+            raise SectionParseError("JSON example fields must be non-empty strings")
+        examples.append(
+            ExampleDoc(
+                description=description.strip(),
+                language=language.strip(),
+                code=code.strip(),
+            )
+        )
+    return examples
 
 
 def _json_optional_text(value: Any, field: str) -> str:

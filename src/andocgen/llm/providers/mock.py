@@ -100,7 +100,7 @@ def _function_doc(ctx: dict[str, str], language: str) -> str:
             "raises": "N/A",
             "edge_cases": "N/A",
             "side_effects": "N/A",
-            "examples": "N/A",
+            "examples": [],
             "see_also": "N/A",
         },
         ensure_ascii=False,

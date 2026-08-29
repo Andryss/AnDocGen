@@ -18,7 +18,7 @@ andocgen generate ./examples/mini_calculator --config config.yaml
 andocgen generate ./examples/mini_library --config config.yaml
 ```
 
-Результат сохраняется в `generated_docs/` (Markdown, README, logs, cache).
+Результат сохраняется в `generated_docs/` (Markdown, README, logs, cache, LLM trace).
 
 Для проверки без записи файлов используйте:
 
@@ -61,6 +61,8 @@ src/andocgen/
 
 Для автодополнения в IDE установите расширение [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) (Red Hat) — в `config.example.yaml` уже указана директива `$schema`.
 
+Пути, переданные в CLI, считаются относительно текущей директории запуска. Относительные пути внутри config-файла (`output.directory`, `output.cache_path`, `reporting.logs_dir`) считаются относительно директории самого config-файла.
+
 Основные блоки:
 
 | Блок | Назначение |
@@ -73,6 +75,7 @@ src/andocgen/
 | `generation.workers` | Параллельные LLM-запросы по волнам call graph (default: 1) |
 | `generation.max_retries` | Повтор при ошибке разбора JSON-ответа |
 | `reporting.quiet` | Без прогресса и сводки в консоли |
+| `reporting.log_llm_content` | Писать prompts/responses в `llm_responses.jsonl`; при `false` сохраняется только metadata |
 | `validation.implementation` | validator: `structured` |
 | `output.implementation` | writer + formatter: `markdown` |
 | `reporting.implementation` | reporter: `file` |
@@ -91,7 +94,7 @@ andocgen inspect ./examples/mini_calculator -c config.example.yaml
 andocgen generate ./examples/mini_calculator -c config.example.yaml
 andocgen eval ./examples/mini_calculator -c config.example.yaml --output eval_reports
 andocgen generate ./examples/mini_library -c config.example.yaml
-pytest
+pytest --cov=andocgen --cov-report=term-missing --cov-fail-under=85
 ruff check .
 ```
 

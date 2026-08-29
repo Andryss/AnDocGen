@@ -54,7 +54,7 @@ validation:
 
 output:
   implementation: markdown
-  directory: ./examples/mini_api/generated_docs_deepseek-v4-flash
+  directory: ./generated_docs_deepseek-v4-flash
 
 reporting:
   implementation: file

@@ -95,10 +95,23 @@ def _format_function(block: DocBlock, labels: LocaleLabels, heading_level: int) 
         ("raises", block.raises),
         ("edge_cases", block.edge_cases),
         ("side_effects", block.side_effects),
-        ("examples", block.examples),
-        ("see_also", block.see_also),
     ]:
         lines.extend(_render_labeled_section(getattr(labels, key), value or ""))
+
+    if block.examples:
+        lines.append(f"**{labels.examples}:**")
+        lines.append("")
+        for example in block.examples:
+            if example.description:
+                lines.append(example.description)
+                lines.append("")
+            language = example.language.strip() or "text"
+            lines.append(f"```{language}")
+            lines.append(example.code.rstrip())
+            lines.append("```")
+            lines.append("")
+
+    lines.extend(_render_labeled_section(labels.see_also, block.see_also or ""))
 
     return "\n".join(lines).rstrip()
 

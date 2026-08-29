@@ -29,7 +29,7 @@ def test_parse_valid_function_response() -> None:
   "raises": "N/A",
   "edge_cases": "N/A",
   "side_effects": "N/A",
-  "examples": "N/A",
+  "examples": [],
   "see_also": "N/A"
 }
 """
@@ -59,7 +59,7 @@ def test_parse_json_parameters_with_optional_metadata() -> None:
   "raises": "N/A",
   "edge_cases": "N/A",
   "side_effects": "N/A",
-  "examples": "N/A",
+  "examples": [],
   "see_also": "N/A"
 }
 """
@@ -82,7 +82,7 @@ def test_parse_na_with_extra_text_treated_as_empty() -> None:
   "raises": "N/A — no exceptions",
   "edge_cases": "N/A",
   "side_effects": "N/A",
-  "examples": "N/A",
+  "examples": [],
   "see_also": "N/A"
 }
 """
@@ -119,7 +119,7 @@ def test_enrich_parameters_from_context() -> None:
   "raises": "N/A",
   "edge_cases": "N/A",
   "side_effects": "N/A",
-  "examples": "N/A",
+  "examples": [],
   "see_also": "N/A"
 }
 """

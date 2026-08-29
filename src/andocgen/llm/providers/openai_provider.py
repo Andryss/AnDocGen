@@ -90,6 +90,16 @@ class OpenAIProvider:
             "required": ["name", "type", "description"],
             "additionalProperties": False,
         }
+        example = {
+            "type": "object",
+            "properties": {
+                "description": {"type": "string"},
+                "language": {"type": "string"},
+                "code": {"type": "string"},
+            },
+            "required": ["description", "language", "code"],
+            "additionalProperties": False,
+        }
         if entity_type == "class":
             return {
                 "type": "object",
@@ -132,7 +142,7 @@ class OpenAIProvider:
                 "raises": text_field,
                 "edge_cases": text_field,
                 "side_effects": text_field,
-                "examples": text_field,
+                "examples": {"type": "array", "items": example},
                 "see_also": text_field,
             },
             "required": [

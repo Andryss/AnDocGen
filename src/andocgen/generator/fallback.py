@@ -3,7 +3,7 @@ from __future__ import annotations
 from andocgen.models.entities import DocBlock, EntityContext, ExportDoc, ParameterDoc, ReturnDoc
 
 
-def build_fallback_block(ctx: EntityContext, raw_response: str = "") -> DocBlock:
+def build_fallback_block(ctx: EntityContext, raw_response: str = "", reason: str = "exhausted retries") -> DocBlock:
     block = DocBlock(
         entity_type=ctx.entity_type,
         entity_name=ctx.entity_name,
@@ -12,6 +12,7 @@ def build_fallback_block(ctx: EntityContext, raw_response: str = "") -> DocBlock
         raw_response=raw_response.strip(),
         summary=_summary(ctx),
         fallback=True,
+        fallback_reason=reason,
     )
 
     if ctx.entity_type in ("function", "method") and ctx.function:
@@ -31,7 +32,7 @@ def build_fallback_block(ctx: EntityContext, raw_response: str = "") -> DocBlock
         block.raises = "N/A"
         block.edge_cases = "N/A"
         block.side_effects = "N/A"
-        block.examples = "N/A"
+        block.examples = []
         block.see_also = "N/A"
     elif ctx.entity_type == "class" and ctx.class_model:
         block.fields = [

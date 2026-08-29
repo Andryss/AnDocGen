@@ -205,6 +205,13 @@ class ExportDoc:
 
 
 @dataclass
+class ExampleDoc:
+    description: str
+    language: str
+    code: str
+
+
+@dataclass
 class DocBlock:
     entity_type: EntityType
     entity_name: str
@@ -218,13 +225,14 @@ class DocBlock:
     raises: str | None = None
     edge_cases: str | None = None
     side_effects: str | None = None
-    examples: str | None = None
+    examples: list[ExampleDoc] | None = None
     see_also: str | None = None
     fields: list[ParameterDoc] | None = None
     inheritance: str | None = None
     methods_overview: str | None = None
     exports: list[ExportDoc] | None = None
     fallback: bool = False
+    fallback_reason: str | None = None
 
 
 @dataclass
@@ -249,6 +257,7 @@ class ValidationIssue:
     module_path: str
     entity_type: EntityType | None = None
     entity_name: str | None = None
+    detail: str | None = None
 
 
 @dataclass

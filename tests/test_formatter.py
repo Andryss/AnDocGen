@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from andocgen.generator.formatter import format_markdown, is_empty_section
-from andocgen.models.entities import DocBlock, ParameterDoc, ReturnDoc
+from andocgen.models.entities import DocBlock, ExampleDoc, ParameterDoc, ReturnDoc
 
 
 def test_format_function_markdown() -> None:
@@ -36,7 +36,7 @@ def test_format_skips_na_optional_sections() -> None:
         raises="N/A",
         edge_cases="N/A — none",
         side_effects="**N/A**",
-        examples="N/A",
+        examples=[],
         see_also="N/A",
     )
     content = format_markdown(block, "ru")
@@ -45,6 +45,29 @@ def test_format_skips_na_optional_sections() -> None:
     assert "**Побочные эффекты:**" not in content
     assert "**Примеры:**" not in content
     assert "**Смотрите также:**" not in content
+
+
+def test_format_renders_typed_examples_as_fenced_code() -> None:
+    block = DocBlock(
+        entity_type="function",
+        entity_name="add",
+        module_path="calc.py",
+        signature="def add(a: int, b: int) -> int",
+        summary="Adds numbers.",
+        examples=[
+            ExampleDoc(
+                description="Add two integers.",
+                language="python",
+                code="add(1, 2)",
+            )
+        ],
+    )
+
+    content = format_markdown(block, "ru")
+
+    assert "**Примеры:**" in content
+    assert "Add two integers." in content
+    assert "```python\nadd(1, 2)\n```" in content
 
 
 def test_format_class_skips_object_inheritance() -> None:

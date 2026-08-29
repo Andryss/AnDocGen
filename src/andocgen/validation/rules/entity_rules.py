@@ -50,7 +50,7 @@ def format_blocking_retry_prompt(issues: list[RuleIssue]) -> str:
 
 
 def _validate_examples(block: DocBlock, ctx: EntityContext) -> list[RuleIssue]:
-    examples = block.examples or ""
+    examples = "\n\n".join(example.code for example in block.examples or [])
     if is_empty_section(examples):
         return []
     fn = ctx.function

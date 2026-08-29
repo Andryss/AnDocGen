@@ -2,9 +2,16 @@ from __future__ import annotations
 
 import json
 
-from andocgen.evaluation.metrics import build_eval_report, render_eval_summary, write_eval_report
+from andocgen.evaluation.metrics import (
+    GenerationMetrics,
+    build_eval_report,
+    build_generation_metrics,
+    render_eval_summary,
+    write_eval_report,
+)
 from andocgen.models.entities import (
     DocBlock,
+    ExampleDoc,
     IssueCategory,
     IssueLevel,
     PipelineResult,
@@ -40,14 +47,17 @@ def test_build_eval_report_counts_generation_quality_metrics() -> None:
             entity_type="function",
             entity_name="ok",
             module_path="a.py",
-            examples="```python\nok()\n```",
+            summary="Генерирует корректное значение.",
+            examples=[ExampleDoc(description="Call ok.", language="python", code="ok()")],
         ),
         DocBlock(
             entity_type="function",
             entity_name="bad",
             module_path="a.py",
-            examples="```python\nbad(\n```",
+            summary="N/A",
+            examples=[ExampleDoc(description="Broken call.", language="python", code="bad(")],
             fallback=True,
+            fallback_reason="parse error",
         ),
     ]
 
@@ -60,8 +70,28 @@ def test_build_eval_report_counts_generation_quality_metrics() -> None:
     assert report.fallback_rate == 1 / 3
     assert report.language_mismatch_rate == 1 / 3
     assert report.parseable_examples_rate == 0.5
+    assert report.metrics.examples_count == 2
+    assert report.metrics.parseable_examples_count == 1
+    assert report.metrics.na_sections_count == 1
     assert report.elapsed_ms_per_entity == 4000 / 3
     assert "Entity coverage" in render_eval_summary(report)
+
+
+def test_build_generation_metrics_returns_dedicated_structure() -> None:
+    block = DocBlock(
+        entity_type="function",
+        entity_name="short",
+        module_path="a.py",
+        summary="Коротко.",
+        examples=[],
+    )
+
+    metrics = build_generation_metrics(PipelineResult(elapsed_seconds=2.0), total_entities=1, blocks=[block])
+
+    assert isinstance(metrics, GenerationMetrics)
+    assert metrics.generated_entities == 1
+    assert metrics.short_summary_count == 1
+    assert metrics.examples_count == 0
 
 
 def test_write_eval_report_saves_json_and_markdown(tmp_path) -> None:

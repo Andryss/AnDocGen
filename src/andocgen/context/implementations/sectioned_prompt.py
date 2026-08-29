@@ -25,7 +25,13 @@ _FUNCTION_EXAMPLE = """{
   "raises": "N/A",
   "edge_cases": "N/A",
   "side_effects": "N/A",
-  "examples": "N/A",
+  "examples": [
+    {
+      "description": "Сложить два числа.",
+      "language": "python",
+      "code": "add(1, 2)"
+    }
+  ],
   "see_also": "N/A"
 }"""
 
@@ -72,8 +78,9 @@ Rules (mandatory):
 6. Returns must be null or an object with string fields: type, description.
 7. Exports must be an array of objects with string fields: name, type, description.
 8. Base documentation only on the provided source code. Do not invent parameters, types, or behavior.
-9. Examples must use valid calls matching the signature (required arguments must be present).
-10. Related entities in the user message are brief references only; do not repeat their full documentation.
+9. Examples must be an array of objects with string fields: description, language, code.
+10. Example code must use valid calls matching the signature (required arguments must be present).
+11. Related entities in the user message are brief references only; do not repeat their full documentation.
 </output_contract>
 
 <example>

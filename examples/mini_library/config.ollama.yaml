@@ -50,7 +50,7 @@ validation:
 
 output:
   implementation: markdown
-  directory: ./examples/mini_library/generated_docs
+  directory: ./generated_docs
 
 reporting:
   implementation: file

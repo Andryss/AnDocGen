@@ -4,6 +4,7 @@ from andocgen.config import ValidationConfig
 from andocgen.models.entities import (
     DocBlock,
     EntityContext,
+    ExampleDoc,
     FunctionModel,
     ParameterDoc,
     ParameterModel,
@@ -80,7 +81,13 @@ def test_example_missing_required_args_warning() -> None:
         module_path="services.py",
         summary="Creates order.",
         content="Creates order.",
-        examples="```python\norder = OrderService().create_order('John')\n```",
+        examples=[
+            ExampleDoc(
+                description="Create order.",
+                language="python",
+                code="order = OrderService().create_order('John')",
+            )
+        ],
     )
     validator = create_validator(ValidationConfig())
     issues = validator.validate([block], [ctx], ValidationConfig())

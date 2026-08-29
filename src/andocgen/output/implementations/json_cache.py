@@ -5,7 +5,7 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
-from andocgen.models.entities import DocBlock, ModuleModel
+from andocgen.models.entities import CallGraph, DocBlock, ModuleModel, make_entity_id
 
 
 class JsonCacheStore:
@@ -21,10 +21,17 @@ class JsonCacheStore:
             }
         return {}
 
-    def update(self, cache_dir: Path, modules: list[ModuleModel], blocks: list[DocBlock] | None = None) -> None:
+    def update(
+        self,
+        cache_dir: Path,
+        modules: list[ModuleModel],
+        blocks: list[DocBlock] | None = None,
+        graph: CallGraph | None = None,
+    ) -> None:
         cache_dir.mkdir(parents=True, exist_ok=True)
         cache_path = cache_dir / "checksums.json"
         files: dict[str, dict[str, str]] = {}
+        entities: dict[str, dict[str, str]] = {}
         if cache_path.exists():
             payload = json.loads(cache_path.read_text(encoding="utf-8"))
             raw_files = payload.get("files", {}) if isinstance(payload, dict) else {}
@@ -34,14 +41,39 @@ class JsonCacheStore:
                     for path, item in raw_files.items()
                     if isinstance(item, dict)
                 }
+            raw_entities = payload.get("entities", {}) if isinstance(payload, dict) else {}
+            if isinstance(raw_entities, dict):
+                entities = {
+                    entity_id: dict(item)
+                    for entity_id, item in raw_entities.items()
+                    if isinstance(item, dict)
+                }
         doc_hashes = _doc_hashes_by_module(blocks or [])
+        doc_hashes_by_entity = _doc_hashes_by_entity(blocks or [])
+        dependency_hashes = _dependency_hashes(graph, doc_hashes_by_entity) if graph else {}
         for module in modules:
             files[module.path] = {
                 "source_hash": module.content_hash,
                 "doc_hash": doc_hashes.get(module.path, files.get(module.path, {}).get("doc_hash", "")),
             }
+            for entity_id in _module_entity_ids(module):
+                previous = entities.get(entity_id, {})
+                entities[entity_id] = {
+                    "source_hash": module.content_hash,
+                    "doc_hash": doc_hashes_by_entity.get(entity_id, previous.get("doc_hash", "")),
+                    "dependency_hash": dependency_hashes.get(entity_id, previous.get("dependency_hash", "")),
+                }
+        source_hashes = {module.path: module.content_hash for module in modules}
+        for block in blocks or []:
+            entity_id = make_entity_id(block.module_path, block.entity_type, block.entity_name)
+            previous = entities.get(entity_id, {})
+            entities[entity_id] = {
+                "source_hash": source_hashes.get(block.module_path, previous.get("source_hash", "")),
+                "doc_hash": doc_hashes_by_entity.get(entity_id, previous.get("doc_hash", "")),
+                "dependency_hash": dependency_hashes.get(entity_id, previous.get("dependency_hash", "")),
+            }
         cache_path.write_text(
-            json.dumps({"files": files}, indent=2, ensure_ascii=False),
+            json.dumps({"files": files, "entities": entities}, indent=2, ensure_ascii=False),
             encoding="utf-8",
         )
 
@@ -53,4 +85,36 @@ def _doc_hashes_by_module(blocks: list[DocBlock]) -> dict[str, str]:
     return {
         module_path: hashlib.sha256("\n".join(sorted(items)).encode("utf-8")).hexdigest()
         for module_path, items in grouped.items()
+    }
+
+
+def _doc_hashes_by_entity(blocks: list[DocBlock]) -> dict[str, str]:
+    return {
+        make_entity_id(block.module_path, block.entity_type, block.entity_name): hashlib.sha256(
+            json.dumps(asdict(block), sort_keys=True, ensure_ascii=False).encode("utf-8")
+        ).hexdigest()
+        for block in blocks
+    }
+
+
+def _module_entity_ids(module: ModuleModel) -> list[str]:
+    ids = [make_entity_id(module.path, "module", "module")]
+    ids.extend(make_entity_id(module.path, "function", fn.name) for fn in module.functions)
+    for cls in module.classes:
+        ids.append(make_entity_id(module.path, "class", cls.name))
+        ids.extend(make_entity_id(module.path, "method", method.qualified_name()) for method in cls.methods)
+    return ids
+
+
+def _dependency_hashes(graph: CallGraph, doc_hashes_by_entity: dict[str, str]) -> dict[str, str]:
+    dependencies: dict[str, list[str]] = {}
+    for edge in graph.edges:
+        if edge.callee_id is None:
+            continue
+        callee_hash = doc_hashes_by_entity.get(edge.callee_id)
+        if callee_hash:
+            dependencies.setdefault(edge.caller_id, []).append(callee_hash)
+    return {
+        entity_id: hashlib.sha256("\n".join(sorted(hashes)).encode("utf-8")).hexdigest()
+        for entity_id, hashes in dependencies.items()
     }

@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Protocol
 
 from andocgen.config import OutputConfig
-from andocgen.models.entities import DocBlock, ModuleModel, ProjectModel
+from andocgen.models.entities import CallGraph, DocBlock, ModuleModel, ProjectModel
 
 
 class DocumentationWriter(Protocol):
@@ -34,7 +34,13 @@ class CacheStore(Protocol):
     def load(self, cache_dir: Path) -> dict[str, str]:
         ...
 
-    def update(self, cache_dir: Path, modules: list[ModuleModel], blocks: list[DocBlock] | None = None) -> None:
+    def update(
+        self,
+        cache_dir: Path,
+        modules: list[ModuleModel],
+        blocks: list[DocBlock] | None = None,
+        graph: CallGraph | None = None,
+    ) -> None:
         ...
 
 

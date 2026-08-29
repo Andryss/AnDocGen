@@ -51,13 +51,16 @@ class EntityDocumentPipeline:
 
         for attempt in range(max_retries + 1):
             attempt_user = user
+            retry_reason = None
             if attempt > 0:
                 if blocking_issues:
+                    retry_reason = "; ".join(issue.message for issue in blocking_issues)
                     attempt_user = (
                         f"{user}\n\n## Retry\n\n"
                         f"{format_blocking_retry_prompt(blocking_issues)}"
                     )
                 elif last_error:
+                    retry_reason = last_error
                     if ctx.entity_type == "class":
                         lang = "Russian" if language == "ru" else language
                         attempt_user = (
@@ -88,7 +91,24 @@ class EntityDocumentPipeline:
                     and validation_config.retry_on_blocking
                     and attempt < max_retries
                 ):
+                    duration_ms = (time.perf_counter() - start) * 1000
                     if trace:
+                        trace.log_llm_attempt(
+                            entity_id=ctx.entity_id,
+                            entity_type=ctx.entity_type,
+                            entity_name=ctx.entity_name,
+                            module_path=ctx.module_path,
+                            provider=type(llm).__name__,
+                            model=str(getattr(llm, "model", "mock")),
+                            attempt=attempt,
+                            duration_ms=duration_ms,
+                            system=system,
+                            user=attempt_user,
+                            raw_response=raw,
+                            parse_ok=True,
+                            validation_ok=False,
+                            retry_reason="; ".join(i.message for i in blocking_issues),
+                        )
                         trace.info(
                             f"  blocking validation for {ctx.entity_id}: "
                             + "; ".join(i.message for i in blocking_issues)
@@ -99,6 +119,22 @@ class EntityDocumentPipeline:
                     duration_ms = (time.perf_counter() - start) * 1000
                     if trace:
                         trace.log_llm_response(ctx.entity_id, raw, duration_ms, parsed=False)
+                        trace.log_llm_attempt(
+                            entity_id=ctx.entity_id,
+                            entity_type=ctx.entity_type,
+                            entity_name=ctx.entity_name,
+                            module_path=ctx.module_path,
+                            provider=type(llm).__name__,
+                            model=str(getattr(llm, "model", "mock")),
+                            attempt=attempt,
+                            duration_ms=duration_ms,
+                            system=system,
+                            user=attempt_user,
+                            raw_response=raw,
+                            parse_ok=True,
+                            validation_ok=False,
+                            fallback_reason=blocking_issues[0].message,
+                        )
                     return None, GenerationError(
                         module_path=ctx.module_path,
                         entity_type=ctx.entity_type,
@@ -107,22 +143,78 @@ class EntityDocumentPipeline:
                     ), duration_ms
 
                 if blocking_issues and validation_config.blocking_fallback == "strip_examples":
-                    block.examples = "N/A"
+                    block.examples = []
 
                 block.content = self._output_formatter.format(block, language)
                 duration_ms = (time.perf_counter() - start) * 1000
                 if trace:
                     trace.log_llm_response(ctx.entity_id, raw, duration_ms, parsed=True)
+                    trace.log_llm_attempt(
+                        entity_id=ctx.entity_id,
+                        entity_type=ctx.entity_type,
+                        entity_name=ctx.entity_name,
+                        module_path=ctx.module_path,
+                        provider=type(llm).__name__,
+                        model=str(getattr(llm, "model", "mock")),
+                        attempt=attempt,
+                        duration_ms=duration_ms,
+                        system=system,
+                        user=attempt_user,
+                        raw_response=raw,
+                        parse_ok=True,
+                        validation_ok=not blocking_issues,
+                    )
                 return block, None, duration_ms
             except SectionParseError as exc:
                 last_error = str(exc)
                 blocking_issues = []
-                if trace and attempt == max_retries:
+                if trace:
                     duration_ms = (time.perf_counter() - start) * 1000
-                    trace.log_llm_response(ctx.entity_id, raw, duration_ms, parsed=False)
+                    if attempt == max_retries:
+                        trace.log_llm_response(ctx.entity_id, raw, duration_ms, parsed=False)
+                    trace.log_llm_attempt(
+                        entity_id=ctx.entity_id,
+                        entity_type=ctx.entity_type,
+                        entity_name=ctx.entity_name,
+                        module_path=ctx.module_path,
+                        provider=type(llm).__name__,
+                        model=str(getattr(llm, "model", "mock")),
+                        attempt=attempt,
+                        duration_ms=duration_ms,
+                        system=system,
+                        user=attempt_user,
+                        raw_response=raw,
+                        parse_ok=False,
+                        validation_ok=False,
+                        retry_reason=retry_reason,
+                        fallback_reason=last_error if attempt == max_retries else None,
+                    )
+            except Exception as exc:
+                last_error = str(exc)
+                blocking_issues = []
+                if trace:
+                    duration_ms = (time.perf_counter() - start) * 1000
+                    trace.log_llm_attempt(
+                        entity_id=ctx.entity_id,
+                        entity_type=ctx.entity_type,
+                        entity_name=ctx.entity_name,
+                        module_path=ctx.module_path,
+                        provider=type(llm).__name__,
+                        model=str(getattr(llm, "model", "mock")),
+                        attempt=attempt,
+                        duration_ms=duration_ms,
+                        system=system,
+                        user=attempt_user,
+                        raw_response=raw,
+                        parse_ok=False,
+                        validation_ok=False,
+                        retry_reason=retry_reason,
+                        fallback_reason=last_error if attempt == max_retries else None,
+                    )
 
         duration_ms = (time.perf_counter() - start) * 1000
-        block = build_fallback_block(ctx, raw)
+        reason = last_error or "; ".join(issue.message for issue in blocking_issues) or "exhausted retries"
+        block = build_fallback_block(ctx, raw, reason=reason)
         block.content = self._output_formatter.format(block, language)
         if trace:
             trace.info(f"  fallback generated for {ctx.entity_id}")

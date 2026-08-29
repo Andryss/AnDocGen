@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import yaml
-from pydantic import ConfigDict
+from pydantic import ConfigDict, PrivateAttr
 
 from andocgen.generated.config_models import (
     AndocgenConfiguration,
@@ -57,6 +57,7 @@ class GenerationConfig(_GenerationConfig):
 
 class AppConfig(AndocgenConfiguration):
     model_config = ConfigDict(extra="ignore")
+    _config_dir: Path | None = PrivateAttr(default=None)
 
     project: ProjectConfig = ProjectConfig()
     discovery: DiscoveryConfig = DiscoveryConfig()
@@ -69,20 +70,26 @@ class AppConfig(AndocgenConfiguration):
     reporting: ReportingConfig = ReportingConfig()
 
     def resolve_output_dir(self) -> Path:
-        return Path(self.output.directory or "./generated_docs")
+        return self._resolve_config_path(self.output.directory or "./generated_docs")
 
     def resolve_andocgen_dir(self) -> Path:
         return self.resolve_output_dir() / ANDOCGEN_DIR
 
     def resolve_cache_dir(self) -> Path:
         if self.output.cache_path:
-            return Path(self.output.cache_path)
+            return self._resolve_config_path(self.output.cache_path)
         return self.resolve_andocgen_dir() / "cache"
 
     def resolve_logs_dir(self) -> Path:
         if self.reporting.logs_dir:
-            return Path(self.reporting.logs_dir)
+            return self._resolve_config_path(self.reporting.logs_dir)
         return self.resolve_andocgen_dir() / "logs"
+
+    def _resolve_config_path(self, value: str) -> Path:
+        path = Path(value)
+        if path.is_absolute() or self._config_dir is None:
+            return path
+        return self._config_dir / path
 
 
 def load_config(path: Path | None = None) -> AppConfig:
@@ -92,4 +99,6 @@ def load_config(path: Path | None = None) -> AppConfig:
     with path.open(encoding="utf-8") as f:
         raw = yaml.safe_load(f) or {}
 
-    return AppConfig.model_validate(raw)
+    config = AppConfig.model_validate(raw)
+    config._config_dir = path.resolve().parent
+    return config

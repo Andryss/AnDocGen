@@ -31,7 +31,7 @@ def test_parse_sections_accepts_json_docblock() -> None:
   "raises": "N/A",
   "edge_cases": "N/A",
   "side_effects": "N/A",
-  "examples": "N/A",
+  "examples": [],
   "see_also": "N/A"
 }
 """
@@ -41,6 +41,70 @@ def test_parse_sections_accepts_json_docblock() -> None:
     assert [p.name for p in block.parameters or []] == ["a", "b"]
     assert block.returns is not None
     assert block.returns.type == "int"
+    assert block.examples == []
+
+
+def test_parse_sections_accepts_typed_examples() -> None:
+    raw = """
+{
+  "summary": "Складывает два числа.",
+  "parameters": [],
+  "returns": {"type": "int", "description": "сумма"},
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": [
+    {
+      "description": "Сложить два целых числа.",
+      "language": "python",
+      "code": "add(1, 2)"
+    }
+  ],
+  "see_also": "N/A"
+}
+"""
+    block = parse_sections(raw, _function_ctx())
+
+    assert block.examples is not None
+    assert block.examples[0].description == "Сложить два целых числа."
+    assert block.examples[0].language == "python"
+    assert block.examples[0].code == "add(1, 2)"
+
+
+def test_parse_sections_rejects_string_examples() -> None:
+    raw = """
+{
+  "summary": "Складывает два числа.",
+  "parameters": [],
+  "returns": null,
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": "N/A",
+  "see_also": "N/A"
+}
+"""
+    with pytest.raises(SectionParseError, match="examples"):
+        parse_sections(raw, _function_ctx())
+
+
+def test_parse_sections_rejects_malformed_typed_example() -> None:
+    raw = """
+{
+  "summary": "Складывает два числа.",
+  "parameters": [],
+  "returns": null,
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": [
+    {"description": "Сложить числа.", "language": "python", "extra": "nope"}
+  ],
+  "see_also": "N/A"
+}
+"""
+    with pytest.raises(SectionParseError, match="example"):
+        parse_sections(raw, _function_ctx())
 
 
 def test_parse_sections_rejects_json_with_unknown_fields() -> None:
@@ -52,7 +116,7 @@ def test_parse_sections_rejects_json_with_unknown_fields() -> None:
   "raises": "N/A",
   "edge_cases": "N/A",
   "side_effects": "N/A",
-  "examples": "N/A",
+  "examples": [],
   "see_also": "N/A",
   "extra": "not allowed"
 }
@@ -93,3 +157,4 @@ def test_mock_provider_returns_json_for_function_prompt() -> None:
     assert raw.strip().startswith("{")
     assert block.summary
     assert block.parameters is not None
+    assert block.examples == []

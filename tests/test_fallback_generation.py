@@ -29,6 +29,7 @@ def test_fallback_blocks_emit_validation_warning() -> None:
             module_path="calc.py",
             entity_type="function",
             entity_name="add",
+            detail="parse failed",
         )
     ]
 
@@ -41,12 +42,18 @@ def build_fallback_for_test():
         entity_name="add",
         module_path="calc.py",
         fallback=True,
+        fallback_reason="parse failed",
     )
 
 
 class _BrokenLLM:
     def complete(self, system: str, user: str) -> str:
         return "not parseable"
+
+
+class _RaisingLLM:
+    def complete(self, system: str, user: str) -> str:
+        raise RuntimeError("provider unavailable")
 
 
 def test_entity_pipeline_returns_fallback_function_block_after_parse_failures() -> None:
@@ -81,11 +88,41 @@ def test_entity_pipeline_returns_fallback_function_block_after_parse_failures() 
     assert err is None
     assert block is not None
     assert block.fallback is True
+    assert block.fallback_reason == "Response must be a JSON object"
     assert block.summary == "Add two numbers."
     assert [p.name for p in block.parameters or []] == ["a", "b"]
     assert block.returns is not None
     assert block.returns.type == "int"
     assert "def add" in block.content
+
+
+def test_entity_pipeline_returns_fallback_function_block_after_provider_error() -> None:
+    fn = FunctionModel(name="add", parameters=[ParameterModel("a", "int")], returns="int")
+    ctx = EntityContext(
+        entity_type="function",
+        entity_name="add",
+        entity_id="calc.py::add",
+        module_path="calc.py",
+        project_name="demo",
+        signature=fn.signature(),
+        function=fn,
+    )
+    pipeline = EntityDocumentPipeline(MarkdownSectionParser(), MarkdownOutputFormatter())
+
+    block, err, _ = pipeline.run(
+        ctx,
+        _RaisingLLM(),
+        "system",
+        "user",
+        "ru",
+        max_retries=0,
+        validation_config=ValidationConfig(),
+    )
+
+    assert err is None
+    assert block is not None
+    assert block.fallback is True
+    assert block.fallback_reason == "provider unavailable"
 
 
 def test_entity_pipeline_returns_fallback_class_block_after_parse_failures() -> None:

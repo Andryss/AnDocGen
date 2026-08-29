@@ -54,7 +54,7 @@ validation:
 
 output:
   implementation: markdown
-  directory: ./examples/mini_api/generated_docs_qwen3-235b
+  directory: ./generated_docs_qwen3-235b
 
 reporting:
   implementation: file
