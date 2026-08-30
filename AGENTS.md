@@ -9,6 +9,7 @@ for project documentation and historical report materials.
 - Run tests: `.venv/bin/pytest`
 - Run coverage gate: `.venv/bin/pytest --cov=andocgen --cov-report=term-missing --cov-fail-under=85`
 - Run lint: `.venv/bin/ruff check .`
+- Run type check: `.venv/bin/mypy`
 - Validate config: `.venv/bin/andocgen config validate --config config.example.yaml`
 
 Do not run formatters or generators that rewrite tracked files unless the user

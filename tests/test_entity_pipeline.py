@@ -6,6 +6,7 @@ from andocgen.config import ValidationConfig
 from andocgen.generator.entity_pipeline import EntityDocumentPipeline
 from andocgen.generator.implementations.markdown_formatter import MarkdownOutputFormatter
 from andocgen.generator.implementations.markdown_section_parser import MarkdownSectionParser
+from andocgen.llm.base import ProviderTimeoutError
 from andocgen.models.entities import (
     ClassModel,
     EntityContext,
@@ -133,3 +134,30 @@ def test_pipeline_strip_examples_fallback() -> None:
     assert err is None
     assert block is not None
     assert block.examples == []
+
+
+def test_provider_error_reason_is_preserved_in_fallback() -> None:
+    class TimeoutLLM:
+        model = "timeout"
+
+        def complete(self, system: str, user: str, *, entity_type: str = "function") -> str:
+            del system, user, entity_type
+            raise ProviderTimeoutError("provider request timed out")
+
+    pipeline = EntityDocumentPipeline(MarkdownSectionParser(), MarkdownOutputFormatter())
+    ctx = _method_context()
+
+    block, err, _ = pipeline.run(
+        ctx,
+        TimeoutLLM(),
+        "system",
+        "user",
+        "ru",
+        max_retries=0,
+        validation_config=ValidationConfig(),
+    )
+
+    assert err is None
+    assert block is not None
+    assert block.fallback is True
+    assert block.fallback_reason == "provider request timed out"

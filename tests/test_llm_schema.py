@@ -1,6 +1,19 @@
 from __future__ import annotations
 
+from andocgen.llm.contracts import (
+    ClassDocResponse,
+    FunctionDocResponse,
+    ModuleDocResponse,
+    doc_response_schema,
+)
 from andocgen.llm.schema import docblock_schema
+
+
+def test_doc_response_schema_is_generated_from_contract_models() -> None:
+    assert doc_response_schema("function")["required"] == FunctionDocResponse.model_json_schema()["required"]
+    assert doc_response_schema("method")["required"] == FunctionDocResponse.model_json_schema()["required"]
+    assert doc_response_schema("class")["required"] == ClassDocResponse.model_json_schema()["required"]
+    assert doc_response_schema("module")["required"] == ModuleDocResponse.model_json_schema()["required"]
 
 
 def test_class_schema_contains_semantic_fields() -> None:
@@ -17,6 +30,13 @@ def test_function_schema_contains_typed_examples() -> None:
 
     assert example["required"] == ["description", "language", "code"]
     assert example["additionalProperties"] is False
+
+
+def test_provider_schema_omits_pydantic_metadata() -> None:
+    schema = doc_response_schema("function")
+
+    assert "title" not in schema
+    assert "default" not in str(schema)
 
 
 def test_module_schema_uses_export_objects() -> None:

@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Protocol
+from typing import TYPE_CHECKING, Protocol
 
 from andocgen.config import OutputConfig
 from andocgen.models.entities import CallGraph, DocBlock, ModuleModel, ProjectModel
+
+if TYPE_CHECKING:
+    from andocgen.generation_plan import CacheSnapshot
 
 
 class DocumentationWriter(Protocol):
@@ -32,6 +35,9 @@ class DocumentationWriter(Protocol):
 
 class CacheStore(Protocol):
     def load(self, cache_dir: Path) -> dict[str, str]:
+        ...
+
+    def load_snapshot(self, cache_dir: Path) -> CacheSnapshot:
         ...
 
     def update(

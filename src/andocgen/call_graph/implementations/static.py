@@ -12,6 +12,7 @@ from andocgen.models.entities import (
     ProjectModel,
     make_entity_id,
 )
+from andocgen.models.iteration import iter_module_functions
 
 
 class StaticCallGraphBuilder:
@@ -22,7 +23,7 @@ class StaticCallGraphBuilder:
         import_maps = {m.path: _build_import_map(m, module_index) for m in project.modules}
 
         for module in project.modules:
-            for fn in _iter_functions(module):
+            for fn in iter_module_functions(module):
                 node_id = _function_node_id(module.path, fn)
                 graph.nodes.append(
                     CallGraphNode(
@@ -38,7 +39,7 @@ class StaticCallGraphBuilder:
 
         for module in project.modules:
             import_map = import_maps[module.path]
-            for fn in _iter_functions(module):
+            for fn in iter_module_functions(module):
                 caller_id = _function_node_id(module.path, fn)
                 for call in fn.calls:
                     callee_id = _resolve_call(call, module.path, fn, import_map, entity_index)
@@ -96,13 +97,6 @@ class StaticCallGraphBuilder:
 
     def get_unresolved_calls(self, entity_id: str, graph: CallGraph) -> list[str]:
         return [e.callee_name for e in graph.edges if e.caller_id == entity_id and not e.callee_id]
-
-
-def _iter_functions(module: ModuleModel) -> list[FunctionModel]:
-    fns = list(module.functions)
-    for cls in module.classes:
-        fns.extend(cls.methods)
-    return fns
 
 
 def _function_node_id(module_path: str, fn: FunctionModel) -> str:

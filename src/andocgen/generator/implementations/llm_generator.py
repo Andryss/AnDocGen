@@ -56,11 +56,14 @@ class LlmDocumentGenerator:
             signature = ctx_match.signature if ctx_match else ""
             entity_type = ctx_match.entity_type if ctx_match else block.entity_type
             registry.register(entity_id, block.summary, signature, entity_type)
-        validation = validation_config or ValidationConfig()
+        validation = validation_config or ValidationConfig.model_validate({})
+        language = generation_config.language or "ru"
+        max_retries = generation_config.max_retries or 0
+        max_context_chars = context_config.max_context_chars or 32000
 
         waves = group_into_waves(ordered_contexts, call_graph, call_graph_builder)
         total = len(ordered_contexts)
-        workers = max(1, generation_config.workers)
+        workers = max(1, generation_config.workers or 1)
         completed = 0
         progress_lock = threading.Lock()
         content_lock = threading.Lock()
@@ -96,17 +99,17 @@ class LlmDocumentGenerator:
                 trace.info(f"Generating {entity_label} ({ctx.entity_id})")
 
             system = prompt_builder.build_system_message(
-                generation_config.language, ctx.entity_type
+                language, ctx.entity_type
             )
-            user = prompt_builder.build_user_message(ctx, context_config.max_context_chars)
+            user = prompt_builder.build_user_message(ctx, max_context_chars)
 
             block, err, duration_ms = self._pipeline.run(
                 ctx,
                 provider,
                 system,
                 user,
-                generation_config.language,
-                generation_config.max_retries,
+                language,
+                max_retries,
                 validation,
                 trace,
             )
@@ -119,13 +122,13 @@ class LlmDocumentGenerator:
             wave_workers = workers
             if wave_workers == 1:
                 for ctx in wave:
-                    block, err = run_one(ctx)
-                    if block:
-                        blocks.append(block)
+                    maybe_block, err = run_one(ctx)
+                    if maybe_block:
+                        blocks.append(maybe_block)
                         with content_lock:
                             registry.register(
                                 ctx.entity_id,
-                                block.summary,
+                                maybe_block.summary,
                                 ctx.signature,
                                 ctx.entity_type,
                             )
@@ -136,13 +139,13 @@ class LlmDocumentGenerator:
                     futures = {pool.submit(run_one, ctx): ctx for ctx in wave}
                     for future in as_completed(futures):
                         ctx = futures[future]
-                        block, err = future.result()
-                        if block:
-                            blocks.append(block)
+                        maybe_block, err = future.result()
+                        if maybe_block:
+                            blocks.append(maybe_block)
                             with content_lock:
                                 registry.register(
                                     ctx.entity_id,
-                                    block.summary,
+                                    maybe_block.summary,
                                     ctx.signature,
                                     ctx.entity_type,
                                 )

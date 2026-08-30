@@ -23,6 +23,7 @@ dev = [
     "pytest-cov>=5.0",
     "datamodel-code-generator>=0.26",
     "ruff>=0.8",
+    "mypy>=1.13",
 ]
 
 [project.scripts]
@@ -58,3 +59,15 @@ select = ["E", "F", "I", "UP"]
 
 [tool.ruff.lint.per-file-ignores]
 "src/andocgen/generated/**" = ["ALL"]
+
+[tool.mypy]
+python_version = "3.11"
+packages = ["andocgen"]
+mypy_path = "src"
+strict = false
+plugins = ["pydantic.mypy"]
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+check_untyped_defs = true
+exclude = ["src/andocgen/generated/"]

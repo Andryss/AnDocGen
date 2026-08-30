@@ -88,6 +88,62 @@ def test_parse_sections_rejects_string_examples() -> None:
         parse_sections(raw, _function_ctx())
 
 
+def test_parse_sections_rejects_missing_required_field() -> None:
+    raw = """
+{
+  "summary": "Складывает два числа.",
+  "parameters": [],
+  "returns": null,
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": []
+}
+"""
+    with pytest.raises(SectionParseError, match="see_also"):
+        parse_sections(raw, _function_ctx())
+
+
+def test_parse_sections_rejects_wrong_nested_type() -> None:
+    raw = """
+{
+  "summary": "Складывает два числа.",
+  "parameters": [
+    {"name": "a", "type": 123, "description": "первое число"}
+  ],
+  "returns": null,
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": [],
+  "see_also": "N/A"
+}
+"""
+    with pytest.raises(SectionParseError, match="parameters"):
+        parse_sections(raw, _function_ctx())
+
+
+def test_parse_sections_deduplicates_parameters_after_contract_validation() -> None:
+    raw = """
+{
+  "summary": "Складывает два числа.",
+  "parameters": [
+    {"name": "a", "type": "int", "description": "первое число"},
+    {"name": "a", "type": "int", "description": "дубликат"}
+  ],
+  "returns": null,
+  "raises": "N/A",
+  "edge_cases": "N/A",
+  "side_effects": "N/A",
+  "examples": [],
+  "see_also": "N/A"
+}
+"""
+    block = parse_sections(raw, _function_ctx())
+
+    assert [p.name for p in block.parameters or []] == ["a"]
+
+
 def test_parse_sections_rejects_malformed_typed_example() -> None:
     raw = """
 {

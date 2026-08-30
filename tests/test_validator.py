@@ -94,6 +94,107 @@ def test_example_missing_required_args_warning() -> None:
     assert any("constructor arguments" in i.message for i in issues)
 
 
+def test_undocumented_raised_exception_warning() -> None:
+    fn = FunctionModel(
+        name="load",
+        parameters=[],
+        returns="str",
+        source_body='raise ValueError("missing")',
+    )
+    ctx = EntityContext(
+        entity_type="function",
+        entity_name="load",
+        entity_id="loader.py::load",
+        module_path="loader.py",
+        project_name="demo",
+        function=fn,
+    )
+    block = DocBlock(
+        entity_type="function",
+        entity_name="load",
+        module_path="loader.py",
+        summary="Загружает значение.",
+        raises="N/A",
+        content="Загружает значение.",
+    )
+
+    issues = create_validator(ValidationConfig()).validate([block], [ctx], ValidationConfig())
+
+    assert any("ValueError" in issue.message for issue in issues)
+
+
+def test_invalid_python_example_warning() -> None:
+    fn = FunctionModel(name="load", parameters=[], returns="str")
+    ctx = EntityContext(
+        entity_type="function",
+        entity_name="load",
+        entity_id="loader.py::load",
+        module_path="loader.py",
+        project_name="demo",
+        function=fn,
+    )
+    block = DocBlock(
+        entity_type="function",
+        entity_name="load",
+        module_path="loader.py",
+        summary="Загружает значение.",
+        content="Загружает значение.",
+        examples=[ExampleDoc(description="Bad.", language="python", code="load(")],
+    )
+
+    issues = create_validator(ValidationConfig()).validate([block], [ctx], ValidationConfig())
+
+    assert any("valid Python" in issue.message for issue in issues)
+
+
+def test_return_type_mismatch_warning() -> None:
+    fn = FunctionModel(name="load", parameters=[], returns="int")
+    ctx = EntityContext(
+        entity_type="function",
+        entity_name="load",
+        entity_id="loader.py::load",
+        module_path="loader.py",
+        project_name="demo",
+        function=fn,
+    )
+    block = DocBlock(
+        entity_type="function",
+        entity_name="load",
+        module_path="loader.py",
+        summary="Загружает значение.",
+        content="Загружает значение.",
+        returns=None,
+    )
+
+    issues = create_validator(ValidationConfig()).validate([block], [ctx], ValidationConfig())
+
+    assert any("Return type `int`" in issue.message for issue in issues)
+
+
+def test_russian_language_check_covers_class_fields() -> None:
+    ctx = EntityContext(
+        entity_type="class",
+        entity_name="Loader",
+        entity_id="loader.py::Loader",
+        module_path="loader.py",
+        project_name="demo",
+        output_language="ru",
+    )
+    block = DocBlock(
+        entity_type="class",
+        entity_name="Loader",
+        module_path="loader.py",
+        summary="Загрузчик данных.",
+        purpose="Loads records from external storage and maps them into application objects.",
+        usage_notes="Create it once and reuse it in endpoint handlers.",
+        content="Загрузчик данных.",
+    )
+
+    issues = create_validator(ValidationConfig()).validate([block], [ctx], ValidationConfig())
+
+    assert any("different language" in issue.message for issue in issues)
+
+
 def test_class_signature_without_object() -> None:
     from andocgen.context.implementations.default_context import _class_signature
     from andocgen.models.entities import ClassModel

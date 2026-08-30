@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from andocgen.generator.formatter import is_empty_section
 from andocgen.models.entities import (
     DocBlock,
     EntityContext,
@@ -8,6 +7,7 @@ from andocgen.models.entities import (
     ParameterDoc,
     ReturnDoc,
 )
+from andocgen.text.sections import is_empty_section
 
 _NOISE_BASES = {"object", "Generic", "TypedDict", "NamedTuple", "Protocol"}
 

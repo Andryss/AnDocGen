@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import httpx
 
+from andocgen.llm.base import ProviderRequestError, ProviderResponseError, ProviderTimeoutError
 from andocgen.llm.schema import docblock_schema
 
 
@@ -22,9 +23,19 @@ class OllamaProvider:
             "stream": False,
             "format": docblock_schema(entity_type),
         }
-        with httpx.Client(timeout=self.timeout) as client:
-            response = client.post(url, json=payload)
-            response.raise_for_status()
-            data = response.json()
+        try:
+            with httpx.Client(timeout=self.timeout) as client:
+                response = client.post(url, json=payload)
+                response.raise_for_status()
+                data = response.json()
+        except httpx.TimeoutException as exc:
+            raise ProviderTimeoutError(str(exc)) from exc
+        except httpx.HTTPError as exc:
+            raise ProviderRequestError(str(exc)) from exc
+        except ValueError as exc:
+            raise ProviderResponseError(str(exc)) from exc
         message = data.get("message", {})
-        return message.get("content", "").strip()
+        content = message.get("content", "") if isinstance(message, dict) else ""
+        if not isinstance(content, str) or not content.strip():
+            raise ProviderResponseError("Ollama provider returned empty content")
+        return content.strip()

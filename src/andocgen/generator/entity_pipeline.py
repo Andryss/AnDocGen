@@ -13,6 +13,7 @@ from andocgen.generator.entity_validator import (
 )
 from andocgen.generator.fallback import build_fallback_block
 from andocgen.generator.implementations.markdown_section_parser import SectionParseError
+from andocgen.generator.rendering import render_doc_block
 from andocgen.generator.response_sanitizer import normalize_llm_response
 from andocgen.llm.base import LLMProvider
 from andocgen.models.entities import DocBlock, EntityContext, GenerationError
@@ -147,7 +148,7 @@ class EntityDocumentPipeline:
                 if blocking_issues and validation_config.blocking_fallback == "strip_examples":
                     block.examples = []
 
-                block.content = self._output_formatter.format(block, language)
+                render_doc_block(block, self._output_formatter, language)
                 duration_ms = (time.perf_counter() - start) * 1000
                 if trace:
                     trace.log_llm_response(ctx.entity_id, raw, duration_ms, parsed=True)
@@ -220,7 +221,7 @@ class EntityDocumentPipeline:
         duration_ms = (time.perf_counter() - start) * 1000
         reason = last_error or "; ".join(issue.message for issue in blocking_issues) or "exhausted retries"
         block = build_fallback_block(ctx, raw, reason=reason)
-        block.content = self._output_formatter.format(block, language)
+        render_doc_block(block, self._output_formatter, language)
         if trace:
             trace.info(f"  fallback generated for {ctx.entity_id}")
         return block, None, duration_ms

@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 import ast
-import json
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from andocgen.io.json_utils import write_json
 from andocgen.models.entities import DocBlock, PipelineResult
 
 
@@ -133,7 +133,7 @@ def write_eval_report(
     output_dir.mkdir(parents=True, exist_ok=True)
     json_path = output_dir / json_name
     markdown_path = output_dir / markdown_name
-    json_path.write_text(json.dumps(asdict(report), indent=2, ensure_ascii=False), encoding="utf-8")
+    write_json(json_path, asdict(report))
     markdown_path.write_text(render_eval_summary(report), encoding="utf-8")
     return json_path, markdown_path
 

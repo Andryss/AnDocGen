@@ -1,8 +1,5 @@
 from __future__ import annotations
 
-import ast
-
-from andocgen.generator.formatter import is_empty_section
 from andocgen.models.entities import (
     ClassModel,
     DocBlock,
@@ -10,6 +7,8 @@ from andocgen.models.entities import (
     FunctionModel,
     ParameterModel,
 )
+from andocgen.python.ast_utils import PythonCall, parse_python_calls
+from andocgen.text.sections import is_empty_section
 from andocgen.validation.rules.issue import RuleIssue
 from andocgen.validation.rules.phantom_params import validate_phantom_params
 from andocgen.validation.rules.text_quality import mostly_latin
@@ -103,7 +102,7 @@ def _required_params(fn: FunctionModel) -> list[ParameterModel]:
     ]
 
 
-def _class_ctor_without_required_args(calls: list[_ExampleCall], class_name: str, ctx: EntityContext) -> bool:
+def _class_ctor_without_required_args(calls: list[PythonCall], class_name: str, ctx: EntityContext) -> bool:
     matching_calls = [call for call in calls if call.name == class_name]
     if not matching_calls:
         return False
@@ -145,7 +144,7 @@ def _find_class_model(class_name: str, ctx: EntityContext) -> ClassModel | None:
     return None
 
 
-def _validate_example_type_names(calls: list[_ExampleCall], ctx: EntityContext) -> list[RuleIssue]:
+def _validate_example_type_names(calls: list[PythonCall], ctx: EntityContext) -> list[RuleIssue]:
     module = ctx.module
     if module is None:
         return []
@@ -172,38 +171,5 @@ def _validate_example_type_names(calls: list[_ExampleCall], ctx: EntityContext) 
     return issues
 
 
-class _ExampleCall:
-    def __init__(self, name: str, positional_count: int, keywords: list[str]) -> None:
-        self.name = name
-        self.positional_count = positional_count
-        self.keywords = keywords
-
-
-def _parse_example_calls(examples: str) -> list[_ExampleCall]:
-    try:
-        tree = ast.parse(examples)
-    except SyntaxError:
-        return []
-    calls: list[_ExampleCall] = []
-    for node in ast.walk(tree):
-        if not isinstance(node, ast.Call):
-            continue
-        name = _call_name(node.func)
-        if not name:
-            continue
-        calls.append(
-            _ExampleCall(
-                name=name,
-                positional_count=len(node.args),
-                keywords=[kw.arg for kw in node.keywords if kw.arg],
-            )
-        )
-    return calls
-
-
-def _call_name(node: ast.expr) -> str:
-    if isinstance(node, ast.Name):
-        return node.id
-    if isinstance(node, ast.Attribute):
-        return node.attr
-    return ""
+def _parse_example_calls(examples: str) -> list[PythonCall]:
+    return parse_python_calls(examples, dotted=False)

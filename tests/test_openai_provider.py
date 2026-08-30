@@ -5,6 +5,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
+from andocgen.llm.base import ProviderConfigError, ProviderRequestError, ProviderResponseError
 from andocgen.llm.providers.openai_provider import OpenAIProvider
 from andocgen.llm.schema import docblock_schema
 
@@ -63,7 +64,31 @@ def test_complete_empty_choices(mock_openai_cls: MagicMock) -> None:
 def test_complete_missing_api_key_raises() -> None:
     provider = _make_provider()
     with patch.dict(os.environ, {}, clear=True):
-        with pytest.raises(RuntimeError, match="OPENAI_API_KEY"):
+        with pytest.raises(ProviderConfigError, match="OPENAI_API_KEY"):
+            provider.complete("sys", "user", entity_type="function")
+
+
+@patch("andocgen.llm.providers.openai_provider.OpenAI")
+def test_complete_wraps_provider_request_errors(mock_openai_cls: MagicMock) -> None:
+    mock_client = MagicMock()
+    mock_openai_cls.return_value = mock_client
+    mock_client.chat.completions.create.side_effect = RuntimeError("rate limit")
+
+    provider = _make_provider()
+    with patch.dict(os.environ, {"OPENAI_API_KEY": "sk-test"}):
+        with pytest.raises(ProviderRequestError, match="rate limit"):
+            provider.complete("sys", "user", entity_type="function")
+
+
+@patch("andocgen.llm.providers.openai_provider.OpenAI")
+def test_complete_rejects_malformed_provider_response(mock_openai_cls: MagicMock) -> None:
+    mock_client = MagicMock()
+    mock_openai_cls.return_value = mock_client
+    mock_client.chat.completions.create.return_value = MagicMock(choices=[MagicMock(message=MagicMock(content=None))])
+
+    provider = _make_provider()
+    with patch.dict(os.environ, {"OPENAI_API_KEY": "sk-test"}):
+        with pytest.raises(ProviderResponseError, match="empty content"):
             provider.complete("sys", "user", entity_type="function")
 
 

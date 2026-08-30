@@ -7,16 +7,17 @@ from andocgen.context.base import ContextBuilder, ProjectMetadataLoader, PromptB
 from andocgen.context.implementations.default_context import DefaultContextBuilder
 from andocgen.context.implementations.metadata import DefaultProjectMetadataLoader
 from andocgen.context.implementations.sectioned_prompt import SectionedPromptBuilder
+from andocgen.registry import create_registered
 
-_CONTEXT_BUILDERS: dict[str, type] = {
+_CONTEXT_BUILDERS: dict[str, type[ContextBuilder]] = {
     "default": DefaultContextBuilder,
 }
 
-_PROMPT_BUILDERS: dict[str, type] = {
+_PROMPT_BUILDERS: dict[str, type[PromptBuilder]] = {
     "sectioned": SectionedPromptBuilder,
 }
 
-_METADATA_LOADERS: dict[str, type] = {
+_METADATA_LOADERS: dict[str, type[ProjectMetadataLoader]] = {
     "default": DefaultProjectMetadataLoader,
 }
 
@@ -29,16 +30,8 @@ class ContextComponents:
 
 
 def create_context_components(config: ContextConfig) -> ContextComponents:
-    ctx_impl = config.implementation.lower()
-    prompt_impl = config.prompt.lower()
-
-    if ctx_impl not in _CONTEXT_BUILDERS:
-        raise ValueError(f"Unknown context builder implementation: {config.implementation}")
-    if prompt_impl not in _PROMPT_BUILDERS:
-        raise ValueError(f"Unknown prompt builder implementation: {config.prompt}")
-
     return ContextComponents(
-        context_builder=_CONTEXT_BUILDERS[ctx_impl](),
-        prompt_builder=_PROMPT_BUILDERS[prompt_impl](),
+        context_builder=create_registered(_CONTEXT_BUILDERS, config.implementation, "context builder"),
+        prompt_builder=create_registered(_PROMPT_BUILDERS, config.prompt, "prompt builder"),
         metadata_loader=_METADATA_LOADERS["default"](),
     )

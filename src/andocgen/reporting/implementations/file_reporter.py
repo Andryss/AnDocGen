@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-import json
 import logging
-import time
 from dataclasses import asdict
 from datetime import datetime
 from pathlib import Path
 
 from andocgen.config import AppConfig
+from andocgen.io.json_utils import append_jsonl, write_json
 from andocgen.models.entities import PipelineResult
 
 
@@ -122,8 +121,7 @@ class FileTraceLogger:
                 "user": self._trunc(user),
             }
             payload["response"] = {"raw": self._trunc(raw_response)}
-        with self.llm_responses_path.open("a", encoding="utf-8") as f:
-            f.write(json.dumps(payload, ensure_ascii=False) + "\n")
+        append_jsonl(self.llm_responses_path, payload)
 
     def _trunc(self, text: str) -> str:
         if len(text) <= self.max_chars:
@@ -148,9 +146,9 @@ class FileReporter:
         logs_dir = config.resolve_logs_dir()
         logs_dir.mkdir(parents=True, exist_ok=True)
 
-        summary_path = logs_dir / config.reporting.summary_file
-        detail_path = logs_dir / config.reporting.detail_file
-        trace_path = logs_dir / config.reporting.trace_file
+        summary_path = logs_dir / (config.reporting.summary_file or "summary.txt")
+        detail_path = logs_dir / (config.reporting.detail_file or "detail.json")
+        trace_path = logs_dir / (config.reporting.trace_file or "trace.log")
 
         summary_text = (
             f"AnDocGen run summary\n"
@@ -187,10 +185,7 @@ class FileReporter:
                 for i in result.issues
             ],
         }
-        detail_path.write_text(
-            json.dumps(detail_payload, indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
+        write_json(detail_path, detail_payload)
 
         result.summary_log_path = str(summary_path)
         result.detail_log_path = str(detail_path)
@@ -200,23 +195,7 @@ class FileReporter:
     def create_trace_logger(self, config: AppConfig) -> FileTraceLogger:
         logs_dir = config.resolve_logs_dir()
         return FileTraceLogger(
-            log_path=logs_dir / config.reporting.trace_file,
-            log_llm_content=config.reporting.log_llm_content,
-            max_chars=config.reporting.trace_max_chars,
+            log_path=logs_dir / (config.reporting.trace_file or "trace.log"),
+            log_llm_content=bool(config.reporting.log_llm_content),
+            max_chars=config.reporting.trace_max_chars or 12000,
         )
-
-
-class StageTimer:
-    def __init__(self, trace: FileTraceLogger, stage: str, detail: str = "") -> None:
-        self._trace = trace
-        self._stage = stage
-        self._detail = detail
-        self._start = time.perf_counter()
-
-    def __enter__(self) -> StageTimer:
-        self._trace.log_stage(self._stage, f"start {self._detail}".strip())
-        return self
-
-    def __exit__(self, *args: object) -> None:
-        elapsed_ms = (time.perf_counter() - self._start) * 1000
-        self._trace.log_stage(self._stage, f"done {self._detail}".strip(), elapsed_ms)

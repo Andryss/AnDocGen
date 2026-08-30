@@ -23,7 +23,7 @@ class MarkdownDocumentationWriter:
         all_module_paths: list[str] | None = None,
         language: str = "ru",
     ) -> list[str]:
-        out_dir = Path(output_root or config.directory)
+        out_dir = output_root or Path(config.directory or "./generated_docs")
         out_dir.mkdir(parents=True, exist_ok=True)
 
         blocks_by_module: dict[str, list[DocBlock]] = defaultdict(list)

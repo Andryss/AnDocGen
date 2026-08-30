@@ -1,18 +1,12 @@
 from __future__ import annotations
 
 import json
-from typing import Any
 
-from andocgen.generator.formatter import is_empty_section
-from andocgen.models.entities import (
-    DocBlock,
-    EntityContext,
-    EntityType,
-    ExampleDoc,
-    ExportDoc,
-    ParameterDoc,
-    ReturnDoc,
-)
+from pydantic import ValidationError
+
+from andocgen.llm.contracts import doc_response_to_block, response_model_for
+from andocgen.models.entities import DocBlock, EntityContext
+from andocgen.text.sections import is_empty_section
 
 
 class SectionParseError(Exception):
@@ -41,201 +35,51 @@ def _parse_json_response(raw_response: str, ctx: EntityContext) -> DocBlock:
     if not isinstance(payload, dict):
         raise SectionParseError("JSON response must be an object")
 
-    allowed = _json_allowed_fields(ctx.entity_type)
-    unexpected = sorted(set(payload) - allowed)
-    if unexpected:
-        raise SectionParseError(f"Unexpected JSON fields: {', '.join(unexpected)}")
+    try:
+        response = response_model_for(ctx.entity_type).model_validate(payload)
+    except ValidationError as exc:
+        raise SectionParseError(_format_validation_error(exc)) from exc
 
-    required = _json_required_fields(ctx.entity_type)
-    missing = [field for field in required if field not in payload]
-    if missing:
-        raise SectionParseError(f"Missing JSON fields: {', '.join(missing)}")
-
-    summary = payload.get("summary")
-    if not isinstance(summary, str) or not summary.strip():
+    if not response.summary.strip():
         raise SectionParseError("JSON field `summary` must be a non-empty string")
 
-    block = DocBlock(
-        entity_type=ctx.entity_type,
-        entity_name=ctx.entity_name,
-        module_path=ctx.module_path,
-        signature=ctx.signature,
-        raw_response=raw_response.strip(),
-        summary=summary.strip(),
-    )
-
-    if ctx.entity_type in ("function", "method"):
-        block.parameters = _json_parameters(payload.get("parameters"))
-        block.returns = _json_return(payload.get("returns"))
-        block.raises = _json_optional_text(payload.get("raises"), "raises")
-        block.edge_cases = _json_optional_text(payload.get("edge_cases"), "edge_cases")
-        block.side_effects = _json_optional_text(payload.get("side_effects"), "side_effects")
-        block.examples = _json_examples(payload.get("examples"))
-        block.see_also = _json_optional_text(payload.get("see_also"), "see_also")
-    elif ctx.entity_type == "class":
-        block.purpose = _json_optional_text(payload.get("purpose"), "purpose")
-        block.usage_notes = _json_optional_text(payload.get("usage_notes"), "usage_notes")
-    elif ctx.entity_type == "module":
-        block.exports = _json_exports(payload.get("exports"))
-
+    block = doc_response_to_block(response, ctx)
+    block.raw_response = raw_response.strip()
+    _normalize_empty_sections(block)
     return block
 
 
-def _json_allowed_fields(entity_type: EntityType) -> set[str]:
-    if entity_type in ("function", "method"):
-        return {
-            "summary",
-            "parameters",
-            "returns",
-            "raises",
-            "edge_cases",
-            "side_effects",
-            "examples",
-            "see_also",
-        }
-    if entity_type == "class":
-        return {"summary", "purpose", "usage_notes"}
-    return {"summary", "exports"}
+def _format_validation_error(exc: ValidationError) -> str:
+    extra_fields = [
+        ".".join(str(part) for part in error["loc"])
+        for error in exc.errors()
+        if error.get("type") == "extra_forbidden" and error.get("loc")
+    ]
+    if extra_fields:
+        return f"Unexpected JSON fields: {', '.join(sorted(extra_fields))}"
+
+    details = []
+    for error in exc.errors():
+        location = ".".join(str(part) for part in error["loc"])
+        details.append(location or str(error["type"]))
+    if details:
+        return f"JSON response failed contract validation: {', '.join(details)}"
+    return "JSON response failed contract validation"
 
 
-def _json_required_fields(entity_type: EntityType) -> list[str]:
-    if entity_type in ("function", "method"):
-        return [
-            "summary",
-            "parameters",
-            "returns",
-            "raises",
-            "edge_cases",
-            "side_effects",
-            "examples",
-            "see_also",
-        ]
-    if entity_type == "class":
-        return ["summary", "purpose", "usage_notes"]
-    return ["summary", "exports"]
-
-
-def _json_parameters(value: Any) -> list[ParameterDoc]:
-    if value is None:
-        return []
-    if not isinstance(value, list):
-        raise SectionParseError("JSON parameter list must be an array")
-    params: list[ParameterDoc] = []
-    seen: set[str] = set()
-    for item in value:
-        if not isinstance(item, dict):
-            raise SectionParseError("JSON parameter item must be an object")
-        extra = sorted(set(item) - {"name", "type", "description", "optional", "default"})
-        if extra:
-            raise SectionParseError(f"Unexpected JSON parameter fields: {', '.join(extra)}")
-        name = item.get("name")
-        if not isinstance(name, str) or not name.strip():
-            raise SectionParseError("JSON parameter `name` must be a non-empty string")
-        if name in seen:
-            continue
-        typ = item.get("type", "")
-        desc = item.get("description", "")
-        default = item.get("default")
-        params.append(
-            ParameterDoc(
-                name=name.strip(),
-                type=typ.strip() if isinstance(typ, str) else "",
-                description=desc.strip() if isinstance(desc, str) else "",
-                optional=bool(item.get("optional", False)),
-                default=default if isinstance(default, str) else None,
-            )
-        )
-        seen.add(name)
-    return params
-
-
-def _json_return(value: Any) -> ReturnDoc | None:
-    if value is None:
-        return None
-    if isinstance(value, str):
-        if is_empty_section(value):
-            return None
-        return ReturnDoc(type="", description=value.strip())
-    if not isinstance(value, dict):
-        raise SectionParseError("JSON `returns` must be null, string, or object")
-    extra = sorted(set(value) - {"type", "description"})
-    if extra:
-        raise SectionParseError(f"Unexpected JSON return fields: {', '.join(extra)}")
-    typ = value.get("type", "")
-    desc = value.get("description", "")
-    if not typ and not desc:
-        return None
-    return ReturnDoc(
-        type=typ.strip() if isinstance(typ, str) else "",
-        description=desc.strip() if isinstance(desc, str) else "",
-    )
-
-
-def _json_exports(value: Any) -> list[ExportDoc]:
-    if value is None:
-        return []
-    if not isinstance(value, list):
-        raise SectionParseError("JSON exports list must be an array")
-    exports: list[ExportDoc] = []
-    for item in value:
-        if not isinstance(item, dict):
-            raise SectionParseError("JSON export item must be an object")
-        extra = sorted(set(item) - {"name", "type", "description"})
-        if extra:
-            raise SectionParseError(f"Unexpected JSON export fields: {', '.join(extra)}")
-        name = item.get("name")
-        if not isinstance(name, str) or not name.strip():
-            raise SectionParseError("JSON export `name` must be a non-empty string")
-        typ = item.get("type")
-        desc = item.get("description", "")
-        exports.append(
-            ExportDoc(
-                name=name.strip(),
-                type=typ.strip() if isinstance(typ, str) else None,
-                description=desc.strip() if isinstance(desc, str) else "",
-            )
-        )
-    return exports
-
-
-def _json_examples(value: Any) -> list[ExampleDoc]:
-    if value is None:
-        return []
-    if not isinstance(value, list):
-        raise SectionParseError("JSON examples must be an array")
-    examples: list[ExampleDoc] = []
-    for item in value:
-        if not isinstance(item, dict):
-            raise SectionParseError("JSON example item must be an object")
-        extra = sorted(set(item) - {"description", "language", "code"})
-        if extra:
-            raise SectionParseError(f"Unexpected JSON example fields: {', '.join(extra)}")
-        missing = [field for field in ("description", "language", "code") if field not in item]
-        if missing:
-            raise SectionParseError(f"Missing JSON example fields: {', '.join(missing)}")
-        description = item.get("description")
-        language = item.get("language")
-        code = item.get("code")
-        if not isinstance(description, str) or not isinstance(language, str) or not isinstance(code, str):
-            raise SectionParseError("JSON example fields must be strings")
-        if not description.strip() or not language.strip() or not code.strip():
-            raise SectionParseError("JSON example fields must be non-empty strings")
-        examples.append(
-            ExampleDoc(
-                description=description.strip(),
-                language=language.strip(),
-                code=code.strip(),
-            )
-        )
-    return examples
-
-
-def _json_optional_text(value: Any, field: str) -> str:
-    if value is None:
-        return "N/A"
-    if not isinstance(value, str):
-        raise SectionParseError(f"JSON field `{field}` must be a string")
-    return _normalize_optional_section(value)
+def _normalize_empty_sections(block: DocBlock) -> None:
+    if block.raises is not None:
+        block.raises = _normalize_optional_section(block.raises)
+    if block.edge_cases is not None:
+        block.edge_cases = _normalize_optional_section(block.edge_cases)
+    if block.side_effects is not None:
+        block.side_effects = _normalize_optional_section(block.side_effects)
+    if block.see_also is not None:
+        block.see_also = _normalize_optional_section(block.see_also)
+    if block.purpose is not None:
+        block.purpose = _normalize_optional_section(block.purpose)
+    if block.usage_notes is not None:
+        block.usage_notes = _normalize_optional_section(block.usage_notes)
 
 
 def _normalize_optional_section(section: str) -> str:

@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 
 from andocgen.models.entities import CallGraph, CallGraphEdge, DocBlock, ModuleModel
-from andocgen.output.implementations.json_cache import JsonCacheStore
+from andocgen.output.implementations.json_cache import JsonCacheStore, docblock_hash
 
 
 def test_json_cache_stores_source_and_doc_hashes(tmp_path) -> None:
@@ -40,3 +40,22 @@ def test_json_cache_stores_source_and_doc_hashes(tmp_path) -> None:
     assert payload["entities"]["a.py::add"]["doc_hash"]
     assert payload["entities"]["a.py::caller"]["dependency_hash"]
     assert JsonCacheStore().load(tmp_path / "cache") == {"a.py": "source-hash"}
+
+
+def test_docblock_hash_ignores_rendered_content() -> None:
+    left = DocBlock(
+        entity_type="function",
+        entity_name="add",
+        module_path="a.py",
+        summary="Adds numbers.",
+        content="### old markdown",
+    )
+    right = DocBlock(
+        entity_type="function",
+        entity_name="add",
+        module_path="a.py",
+        summary="Adds numbers.",
+        content="### new markdown",
+    )
+
+    assert docblock_hash(left) == docblock_hash(right)

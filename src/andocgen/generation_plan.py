@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from andocgen.models.entities import CallGraph, DocBlock, ModuleModel, ProjectModel, make_entity_id
+from andocgen.models.iteration import entity_module_map
 from andocgen.output.implementations.json_cache import docblock_hash
 
 GenerationReason = str
@@ -26,7 +27,7 @@ class GenerationPlan:
 
 
 def build_generation_plan(project: ProjectModel, graph: CallGraph, cache: CacheSnapshot) -> GenerationPlan:
-    entity_modules = _entity_modules(project.modules)
+    entity_modules = entity_module_map(project.modules)
     known_entity_ids = set(entity_modules)
     generated: set[str] = set()
     reasons: dict[str, GenerationReason] = {}
@@ -83,19 +84,6 @@ def cache_snapshot_from_raw(raw: dict[str, object]) -> CacheSnapshot:
         if isinstance(entities, dict)
         else {},
     )
-
-
-def _entity_modules(modules: list[ModuleModel]) -> dict[str, str]:
-    result: dict[str, str] = {}
-    for module in modules:
-        result[make_entity_id(module.path, "module", "module")] = module.path
-        for fn in module.functions:
-            result[make_entity_id(module.path, "function", fn.name)] = module.path
-        for cls in module.classes:
-            result[make_entity_id(module.path, "class", cls.name)] = module.path
-            for method in cls.methods:
-                result[make_entity_id(module.path, "method", method.qualified_name())] = module.path
-    return result
 
 
 def _module_hash(modules: list[ModuleModel], module_path: str) -> str:

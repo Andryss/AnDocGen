@@ -12,6 +12,7 @@ from andocgen.models.entities import (
     ParameterModel,
 )
 from andocgen.parser.base import ParseResult
+from andocgen.python.ast_utils import call_name, safe_unparse
 
 
 def _file_hash(path: Path) -> str:
@@ -209,12 +210,7 @@ class _ModuleVisitor(ast.NodeVisitor):
 
     @staticmethod
     def _expr_to_str(node: ast.expr | None) -> str:
-        if node is None:
-            return ""
-        try:
-            return ast.unparse(node)
-        except Exception:
-            return type(node).__name__
+        return safe_unparse(node)
 
 
 def _extract_decorators(node: ast.FunctionDef | ast.AsyncFunctionDef) -> list[str]:
@@ -225,10 +221,7 @@ def _extract_decorators(node: ast.FunctionDef | ast.AsyncFunctionDef) -> list[st
         elif isinstance(dec, ast.Attribute):
             decorators.append(dec.attr)
         else:
-            try:
-                decorators.append(ast.unparse(dec))
-            except Exception:
-                decorators.append("unknown")
+            decorators.append(safe_unparse(dec) or "unknown")
     return decorators
 
 
@@ -281,18 +274,7 @@ def _extract_calls(node: ast.AST) -> list[str]:
     calls: list[str] = []
     for child in ast.walk(node):
         if isinstance(child, ast.Call):
-            name = _call_name(child.func)
+            name = call_name(child.func)
             if name:
                 calls.append(name)
     return sorted(set(calls))
-
-
-def _call_name(node: ast.expr) -> str:
-    if isinstance(node, ast.Name):
-        return node.id
-    if isinstance(node, ast.Attribute):
-        value = _call_name(node.value) if not isinstance(node.value, ast.Name) else node.value.id
-        if value:
-            return f"{value}.{node.attr}"
-        return node.attr
-    return ""

@@ -5,29 +5,29 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
+from andocgen.io.json_utils import read_json_object, write_json
 from andocgen.models.entities import CallGraph, DocBlock, ModuleModel, make_entity_id
+from andocgen.models.iteration import module_entity_ids
 
 
 class JsonCacheStore:
     def load(self, cache_dir: Path) -> dict[str, str]:
         cache_path = cache_dir / "checksums.json"
-        if cache_path.exists():
-            payload = json.loads(cache_path.read_text(encoding="utf-8"))
-            files = payload.get("files", {}) if isinstance(payload, dict) else {}
-            return {
-                path: item.get("source_hash", "")
-                for path, item in files.items()
-                if isinstance(item, dict)
-            }
-        return {}
+        payload = read_json_object(cache_path)
+        files = payload.get("files", {})
+        if not isinstance(files, dict):
+            return {}
+        return {
+            path: item.get("source_hash", "")
+            for path, item in files.items()
+            if isinstance(path, str) and isinstance(item, dict)
+        }
 
     def load_snapshot(self, cache_dir: Path):
         from andocgen.generation_plan import cache_snapshot_from_raw
 
         cache_path = cache_dir / "checksums.json"
-        if not cache_path.exists():
-            return cache_snapshot_from_raw({})
-        return cache_snapshot_from_raw(json.loads(cache_path.read_text(encoding="utf-8")))
+        return cache_snapshot_from_raw(read_json_object(cache_path))
 
     def update(
         self,
@@ -41,7 +41,7 @@ class JsonCacheStore:
         files: dict[str, dict[str, str]] = {}
         entities: dict[str, dict[str, str]] = {}
         if cache_path.exists():
-            payload = json.loads(cache_path.read_text(encoding="utf-8"))
+            payload = read_json_object(cache_path)
             raw_files = payload.get("files", {}) if isinstance(payload, dict) else {}
             if isinstance(raw_files, dict):
                 files = {
@@ -64,7 +64,7 @@ class JsonCacheStore:
                 "source_hash": module.content_hash,
                 "doc_hash": doc_hashes.get(module.path, files.get(module.path, {}).get("doc_hash", "")),
             }
-            for entity_id in _module_entity_ids(module):
+            for entity_id in module_entity_ids(module):
                 previous = entities.get(entity_id, {})
                 entities[entity_id] = {
                     "source_hash": module.content_hash,
@@ -80,16 +80,13 @@ class JsonCacheStore:
                 "doc_hash": doc_hashes_by_entity.get(entity_id, previous.get("doc_hash", "")),
                 "dependency_hash": dependency_hashes.get(entity_id, previous.get("dependency_hash", "")),
             }
-        cache_path.write_text(
-            json.dumps({"files": files, "entities": entities}, indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
+        write_json(cache_path, {"files": files, "entities": entities})
 
 
 def _doc_hashes_by_module(blocks: list[DocBlock]) -> dict[str, str]:
     grouped: dict[str, list[str]] = {}
     for block in blocks:
-        grouped.setdefault(block.module_path, []).append(json.dumps(asdict(block), sort_keys=True, ensure_ascii=False))
+        grouped.setdefault(block.module_path, []).append(docblock_hash(block))
     return {
         module_path: hashlib.sha256("\n".join(sorted(items)).encode("utf-8")).hexdigest()
         for module_path, items in grouped.items()
@@ -104,18 +101,11 @@ def _doc_hashes_by_entity(blocks: list[DocBlock]) -> dict[str, str]:
 
 
 def docblock_hash(block: DocBlock) -> str:
+    payload = asdict(block)
+    payload.pop("content", None)
     return hashlib.sha256(
-        json.dumps(asdict(block), sort_keys=True, ensure_ascii=False).encode("utf-8")
+        json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
     ).hexdigest()
-
-
-def _module_entity_ids(module: ModuleModel) -> list[str]:
-    ids = [make_entity_id(module.path, "module", "module")]
-    ids.extend(make_entity_id(module.path, "function", fn.name) for fn in module.functions)
-    for cls in module.classes:
-        ids.append(make_entity_id(module.path, "class", cls.name))
-        ids.extend(make_entity_id(module.path, "method", method.qualified_name()) for method in cls.methods)
-    return ids
 
 
 def _dependency_hashes(graph: CallGraph, doc_hashes_by_entity: dict[str, str]) -> dict[str, str]:

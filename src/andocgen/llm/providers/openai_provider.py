@@ -5,6 +5,7 @@ from typing import Any
 
 from openai import OpenAI
 
+from andocgen.llm.base import ProviderConfigError, ProviderRequestError, ProviderResponseError
 from andocgen.llm.schema import docblock_schema
 
 
@@ -31,7 +32,7 @@ class OpenAIProvider:
     def _build_client(self) -> OpenAI:
         api_key = os.environ.get(self.api_key_env)
         if not api_key:
-            raise RuntimeError(
+            raise ProviderConfigError(
                 f"Environment variable {self.api_key_env} is not set for OpenAI provider"
             )
 
@@ -72,10 +73,17 @@ class OpenAIProvider:
         if self.max_tokens is not None:
             request_kwargs["max_tokens"] = self.max_tokens
 
-        response = client.chat.completions.create(**request_kwargs)
+        try:
+            response = client.chat.completions.create(**request_kwargs)
+        except ProviderRequestError:
+            raise
+        except Exception as exc:
+            raise ProviderRequestError(str(exc)) from exc
 
         choices = response.choices
         if not choices:
             return ""
         content = choices[0].message.content
-        return (content or "").strip()
+        if content is None:
+            raise ProviderResponseError("OpenAI provider returned empty content")
+        return content.strip()
