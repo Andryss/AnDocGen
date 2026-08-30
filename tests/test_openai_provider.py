@@ -6,6 +6,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from andocgen.llm.providers.openai_provider import OpenAIProvider
+from andocgen.llm.schema import docblock_schema
 
 
 def _make_provider(**kwargs: object) -> OpenAIProvider:
@@ -28,7 +29,7 @@ def test_complete_returns_trimmed_content(mock_openai_cls: MagicMock) -> None:
 
     provider = _make_provider()
     with patch.dict(os.environ, {"OPENAI_API_KEY": "sk-test"}):
-        result = provider.complete("sys", "user")
+        result = provider.complete("sys", "user", entity_type="function")
 
     assert result == "doc text"
     mock_client.chat.completions.create.assert_called_once_with(
@@ -42,7 +43,7 @@ def test_complete_returns_trimmed_content(mock_openai_cls: MagicMock) -> None:
             "json_schema": {
                 "name": "andocgen_docblock",
                 "strict": True,
-                "schema": OpenAIProvider.docblock_schema(),
+                "schema": docblock_schema("function"),
             },
         },
     )
@@ -56,14 +57,14 @@ def test_complete_empty_choices(mock_openai_cls: MagicMock) -> None:
 
     provider = _make_provider()
     with patch.dict(os.environ, {"OPENAI_API_KEY": "sk-test"}):
-        assert provider.complete("sys", "user") == ""
+        assert provider.complete("sys", "user", entity_type="function") == ""
 
 
 def test_complete_missing_api_key_raises() -> None:
     provider = _make_provider()
     with patch.dict(os.environ, {}, clear=True):
         with pytest.raises(RuntimeError, match="OPENAI_API_KEY"):
-            provider.complete("sys", "user")
+            provider.complete("sys", "user", entity_type="function")
 
 
 @patch("andocgen.llm.providers.openai_provider.OpenAI")
@@ -84,7 +85,7 @@ def test_yandex_project_passed_to_client(mock_openai_cls: MagicMock) -> None:
     )
 
     with patch.dict(os.environ, {"YANDEX_API_KEY": "AQVN-test"}):
-        provider.complete("sys", "user")
+        provider.complete("sys", "user", entity_type="function")
 
     mock_openai_cls.assert_called_once_with(
         api_key="AQVN-test",
@@ -103,7 +104,7 @@ def test_yandex_project_passed_to_client(mock_openai_cls: MagicMock) -> None:
             "json_schema": {
                 "name": "andocgen_docblock",
                 "strict": True,
-                "schema": OpenAIProvider.docblock_schema(),
+                "schema": docblock_schema("function"),
             },
         },
         temperature=0.3,
@@ -112,7 +113,7 @@ def test_yandex_project_passed_to_client(mock_openai_cls: MagicMock) -> None:
 
 
 @patch("andocgen.llm.providers.openai_provider.OpenAI")
-def test_complete_uses_class_schema_for_class_prompt(mock_openai_cls: MagicMock) -> None:
+def test_complete_uses_explicit_class_schema(mock_openai_cls: MagicMock) -> None:
     mock_client = MagicMock()
     mock_openai_cls.return_value = mock_client
     mock_client.chat.completions.create.return_value = MagicMock(
@@ -121,15 +122,15 @@ def test_complete_uses_class_schema_for_class_prompt(mock_openai_cls: MagicMock)
 
     provider = _make_provider()
     with patch.dict(os.environ, {"OPENAI_API_KEY": "sk-test"}):
-        provider.complete("Return a JSON object with EXACTLY these top-level fields:\n- Summary", "user")
+        provider.complete("function-looking system prompt", "user", entity_type="class")
 
     kwargs = mock_client.chat.completions.create.call_args.kwargs
     schema = kwargs["response_format"]["json_schema"]["schema"]
-    assert schema == OpenAIProvider.docblock_schema("class")
+    assert schema == docblock_schema("class")
 
 
 def test_function_schema_uses_typed_examples() -> None:
-    schema = OpenAIProvider.docblock_schema()
+    schema = docblock_schema("function")
     examples = schema["properties"]["examples"]
 
     assert examples["type"] == "array"

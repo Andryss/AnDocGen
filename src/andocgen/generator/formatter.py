@@ -119,6 +119,9 @@ def _format_function(block: DocBlock, labels: LocaleLabels, heading_level: int) 
 def _format_class(block: DocBlock, labels: LocaleLabels, heading_level: int) -> str:
     lines = [_heading(heading_level, _display_signature(block)), *_render_prose(block.summary)]
 
+    lines.extend(_render_labeled_section(labels.purpose, block.purpose or ""))
+    lines.extend(_render_labeled_section(labels.usage_notes, block.usage_notes or ""))
+
     if block.fields:
         lines.append(f"**{labels.fields}:**")
         lines.append("")

@@ -73,9 +73,8 @@ def _parse_json_response(raw_response: str, ctx: EntityContext) -> DocBlock:
         block.examples = _json_examples(payload.get("examples"))
         block.see_also = _json_optional_text(payload.get("see_also"), "see_also")
     elif ctx.entity_type == "class":
-        block.fields = _json_parameters(payload.get("fields", []))
-        block.inheritance = _json_optional_text(payload.get("inheritance", "N/A"), "inheritance")
-        block.methods_overview = _json_optional_text(payload.get("methods_overview", "N/A"), "methods_overview")
+        block.purpose = _json_optional_text(payload.get("purpose"), "purpose")
+        block.usage_notes = _json_optional_text(payload.get("usage_notes"), "usage_notes")
     elif ctx.entity_type == "module":
         block.exports = _json_exports(payload.get("exports"))
 
@@ -95,7 +94,7 @@ def _json_allowed_fields(entity_type: EntityType) -> set[str]:
             "see_also",
         }
     if entity_type == "class":
-        return {"summary", "fields", "inheritance", "methods_overview"}
+        return {"summary", "purpose", "usage_notes"}
     return {"summary", "exports"}
 
 
@@ -112,7 +111,7 @@ def _json_required_fields(entity_type: EntityType) -> list[str]:
             "see_also",
         ]
     if entity_type == "class":
-        return ["summary"]
+        return ["summary", "purpose", "usage_notes"]
     return ["summary", "exports"]
 
 

@@ -45,6 +45,7 @@ class TraceLogger(Protocol):
         validation_ok: bool,
         retry_reason: str | None = None,
         fallback_reason: str | None = None,
+        structured_format: str | None = None,
     ) -> None:
         ...
 

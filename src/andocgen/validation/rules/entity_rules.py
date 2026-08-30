@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import re
+import ast
 
 from andocgen.generator.formatter import is_empty_section
 from andocgen.models.entities import (
@@ -58,7 +58,8 @@ def _validate_examples(block: DocBlock, ctx: EntityContext) -> list[RuleIssue]:
         return []
 
     issues: list[RuleIssue] = []
-    if fn.owner_class and _class_ctor_without_required_args(examples, fn.owner_class, ctx):
+    calls = _parse_example_calls(examples)
+    if fn.owner_class and _class_ctor_without_required_args(calls, fn.owner_class, ctx):
         issues.append(
             RuleIssue(
                 code="examples_invalid_ctor",
@@ -71,7 +72,7 @@ def _validate_examples(block: DocBlock, ctx: EntityContext) -> list[RuleIssue]:
         for cls in module.classes:
             if fn.owner_class and cls.name == fn.owner_class:
                 continue
-            if _class_ctor_without_required_args(examples, cls.name, ctx):
+            if _class_ctor_without_required_args(calls, cls.name, ctx):
                 issues.append(
                     RuleIssue(
                         code="examples_invalid_ctor",
@@ -80,7 +81,7 @@ def _validate_examples(block: DocBlock, ctx: EntityContext) -> list[RuleIssue]:
                 )
 
     required = _required_params(fn)
-    if required and re.search(rf"\b{re.escape(fn.name)}\s*\(\s*\)", examples):
+    if required and any(call.name == fn.name and call.positional_count == 0 and not call.keywords for call in calls):
         issues.append(
             RuleIssue(
                 code="examples_invalid_call",
@@ -88,7 +89,7 @@ def _validate_examples(block: DocBlock, ctx: EntityContext) -> list[RuleIssue]:
             )
         )
 
-    issues.extend(_validate_example_type_names(examples, ctx))
+    issues.extend(_validate_example_type_names(calls, ctx))
     return issues
 
 
@@ -102,21 +103,24 @@ def _required_params(fn: FunctionModel) -> list[ParameterModel]:
     ]
 
 
-def _class_ctor_without_required_args(
-    examples: str, class_name: str, ctx: EntityContext
-) -> bool:
-    if not re.search(rf"\b{re.escape(class_name)}\s*\(\s*\)", examples):
+def _class_ctor_without_required_args(calls: list[_ExampleCall], class_name: str, ctx: EntityContext) -> bool:
+    matching_calls = [call for call in calls if call.name == class_name]
+    if not matching_calls:
         return False
     cls = _find_class_model(class_name, ctx)
     if cls is None:
         return False
     if cls.is_namedtuple or cls.is_dataclass:
         required_fields = [field for field in cls.field_defs if field.default is None]
-        return bool(required_fields)
+        return any(
+            call.positional_count == 0 and not (set(call.keywords) & {field.name for field in required_fields})
+            for call in matching_calls
+        )
     init_fn = _find_class_init(class_name, ctx)
     if init_fn is None:
         return False
-    return bool(_required_params(init_fn))
+    required = _required_params(init_fn)
+    return any(call.positional_count < len(required) and not call.keywords for call in matching_calls)
 
 
 def _find_class_init(class_name: str, ctx: EntityContext) -> FunctionModel | None:
@@ -141,7 +145,7 @@ def _find_class_model(class_name: str, ctx: EntityContext) -> ClassModel | None:
     return None
 
 
-def _validate_example_type_names(examples: str, ctx: EntityContext) -> list[RuleIssue]:
+def _validate_example_type_names(calls: list[_ExampleCall], ctx: EntityContext) -> list[RuleIssue]:
     module = ctx.module
     if module is None:
         return []
@@ -150,19 +154,56 @@ def _validate_example_type_names(examples: str, ctx: EntityContext) -> list[Rule
         if (not cls.is_dataclass and not cls.is_namedtuple) or not cls.field_defs:
             continue
         allowed = {field.name for field in cls.field_defs}
-        for match in re.finditer(rf"\b{re.escape(cls.name)}\s*\(([^)]*)\)", examples):
-            args = match.group(1).strip()
-            if not args or "=" not in args:
+        for call in calls:
+            if call.name != cls.name:
                 continue
-            for kw in re.findall(r"(\w+)\s*=", args):
-                if kw not in allowed:
-                    issues.append(
-                        RuleIssue(
-                            code="examples_invalid_type",
-                            message=(
-                                f"Example uses unknown field `{kw}` for `{cls.name}` "
-                                f"(expected: {', '.join(sorted(allowed))})"
-                            ),
-                        )
+            for kw in call.keywords:
+                if kw in allowed:
+                    continue
+                issues.append(
+                    RuleIssue(
+                        code="examples_invalid_type",
+                        message=(
+                            f"Example uses unknown field `{kw}` for `{cls.name}` "
+                            f"(expected: {', '.join(sorted(allowed))})"
+                        ),
                     )
+                )
     return issues
+
+
+class _ExampleCall:
+    def __init__(self, name: str, positional_count: int, keywords: list[str]) -> None:
+        self.name = name
+        self.positional_count = positional_count
+        self.keywords = keywords
+
+
+def _parse_example_calls(examples: str) -> list[_ExampleCall]:
+    try:
+        tree = ast.parse(examples)
+    except SyntaxError:
+        return []
+    calls: list[_ExampleCall] = []
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        name = _call_name(node.func)
+        if not name:
+            continue
+        calls.append(
+            _ExampleCall(
+                name=name,
+                positional_count=len(node.args),
+                keywords=[kw.arg for kw in node.keywords if kw.arg],
+            )
+        )
+    return calls
+
+
+def _call_name(node: ast.expr) -> str:
+    if isinstance(node, ast.Name):
+        return node.id
+    if isinstance(node, ast.Attribute):
+        return node.attr
+    return ""

@@ -35,6 +35,8 @@ def build_fallback_block(ctx: EntityContext, raw_response: str = "", reason: str
         block.examples = []
         block.see_also = "N/A"
     elif ctx.entity_type == "class" and ctx.class_model:
+        block.purpose = f"Класс `{ctx.entity_name}` описан по структуре исходного кода."
+        block.usage_notes = "Используйте публичные методы и поля класса согласно их сигнатурам."
         block.fields = [
             ParameterDoc(
                 name=field.name,

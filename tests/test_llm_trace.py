@@ -27,6 +27,7 @@ def test_llm_trace_writes_content_when_enabled(tmp_path) -> None:
         raw_response='{"summary":"ok"}',
         parse_ok=True,
         validation_ok=True,
+        structured_format="json_schema",
     )
 
     lines = (tmp_path / "docs" / ".andocgen" / "logs" / "llm_responses.jsonl").read_text(encoding="utf-8").splitlines()
@@ -35,6 +36,7 @@ def test_llm_trace_writes_content_when_enabled(tmp_path) -> None:
     assert payload["request"]["system"] == "system prompt"
     assert payload["response"]["raw"] == '{"summary":"ok"}'
     assert payload["parse_ok"] is True
+    assert payload["structured_format"] == "json_schema"
 
 
 def test_llm_trace_redacts_content_when_disabled(tmp_path) -> None:

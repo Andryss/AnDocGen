@@ -5,6 +5,14 @@ from andocgen.generator.section_parser import parse_sections
 from andocgen.models.entities import ClassModel, EntityContext, ParameterModel
 
 
+def _class_response(summary: str) -> str:
+    return (
+        f'{{"summary": "{summary}", '
+        '"purpose": "Describes the class role.", '
+        '"usage_notes": "Use public methods and fields."}'
+    )
+
+
 def test_parse_class_summary_only() -> None:
     ctx = EntityContext(
         entity_type="class",
@@ -15,7 +23,7 @@ def test_parse_class_summary_only() -> None:
         signature="class Item",
         class_model=ClassModel(name="Item", bases=["Base"]),
     )
-    raw = '{"summary": "Data item."}'
+    raw = _class_response("Data item.")
     block = parse_sections(raw, ctx)
     BlockEnricher().enrich(block, ctx)
     assert block.summary == "Data item."
@@ -40,7 +48,7 @@ def test_enrich_class_fields_from_dataclass_ast() -> None:
             ],
         ),
     )
-    raw = '{"summary": "Line item."}'
+    raw = _class_response("Line item.")
     block = parse_sections(raw, ctx)
     BlockEnricher().enrich(block, ctx)
     assert block.fields is not None
@@ -57,7 +65,7 @@ def test_enrich_plain_class_clears_llm_fields() -> None:
         signature="class OrderService",
         class_model=ClassModel(name="OrderService", is_dataclass=False),
     )
-    raw = '{"summary": "Service class."}'
+    raw = _class_response("Service class.")
     block = parse_sections(raw, ctx)
     BlockEnricher().enrich(block, ctx)
     assert block.fields == []

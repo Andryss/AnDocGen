@@ -12,7 +12,7 @@ _FUNCTION_SECTIONS = (
     "Examples",
     "See also",
 )
-_CLASS_SECTIONS = ("Summary",)
+_CLASS_SECTIONS = ("Summary", "Purpose", "Usage notes")
 _MODULE_SECTIONS = ("Summary", "Exports")
 
 _FUNCTION_EXAMPLE = """{
@@ -36,7 +36,9 @@ _FUNCTION_EXAMPLE = """{
 }"""
 
 _CLASS_EXAMPLE = """{
-  "summary": "Класс для базовых арифметических операций с числами с плавающей точкой."
+  "summary": "Класс для базовых арифметических операций с числами с плавающей точкой.",
+  "purpose": "Инкапсулирует операции калькулятора в объектном интерфейсе.",
+  "usage_notes": "Создайте экземпляр класса и вызывайте методы для выполнения вычислений."
 }"""
 
 _MODULE_EXAMPLE = """{

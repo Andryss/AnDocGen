@@ -10,7 +10,8 @@ class MockProvider:
     def __init__(self, language: str = "ru") -> None:
         self.language = language
 
-    def complete(self, system: str, user: str) -> str:
+    def complete(self, system: str, user: str, *, entity_type: str = "function") -> str:
+        del system, entity_type
         ctx = _parse_user_message(user)
         if ctx["entity_type"] == "module":
             return _module_doc(ctx, self.language)
@@ -68,7 +69,14 @@ def _module_doc(ctx: dict[str, str], language: str) -> str:
 def _class_doc(ctx: dict[str, str], language: str) -> str:
     name = ctx["entity_name"]
     desc = _summary_desc(ctx["docstring"], f"Класс `{name}`.", language)
-    return json.dumps({"summary": desc}, ensure_ascii=False)
+    return json.dumps(
+        {
+            "summary": desc,
+            "purpose": f"Описывает роль класса `{name}` в модуле.",
+            "usage_notes": "Используйте экземпляры класса согласно его публичным методам и полям.",
+        },
+        ensure_ascii=False,
+    )
 
 
 def _function_doc(ctx: dict[str, str], language: str) -> str:

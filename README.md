@@ -100,11 +100,9 @@ ruff check .
 
 ## Документация проекта
 
-- [Требования](docs/requirements.md)
-- [Архитектура](docs/architecture.md)
-- [Подготовка входных данных](docs/input_preparation.md)
-- [Описание прототипа](docs/prototype.md)
-- [Апробация](docs/evaluation.md)
+- [Рабочая документация](docs/README.md)
+- [Инструкции для ИИ-агентов](AGENTS.md)
+- [Исторический первый отчет](docs/first_report/README.md)
 
 ## Требования
 

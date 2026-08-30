@@ -5,6 +5,8 @@ from typing import Any
 
 from openai import OpenAI
 
+from andocgen.llm.schema import docblock_schema
+
 
 class OpenAIProvider:
     def __init__(
@@ -48,7 +50,7 @@ class OpenAIProvider:
             self._client = self._build_client()
         return self._client
 
-    def complete(self, system: str, user: str) -> str:
+    def complete(self, system: str, user: str, *, entity_type: str = "function") -> str:
         client = self._get_client()
         request_kwargs: dict[str, Any] = {
             "model": self.model,
@@ -62,7 +64,7 @@ class OpenAIProvider:
             "json_schema": {
                 "name": "andocgen_docblock",
                 "strict": True,
-                "schema": self.docblock_schema(_entity_type_from_system(system)),
+                "schema": docblock_schema(entity_type),
             },
         }
         if self.temperature is not None:
@@ -77,91 +79,3 @@ class OpenAIProvider:
             return ""
         content = choices[0].message.content
         return (content or "").strip()
-
-    @staticmethod
-    def docblock_schema(entity_type: str = "function") -> dict[str, Any]:
-        parameter = {
-            "type": "object",
-            "properties": {
-                "name": {"type": "string"},
-                "type": {"type": "string"},
-                "description": {"type": "string"},
-            },
-            "required": ["name", "type", "description"],
-            "additionalProperties": False,
-        }
-        example = {
-            "type": "object",
-            "properties": {
-                "description": {"type": "string"},
-                "language": {"type": "string"},
-                "code": {"type": "string"},
-            },
-            "required": ["description", "language", "code"],
-            "additionalProperties": False,
-        }
-        if entity_type == "class":
-            return {
-                "type": "object",
-                "properties": {
-                    "summary": {"type": "string"},
-                },
-                "required": ["summary"],
-                "additionalProperties": False,
-            }
-        if entity_type == "module":
-            return {
-                "type": "object",
-                "properties": {
-                    "summary": {"type": "string"},
-                    "exports": {"type": "array", "items": parameter},
-                },
-                "required": ["summary", "exports"],
-                "additionalProperties": False,
-            }
-        text_field = {"type": "string"}
-        return {
-            "type": "object",
-            "properties": {
-                "summary": text_field,
-                "parameters": {"type": "array", "items": parameter},
-                "returns": {
-                    "anyOf": [
-                        {
-                            "type": "object",
-                            "properties": {
-                                "type": {"type": "string"},
-                                "description": {"type": "string"},
-                            },
-                            "required": ["type", "description"],
-                            "additionalProperties": False,
-                        },
-                        {"type": "null"},
-                    ]
-                },
-                "raises": text_field,
-                "edge_cases": text_field,
-                "side_effects": text_field,
-                "examples": {"type": "array", "items": example},
-                "see_also": text_field,
-            },
-            "required": [
-                "summary",
-                "parameters",
-                "returns",
-                "raises",
-                "edge_cases",
-                "side_effects",
-                "examples",
-                "see_also",
-            ],
-            "additionalProperties": False,
-        }
-
-
-def _entity_type_from_system(system: str) -> str:
-    if "- Exports" in system:
-        return "module"
-    if "- Summary" in system and "- Parameters" not in system and "- Returns" not in system:
-        return "class"
-    return "function"

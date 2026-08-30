@@ -20,7 +20,8 @@ class _SequenceLLM:
         self._responses = responses
         self._index = 0
 
-    def complete(self, system: str, user: str) -> str:
+    def complete(self, system: str, user: str, *, entity_type: str = "function") -> str:
+        del system, user, entity_type
         response = self._responses[min(self._index, len(self._responses) - 1)]
         self._index += 1
         return response

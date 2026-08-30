@@ -230,6 +230,8 @@ class DocBlock:
     fields: list[ParameterDoc] | None = None
     inheritance: str | None = None
     methods_overview: str | None = None
+    purpose: str | None = None
+    usage_notes: str | None = None
     exports: list[ExportDoc] | None = None
     fallback: bool = False
     fallback_reason: str | None = None

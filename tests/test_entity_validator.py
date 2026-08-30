@@ -142,6 +142,77 @@ def test_blocking_on_order_service_ctor_without_args() -> None:
     assert any(issue.code == "examples_invalid_ctor" for issue in issues)
 
 
+def test_ast_detects_multiline_call_without_required_args() -> None:
+    fn = FunctionModel(
+        name="create_user",
+        parameters=[ParameterModel(name="name"), ParameterModel(name="email")],
+    )
+    ctx = EntityContext(
+        entity_type="function",
+        entity_name="create_user",
+        entity_id="handlers.py::create_user",
+        module_path="handlers.py",
+        project_name="demo",
+        function=fn,
+        module=ModuleModel(path="handlers.py"),
+    )
+    block = DocBlock(
+        entity_type="function",
+        entity_name="create_user",
+        module_path="handlers.py",
+        summary="Creates user.",
+        examples=[
+            ExampleDoc(
+                description="Invalid multiline call.",
+                language="python",
+                code="create_user(\n)",
+            )
+        ],
+    )
+
+    issues = validate_entity(block, ctx)
+
+    assert any(issue.code == "examples_invalid_call" for issue in issues)
+
+
+def test_ast_detects_unknown_dataclass_keyword() -> None:
+    order_cls = ClassModel(
+        name="Order",
+        is_dataclass=True,
+        field_defs=[
+            ParameterModel(name="id", type_annotation="int"),
+            ParameterModel(name="customer", type_annotation="str"),
+        ],
+    )
+    fn = FunctionModel(name="render", parameters=[ParameterModel(name="order")])
+    ctx = EntityContext(
+        entity_type="function",
+        entity_name="render",
+        entity_id="models.py::render",
+        module_path="models.py",
+        project_name="demo",
+        function=fn,
+        module=ModuleModel(path="models.py", classes=[order_cls]),
+    )
+    block = DocBlock(
+        entity_type="function",
+        entity_name="render",
+        module_path="models.py",
+        summary="Renders order.",
+        examples=[
+            ExampleDoc(
+                description="Invalid field.",
+                language="python",
+                code="render(Order(id=1, price=10))",
+            )
+        ],
+    )
+
+    issues = validate_entity(block, ctx)
+
+    assert any(issue.code == "examples_invalid_type" for issue in issues)
+
+
 def test_phantom_param_blocking() -> None:
     fn = FunctionModel(
         name="add",

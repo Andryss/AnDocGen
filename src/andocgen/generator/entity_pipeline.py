@@ -79,7 +79,7 @@ class EntityDocumentPipeline:
                 trace.log_llm_request(ctx.entity_id, system, attempt_user)
 
             try:
-                raw = llm.complete(system, attempt_user)
+                raw = llm.complete(system, attempt_user, entity_type=ctx.entity_type)
                 raw = normalize_llm_response(raw)
                 block = self._section_parser.parse(raw, ctx)
                 self._enricher.enrich(block, ctx)
@@ -108,6 +108,7 @@ class EntityDocumentPipeline:
                             parse_ok=True,
                             validation_ok=False,
                             retry_reason="; ".join(i.message for i in blocking_issues),
+                            structured_format="json_schema",
                         )
                         trace.info(
                             f"  blocking validation for {ctx.entity_id}: "
@@ -134,6 +135,7 @@ class EntityDocumentPipeline:
                             parse_ok=True,
                             validation_ok=False,
                             fallback_reason=blocking_issues[0].message,
+                            structured_format="json_schema",
                         )
                     return None, GenerationError(
                         module_path=ctx.module_path,
@@ -163,6 +165,7 @@ class EntityDocumentPipeline:
                         raw_response=raw,
                         parse_ok=True,
                         validation_ok=not blocking_issues,
+                        structured_format="json_schema",
                     )
                 return block, None, duration_ms
             except SectionParseError as exc:
@@ -188,6 +191,7 @@ class EntityDocumentPipeline:
                         validation_ok=False,
                         retry_reason=retry_reason,
                         fallback_reason=last_error if attempt == max_retries else None,
+                        structured_format="json_schema",
                     )
             except Exception as exc:
                 last_error = str(exc)
@@ -210,6 +214,7 @@ class EntityDocumentPipeline:
                         validation_ok=False,
                         retry_reason=retry_reason,
                         fallback_reason=last_error if attempt == max_retries else None,
+                        structured_format="json_schema",
                     )
 
         duration_ms = (time.perf_counter() - start) * 1000

@@ -1,45 +1,18 @@
-# Документация AnDocGen
+# AnDocGen Docs
 
-Каталог `docs/` содержит проектную документацию системы автоматической генерации технической документации из исходного кода на основе больших языковых моделей. Документы соответствуют этапам индивидуального задания (см. [individual_assignment.md](individual_assignment.md)) и оформлены для конвертации в DOCX через Pandoc.
+This directory contains project documentation for the AnDocGen codebase.
 
-## Соответствие этапам задания
+Historical assignment/report materials are archived under
+[`first_report/`](first_report/) and should not be edited. When a report needs
+to reference the original project write-up, link to files inside that archive.
 
-| Этап | Документ | Содержание |
-|------|----------|------------|
-| 2 | [requirements.md](requirements.md) | Функциональные и нефункциональные требования, сценарии использования, входные и выходные форматы |
-| 3 | [architecture.md](architecture.md) | Архитектура, модули конвейера, потоки данных, диаграммы |
-| 4 | [input_preparation.md](input_preparation.md) | Извлечение из кода, структура данных, схема формирования промпта, примеры |
-| 5 | [prototype.md](prototype.md) | Реализация прототипа: стек, модули, примеры генерации, ограничения, запуск |
-| 6 | [evaluation.md](evaluation.md) | Апробация: успешные и неуспешные примеры, анализ ошибок, ограничения подхода, развитие |
+AI-agent workflow rules live in one place: [`../AGENTS.md`](../AGENTS.md).
 
-Все перечисленные документы — **готовы**.
+## Historical Report
 
-## Рекомендуемый порядок чтения
-
-1. [individual_assignment.md](individual_assignment.md) — тема и график работ
-2. [requirements.md](requirements.md)
-3. [architecture.md](architecture.md)
-4. [input_preparation.md](input_preparation.md)
-5. [prototype.md](prototype.md)
-6. [evaluation.md](evaluation.md)
-7. [README.md](../README.md) — установка и быстрый старт
-
-## Конвертация в DOCX
-
-```bash 
-pandoc docs/requirements.md -o requirements.docx
-pandoc docs/architecture.md -o architecture.docx
-pandoc docs/input_preparation.md -o input_preparation.docx
-pandoc docs/prototype.md -o prototype.docx
-pandoc docs/evaluation.md -o evaluation.docx
-```
-
-## Связанные материалы в репозитории
-
-| Путь | Описание                                                        |
-|------|-----------------------------------------------------------------|
-| [../README.md](../README.md) | Установка, запуск `andocgen`, обзор структуры кода              |
-| [../src/andocgen/](../src/andocgen/) | Исходный код                                                    |
-| [../config.example.yaml](../config.example.yaml) | Пример конфигурации                                             |
-| [../config.schema.yaml](../config.schema.yaml) | JSON Schema спецификация конфигурации (source of truth)         |
-| [../examples/](../examples/) | Примеры для генерации и апробации                               |
+- [First report index](first_report/README.md)
+- [Requirements](first_report/requirements.md)
+- [Architecture](first_report/architecture.md)
+- [Input preparation](first_report/input_preparation.md)
+- [Prototype](first_report/prototype.md)
+- [Evaluation](first_report/evaluation.md)

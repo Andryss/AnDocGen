@@ -14,6 +14,8 @@ class LocaleLabels:
     see_also: str
     fields: str
     inheritance: str
+    purpose: str
+    usage_notes: str
     exports: str
     classes: str
     functions: str
@@ -43,6 +45,8 @@ _LABELS: dict[str, LocaleLabels] = {
         see_also="Смотрите также",
         fields="Поля",
         inheritance="Наследование",
+        purpose="Назначение",
+        usage_notes="Использование",
         exports="Экспорт",
         classes="Классы",
         functions="Функции",
@@ -70,6 +74,8 @@ _LABELS: dict[str, LocaleLabels] = {
         see_also="See also",
         fields="Fields",
         inheritance="Inheritance",
+        purpose="Purpose",
+        usage_notes="Usage notes",
         exports="Exports",
         classes="Classes",
         functions="Functions",

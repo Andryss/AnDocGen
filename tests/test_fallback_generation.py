@@ -47,12 +47,14 @@ def build_fallback_for_test():
 
 
 class _BrokenLLM:
-    def complete(self, system: str, user: str) -> str:
+    def complete(self, system: str, user: str, *, entity_type: str = "function") -> str:
+        del system, user, entity_type
         return "not parseable"
 
 
 class _RaisingLLM:
-    def complete(self, system: str, user: str) -> str:
+    def complete(self, system: str, user: str, *, entity_type: str = "function") -> str:
+        del system, user, entity_type
         raise RuntimeError("provider unavailable")
 
 

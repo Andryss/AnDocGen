@@ -21,6 +21,14 @@ class JsonCacheStore:
             }
         return {}
 
+    def load_snapshot(self, cache_dir: Path):
+        from andocgen.generation_plan import cache_snapshot_from_raw
+
+        cache_path = cache_dir / "checksums.json"
+        if not cache_path.exists():
+            return cache_snapshot_from_raw({})
+        return cache_snapshot_from_raw(json.loads(cache_path.read_text(encoding="utf-8")))
+
     def update(
         self,
         cache_dir: Path,
@@ -90,11 +98,15 @@ def _doc_hashes_by_module(blocks: list[DocBlock]) -> dict[str, str]:
 
 def _doc_hashes_by_entity(blocks: list[DocBlock]) -> dict[str, str]:
     return {
-        make_entity_id(block.module_path, block.entity_type, block.entity_name): hashlib.sha256(
-            json.dumps(asdict(block), sort_keys=True, ensure_ascii=False).encode("utf-8")
-        ).hexdigest()
+        make_entity_id(block.module_path, block.entity_type, block.entity_name): docblock_hash(block)
         for block in blocks
     }
+
+
+def docblock_hash(block: DocBlock) -> str:
+    return hashlib.sha256(
+        json.dumps(asdict(block), sort_keys=True, ensure_ascii=False).encode("utf-8")
+    ).hexdigest()
 
 
 def _module_entity_ids(module: ModuleModel) -> list[str]:

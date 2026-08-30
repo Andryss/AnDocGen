@@ -85,6 +85,25 @@ def test_format_class_skips_object_inheritance() -> None:
     assert "(object)" not in content
 
 
+def test_format_class_renders_purpose_and_usage_notes() -> None:
+    block = DocBlock(
+        entity_type="class",
+        entity_name="ApiResponse",
+        module_path="handlers.py",
+        signature="class ApiResponse",
+        summary="Represents an API response.",
+        purpose="Carries status and body from handlers.",
+        usage_notes="Return it from endpoint handlers.",
+    )
+
+    content = format_markdown(block, "ru")
+
+    assert "**Назначение:**" in content
+    assert "Carries status and body from handlers." in content
+    assert "**Использование:**" in content
+    assert "Return it from endpoint handlers." in content
+
+
 def test_is_empty_section() -> None:
     assert is_empty_section("N/A")
     assert is_empty_section("n/a")

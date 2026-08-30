@@ -18,7 +18,8 @@ class _SlowLLM:
     def __init__(self, delay: float = 0.05) -> None:
         self.delay = delay
 
-    def complete(self, system: str, user: str) -> str:
+    def complete(self, system: str, user: str, *, entity_type: str = "function") -> str:
+        del system, user, entity_type
         with _SlowLLM._global_lock:
             _SlowLLM._global_concurrent += 1
             _SlowLLM._global_max = max(_SlowLLM._global_max, _SlowLLM._global_concurrent)

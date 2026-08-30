@@ -99,6 +99,7 @@ class FileTraceLogger:
         validation_ok: bool,
         retry_reason: str | None = None,
         fallback_reason: str | None = None,
+        structured_format: str | None = None,
     ) -> None:
         payload = {
             "entity_id": entity_id,
@@ -113,6 +114,7 @@ class FileTraceLogger:
             "validation_ok": validation_ok,
             "retry_reason": retry_reason,
             "fallback_reason": fallback_reason,
+            "structured_format": structured_format,
         }
         if self.log_llm_content:
             payload["request"] = {

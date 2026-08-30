@@ -193,3 +193,31 @@ def test_module_exports_merge_llm_descriptions() -> None:
     assert by_name["Item"].description == "модель позиции"
     assert by_name["Order"].type == "class"
     assert "OrderService" not in by_name
+
+
+def test_parse_class_response_with_semantic_fields() -> None:
+    raw = """
+{
+  "summary": "Represents an API response.",
+  "purpose": "Carries HTTP status and response body between handlers and clients.",
+  "usage_notes": "Create it in handler methods after storage operations complete."
+}
+"""
+    block = parse_sections(raw, _ctx("class"))
+
+    assert block.summary == "Represents an API response."
+    assert block.purpose == "Carries HTTP status and response body between handlers and clients."
+    assert block.usage_notes == "Create it in handler methods after storage operations complete."
+
+
+def test_reject_class_response_with_extra_field() -> None:
+    raw = """
+{
+  "summary": "Represents an API response.",
+  "purpose": "Carries HTTP status and response body.",
+  "usage_notes": "Use from handlers.",
+  "fields": []
+}
+"""
+    with pytest.raises(SectionParseError, match="Unexpected JSON fields"):
+        parse_sections(raw, _ctx("class"))
