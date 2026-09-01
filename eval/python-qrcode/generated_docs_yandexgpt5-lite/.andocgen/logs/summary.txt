@@ -1,0 +1,16 @@
+AnDocGen run summary
+Timestamp: 2026-09-01T19:43:39.121223
+Processed files: 25
+Skipped files: 0
+Parse errors: 0
+Generation errors: 0
+Fallback generated: 0
+Validation warnings: 46
+Validation errors: 0
+Output files: 31
+Elapsed seconds: 353.23
+
+Log files:
+  trace: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/.andocgen/logs/trace.log
+  llm_responses: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/.andocgen/logs/llm_responses.jsonl
+  detail: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/.andocgen/logs/detail.json

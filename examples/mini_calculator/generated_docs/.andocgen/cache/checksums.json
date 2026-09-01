@@ -2,7 +2,7 @@
   "files": {
     "calculator.py": {
       "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
-      "doc_hash": "13b909192d2072fb6f199f0e972d5c614a2ebbe6c5ddf1b14992407258b21da2"
+      "doc_hash": "2ce4eb2178ae02487266e1fbedb2ce4efac5ed6133855d594a0a454ea1d9f71a"
     }
   },
   "entities": {
@@ -13,37 +13,37 @@
     },
     "calculator.py::add": {
       "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
-      "doc_hash": "adfcc4113bbd5c5eff44464c088f71f98d4d24f84f4c0a603edfc718f7e5caab",
+      "doc_hash": "89283409bed46a1874cfd5b13f271459ce02a9cc6a664b13bdca90be0ad5a217",
       "dependency_hash": ""
     },
     "calculator.py::divide": {
       "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
-      "doc_hash": "9dccb9b47c9c56f41d36f19a671132a5f6bf94100e2b9749bf610c5ca2cdcd82",
+      "doc_hash": "28306805f80c4c1a9352775ef09d5e71d00f26e7b3c778ea35348b8968eef6f3",
       "dependency_hash": ""
     },
     "calculator.py::Calculator": {
       "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
-      "doc_hash": "43cfcb4597887fe97a6ca9c84f31e2391fb360d30e34bc1be59801cf47eb2f88",
+      "doc_hash": "1de175551ea2195b18dabafc0dd11f1f17a4df0700331d0b25ee3a576624fc5c",
       "dependency_hash": ""
     },
     "calculator.py::Calculator.__init__": {
       "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
-      "doc_hash": "9af831bd917bce69a8c96f8bf31f6a3060d1d2bfaf2e7212d545e79f58d6ab05",
+      "doc_hash": "795e6ff752bc1c782e7cee726b4113665d8e5177026692b46680e5b6c2605ae2",
       "dependency_hash": ""
     },
     "calculator.py::Calculator.multiply": {
       "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
-      "doc_hash": "e4069d973ef87f03f7c380c95d7a690b47b802cef6d31359b0cebb065292bbc9",
+      "doc_hash": "d879a81503924a9989bcf512dfa96010bc2622f18a3ff7a13b725765195deaf0",
       "dependency_hash": ""
     },
     "calculator.py::Calculator.format_result": {
       "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
-      "doc_hash": "4ce7c7da0b00cf7435a1102f706cface082a088e40059798e530bdcd7a9b461b",
+      "doc_hash": "701138b11bd5305f41d1e16534ce5d12097738f6223b68b3f8249dad251482ae",
       "dependency_hash": ""
     },
     "calculator.py::calculator.py": {
       "source_hash": "80340f2189bdbdebbf9a4cb431fcced43783e9afdcaa341fa74f769953cbe662",
-      "doc_hash": "2fe9562a52d4b4d51959f5e7e64f7adf9a81983d69f15f5e17f235058c9e04a4",
+      "doc_hash": "f168c34b022912a1677ffc1726939ed25131e8b0af082b792d914f3b7bab5540",
       "dependency_hash": ""
     }
   }

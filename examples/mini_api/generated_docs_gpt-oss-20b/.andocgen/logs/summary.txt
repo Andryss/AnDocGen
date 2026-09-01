@@ -1,14 +1,14 @@
 AnDocGen run summary
-Timestamp: 2026-08-29T23:53:47.003323
+Timestamp: 2026-09-01T19:03:46.352973
 Processed files: 3
 Skipped files: 0
 Parse errors: 0
 Generation errors: 0
 Fallback generated: 0
-Validation warnings: 0
+Validation warnings: 1
 Validation errors: 0
 Output files: 4
-Elapsed seconds: 32.80
+Elapsed seconds: 216.31
 
 Log files:
   trace: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api/generated_docs_gpt-oss-20b/.andocgen/logs/trace.log

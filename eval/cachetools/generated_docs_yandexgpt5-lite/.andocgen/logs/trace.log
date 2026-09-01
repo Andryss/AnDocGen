@@ -1,0 +1,486 @@
+2026-09-01 19:33:29,390 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/cachetools/cachetools provider=openai dry_run=False
+2026-09-01 19:33:29,390 INFO Output directory: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/cachetools/generated_docs_yandexgpt5-lite
+2026-09-01 19:33:29,390 INFO [scan] start
+2026-09-01 19:33:29,390 INFO [scan] done (1ms)
+2026-09-01 19:33:29,390 INFO Found 5 files
+2026-09-01 19:33:29,390 INFO [parse] start 5 files
+2026-09-01 19:33:29,391 DEBUG Parsing: src/cachetools/__init__.py
+2026-09-01 19:33:29,397 DEBUG   parsed src/cachetools/__init__.py: 2 functions, 9 classes
+2026-09-01 19:33:29,397 DEBUG Parsing: src/cachetools/_cached.py
+2026-09-01 19:33:29,398 DEBUG   parsed src/cachetools/_cached.py: 9 functions, 0 classes
+2026-09-01 19:33:29,398 DEBUG Parsing: src/cachetools/_cachedmethod.py
+2026-09-01 19:33:29,402 DEBUG   parsed src/cachetools/_cachedmethod.py: 10 functions, 3 classes
+2026-09-01 19:33:29,402 DEBUG Parsing: src/cachetools/func.py
+2026-09-01 19:33:29,403 DEBUG   parsed src/cachetools/func.py: 6 functions, 1 classes
+2026-09-01 19:33:29,403 DEBUG Parsing: src/cachetools/keys.py
+2026-09-01 19:33:29,404 DEBUG   parsed src/cachetools/keys.py: 4 functions, 1 classes
+2026-09-01 19:33:29,404 INFO [parse] done 5 files (13ms)
+2026-09-01 19:33:29,404 INFO [call_graph] start
+2026-09-01 19:33:29,404 INFO [call_graph] done (0ms)
+2026-09-01 19:33:29,404 DEBUG Call graph: 128 nodes, 344 edges
+2026-09-01 19:33:29,404 INFO Generating documentation for 147 entities
+2026-09-01 19:33:29,405 INFO [generate] start 147 entities
+2026-09-01 19:33:29,405 INFO Generating method:Cache.__contains__ (src/cachetools/__init__.py::Cache.__contains__)
+2026-09-01 19:33:29,405 INFO LLM request entity=src/cachetools/__init__.py::Cache.__contains__ system_chars=1885 user_chars=2482
+2026-09-01 19:33:29,405 INFO Generating method:Cache.__init__ (src/cachetools/__init__.py::Cache.__init__)
+2026-09-01 19:33:29,406 INFO LLM request entity=src/cachetools/__init__.py::Cache.__init__ system_chars=1885 user_chars=2696
+2026-09-01 19:33:31,751 INFO LLM response entity=src/cachetools/__init__.py::Cache.__contains__ status=parsed chars=470 duration_ms=2346
+2026-09-01 19:33:31,752 INFO Generating method:Cache.__iter__ (src/cachetools/__init__.py::Cache.__iter__)
+2026-09-01 19:33:31,752 INFO LLM request entity=src/cachetools/__init__.py::Cache.__iter__ system_chars=1885 user_chars=2470
+2026-09-01 19:33:32,449 INFO LLM response entity=src/cachetools/__init__.py::Cache.__init__ status=parsed chars=684 duration_ms=3043
+2026-09-01 19:33:32,450 INFO Generating method:Cache.__len__ (src/cachetools/__init__.py::Cache.__len__)
+2026-09-01 19:33:32,450 INFO LLM request entity=src/cachetools/__init__.py::Cache.__len__ system_chars=1885 user_chars=2467
+2026-09-01 19:33:33,339 INFO LLM response entity=src/cachetools/__init__.py::Cache.__iter__ status=parsed chars=346 duration_ms=1587
+2026-09-01 19:33:33,340 INFO Generating method:Cache.__missing__ (src/cachetools/__init__.py::Cache.__missing__)
+2026-09-01 19:33:33,340 INFO LLM request entity=src/cachetools/__init__.py::Cache.__missing__ system_chars=1885 user_chars=2474
+2026-09-01 19:33:34,605 INFO LLM response entity=src/cachetools/__init__.py::Cache.__len__ status=parsed chars=350 duration_ms=2154
+2026-09-01 19:33:34,605 INFO Generating method:Cache.__repr__ (src/cachetools/__init__.py::Cache.__repr__)
+2026-09-01 19:33:34,605 INFO LLM request entity=src/cachetools/__init__.py::Cache.__repr__ system_chars=1885 user_chars=2621
+2026-09-01 19:33:35,682 INFO LLM response entity=src/cachetools/__init__.py::Cache.__missing__ status=parsed chars=454 duration_ms=2342
+2026-09-01 19:33:35,682 INFO Generating method:Cache.currsize (src/cachetools/__init__.py::Cache.currsize)
+2026-09-01 19:33:35,683 INFO LLM request entity=src/cachetools/__init__.py::Cache.currsize system_chars=1885 user_chars=2555
+2026-09-01 19:33:37,160 INFO LLM response entity=src/cachetools/__init__.py::Cache.__repr__ status=parsed chars=564 duration_ms=2555
+2026-09-01 19:33:37,161 INFO Generating method:Cache.get (src/cachetools/__init__.py::Cache.get)
+2026-09-01 19:33:37,161 INFO LLM request entity=src/cachetools/__init__.py::Cache.get system_chars=1885 user_chars=2540
+2026-09-01 19:33:37,864 INFO   blocking validation for src/cachetools/__init__.py::Cache.currsize: Example instantiates `Cache` without constructor arguments
+2026-09-01 19:33:37,864 INFO LLM request entity=src/cachetools/__init__.py::Cache.currsize system_chars=1885 user_chars=2731
+2026-09-01 19:33:39,669 INFO LLM response entity=src/cachetools/__init__.py::Cache.currsize status=parsed chars=323 duration_ms=3987
+2026-09-01 19:33:39,670 INFO Generating method:Cache.getsizeof (src/cachetools/__init__.py::Cache.getsizeof)
+2026-09-01 19:33:39,671 INFO LLM request entity=src/cachetools/__init__.py::Cache.getsizeof system_chars=1885 user_chars=2588
+2026-09-01 19:33:40,473 INFO   blocking validation for src/cachetools/__init__.py::Cache.get: Example instantiates `Cache` without constructor arguments
+2026-09-01 19:33:40,473 INFO LLM request entity=src/cachetools/__init__.py::Cache.get system_chars=1885 user_chars=2716
+2026-09-01 19:33:41,675 INFO LLM response entity=src/cachetools/__init__.py::Cache.getsizeof status=parsed chars=457 duration_ms=2005
+2026-09-01 19:33:41,676 INFO Generating method:Cache.maxsize (src/cachetools/__init__.py::Cache.maxsize)
+2026-09-01 19:33:41,677 INFO LLM request entity=src/cachetools/__init__.py::Cache.maxsize system_chars=1885 user_chars=2552
+2026-09-01 19:33:43,247 INFO LLM response entity=src/cachetools/__init__.py::Cache.maxsize status=parsed chars=345 duration_ms=1570
+2026-09-01 19:33:43,248 INFO Generating method:Cache.pop (src/cachetools/__init__.py::Cache.pop)
+2026-09-01 19:33:43,248 INFO LLM request entity=src/cachetools/__init__.py::Cache.pop system_chars=1885 user_chars=2664
+2026-09-01 19:33:43,352 INFO LLM response entity=src/cachetools/__init__.py::Cache.get status=parsed chars=771 duration_ms=6192
+2026-09-01 19:33:43,353 INFO Generating method:Cache.setdefault (src/cachetools/__init__.py::Cache.setdefault)
+2026-09-01 19:33:43,353 INFO LLM request entity=src/cachetools/__init__.py::Cache.setdefault system_chars=1885 user_chars=2589
+2026-09-01 19:33:46,228 INFO LLM response entity=src/cachetools/__init__.py::Cache.pop status=parsed chars=903 duration_ms=2980
+2026-09-01 19:33:46,229 INFO Generating method:FIFOCache.__delitem__ (src/cachetools/__init__.py::FIFOCache.__delitem__)
+2026-09-01 19:33:46,230 INFO LLM request entity=src/cachetools/__init__.py::FIFOCache.__delitem__ system_chars=1885 user_chars=2641
+2026-09-01 19:33:46,503 INFO LLM response entity=src/cachetools/__init__.py::Cache.setdefault status=parsed chars=910 duration_ms=3149
+2026-09-01 19:33:46,504 INFO Generating method:FIFOCache.__setitem__ (src/cachetools/__init__.py::FIFOCache.__setitem__)
+2026-09-01 19:33:46,504 INFO LLM request entity=src/cachetools/__init__.py::FIFOCache.__setitem__ system_chars=1885 user_chars=2750
+2026-09-01 19:33:49,294 INFO LLM response entity=src/cachetools/__init__.py::FIFOCache.__delitem__ status=parsed chars=587 duration_ms=3064
+2026-09-01 19:33:49,295 INFO Generating method:FIFOCache.popitem (src/cachetools/__init__.py::FIFOCache.popitem)
+2026-09-01 19:33:49,295 INFO LLM request entity=src/cachetools/__init__.py::FIFOCache.popitem system_chars=1885 user_chars=2887
+2026-09-01 19:33:49,596 INFO LLM response entity=src/cachetools/__init__.py::FIFOCache.__setitem__ status=parsed chars=677 duration_ms=3092
+2026-09-01 19:33:49,597 INFO Generating method:LFUCache.__delitem__ (src/cachetools/__init__.py::LFUCache.__delitem__)
+2026-09-01 19:33:49,597 INFO LLM request entity=src/cachetools/__init__.py::LFUCache.__delitem__ system_chars=1885 user_chars=2729
+2026-09-01 19:33:52,292 INFO LLM response entity=src/cachetools/__init__.py::FIFOCache.popitem status=parsed chars=558 duration_ms=2996
+2026-09-01 19:33:52,293 INFO Generating method:LFUCache.__touch (src/cachetools/__init__.py::LFUCache.__touch)
+2026-09-01 19:33:52,293 INFO LLM request entity=src/cachetools/__init__.py::LFUCache.__touch system_chars=1885 user_chars=3090
+2026-09-01 19:33:52,757 INFO LLM response entity=src/cachetools/__init__.py::LFUCache.__delitem__ status=parsed chars=562 duration_ms=3160
+2026-09-01 19:33:52,758 INFO Generating method:LFUCache.popitem (src/cachetools/__init__.py::LFUCache.popitem)
+2026-09-01 19:33:52,758 INFO LLM request entity=src/cachetools/__init__.py::LFUCache.popitem system_chars=1885 user_chars=2940
+2026-09-01 19:33:54,923 INFO LLM response entity=src/cachetools/__init__.py::LFUCache.__touch status=parsed chars=536 duration_ms=2630
+2026-09-01 19:33:54,924 INFO Generating method:LRUCache.__delitem__ (src/cachetools/__init__.py::LRUCache.__delitem__)
+2026-09-01 19:33:54,924 INFO LLM request entity=src/cachetools/__init__.py::LRUCache.__delitem__ system_chars=1885 user_chars=2640
+2026-09-01 19:33:55,062 INFO   blocking validation for src/cachetools/__init__.py::LFUCache.popitem: Example instantiates `LFUCache` without constructor arguments
+2026-09-01 19:33:55,063 INFO LLM request entity=src/cachetools/__init__.py::LFUCache.popitem system_chars=1885 user_chars=3119
+2026-09-01 19:33:57,833 INFO LLM response entity=src/cachetools/__init__.py::LFUCache.popitem status=parsed chars=541 duration_ms=5074
+2026-09-01 19:33:57,834 INFO Generating method:LRUCache.__touch (src/cachetools/__init__.py::LRUCache.__touch)
+2026-09-01 19:33:57,834 INFO LLM request entity=src/cachetools/__init__.py::LRUCache.__touch system_chars=1885 user_chars=2720
+2026-09-01 19:33:58,044 INFO LLM response entity=src/cachetools/__init__.py::LRUCache.__delitem__ status=parsed chars=619 duration_ms=3120
+2026-09-01 19:33:58,046 INFO Generating method:LRUCache.popitem (src/cachetools/__init__.py::LRUCache.popitem)
+2026-09-01 19:33:58,046 INFO LLM request entity=src/cachetools/__init__.py::LRUCache.popitem system_chars=1885 user_chars=2896
+2026-09-01 19:34:00,420 INFO LLM response entity=src/cachetools/__init__.py::LRUCache.popitem status=parsed chars=501 duration_ms=2374
+2026-09-01 19:34:00,421 INFO Generating method:RRCache.__delitem__ (src/cachetools/__init__.py::RRCache.__delitem__)
+2026-09-01 19:34:00,421 INFO LLM request entity=src/cachetools/__init__.py::RRCache.__delitem__ system_chars=1885 user_chars=2827
+2026-09-01 19:34:00,429 INFO LLM response entity=src/cachetools/__init__.py::LRUCache.__touch status=parsed chars=609 duration_ms=2595
+2026-09-01 19:34:00,429 INFO Generating method:RRCache.__setitem__ (src/cachetools/__init__.py::RRCache.__setitem__)
+2026-09-01 19:34:00,429 INFO LLM request entity=src/cachetools/__init__.py::RRCache.__setitem__ system_chars=1885 user_chars=2744
+2026-09-01 19:34:03,119 INFO LLM response entity=src/cachetools/__init__.py::RRCache.__delitem__ status=parsed chars=565 duration_ms=2697
+2026-09-01 19:34:03,120 INFO Generating method:RRCache.choice (src/cachetools/__init__.py::RRCache.choice)
+2026-09-01 19:34:03,120 INFO LLM request entity=src/cachetools/__init__.py::RRCache.choice system_chars=1885 user_chars=2664
+2026-09-01 19:34:04,154 INFO LLM response entity=src/cachetools/__init__.py::RRCache.__setitem__ status=parsed chars=895 duration_ms=3725
+2026-09-01 19:34:04,155 INFO Generating method:RRCache.popitem (src/cachetools/__init__.py::RRCache.popitem)
+2026-09-01 19:34:04,155 INFO LLM request entity=src/cachetools/__init__.py::RRCache.popitem system_chars=1885 user_chars=2864
+2026-09-01 19:34:04,887 INFO LLM response entity=src/cachetools/__init__.py::RRCache.choice status=parsed chars=337 duration_ms=1767
+2026-09-01 19:34:04,888 INFO Generating method:TLRUCache.__contains__ (src/cachetools/__init__.py::TLRUCache.__contains__)
+2026-09-01 19:34:04,888 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.__contains__ system_chars=1885 user_chars=2704
+2026-09-01 19:34:06,564 INFO LLM response entity=src/cachetools/__init__.py::RRCache.popitem status=parsed chars=401 duration_ms=2409
+2026-09-01 19:34:06,565 INFO Generating method:TLRUCache.__delitem__ (src/cachetools/__init__.py::TLRUCache.__delitem__)
+2026-09-01 19:34:06,565 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.__delitem__ system_chars=1885 user_chars=2844
+2026-09-01 19:34:07,290 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.__contains__ status=parsed chars=491 duration_ms=2402
+2026-09-01 19:34:07,291 INFO Generating method:TLRUCache.__getitem (src/cachetools/__init__.py::TLRUCache.__getitem)
+2026-09-01 19:34:07,291 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.__getitem system_chars=1885 user_chars=2613
+2026-09-01 19:34:09,374 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.__delitem__ status=parsed chars=582 duration_ms=2809
+2026-09-01 19:34:09,376 INFO Generating method:TLRUCache.__iter__ (src/cachetools/__init__.py::TLRUCache.__iter__)
+2026-09-01 19:34:09,376 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.__iter__ system_chars=1885 user_chars=2730
+2026-09-01 19:34:10,176 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.__getitem status=parsed chars=623 duration_ms=2885
+2026-09-01 19:34:10,177 INFO Generating method:TLRUCache.expire (src/cachetools/__init__.py::TLRUCache.expire)
+2026-09-01 19:34:10,177 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.expire system_chars=1885 user_chars=3552
+2026-09-01 19:34:12,256 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.__iter__ status=parsed chars=633 duration_ms=2880
+2026-09-01 19:34:12,256 INFO Generating method:TLRUCache.ttu (src/cachetools/__init__.py::TLRUCache.ttu)
+2026-09-01 19:34:12,257 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.ttu system_chars=1885 user_chars=2656
+2026-09-01 19:34:13,245 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.expire status=parsed chars=729 duration_ms=3068
+2026-09-01 19:34:13,246 INFO Generating method:TTLCache.__contains__ (src/cachetools/__init__.py::TTLCache.__contains__)
+2026-09-01 19:34:13,246 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.__contains__ system_chars=1885 user_chars=2703
+2026-09-01 19:34:13,955 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.ttu status=parsed chars=345 duration_ms=1698
+2026-09-01 19:34:13,955 INFO Generating method:TTLCache.__delitem__ (src/cachetools/__init__.py::TTLCache.__delitem__)
+2026-09-01 19:34:13,956 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.__delitem__ system_chars=1885 user_chars=2728
+2026-09-01 19:34:15,732 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.__contains__ status=parsed chars=486 duration_ms=2486
+2026-09-01 19:34:15,733 INFO Generating method:TTLCache.__getlink (src/cachetools/__init__.py::TTLCache.__getlink)
+2026-09-01 19:34:15,733 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.__getlink system_chars=1885 user_chars=2612
+2026-09-01 19:34:17,190 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.__delitem__ status=parsed chars=629 duration_ms=3234
+2026-09-01 19:34:17,191 INFO Generating method:TTLCache.__iter__ (src/cachetools/__init__.py::TTLCache.__iter__)
+2026-09-01 19:34:17,191 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.__iter__ system_chars=1885 user_chars=2787
+2026-09-01 19:34:18,154 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.__getlink status=parsed chars=523 duration_ms=2421
+2026-09-01 19:34:18,155 INFO Generating method:TTLCache.expire (src/cachetools/__init__.py::TTLCache.expire)
+2026-09-01 19:34:18,155 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.expire system_chars=1885 user_chars=3307
+2026-09-01 19:34:19,810 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.__iter__ status=parsed chars=485 duration_ms=2619
+2026-09-01 19:34:19,811 INFO Generating method:TTLCache.ttl (src/cachetools/__init__.py::TTLCache.ttl)
+2026-09-01 19:34:19,811 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.ttl system_chars=1885 user_chars=2645
+2026-09-01 19:34:21,308 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.expire status=parsed chars=786 duration_ms=3153
+2026-09-01 19:34:21,310 INFO Generating method:_DefaultSize.__getitem__ (src/cachetools/__init__.py::_DefaultSize.__getitem__)
+2026-09-01 19:34:21,310 INFO LLM request entity=src/cachetools/__init__.py::_DefaultSize.__getitem__ system_chars=1885 user_chars=2471
+2026-09-01 19:34:21,717 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.ttl status=parsed chars=388 duration_ms=1906
+2026-09-01 19:34:21,718 INFO Generating method:_DefaultSize.__setitem__ (src/cachetools/__init__.py::_DefaultSize.__setitem__)
+2026-09-01 19:34:21,719 INFO LLM request entity=src/cachetools/__init__.py::_DefaultSize.__setitem__ system_chars=1885 user_chars=2475
+2026-09-01 19:34:23,846 INFO LLM response entity=src/cachetools/__init__.py::_DefaultSize.__getitem__ status=parsed chars=471 duration_ms=2536
+2026-09-01 19:34:23,847 INFO Generating method:_DefaultSize.clear (src/cachetools/__init__.py::_DefaultSize.clear)
+2026-09-01 19:34:23,847 INFO LLM request entity=src/cachetools/__init__.py::_DefaultSize.clear system_chars=1885 user_chars=2451
+2026-09-01 19:34:24,827 INFO LLM response entity=src/cachetools/__init__.py::_DefaultSize.__setitem__ status=parsed chars=611 duration_ms=3108
+2026-09-01 19:34:24,828 INFO Generating method:_DefaultSize.pop (src/cachetools/__init__.py::_DefaultSize.pop)
+2026-09-01 19:34:24,828 INFO LLM request entity=src/cachetools/__init__.py::_DefaultSize.pop system_chars=1885 user_chars=2455
+2026-09-01 19:34:25,353 INFO LLM response entity=src/cachetools/__init__.py::_DefaultSize.clear status=parsed chars=263 duration_ms=1506
+2026-09-01 19:34:25,353 INFO Generating method:_TimedCache.expire (src/cachetools/__init__.py::_TimedCache.expire)
+2026-09-01 19:34:25,353 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache.expire system_chars=1885 user_chars=2577
+2026-09-01 19:34:26,735 INFO LLM response entity=src/cachetools/__init__.py::_DefaultSize.pop status=parsed chars=388 duration_ms=1907
+2026-09-01 19:34:26,735 INFO Generating method:_TimedCache.timer (src/cachetools/__init__.py::_TimedCache.timer)
+2026-09-01 19:34:26,736 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache.timer system_chars=1885 user_chars=2659
+2026-09-01 19:34:28,213 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache.expire status=parsed chars=686 duration_ms=2859
+2026-09-01 19:34:28,214 INFO Generating function:cached (src/cachetools/__init__.py::cached)
+2026-09-01 19:34:28,214 INFO LLM request entity=src/cachetools/__init__.py::cached system_chars=1885 user_chars=3429
+2026-09-01 19:34:28,742 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache.timer status=parsed chars=328 duration_ms=2006
+2026-09-01 19:34:28,743 INFO Generating function:cachedmethod (src/cachetools/__init__.py::cachedmethod)
+2026-09-01 19:34:28,743 INFO LLM request entity=src/cachetools/__init__.py::cachedmethod system_chars=1885 user_chars=3395
+2026-09-01 19:34:35,126 INFO LLM response entity=src/cachetools/__init__.py::cachedmethod status=parsed chars=1551 duration_ms=6383
+2026-09-01 19:34:35,127 INFO Generating function:_condition (src/cachetools/_cached.py::_condition)
+2026-09-01 19:34:35,127 INFO LLM request entity=src/cachetools/_cached.py::_condition system_chars=1885 user_chars=3060
+2026-09-01 19:34:36,193 INFO LLM response entity=src/cachetools/__init__.py::cached status=parsed chars=1761 duration_ms=7978
+2026-09-01 19:34:36,193 INFO Generating function:_condition_info (src/cachetools/_cached.py::_condition_info)
+2026-09-01 19:34:36,193 INFO LLM request entity=src/cachetools/_cached.py::_condition_info system_chars=1885 user_chars=3358
+2026-09-01 19:34:39,344 INFO LLM response entity=src/cachetools/_cached.py::_condition status=parsed chars=1124 duration_ms=4217
+2026-09-01 19:34:39,345 INFO Generating function:_locked (src/cachetools/_cached.py::_locked)
+2026-09-01 19:34:39,345 INFO LLM request entity=src/cachetools/_cached.py::_locked system_chars=1885 user_chars=2990
+2026-09-01 19:34:41,757 INFO LLM response entity=src/cachetools/_cached.py::_condition_info status=parsed chars=1195 duration_ms=5564
+2026-09-01 19:34:41,758 INFO Generating function:_locked_info (src/cachetools/_cached.py::_locked_info)
+2026-09-01 19:34:41,759 INFO LLM request entity=src/cachetools/_cached.py::_locked_info system_chars=1885 user_chars=3283
+2026-09-01 19:34:45,002 INFO LLM response entity=src/cachetools/_cached.py::_locked status=parsed chars=1293 duration_ms=5657
+2026-09-01 19:34:45,003 INFO Generating function:_uncached (src/cachetools/_cached.py::_uncached)
+2026-09-01 19:34:45,003 INFO LLM request entity=src/cachetools/_cached.py::_uncached system_chars=1885 user_chars=2397
+2026-09-01 19:34:46,705 INFO LLM response entity=src/cachetools/_cached.py::_locked_info status=parsed chars=1107 duration_ms=4946
+2026-09-01 19:34:46,706 INFO Generating function:_uncached_info (src/cachetools/_cached.py::_uncached_info)
+2026-09-01 19:34:46,706 INFO LLM request entity=src/cachetools/_cached.py::_uncached_info system_chars=1885 user_chars=2588
+2026-09-01 19:34:48,108 INFO LLM response entity=src/cachetools/_cached.py::_uncached status=parsed chars=616 duration_ms=3105
+2026-09-01 19:34:48,108 INFO Generating function:_unlocked (src/cachetools/_cached.py::_unlocked)
+2026-09-01 19:34:48,109 INFO LLM request entity=src/cachetools/_cached.py::_unlocked system_chars=1885 user_chars=2666
+2026-09-01 19:34:50,817 INFO LLM response entity=src/cachetools/_cached.py::_uncached_info status=parsed chars=957 duration_ms=4111
+2026-09-01 19:34:50,818 INFO Generating function:_unlocked_info (src/cachetools/_cached.py::_unlocked_info)
+2026-09-01 19:34:50,818 INFO LLM request entity=src/cachetools/_cached.py::_unlocked_info system_chars=1885 user_chars=2960
+2026-09-01 19:34:52,624 INFO LLM response entity=src/cachetools/_cached.py::_unlocked status=parsed chars=1156 duration_ms=4516
+2026-09-01 19:34:52,625 INFO Generating method:_DeprecatedDescriptorBase.__init__ (src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.__init__)
+2026-09-01 19:34:52,625 INFO LLM request entity=src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.__init__ system_chars=1885 user_chars=2556
+2026-09-01 19:34:55,836 INFO LLM response entity=src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.__init__ status=parsed chars=799 duration_ms=3211
+2026-09-01 19:34:55,837 INFO Generating method:_DescriptorBase.__init__ (src/cachetools/_cachedmethod.py::_DescriptorBase.__init__)
+2026-09-01 19:34:55,837 INFO LLM request entity=src/cachetools/_cachedmethod.py::_DescriptorBase.__init__ system_chars=1885 user_chars=2427
+2026-09-01 19:35:02,209 INFO LLM response entity=src/cachetools/_cachedmethod.py::_DescriptorBase.__init__ status=parsed chars=1312 duration_ms=6372
+2026-09-01 19:35:02,210 INFO Generating method:_DescriptorBase.__set_name__ (src/cachetools/_cachedmethod.py::_DescriptorBase.__set_name__)
+2026-09-01 19:35:02,210 INFO LLM request entity=src/cachetools/_cachedmethod.py::_DescriptorBase.__set_name__ system_chars=1885 user_chars=2644
+2026-09-01 19:35:02,215 INFO LLM response entity=src/cachetools/_cached.py::_unlocked_info status=parsed chars=2510 duration_ms=11398
+2026-09-01 19:35:02,216 INFO Generating method:_WrapperBase.__call__ (src/cachetools/_cachedmethod.py::_WrapperBase.__call__)
+2026-09-01 19:35:02,216 INFO LLM request entity=src/cachetools/_cachedmethod.py::_WrapperBase.__call__ system_chars=1885 user_chars=2407
+2026-09-01 19:35:05,267 INFO LLM response entity=src/cachetools/_cachedmethod.py::_WrapperBase.__call__ status=parsed chars=625 duration_ms=3051
+2026-09-01 19:35:05,268 INFO Generating method:_WrapperBase.cache (src/cachetools/_cachedmethod.py::_WrapperBase.cache)
+2026-09-01 19:35:05,268 INFO LLM request entity=src/cachetools/_cachedmethod.py::_WrapperBase.cache system_chars=1885 user_chars=2369
+2026-09-01 19:35:05,630 INFO LLM response entity=src/cachetools/_cachedmethod.py::_DescriptorBase.__set_name__ status=parsed chars=821 duration_ms=3421
+2026-09-01 19:35:05,631 INFO Generating method:_WrapperBase.cache_clear (src/cachetools/_cachedmethod.py::_WrapperBase.cache_clear)
+2026-09-01 19:35:05,632 INFO LLM request entity=src/cachetools/_cachedmethod.py::_WrapperBase.cache_clear system_chars=1885 user_chars=2398
+2026-09-01 19:35:07,175 INFO LLM response entity=src/cachetools/_cachedmethod.py::_WrapperBase.cache_clear status=parsed chars=329 duration_ms=1543
+2026-09-01 19:35:07,176 INFO Generating method:_WrapperBase.cache_condition (src/cachetools/_cachedmethod.py::_WrapperBase.cache_condition)
+2026-09-01 19:35:07,176 INFO LLM request entity=src/cachetools/_cachedmethod.py::_WrapperBase.cache_condition system_chars=1885 user_chars=2388
+2026-09-01 19:35:07,244 INFO LLM response entity=src/cachetools/_cachedmethod.py::_WrapperBase.cache status=parsed chars=387 duration_ms=1976
+2026-09-01 19:35:07,245 INFO Generating method:_WrapperBase.cache_key (src/cachetools/_cachedmethod.py::_WrapperBase.cache_key)
+2026-09-01 19:35:07,245 INFO LLM request entity=src/cachetools/_cachedmethod.py::_WrapperBase.cache_key system_chars=1885 user_chars=2406
+2026-09-01 19:35:09,079 INFO LLM response entity=src/cachetools/_cachedmethod.py::_WrapperBase.cache_condition status=parsed chars=425 duration_ms=1903
+2026-09-01 19:35:09,080 INFO Generating method:_WrapperBase.cache_lock (src/cachetools/_cachedmethod.py::_WrapperBase.cache_lock)
+2026-09-01 19:35:09,080 INFO LLM request entity=src/cachetools/_cachedmethod.py::_WrapperBase.cache_lock system_chars=1885 user_chars=2378
+2026-09-01 19:35:09,330 INFO LLM response entity=src/cachetools/_cachedmethod.py::_WrapperBase.cache_key status=parsed chars=369 duration_ms=2085
+2026-09-01 19:35:09,331 INFO Generating function:_condition (src/cachetools/_cachedmethod.py::_condition)
+2026-09-01 19:35:09,331 INFO LLM request entity=src/cachetools/_cachedmethod.py::_condition system_chars=1885 user_chars=3905
+2026-09-01 19:35:10,986 INFO LLM response entity=src/cachetools/_cachedmethod.py::_WrapperBase.cache_lock status=parsed chars=386 duration_ms=1906
+2026-09-01 19:35:10,987 INFO Generating function:_condition_info (src/cachetools/_cachedmethod.py::_condition_info)
+2026-09-01 19:35:10,987 INFO LLM request entity=src/cachetools/_cachedmethod.py::_condition_info system_chars=1885 user_chars=4041
+2026-09-01 19:35:13,741 INFO LLM response entity=src/cachetools/_cachedmethod.py::_condition status=parsed chars=962 duration_ms=4410
+2026-09-01 19:35:13,742 INFO Generating function:_locked (src/cachetools/_cachedmethod.py::_locked)
+2026-09-01 19:35:13,742 INFO LLM request entity=src/cachetools/_cachedmethod.py::_locked system_chars=1885 user_chars=3601
+2026-09-01 19:35:15,704 INFO LLM response entity=src/cachetools/_cachedmethod.py::_condition_info status=parsed chars=837 duration_ms=4717
+2026-09-01 19:35:15,705 INFO Generating function:_locked_info (src/cachetools/_cachedmethod.py::_locked_info)
+2026-09-01 19:35:15,705 INFO LLM request entity=src/cachetools/_cachedmethod.py::_locked_info system_chars=1885 user_chars=3831
+2026-09-01 19:35:17,441 INFO LLM response entity=src/cachetools/_cachedmethod.py::_locked status=parsed chars=824 duration_ms=3699
+2026-09-01 19:35:17,442 INFO Generating function:_none (src/cachetools/_cachedmethod.py::_none)
+2026-09-01 19:35:17,442 INFO LLM request entity=src/cachetools/_cachedmethod.py::_none system_chars=1885 user_chars=2336
+2026-09-01 19:35:19,247 INFO LLM response entity=src/cachetools/_cachedmethod.py::_none status=parsed chars=362 duration_ms=1805
+2026-09-01 19:35:19,247 INFO Generating function:_unlocked (src/cachetools/_cachedmethod.py::_unlocked)
+2026-09-01 19:35:19,248 INFO LLM request entity=src/cachetools/_cachedmethod.py::_unlocked system_chars=1885 user_chars=3287
+2026-09-01 19:35:20,707 INFO LLM response entity=src/cachetools/_cachedmethod.py::_locked_info status=parsed chars=741 duration_ms=5002
+2026-09-01 19:35:20,708 INFO Generating function:_unlocked_info (src/cachetools/_cachedmethod.py::_unlocked_info)
+2026-09-01 19:35:20,709 INFO LLM request entity=src/cachetools/_cachedmethod.py::_unlocked_info system_chars=1885 user_chars=3391
+2026-09-01 19:35:23,030 INFO LLM response entity=src/cachetools/_cachedmethod.py::_unlocked status=parsed chars=781 duration_ms=3782
+2026-09-01 19:35:23,031 INFO Generating function:_warn_classmethod (src/cachetools/_cachedmethod.py::_warn_classmethod)
+2026-09-01 19:35:23,031 INFO LLM request entity=src/cachetools/_cachedmethod.py::_warn_classmethod system_chars=1885 user_chars=2506
+2026-09-01 19:35:25,269 INFO LLM response entity=src/cachetools/_cachedmethod.py::_unlocked_info status=parsed chars=726 duration_ms=4561
+2026-09-01 19:35:25,270 INFO Generating function:_warn_instance_dict (src/cachetools/_cachedmethod.py::_warn_instance_dict)
+2026-09-01 19:35:25,270 INFO LLM request entity=src/cachetools/_cachedmethod.py::_warn_instance_dict system_chars=1885 user_chars=2459
+2026-09-01 19:35:25,481 INFO LLM response entity=src/cachetools/_cachedmethod.py::_warn_classmethod status=parsed chars=667 duration_ms=2450
+2026-09-01 19:35:25,482 INFO Generating method:_UnboundTTLCache.__init__ (src/cachetools/func.py::_UnboundTTLCache.__init__)
+2026-09-01 19:35:25,483 INFO LLM request entity=src/cachetools/func.py::_UnboundTTLCache.__init__ system_chars=1885 user_chars=2510
+2026-09-01 19:35:27,947 INFO LLM response entity=src/cachetools/_cachedmethod.py::_warn_instance_dict status=parsed chars=636 duration_ms=2677
+2026-09-01 19:35:27,948 INFO Generating method:_UnboundTTLCache.maxsize (src/cachetools/func.py::_UnboundTTLCache.maxsize)
+2026-09-01 19:35:27,948 INFO LLM request entity=src/cachetools/func.py::_UnboundTTLCache.maxsize system_chars=1885 user_chars=2464
+2026-09-01 19:35:29,308 INFO LLM response entity=src/cachetools/func.py::_UnboundTTLCache.__init__ status=parsed chars=727 duration_ms=3826
+2026-09-01 19:35:29,309 INFO Generating method:_HashedTuple.__add__ (src/cachetools/keys.py::_HashedTuple.__add__)
+2026-09-01 19:35:29,309 INFO LLM request entity=src/cachetools/keys.py::_HashedTuple.__add__ system_chars=1885 user_chars=2289
+2026-09-01 19:35:29,760 INFO LLM response entity=src/cachetools/func.py::_UnboundTTLCache.maxsize status=parsed chars=285 duration_ms=1812
+2026-09-01 19:35:29,761 INFO Generating method:_HashedTuple.__getstate__ (src/cachetools/keys.py::_HashedTuple.__getstate__)
+2026-09-01 19:35:29,762 INFO LLM request entity=src/cachetools/keys.py::_HashedTuple.__getstate__ system_chars=1885 user_chars=2245
+2026-09-01 19:35:31,321 INFO LLM response entity=src/cachetools/keys.py::_HashedTuple.__getstate__ status=parsed chars=303 duration_ms=1559
+2026-09-01 19:35:31,322 INFO Generating method:_HashedTuple.__hash__ (src/cachetools/keys.py::_HashedTuple.__hash__)
+2026-09-01 19:35:31,322 INFO LLM request entity=src/cachetools/keys.py::_HashedTuple.__hash__ system_chars=1885 user_chars=2386
+2026-09-01 19:35:32,275 INFO LLM response entity=src/cachetools/keys.py::_HashedTuple.__add__ status=parsed chars=700 duration_ms=2966
+2026-09-01 19:35:32,276 INFO Generating method:_HashedTuple.__radd__ (src/cachetools/keys.py::_HashedTuple.__radd__)
+2026-09-01 19:35:32,276 INFO LLM request entity=src/cachetools/keys.py::_HashedTuple.__radd__ system_chars=1885 user_chars=2291
+2026-09-01 19:35:35,974 INFO LLM response entity=src/cachetools/keys.py::_HashedTuple.__radd__ status=parsed chars=890 duration_ms=3698
+2026-09-01 19:35:35,974 INFO Generating function:hashkey (src/cachetools/keys.py::hashkey)
+2026-09-01 19:35:35,974 INFO LLM request entity=src/cachetools/keys.py::hashkey system_chars=1885 user_chars=2492
+2026-09-01 19:35:37,177 INFO LLM response entity=src/cachetools/keys.py::_HashedTuple.__hash__ status=parsed chars=1231 duration_ms=5855
+2026-09-01 19:35:37,177 INFO Generating function:typedkey (src/cachetools/keys.py::typedkey)
+2026-09-01 19:35:37,177 INFO LLM request entity=src/cachetools/keys.py::typedkey system_chars=1885 user_chars=2653
+2026-09-01 19:35:39,312 INFO LLM response entity=src/cachetools/keys.py::hashkey status=parsed chars=641 duration_ms=3338
+2026-09-01 19:35:39,687 INFO LLM response entity=src/cachetools/keys.py::typedkey status=parsed chars=696 duration_ms=2510
+2026-09-01 19:35:39,689 INFO Generating method:Cache.__getitem__ (src/cachetools/__init__.py::Cache.__getitem__)
+2026-09-01 19:35:39,689 INFO LLM request entity=src/cachetools/__init__.py::Cache.__getitem__ system_chars=1885 user_chars=2668
+2026-09-01 19:35:39,689 INFO Generating method:Cache.__setitem__ (src/cachetools/__init__.py::Cache.__setitem__)
+2026-09-01 19:35:39,690 INFO LLM request entity=src/cachetools/__init__.py::Cache.__setitem__ system_chars=1885 user_chars=3077
+2026-09-01 19:35:42,699 INFO LLM response entity=src/cachetools/__init__.py::Cache.__getitem__ status=parsed chars=624 duration_ms=3009
+2026-09-01 19:35:42,700 INFO Generating method:Cache.__delitem__ (src/cachetools/__init__.py::Cache.__delitem__)
+2026-09-01 19:35:42,700 INFO LLM request entity=src/cachetools/__init__.py::Cache.__delitem__ system_chars=1885 user_chars=2775
+2026-09-01 19:35:43,200 INFO LLM response entity=src/cachetools/__init__.py::Cache.__setitem__ status=parsed chars=761 duration_ms=3509
+2026-09-01 19:35:43,201 INFO Generating method:FIFOCache.__init__ (src/cachetools/__init__.py::FIFOCache.__init__)
+2026-09-01 19:35:43,201 INFO LLM request entity=src/cachetools/__init__.py::FIFOCache.__init__ system_chars=1885 user_chars=2850
+2026-09-01 19:35:44,874 INFO LLM response entity=src/cachetools/__init__.py::Cache.__delitem__ status=parsed chars=553 duration_ms=2173
+2026-09-01 19:35:44,875 INFO Generating method:LFUCache.__init__ (src/cachetools/__init__.py::LFUCache.__init__)
+2026-09-01 19:35:44,875 INFO LLM request entity=src/cachetools/__init__.py::LFUCache.__init__ system_chars=1885 user_chars=2922
+2026-09-01 19:35:46,406 INFO LLM response entity=src/cachetools/__init__.py::FIFOCache.__init__ status=parsed chars=709 duration_ms=3205
+2026-09-01 19:35:46,407 INFO Generating method:LFUCache.__getitem__ (src/cachetools/__init__.py::LFUCache.__getitem__)
+2026-09-01 19:35:46,407 INFO LLM request entity=src/cachetools/__init__.py::LFUCache.__getitem__ system_chars=1885 user_chars=2838
+2026-09-01 19:35:48,118 INFO LLM response entity=src/cachetools/__init__.py::LFUCache.__init__ status=parsed chars=792 duration_ms=3243
+2026-09-01 19:35:48,119 INFO Generating method:LFUCache.__setitem__ (src/cachetools/__init__.py::LFUCache.__setitem__)
+2026-09-01 19:35:48,119 INFO LLM request entity=src/cachetools/__init__.py::LFUCache.__setitem__ system_chars=1885 user_chars=3102
+2026-09-01 19:35:49,845 INFO   blocking validation for src/cachetools/__init__.py::LFUCache.__getitem__: Example instantiates `LFUCache` without constructor arguments
+2026-09-01 19:35:49,845 INFO LLM request entity=src/cachetools/__init__.py::LFUCache.__getitem__ system_chars=1885 user_chars=3017
+2026-09-01 19:35:52,031 INFO LLM response entity=src/cachetools/__init__.py::LFUCache.__setitem__ status=parsed chars=1034 duration_ms=3912
+2026-09-01 19:35:52,032 INFO Generating method:LRUCache.__init__ (src/cachetools/__init__.py::LRUCache.__init__)
+2026-09-01 19:35:52,033 INFO LLM request entity=src/cachetools/__init__.py::LRUCache.__init__ system_chars=1885 user_chars=2849
+2026-09-01 19:35:53,361 INFO LLM response entity=src/cachetools/__init__.py::LFUCache.__getitem__ status=parsed chars=832 duration_ms=6953
+2026-09-01 19:35:53,361 INFO Generating method:LRUCache.__getitem__ (src/cachetools/__init__.py::LRUCache.__getitem__)
+2026-09-01 19:35:53,361 INFO LLM request entity=src/cachetools/__init__.py::LRUCache.__getitem__ system_chars=1885 user_chars=2849
+2026-09-01 19:35:55,142 INFO LLM response entity=src/cachetools/__init__.py::LRUCache.__init__ status=parsed chars=715 duration_ms=3109
+2026-09-01 19:35:55,143 INFO Generating method:LRUCache.__setitem__ (src/cachetools/__init__.py::LRUCache.__setitem__)
+2026-09-01 19:35:55,143 INFO LLM request entity=src/cachetools/__init__.py::LRUCache.__setitem__ system_chars=1885 user_chars=2772
+2026-09-01 19:35:56,948 INFO LLM response entity=src/cachetools/__init__.py::LRUCache.__getitem__ status=parsed chars=826 duration_ms=3587
+2026-09-01 19:35:56,949 INFO Generating method:RRCache.__init__ (src/cachetools/__init__.py::RRCache.__init__)
+2026-09-01 19:35:56,949 INFO LLM request entity=src/cachetools/__init__.py::RRCache.__init__ system_chars=1885 user_chars=2905
+2026-09-01 19:35:58,755 INFO LLM response entity=src/cachetools/__init__.py::LRUCache.__setitem__ status=parsed chars=988 duration_ms=3612
+2026-09-01 19:35:58,756 INFO Generating method:TLRUCache.__getitem__ (src/cachetools/__init__.py::TLRUCache.__getitem__)
+2026-09-01 19:35:58,756 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.__getitem__ system_chars=1885 user_chars=3023
+2026-09-01 19:36:00,862 INFO LLM response entity=src/cachetools/__init__.py::RRCache.__init__ status=parsed chars=958 duration_ms=3913
+2026-09-01 19:36:00,863 INFO Generating method:TLRUCache.__setitem__ (src/cachetools/__init__.py::TLRUCache.__setitem__)
+2026-09-01 19:36:00,864 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.__setitem__ system_chars=1885 user_chars=3444
+2026-09-01 19:36:02,723 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.__getitem__ status=parsed chars=902 duration_ms=3967
+2026-09-01 19:36:02,724 INFO Generating method:TLRUCache.popitem (src/cachetools/__init__.py::TLRUCache.popitem)
+2026-09-01 19:36:02,724 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.popitem system_chars=1885 user_chars=3216
+2026-09-01 19:36:04,759 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.__setitem__ status=parsed chars=806 duration_ms=3896
+2026-09-01 19:36:04,760 INFO Generating method:TTLCache.__getitem__ (src/cachetools/__init__.py::TTLCache.__getitem__)
+2026-09-01 19:36:04,760 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.__getitem__ system_chars=1885 user_chars=3005
+2026-09-01 19:36:05,342 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.popitem status=parsed chars=640 duration_ms=2617
+2026-09-01 19:36:05,342 INFO Generating method:TTLCache.__setitem__ (src/cachetools/__init__.py::TTLCache.__setitem__)
+2026-09-01 19:36:05,342 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.__setitem__ system_chars=1885 user_chars=3296
+2026-09-01 19:36:08,947 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.__setitem__ status=parsed chars=743 duration_ms=3605
+2026-09-01 19:36:08,948 INFO Generating method:TTLCache.__setstate__ (src/cachetools/__init__.py::TTLCache.__setstate__)
+2026-09-01 19:36:08,948 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.__setstate__ system_chars=1885 user_chars=3023
+2026-09-01 19:36:09,273 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.__getitem__ status=parsed chars=1057 duration_ms=4513
+2026-09-01 19:36:09,273 INFO Generating method:TTLCache.popitem (src/cachetools/__init__.py::TTLCache.popitem)
+2026-09-01 19:36:09,274 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.popitem system_chars=1885 user_chars=3211
+2026-09-01 19:36:12,395 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.popitem status=parsed chars=742 duration_ms=3121
+2026-09-01 19:36:12,396 INFO Generating method:_TimedCache.__init__ (src/cachetools/__init__.py::_TimedCache.__init__)
+2026-09-01 19:36:12,396 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache.__init__ system_chars=1885 user_chars=2859
+2026-09-01 19:36:12,669 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.__setstate__ status=parsed chars=952 duration_ms=3721
+2026-09-01 19:36:12,670 INFO Generating method:_TimedCache.__len__ (src/cachetools/__init__.py::_TimedCache.__len__)
+2026-09-01 19:36:12,670 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache.__len__ system_chars=1885 user_chars=2787
+2026-09-01 19:36:15,515 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache.__len__ status=parsed chars=572 duration_ms=2845
+2026-09-01 19:36:15,515 INFO Generating method:_TimedCache.__repr__ (src/cachetools/__init__.py::_TimedCache.__repr__)
+2026-09-01 19:36:15,516 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache.__repr__ system_chars=1885 user_chars=2792
+2026-09-01 19:36:16,036 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache.__init__ status=parsed chars=1010 duration_ms=3640
+2026-09-01 19:36:16,036 INFO Generating method:_TimedCache.currsize (src/cachetools/__init__.py::_TimedCache.currsize)
+2026-09-01 19:36:16,036 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache.currsize system_chars=1885 user_chars=2765
+2026-09-01 19:36:18,827 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache.__repr__ status=parsed chars=688 duration_ms=3311
+2026-09-01 19:36:18,827 INFO Generating method:_TimedCache.get (src/cachetools/__init__.py::_TimedCache.get)
+2026-09-01 19:36:18,828 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache.get system_chars=1885 user_chars=2782
+2026-09-01 19:36:19,228 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache.currsize status=parsed chars=713 duration_ms=3192
+2026-09-01 19:36:19,229 INFO Generating method:_TimedCache.pop (src/cachetools/__init__.py::_TimedCache.pop)
+2026-09-01 19:36:19,229 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache.pop system_chars=1885 user_chars=2852
+2026-09-01 19:36:22,638 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache.get status=parsed chars=980 duration_ms=3811
+2026-09-01 19:36:22,639 INFO Generating method:_TimedCache.setdefault (src/cachetools/__init__.py::_TimedCache.setdefault)
+2026-09-01 19:36:22,639 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache.setdefault system_chars=1885 user_chars=2874
+2026-09-01 19:36:24,346 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache.pop status=parsed chars=1091 duration_ms=5117
+2026-09-01 19:36:24,347 INFO Generating function:_wrapper (src/cachetools/_cached.py::_wrapper)
+2026-09-01 19:36:24,348 INFO LLM request entity=src/cachetools/_cached.py::_wrapper system_chars=1885 user_chars=4575
+2026-09-01 19:36:25,950 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache.setdefault status=parsed chars=798 duration_ms=3311
+2026-09-01 19:36:25,952 INFO Generating method:_DeprecatedDescriptorBase.__call__ (src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.__call__)
+2026-09-01 19:36:25,952 INFO LLM request entity=src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.__call__ system_chars=1885 user_chars=2696
+2026-09-01 19:36:29,666 INFO LLM response entity=src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.__call__ status=parsed chars=998 duration_ms=3714
+2026-09-01 19:36:29,667 INFO Generating method:_DeprecatedDescriptorBase.cache_clear (src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.cache_clear)
+2026-09-01 19:36:29,667 INFO LLM request entity=src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.cache_clear system_chars=1885 user_chars=2690
+2026-09-01 19:36:32,073 INFO LLM response entity=src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.cache_clear status=parsed chars=532 duration_ms=2406
+2026-09-01 19:36:32,074 INFO Generating method:_WrapperBase.__init__ (src/cachetools/_cachedmethod.py::_WrapperBase.__init__)
+2026-09-01 19:36:32,074 INFO LLM request entity=src/cachetools/_cachedmethod.py::_WrapperBase.__init__ system_chars=1885 user_chars=2915
+2026-09-01 19:36:32,133 INFO LLM response entity=src/cachetools/_cached.py::_wrapper status=parsed chars=1642 duration_ms=7785
+2026-09-01 19:36:32,134 INFO Generating method:_DescriptorBase.__get__ (src/cachetools/_cachedmethod.py::_DescriptorBase.__get__)
+2026-09-01 19:36:32,134 INFO LLM request entity=src/cachetools/_cachedmethod.py::_DescriptorBase.__get__ system_chars=1885 user_chars=4323
+2026-09-01 19:36:36,295 INFO LLM response entity=src/cachetools/_cachedmethod.py::_DescriptorBase.__get__ status=parsed chars=1182 duration_ms=4161
+2026-09-01 19:36:36,296 INFO Generating function:_wrapper (src/cachetools/_cachedmethod.py::_wrapper)
+2026-09-01 19:36:36,296 INFO LLM request entity=src/cachetools/_cachedmethod.py::_wrapper system_chars=1885 user_chars=4040
+2026-09-01 19:36:37,089 INFO LLM response entity=src/cachetools/_cachedmethod.py::_WrapperBase.__init__ status=parsed chars=1213 duration_ms=5014
+2026-09-01 19:36:37,090 INFO Generating function:_cache (src/cachetools/func.py::_cache)
+2026-09-01 19:36:37,090 INFO LLM request entity=src/cachetools/func.py::_cache system_chars=1885 user_chars=3124
+2026-09-01 19:36:41,705 INFO LLM response entity=src/cachetools/_cachedmethod.py::_wrapper status=parsed chars=1307 duration_ms=5409
+2026-09-01 19:36:41,706 INFO Generating function:methodkey (src/cachetools/keys.py::methodkey)
+2026-09-01 19:36:41,706 INFO LLM request entity=src/cachetools/keys.py::methodkey system_chars=1885 user_chars=2500
+2026-09-01 19:36:42,509 INFO LLM response entity=src/cachetools/func.py::_cache status=parsed chars=1338 duration_ms=5419
+2026-09-01 19:36:42,510 INFO Generating function:typedmethodkey (src/cachetools/keys.py::typedmethodkey)
+2026-09-01 19:36:42,510 INFO LLM request entity=src/cachetools/keys.py::typedmethodkey system_chars=1885 user_chars=2532
+2026-09-01 19:36:44,366 INFO LLM response entity=src/cachetools/keys.py::methodkey status=parsed chars=632 duration_ms=2659
+2026-09-01 19:36:46,021 INFO LLM response entity=src/cachetools/keys.py::typedmethodkey status=parsed chars=798 duration_ms=3511
+2026-09-01 19:36:46,022 INFO Generating method:TLRUCache.__init__ (src/cachetools/__init__.py::TLRUCache.__init__)
+2026-09-01 19:36:46,023 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.__init__ system_chars=1885 user_chars=2952
+2026-09-01 19:36:46,023 INFO Generating method:TTLCache.__init__ (src/cachetools/__init__.py::TTLCache.__init__)
+2026-09-01 19:36:46,024 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.__init__ system_chars=1885 user_chars=3008
+2026-09-01 19:36:50,538 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.__init__ status=parsed chars=1067 duration_ms=4515
+2026-09-01 19:36:50,539 INFO Generating function:fifo_cache (src/cachetools/func.py::fifo_cache)
+2026-09-01 19:36:50,539 INFO LLM request entity=src/cachetools/func.py::fifo_cache system_chars=1885 user_chars=3174
+2026-09-01 19:36:50,547 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.__init__ status=parsed chars=1025 duration_ms=4523
+2026-09-01 19:36:50,547 INFO Generating function:lfu_cache (src/cachetools/func.py::lfu_cache)
+2026-09-01 19:36:50,547 INFO LLM request entity=src/cachetools/func.py::lfu_cache system_chars=1885 user_chars=3174
+2026-09-01 19:36:53,826 INFO LLM response entity=src/cachetools/func.py::fifo_cache status=parsed chars=814 duration_ms=3287
+2026-09-01 19:36:53,827 INFO Generating function:lru_cache (src/cachetools/func.py::lru_cache)
+2026-09-01 19:36:53,827 INFO LLM request entity=src/cachetools/func.py::lru_cache system_chars=1885 user_chars=3170
+2026-09-01 19:36:54,023 INFO LLM response entity=src/cachetools/func.py::lfu_cache status=parsed chars=746 duration_ms=3476
+2026-09-01 19:36:54,024 INFO Generating function:rr_cache (src/cachetools/func.py::rr_cache)
+2026-09-01 19:36:54,024 INFO LLM request entity=src/cachetools/func.py::rr_cache system_chars=1885 user_chars=3202
+2026-09-01 19:36:58,243 INFO LLM response entity=src/cachetools/func.py::rr_cache status=parsed chars=982 duration_ms=4219
+2026-09-01 19:36:58,244 INFO Generating function:ttl_cache (src/cachetools/func.py::ttl_cache)
+2026-09-01 19:36:58,244 INFO LLM request entity=src/cachetools/func.py::ttl_cache system_chars=1885 user_chars=3337
+2026-09-01 19:36:59,166 INFO LLM response entity=src/cachetools/func.py::lru_cache status=parsed chars=1140 duration_ms=5339
+2026-09-01 19:37:04,345 INFO LLM response entity=src/cachetools/func.py::ttl_cache status=parsed chars=1384 duration_ms=6101
+2026-09-01 19:37:04,346 INFO Generating method:Cache.clear (src/cachetools/__init__.py::Cache.clear)
+2026-09-01 19:37:04,347 INFO LLM request entity=src/cachetools/__init__.py::Cache.clear system_chars=1885 user_chars=2515
+2026-09-01 19:37:04,347 INFO Generating method:FIFOCache.clear (src/cachetools/__init__.py::FIFOCache.clear)
+2026-09-01 19:37:04,347 INFO LLM request entity=src/cachetools/__init__.py::FIFOCache.clear system_chars=1885 user_chars=2583
+2026-09-01 19:37:05,843 INFO LLM response entity=src/cachetools/__init__.py::Cache.clear status=parsed chars=278 duration_ms=1496
+2026-09-01 19:37:05,844 INFO Generating method:LFUCache.clear (src/cachetools/__init__.py::LFUCache.clear)
+2026-09-01 19:37:05,844 INFO LLM request entity=src/cachetools/__init__.py::LFUCache.clear system_chars=1885 user_chars=2646
+2026-09-01 19:37:06,591 INFO LLM response entity=src/cachetools/__init__.py::FIFOCache.clear status=parsed chars=331 duration_ms=2244
+2026-09-01 19:37:06,592 INFO Generating method:LRUCache.clear (src/cachetools/__init__.py::LRUCache.clear)
+2026-09-01 19:37:06,592 INFO LLM request entity=src/cachetools/__init__.py::LRUCache.clear system_chars=1885 user_chars=2643
+2026-09-01 19:37:07,594 INFO LLM response entity=src/cachetools/__init__.py::LFUCache.clear status=parsed chars=306 duration_ms=1750
+2026-09-01 19:37:07,594 INFO Generating method:RRCache.clear (src/cachetools/__init__.py::RRCache.clear)
+2026-09-01 19:37:07,594 INFO LLM request entity=src/cachetools/__init__.py::RRCache.clear system_chars=1885 user_chars=2669
+2026-09-01 19:37:08,244 INFO LLM response entity=src/cachetools/__init__.py::LRUCache.clear status=parsed chars=350 duration_ms=1652
+2026-09-01 19:37:08,245 INFO Generating method:TLRUCache.clear (src/cachetools/__init__.py::TLRUCache.clear)
+2026-09-01 19:37:08,245 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache.clear system_chars=1885 user_chars=2598
+2026-09-01 19:37:09,188 INFO LLM response entity=src/cachetools/__init__.py::RRCache.clear status=parsed chars=278 duration_ms=1593
+2026-09-01 19:37:09,189 INFO Generating method:TTLCache.clear (src/cachetools/__init__.py::TTLCache.clear)
+2026-09-01 19:37:09,189 INFO LLM request entity=src/cachetools/__init__.py::TTLCache.clear system_chars=1885 user_chars=2633
+2026-09-01 19:37:10,207 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache.clear status=parsed chars=363 duration_ms=1962
+2026-09-01 19:37:10,208 INFO Generating method:_TimedCache.clear (src/cachetools/__init__.py::_TimedCache.clear)
+2026-09-01 19:37:10,208 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache.clear system_chars=1885 user_chars=2617
+2026-09-01 19:37:11,355 INFO LLM response entity=src/cachetools/__init__.py::TTLCache.clear status=parsed chars=367 duration_ms=2166
+2026-09-01 19:37:11,721 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache.clear status=parsed chars=249 duration_ms=1513
+2026-09-01 19:37:11,723 INFO Generating class:_DefaultSize (src/cachetools/__init__.py::_DefaultSize)
+2026-09-01 19:37:11,723 INFO LLM request entity=src/cachetools/__init__.py::_DefaultSize system_chars=1713 user_chars=2650
+2026-09-01 19:37:11,723 INFO Generating class:Cache (src/cachetools/__init__.py::Cache)
+2026-09-01 19:37:11,727 INFO LLM request entity=src/cachetools/__init__.py::Cache system_chars=1713 user_chars=4128
+2026-09-01 19:37:13,116 INFO LLM response entity=src/cachetools/__init__.py::_DefaultSize status=parsed chars=387 duration_ms=1393
+2026-09-01 19:37:13,117 INFO Generating class:FIFOCache (src/cachetools/__init__.py::FIFOCache)
+2026-09-01 19:37:13,117 INFO LLM request entity=src/cachetools/__init__.py::FIFOCache system_chars=1713 user_chars=3011
+2026-09-01 19:37:13,252 INFO LLM response entity=src/cachetools/__init__.py::Cache status=parsed chars=564 duration_ms=1525
+2026-09-01 19:37:13,253 INFO Generating class:LFUCache (src/cachetools/__init__.py::LFUCache)
+2026-09-01 19:37:13,253 INFO LLM request entity=src/cachetools/__init__.py::LFUCache system_chars=1713 user_chars=3327
+2026-09-01 19:37:14,620 INFO LLM response entity=src/cachetools/__init__.py::FIFOCache status=parsed chars=464 duration_ms=1503
+2026-09-01 19:37:14,621 INFO Generating class:LRUCache (src/cachetools/__init__.py::LRUCache)
+2026-09-01 19:37:14,621 INFO LLM request entity=src/cachetools/__init__.py::LRUCache system_chars=1713 user_chars=3317
+2026-09-01 19:37:15,124 INFO LLM response entity=src/cachetools/__init__.py::LFUCache status=parsed chars=579 duration_ms=1871
+2026-09-01 19:37:15,125 INFO Generating class:RRCache (src/cachetools/__init__.py::RRCache)
+2026-09-01 19:37:15,125 INFO LLM request entity=src/cachetools/__init__.py::RRCache system_chars=1713 user_chars=3142
+2026-09-01 19:37:16,328 INFO LLM response entity=src/cachetools/__init__.py::LRUCache status=parsed chars=476 duration_ms=1707
+2026-09-01 19:37:16,329 INFO Generating class:_TimedCache (src/cachetools/__init__.py::_TimedCache)
+2026-09-01 19:37:16,329 INFO LLM request entity=src/cachetools/__init__.py::_TimedCache system_chars=1713 user_chars=3365
+2026-09-01 19:37:16,536 INFO LLM response entity=src/cachetools/__init__.py::RRCache status=parsed chars=385 duration_ms=1411
+2026-09-01 19:37:16,537 INFO Generating class:TTLCache (src/cachetools/__init__.py::TTLCache)
+2026-09-01 19:37:16,537 INFO LLM request entity=src/cachetools/__init__.py::TTLCache system_chars=1713 user_chars=3822
+2026-09-01 19:37:17,878 INFO LLM response entity=src/cachetools/__init__.py::_TimedCache status=parsed chars=462 duration_ms=1549
+2026-09-01 19:37:17,879 INFO Generating class:TLRUCache (src/cachetools/__init__.py::TLRUCache)
+2026-09-01 19:37:17,879 INFO LLM request entity=src/cachetools/__init__.py::TLRUCache system_chars=1713 user_chars=3798
+2026-09-01 19:37:18,385 INFO LLM response entity=src/cachetools/__init__.py::TTLCache status=parsed chars=515 duration_ms=1848
+2026-09-01 19:37:18,386 INFO Generating class:_WrapperBase (src/cachetools/_cachedmethod.py::_WrapperBase)
+2026-09-01 19:37:18,386 INFO LLM request entity=src/cachetools/_cachedmethod.py::_WrapperBase system_chars=1713 user_chars=2972
+2026-09-01 19:37:19,539 INFO LLM response entity=src/cachetools/_cachedmethod.py::_WrapperBase status=parsed chars=329 duration_ms=1153
+2026-09-01 19:37:19,540 INFO LLM response entity=src/cachetools/__init__.py::TLRUCache status=parsed chars=557 duration_ms=1661
+2026-09-01 19:37:19,541 INFO Generating class:_DescriptorBase (src/cachetools/_cachedmethod.py::_DescriptorBase)
+2026-09-01 19:37:19,541 INFO LLM request entity=src/cachetools/_cachedmethod.py::_DescriptorBase system_chars=1713 user_chars=2890
+2026-09-01 19:37:19,541 INFO Generating class:_DeprecatedDescriptorBase (src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase)
+2026-09-01 19:37:19,542 INFO LLM request entity=src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase system_chars=1713 user_chars=2870
+2026-09-01 19:37:20,472 INFO LLM response entity=src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase status=parsed chars=261 duration_ms=930
+2026-09-01 19:37:20,473 INFO Generating class:_UnboundTTLCache (src/cachetools/func.py::_UnboundTTLCache)
+2026-09-01 19:37:20,473 INFO LLM request entity=src/cachetools/func.py::_UnboundTTLCache system_chars=1713 user_chars=2586
+2026-09-01 19:37:21,143 INFO LLM response entity=src/cachetools/_cachedmethod.py::_DescriptorBase status=parsed chars=456 duration_ms=1602
+2026-09-01 19:37:21,144 INFO Generating class:_HashedTuple (src/cachetools/keys.py::_HashedTuple)
+2026-09-01 19:37:21,145 INFO LLM request entity=src/cachetools/keys.py::_HashedTuple system_chars=1713 user_chars=2848
+2026-09-01 19:37:22,649 INFO LLM response entity=src/cachetools/func.py::_UnboundTTLCache status=parsed chars=550 duration_ms=2176
+2026-09-01 19:37:22,680 INFO LLM response entity=src/cachetools/keys.py::_HashedTuple status=parsed chars=368 duration_ms=1536
+2026-09-01 19:37:22,681 INFO Generating module:src/cachetools/__init__.py (src/cachetools/__init__.py::module)
+2026-09-01 19:37:22,681 INFO LLM request entity=src/cachetools/__init__.py::module system_chars=1384 user_chars=4287
+2026-09-01 19:37:22,681 INFO Generating module:src/cachetools/_cached.py (src/cachetools/_cached.py::module)
+2026-09-01 19:37:22,681 INFO LLM request entity=src/cachetools/_cached.py::module system_chars=1384 user_chars=3660
+2026-09-01 19:37:27,567 INFO LLM response entity=src/cachetools/_cached.py::module status=parsed chars=1530 duration_ms=4885
+2026-09-01 19:37:27,568 INFO Generating module:src/cachetools/_cachedmethod.py (src/cachetools/_cachedmethod.py::module)
+2026-09-01 19:37:27,568 INFO LLM request entity=src/cachetools/_cachedmethod.py::module system_chars=1384 user_chars=3845
+2026-09-01 19:37:28,469 INFO LLM response entity=src/cachetools/__init__.py::module status=parsed chars=1823 duration_ms=5788
+2026-09-01 19:37:28,471 INFO Generating module:src/cachetools/func.py (src/cachetools/func.py::module)
+2026-09-01 19:37:28,471 INFO LLM request entity=src/cachetools/func.py::module system_chars=1384 user_chars=3692
+2026-09-01 19:37:32,686 INFO LLM response entity=src/cachetools/func.py::module status=parsed chars=1109 duration_ms=4215
+2026-09-01 19:37:32,687 INFO Generating module:src/cachetools/keys.py (src/cachetools/keys.py::module)
+2026-09-01 19:37:32,687 INFO LLM request entity=src/cachetools/keys.py::module system_chars=1384 user_chars=2808
+2026-09-01 19:37:32,710 INFO LLM response entity=src/cachetools/_cachedmethod.py::module status=parsed chars=1655 duration_ms=5142
+2026-09-01 19:37:35,166 INFO LLM response entity=src/cachetools/keys.py::module status=parsed chars=631 duration_ms=2479
+2026-09-01 19:37:35,168 INFO [generate] done 147 entities (245766ms)
+2026-09-01 19:37:35,168 INFO [validate] start
+2026-09-01 19:37:35,182 INFO [validate] done (15ms)
+2026-09-01 19:37:35,183 INFO Validation: 36 warnings, 0 errors
+2026-09-01 19:37:35,183 INFO [write] start
+2026-09-01 19:37:35,186 INFO [write] done (3ms)
+2026-09-01 19:37:35,186 INFO Wrote 7 output files
+2026-09-01 19:37:35,186 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/cachetools/generated_docs_yandexgpt5-lite/src/cachetools/__init__.py.md
+2026-09-01 19:37:35,186 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/cachetools/generated_docs_yandexgpt5-lite/src/cachetools/_cached.py.md
+2026-09-01 19:37:35,186 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/cachetools/generated_docs_yandexgpt5-lite/src/cachetools/_cachedmethod.py.md
+2026-09-01 19:37:35,186 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/cachetools/generated_docs_yandexgpt5-lite/src/cachetools/func.py.md
+2026-09-01 19:37:35,186 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/cachetools/generated_docs_yandexgpt5-lite/src/cachetools/keys.py.md
+2026-09-01 19:37:35,186 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/cachetools/generated_docs_yandexgpt5-lite/README.md
+2026-09-01 19:37:35,186 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/cachetools/generated_docs_yandexgpt5-lite/src/cachetools/README.md
+2026-09-01 19:37:35,197 INFO Pipeline finished in 245.81s

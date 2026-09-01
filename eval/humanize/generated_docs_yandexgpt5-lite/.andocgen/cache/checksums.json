@@ -1,0 +1,275 @@
+{
+  "files": {
+    "src/humanize/__init__.py": {
+      "source_hash": "69586bc9cba2dbe0daa63d9f82eed16f8511a9da1ccf2e1045cd5175a9028e40",
+      "doc_hash": "40454287fb1daf90448c9ef6ce6e7ca100b4ac34fe13b27915c34727165f25e4"
+    },
+    "src/humanize/filesize.py": {
+      "source_hash": "b35adbf0bf7893f88beb2eb3c689237b84469444de1326a42545790b01913ec7",
+      "doc_hash": "dc5c99c3f2d0a26c96da0f241a04a55eac7eef5475c30435b7880da835987223"
+    },
+    "src/humanize/i18n.py": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "a14f63e838174e909e7a6f34201e79d1325fe66291ddd14fc80e9e2fd14be68e"
+    },
+    "src/humanize/lists.py": {
+      "source_hash": "def0609522ce9aec413e0a46608a7eaf8d8b08aad682469dea4aff5dd4601754",
+      "doc_hash": "71fce57760e710ffcf974c12a5c9723b39ae413c9b2764d7b37fae86f7dc6858"
+    },
+    "src/humanize/number.py": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "f9bce98bf69524a9f81a7e95addc8435fde71b8cf87dcb819b44cdb8bfe9b68a"
+    },
+    "src/humanize/time.py": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "4e8b9cfee5677e71ea17efc1a8d7c94700a1101ca5a6656e7aa34ef731dee317"
+    }
+  },
+  "entities": {
+    "src/humanize/__init__.py::module": {
+      "source_hash": "69586bc9cba2dbe0daa63d9f82eed16f8511a9da1ccf2e1045cd5175a9028e40",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/humanize/filesize.py::module": {
+      "source_hash": "b35adbf0bf7893f88beb2eb3c689237b84469444de1326a42545790b01913ec7",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/humanize/filesize.py::naturalsize": {
+      "source_hash": "b35adbf0bf7893f88beb2eb3c689237b84469444de1326a42545790b01913ec7",
+      "doc_hash": "638467c98b47020511f39c9a53d60c95a3d90133b1abe2398767e52b43fbf68b",
+      "dependency_hash": ""
+    },
+    "src/humanize/i18n.py::module": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/humanize/i18n.py::_get_default_locale_path": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "afa5a52db9c591d42d7c7ff3a8527dffe3714e8d30cdd3224482a6189beed704",
+      "dependency_hash": ""
+    },
+    "src/humanize/i18n.py::get_translation": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "3e9c2853f8e15c026ece169d5b0d219d7954c611f9da8360d73e94655223f73a",
+      "dependency_hash": ""
+    },
+    "src/humanize/i18n.py::activate": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "0f8b3be77370b70a409709a511bc1a2669ba209997660a20fa8c7d2804825da6",
+      "dependency_hash": "88b0652efa5f918435850f8dcd574cdf31b439add0b46dd24b7a7abd66206dec"
+    },
+    "src/humanize/i18n.py::deactivate": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "29a5cc31f739938e885f40797d7625429661a211f1f54fa29f218d44c2dbe0b4",
+      "dependency_hash": ""
+    },
+    "src/humanize/i18n.py::_gettext": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "56d73e328e39960fcb86c2e72c3bdfa3328602e2399ca68af68d75a39bc62061",
+      "dependency_hash": "7fc51a03ef583f6f746ccf68e65086581ef04fe63b898987688188bc327b80af"
+    },
+    "src/humanize/i18n.py::_pgettext": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "56386b256fcf6a0ae31cef7c87c8aaa5e4278207b49f62ce298de3a797083332",
+      "dependency_hash": "7fc51a03ef583f6f746ccf68e65086581ef04fe63b898987688188bc327b80af"
+    },
+    "src/humanize/i18n.py::_ngettext": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "5949e70ccc5e3cd68e378a3f27e42c23ce3c0ddd64da659d1f252d2606eb48fa",
+      "dependency_hash": "7fc51a03ef583f6f746ccf68e65086581ef04fe63b898987688188bc327b80af"
+    },
+    "src/humanize/i18n.py::_gettext_noop": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "9eee98700ef3f2636800a0a6d7128e142abbe98b11283431bfe849d99761c811",
+      "dependency_hash": ""
+    },
+    "src/humanize/i18n.py::_ngettext_noop": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "46933ea6da275c9b1372cc05cdeff75feb1fe7c799bbf3feb6df3afa6a3c0f4f",
+      "dependency_hash": ""
+    },
+    "src/humanize/i18n.py::thousands_separator": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "6e3be4b9c8c37ffffa453adc6468a4aa01a14dbd1ea2e621e2c8ac0268c75375",
+      "dependency_hash": ""
+    },
+    "src/humanize/i18n.py::decimal_separator": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "0ff28cdd8aafc5e01abe908ee38e9ec8fe11abce3c0f4d9229c0a5f260a21164",
+      "dependency_hash": ""
+    },
+    "src/humanize/lists.py::module": {
+      "source_hash": "def0609522ce9aec413e0a46608a7eaf8d8b08aad682469dea4aff5dd4601754",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/humanize/lists.py::natural_list": {
+      "source_hash": "def0609522ce9aec413e0a46608a7eaf8d8b08aad682469dea4aff5dd4601754",
+      "doc_hash": "58d225a8de6a9ffd133d0a09beb62671d9d6f88d20a8be3bb94d44dbd17eda81",
+      "dependency_hash": ""
+    },
+    "src/humanize/number.py::module": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/humanize/number.py::_format_not_finite": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "3496cbd8841dbad84bffec6059328922b41b655848e21f2cf99a61e8601b9d87",
+      "dependency_hash": ""
+    },
+    "src/humanize/number.py::ordinal": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "01a2e08a5c837d75f74ead6b613a8ea101bb4e92bad94ad9d03782c90da22d4a",
+      "dependency_hash": "a368e4a1a786cf7117cd02eaf22e14bec77568bb971e27c543df1339552b13c8"
+    },
+    "src/humanize/number.py::intcomma": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "55aabe0dd4aaa27df7674845905365bd336b06e9fb951774e91d6f7f09601a4c",
+      "dependency_hash": "8a7ed1b41692ccecd78d1bc5e71d13d2e72f924dfabbdf3339cc8ae320ceaa32"
+    },
+    "src/humanize/number.py::intword": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "3429fd738d6772e1637de725773352a7d06af9e5d9027ff6c7ee0064798ad806",
+      "dependency_hash": "2a96e14a73db7d4054f40721987bdce80e9c7edf29bdb5e0bf917847b0a10497"
+    },
+    "src/humanize/number.py::apnumber": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "3bfa2b40f7440b3d703bad4d4c1b9819912f33356c0581473ca75642b88281fe",
+      "dependency_hash": "a368e4a1a786cf7117cd02eaf22e14bec77568bb971e27c543df1339552b13c8"
+    },
+    "src/humanize/number.py::fractional": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "8951e9a11498181eff83a077d2085c5b2e7f2b06743cd71816147306952464e9",
+      "dependency_hash": "a368e4a1a786cf7117cd02eaf22e14bec77568bb971e27c543df1339552b13c8"
+    },
+    "src/humanize/number.py::scientific": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "4029ae78eda3795501e477af6dd9cbd973efcf0aece050d134570afc458e2c01",
+      "dependency_hash": "a368e4a1a786cf7117cd02eaf22e14bec77568bb971e27c543df1339552b13c8"
+    },
+    "src/humanize/number.py::clamp": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "4979dfe3a4d6412772e55fd728a16f797e98c68ee8fbee73dcef8633c02b6956",
+      "dependency_hash": "a368e4a1a786cf7117cd02eaf22e14bec77568bb971e27c543df1339552b13c8"
+    },
+    "src/humanize/number.py::metric": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "6721090c8af8ffb6575f8fc779d366a1121df4c3d647882af0c7d973ff1b10f6",
+      "dependency_hash": "8825a56a3b5b9a9ba9f0da7be109ca08617f9c4fada70be91961812fd6ee0cde"
+    },
+    "src/humanize/time.py::module": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/humanize/time.py::_now": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "6de52c0f74e8c4a40c830232f83f36ce227f35267ed0fb1c70eede01b0053110",
+      "dependency_hash": ""
+    },
+    "src/humanize/time.py::_abs_timedelta": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "218c3a708141c365654f85999961b3c578dde5b90fdd6150440f92ff6c529962",
+      "dependency_hash": "9373c27668461300e1ba6d3b7454deb730f75ee837163206f5190f81fecd125f"
+    },
+    "src/humanize/time.py::_date_and_delta": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "657bf7abb51924b413e81831c906765d2fdeb62a15548e371dcc1bc4fb33f0b7",
+      "dependency_hash": "6d56a636d9f137be265dba35793220acf15fbb650fcc784f80dab5af4a2b2a02"
+    },
+    "src/humanize/time.py::naturaldelta": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "cbeb7792525a30e2029b820b1f222c37ecd12d01a076c8ea60aad996706aee9d",
+      "dependency_hash": "b03e315e88f9ef8061f1018ab892844bb3d91d6b5fc73c899b32c1041f051cea"
+    },
+    "src/humanize/time.py::naturaltime": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "1b12a990b08b6d7b08a8d429a41b972fe034288ec089b6fa9b89f3aa827688c5",
+      "dependency_hash": "34be6bca50948ee19ff7e3fe966fdb894744ead96af7c85b52843a13f6b12cde"
+    },
+    "src/humanize/time.py::_convert_aware_datetime": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "84108656bbf5493688d1d52477e284f59dc1d81f4d1fd66d1937f1df9e641a1b",
+      "dependency_hash": ""
+    },
+    "src/humanize/time.py::naturalday": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "417d45c9fbcc24d05e3d3a56c7608380e2c201ea21c2db1ece3b45eb8694d54d",
+      "dependency_hash": ""
+    },
+    "src/humanize/time.py::naturaldate": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "4dd9cee6ad2d864ab2a852de6319a5104f1bee3f8d399e45a23db6caa103acc0",
+      "dependency_hash": "4cd55b2db096557dc6d69bc854726be83e6032bdd46f45f048e5f1c9e4af5770"
+    },
+    "src/humanize/time.py::_quotient_and_remainder": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "da0f91d2d9eb51640944c9a39c7f3fb7732a03270bd62598629f95d31c7a3406",
+      "dependency_hash": "331b317ecbd13ab47f1cfe7bd48a6f19ed1fe1abccd314976b43361e7a75942d"
+    },
+    "src/humanize/time.py::_suitable_minimum_unit": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "e6fbac30d5dcbe8aacad4dd0c75f1d7a0ea72605f025bdcfa3316636116b49e0",
+      "dependency_hash": ""
+    },
+    "src/humanize/time.py::_suppress_lower_units": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "41b2e1024175e537449423d2ee391ebe553f615e98c2f5d31b92f44de751b1f5",
+      "dependency_hash": ""
+    },
+    "src/humanize/time.py::precisedelta": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "782aea63a117cefb64a64391c7b9d995591c1302468f548c3e448f1108009e61",
+      "dependency_hash": "7df164674db7815249c9ddff098d345e2a36d797b9a17cbbf367b800a7a53476"
+    },
+    "src/humanize/time.py::_rounding_by_fmt": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "b0e8ee8a9dae15e354373b5e0b1f4754ac5371cceb18513db5e3f16f56077141",
+      "dependency_hash": ""
+    },
+    "src/humanize/time.py::Unit": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "8d45ecd77b764a8a1f036833d20316f14b89ebbedaa2c3f37facae818aaae8b1",
+      "dependency_hash": ""
+    },
+    "src/humanize/time.py::Unit.__lt__": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "6e90ac546eda924d1d2d8c1b41973cd2c6180bbbcc4ff793ff90428559dc01b6",
+      "dependency_hash": ""
+    },
+    "src/humanize/filesize.py::src/humanize/filesize.py": {
+      "source_hash": "b35adbf0bf7893f88beb2eb3c689237b84469444de1326a42545790b01913ec7",
+      "doc_hash": "a5c4f49bf22a4ad6dab5a13c9d53a8ae8a56d00910bf22c517d0c2b42f15f2a7",
+      "dependency_hash": ""
+    },
+    "src/humanize/i18n.py::src/humanize/i18n.py": {
+      "source_hash": "59437bd22945d6f921dbbd54afb37baff1d54d72d9f9763ceb63f80a325ed911",
+      "doc_hash": "fa6e46f51450e1fe01364d2e74faba228e6cf7fc0dd6a4012991a7125916c3af",
+      "dependency_hash": ""
+    },
+    "src/humanize/lists.py::src/humanize/lists.py": {
+      "source_hash": "def0609522ce9aec413e0a46608a7eaf8d8b08aad682469dea4aff5dd4601754",
+      "doc_hash": "7b4b27d70a414c25126e6f12de106bf3a9e340436a6d0b66c7d45644db2be566",
+      "dependency_hash": ""
+    },
+    "src/humanize/__init__.py::src/humanize/__init__.py": {
+      "source_hash": "69586bc9cba2dbe0daa63d9f82eed16f8511a9da1ccf2e1045cd5175a9028e40",
+      "doc_hash": "f94ff9fe04a42d2a96a85a3af13d943366f7315e2b45c54b1fc14ed72a6e0888",
+      "dependency_hash": ""
+    },
+    "src/humanize/time.py::src/humanize/time.py": {
+      "source_hash": "93c836497d8e3267618a5bffc488f91b88e19f0efc8f2758b5d748b74a7bb173",
+      "doc_hash": "52bc61681aa0be8ccf5b67a7809cb069dee59540b02bb903cfb7cd52368cce35",
+      "dependency_hash": ""
+    },
+    "src/humanize/number.py::src/humanize/number.py": {
+      "source_hash": "dfbd68811a62fa8d824da8aaffc288409ae01351852ec2d301899ea1a6270307",
+      "doc_hash": "d18ec5ee27c326f3eccfe35b756a37d7b4d85cd117bf4dc0b7f751bf239d2580",
+      "dependency_hash": ""
+    }
+  }
+}

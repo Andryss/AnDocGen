@@ -1,0 +1,105 @@
+{
+  "parse_errors": [],
+  "generation_errors": [],
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "src/humanize/i18n.py",
+      "entity_type": "function",
+      "entity_name": "activate",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/humanize/i18n.py",
+      "entity_type": "function",
+      "entity_name": "activate",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/humanize/number.py",
+      "entity_type": "function",
+      "entity_name": "fractional",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/humanize/number.py",
+      "entity_type": "function",
+      "entity_name": "clamp",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/humanize/number.py",
+      "entity_type": "function",
+      "entity_name": "ordinal",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Return type `dt.timedelta` differs from documented `datetime.timedelta`",
+      "module_path": "src/humanize/time.py",
+      "entity_type": "function",
+      "entity_name": "_abs_timedelta",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/humanize/number.py",
+      "entity_type": "function",
+      "entity_name": "metric",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "High cyclomatic complexity (33)",
+      "module_path": "src/humanize/time.py",
+      "entity_type": "function",
+      "entity_name": "naturaldelta",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/humanize/time.py",
+      "entity_type": "function",
+      "entity_name": "naturaldelta",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "src/humanize/time.py",
+      "entity_type": "function",
+      "entity_name": "naturaldelta",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "High cyclomatic complexity (25)",
+      "module_path": "src/humanize/time.py",
+      "entity_type": "function",
+      "entity_name": "precisedelta",
+      "detail": null
+    }
+  ]
+}

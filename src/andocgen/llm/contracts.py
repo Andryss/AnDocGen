@@ -23,8 +23,8 @@ class ParameterResponse(_StrictModel):
     name: str
     type: str
     description: str
-    optional: bool = False
-    default: str | None = None
+    optional: bool
+    default: str | None
 
 
 class ReturnResponse(_StrictModel):
@@ -173,11 +173,15 @@ def _inline_refs(schema: dict[str, Any]) -> dict[str, Any]:
 def _strip_schema_metadata(schema: dict[str, Any]) -> dict[str, Any]:
     def strip(value: Any) -> Any:
         if isinstance(value, dict):
-            return {
-                key: strip(item)
-                for key, item in value.items()
-                if key not in {"title", "default"}
-            }
+            result: dict[str, Any] = {}
+            for key, item in value.items():
+                if key == "properties" and isinstance(item, dict):
+                    result[key] = {name: strip(prop_schema) for name, prop_schema in item.items()}
+                    continue
+                if key in {"title", "default"}:
+                    continue
+                result[key] = strip(item)
+            return result
         if isinstance(value, list):
             return [strip(item) for item in value]
         return value

@@ -1,5 +1,5 @@
 AnDocGen run summary
-Timestamp: 2026-08-29T23:54:11.475331
+Timestamp: 2026-09-01T17:59:43.988712
 Processed files: 3
 Skipped files: 0
 Parse errors: 0
@@ -8,7 +8,7 @@ Fallback generated: 0
 Validation warnings: 0
 Validation errors: 0
 Output files: 4
-Elapsed seconds: 13.85
+Elapsed seconds: 20.27
 
 Log files:
   trace: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api/generated_docs_yandexgtp5-lite/.andocgen/logs/trace.log

@@ -1,0 +1,786 @@
+{
+  "files": {
+    "src/cachetools/__init__.py": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "1922d4c5faaceceb0c3b0b094a9f432e76581463d94bbf33961d9f492f509062"
+    },
+    "src/cachetools/_cached.py": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "a613e14ab38cfd4cd04c8a2834eedf72f11fa692d28b5eb73358dba5ed47d409"
+    },
+    "src/cachetools/_cachedmethod.py": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "1cec923f9ac59e4d0dc79f1ca5169e01fce5ed717dbd5df856095ec7c58ee53f"
+    },
+    "src/cachetools/func.py": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "dd653169ce41abce3863d1f474add85d187b8c54207b660817961235819d0143"
+    },
+    "src/cachetools/keys.py": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "a2939cbe0b567459a3fc3bac4d5cbb0b6092405e239743de9bdac5d9cd92a29e"
+    }
+  },
+  "entities": {
+    "src/cachetools/__init__.py::module": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::cached": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "bb1baab8221644ee0be9c2e38b07db38ee8570fd556fb3f22a8585b5edf5b303",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::cachedmethod": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "5879fc8ced44dd5e286ddcd2aefbbe8280762a7f0b2122b04396f5907ff408f0",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::_DefaultSize": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "f3143fb77006004767fce5bb4bcb0e13e949e3f858cb02f4a1d68b3309299f37",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::_DefaultSize.__getitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "3a5626577fbba90bcace3d0a2eb3c699dd44fd7e853c6bda623fbffb1854b0dc",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::_DefaultSize.__setitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "57954ce0871c8bdc71d3b4f4273cb9085df81ad28388563389bae3b03064f7fb",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::_DefaultSize.pop": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "96c6ec0a8a5659f83ac290e8a3e66bdbce0813379243e731dc93861f948c1570",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::_DefaultSize.clear": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "df784f0d4b7ad29c69d81b3125042f346b34f47a5dfab629ba3892ee77e2d958",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "3da5f05cdb4276b54474a0ee82f225f17fc2bca6e80fddac8fca4a86b89465d8",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.__init__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "c2ccefe7acd0dcf4e7c33d99efc099eb7d9cb17ba406d59e2bc77e4b204ecd45",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.__repr__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "a8c43002892876548378697496e4c9627a27cb94444f7a86d98ce90b73144b45",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.__getitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "2e4a5708983d965cb606460ca0956f814913a449b209ab1eb35c64109e38097f",
+      "dependency_hash": "4b91f458fde47ad0eaa07ab0d6f14eebcd6c98e72525da01f46e3de696c9388f"
+    },
+    "src/cachetools/__init__.py::Cache.__setitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "8bd2bc887a9e697b2cce839f9910ef76758bc9377e3b33ea91bc1d9a32689e2a",
+      "dependency_hash": "6e724e1a7bd1c510ef7960a949ac80b44d484f74db96f13308a0de40224bdaaa"
+    },
+    "src/cachetools/__init__.py::Cache.__delitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "13803743e088e30be4bce36a10874615c0c4db382569224c7ef3198f2bdd1aa6",
+      "dependency_hash": "345ebd25c73b9ba2e9c21566ea5027e9ec899259135a27dd03da45913d983662"
+    },
+    "src/cachetools/__init__.py::Cache.__contains__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "3be4d862e89d2ce3a8dc571d6d1baf4920c7290b02dfcd02617fa31a2712dffd",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.__missing__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "4b7cc02c00edab006b062a89c94deb0960eaead3f1b80cc20b8842d4979de34d",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.__iter__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "4d5f7a01a3415855a663de973241bd7fb35fc8f7e4ad8cffb44bcd8c93d113b7",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.__len__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "2b800d46e881c877e2400ccc5c9c8b7a2afe612d127d16b9e3128c594576875e",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.get": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "e4f23e12ff18aa127bbbad38d7cf5aa36b8fac3fd2620d33425e102b76fcf93f",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.pop": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "dc29e440e82d7eb80dabafb12e8b1357459436cf200b148a81d0d0da620399a0",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.setdefault": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "6be32f1af5d76c9956bdbc24dd64c35bbf08761ff546ec7e2e6bd423b9c5ab88",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.clear": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "ba12ef92a984447d1c21baef1ce4bc71883f6d9c3a5e2580f9fc1046da48dbae",
+      "dependency_hash": "44bce7dfdfd5d4b8f2fc57add2975f65b752159abed18ed9769ac1cf78d31a43"
+    },
+    "src/cachetools/__init__.py::Cache.maxsize": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "882cb091586df9ad7dce62cb7eb81a8944f143437c3581ec7179d910d3c8f177",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.currsize": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "8b424cd68425f60783d3a931a54fdbfe51010ee6e6c880a2b8092f01fb65d664",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::Cache.getsizeof": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "d37b0395d0862c09eb3022c038279250922badf704198700ae47b7ca50f4e91a",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::FIFOCache": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "e68696d038a21759f29fa75417b25afca4a26bfffeeeb5579aa9d1d19ae174b6",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::FIFOCache.__init__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "41becdb33ac74160b2641d2d1b256818ed4f028a05a3cfc24dbbc61bd633ed55",
+      "dependency_hash": "c089dd5fed7c03a3977885f081ab6707e70cb24d7901444e84766b65c1e2f152"
+    },
+    "src/cachetools/__init__.py::FIFOCache.__setitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "d1375c4216278cc33841f1640a28574ef91e2ccc1bd2287262b8766696730a10",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::FIFOCache.__delitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "3d8dae73fe68b046bf6a1b27de2934bf7dd76f1ab4f22322ab7d8b7b40a46881",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::FIFOCache.popitem": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "76cab191cb08a76d15e6aa6585d415d6397e9806e2337e491548b773b60dcea3",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::FIFOCache.clear": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "6b421c95d52fbef2f214df5f9c3bbed6a8127beb2ec52261b517b9e0046a6fed",
+      "dependency_hash": "260a1ded9b76c7ecdebf7d23fc03960853e0b6da103b21621c71d20c886cae12"
+    },
+    "src/cachetools/__init__.py::LFUCache": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "599afd75801708578708fa15b0483dec462a1699a9efe51ef25b5951382e8542",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::LFUCache.__init__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "375819b59d45ea511dd207c9dbe3cc33e4f0814b5b89f9f5895da3482a1cdaab",
+      "dependency_hash": "c089dd5fed7c03a3977885f081ab6707e70cb24d7901444e84766b65c1e2f152"
+    },
+    "src/cachetools/__init__.py::LFUCache.__getitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "876cb6e14261cb02ebb33736e3f49d89cfcb052f4995181528bd90884998e78e",
+      "dependency_hash": "f5614e88fb2a76963df8f2a3e210ae952e42a54028a2b09cc3e56e0cec984a56"
+    },
+    "src/cachetools/__init__.py::LFUCache.__setitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "275fc6b91e265d4848f5c306fb4cca43b8fecc19c3464daaf9dc0d22a3a3c932",
+      "dependency_hash": "f5614e88fb2a76963df8f2a3e210ae952e42a54028a2b09cc3e56e0cec984a56"
+    },
+    "src/cachetools/__init__.py::LFUCache.__delitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "c8de759d705f88c74d866561b922ba7fd531c5e811bd2ee3d254101e63ea5900",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::LFUCache.popitem": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "81115178e944e84825c07c409c2c170ee1282f41e56110c66eab8077d7ea7d3a",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::LFUCache.clear": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "8e493014fd040ccc75e9fb78f0256f9c31e462495a97187f153cc4d4d24fee60",
+      "dependency_hash": "d60827f2b59d236d19d32313768e8eb9486ef4f8e331d40e5ce37ba036d51a9c"
+    },
+    "src/cachetools/__init__.py::LFUCache.__touch": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "798018313152d09c3eeafd2f0ec28bb7ac1a68e1a4159c8c63112d598dc6d7b5",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::LRUCache": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "f470d39cc392d914295da5f94de9a879e3d95f8e78fd5e4156e8b7450115c988",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::LRUCache.__init__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "7defbc0da2d45d266ad26c9a73f4f453737f4a7dfcf74505b8ac5d23e9adf0e8",
+      "dependency_hash": "c089dd5fed7c03a3977885f081ab6707e70cb24d7901444e84766b65c1e2f152"
+    },
+    "src/cachetools/__init__.py::LRUCache.__getitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "f6db9a1cc358dde5f6bfef7c800a0d11a8a8110b0143c15c5808a39303989c60",
+      "dependency_hash": "fd6ff80c14b0899f8021074724fae638618b7f60518654a56e9c87f5b32bd03b"
+    },
+    "src/cachetools/__init__.py::LRUCache.__setitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "b1b3fb50130358a790bd9447a154533a5ff06eee830413b6d716b7e6daaff3e0",
+      "dependency_hash": "fd6ff80c14b0899f8021074724fae638618b7f60518654a56e9c87f5b32bd03b"
+    },
+    "src/cachetools/__init__.py::LRUCache.__delitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "0c4542ff087ded66a4496bb61e0b29a8db61c77175f19fa980fa9dbacb67ff92",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::LRUCache.popitem": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "d53949b9f4d49849c4456b14c46270acd3028a693f57c66becb7a323eff807ac",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::LRUCache.clear": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "4ea7f23bf62bf8891700ac0c072ef3f0f739d30cf0700af1e4151039c799884f",
+      "dependency_hash": "9b3d15e6532e5a1abb757a8aea449a96a064b70acc89d849a25f317c2fe224fe"
+    },
+    "src/cachetools/__init__.py::LRUCache.__touch": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "625fb3f7894bb4abdbfa29062724490fdde9c868f2818c21bfc874c8eeff576a",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::RRCache": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "d24287328e2cde5758b2be9446e871dc3d7e8226dce83e27fada6aca9bc50d95",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::RRCache.__init__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "c5636c28dd3439679abb904432adafaeed788202eced46d6dbcd78a4fdc02a2b",
+      "dependency_hash": "c089dd5fed7c03a3977885f081ab6707e70cb24d7901444e84766b65c1e2f152"
+    },
+    "src/cachetools/__init__.py::RRCache.choice": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "0b183b6d44c7941b462895591578a4870793b45fc28dde4afd8803d7ab300c04",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::RRCache.__setitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "7791673e20575eaa5e842bd931a84753ffdd199822b107319bd6f6beb8c68784",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::RRCache.__delitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "797a1f88faf409a8381d3fe455359fdd348470517819d5a219b211492b1b51d0",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::RRCache.popitem": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "1da78bcfb7e0fedcdbdb7aa773535e5536ee264a89e029fe0f29af46567f5d34",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::RRCache.clear": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "228cc2e756c3749eeeecdfbb207bca7d5fe0a4c93886a7a8e56a9f6f86015284",
+      "dependency_hash": "857380f2a970106a3c16d815b74699195a85d9ee2968b5c1343f620846dc3e78"
+    },
+    "src/cachetools/__init__.py::_TimedCache": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "a74e68fe55ee5f328e18f7a84d99692eae9228f3639c1a396620941c0cd7f2f8",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::_TimedCache.__init__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "12f7c9994467f520325e091ec50546c26c9bb877d6a12e5d9898fc0807ec00c6",
+      "dependency_hash": "c089dd5fed7c03a3977885f081ab6707e70cb24d7901444e84766b65c1e2f152"
+    },
+    "src/cachetools/__init__.py::_TimedCache.__repr__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "934c43d4f367a849cc1b035be62e8146b4187f7125801c2c6f4fe70a38fdc492",
+      "dependency_hash": "c75463e64c1b3a761a5f838e91342841cd029a61c99689c99e30b2954ec126de"
+    },
+    "src/cachetools/__init__.py::_TimedCache.__len__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "c5a39846220b20418388468229dbbd71587bfadccc37c5e757ab253026760547",
+      "dependency_hash": "c75463e64c1b3a761a5f838e91342841cd029a61c99689c99e30b2954ec126de"
+    },
+    "src/cachetools/__init__.py::_TimedCache.currsize": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "23f9099850c5008a17e699b4879e0e4005949e78319ebd87e09b1228fd4c5e3b",
+      "dependency_hash": "c75463e64c1b3a761a5f838e91342841cd029a61c99689c99e30b2954ec126de"
+    },
+    "src/cachetools/__init__.py::_TimedCache.timer": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "8aa95cc4a8a04e6bfb9d6fdfb7d1ed5ad2b115d68d753ada54cabfa50a3a04fb",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::_TimedCache.get": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "f2770c9e5fb9268b4b73cb633aa4787836e9144fdac31bb9b0038edc1ec17f57",
+      "dependency_hash": "fac4a5708268f7219d297ae7c0c28d66c8c591355e3993d99b50c8ca06c8db0e"
+    },
+    "src/cachetools/__init__.py::_TimedCache.pop": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "ede6e035ecee3b9fb17096222367a01ca67948f1da74add051aa70e153e76732",
+      "dependency_hash": "345ebd25c73b9ba2e9c21566ea5027e9ec899259135a27dd03da45913d983662"
+    },
+    "src/cachetools/__init__.py::_TimedCache.setdefault": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "74f8fd3188ed78bb0e8e0fa1538ffe305b8ef3ec499b6fe512e8e03f25037652",
+      "dependency_hash": "27c483fb9722a5ee7bf1219c9ba86ab4e4acfe42aa0b403a980281b9c5b03664"
+    },
+    "src/cachetools/__init__.py::_TimedCache.clear": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "69fa65ca913c84f2ec4117caebf365371d1452678ab85c5c9884c6874fa7e35e",
+      "dependency_hash": "b317cecb875b26174e9f33093ed703467bd6c8c70765d401735e459f177ecf47"
+    },
+    "src/cachetools/__init__.py::_TimedCache.expire": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "87eda4eaf0b2bb2ea1bc6dc269510088d1a1cc590c2047a516692f9de44c3332",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TTLCache": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "4cedb07461dff621a2ee8fcc51821bdbfbc28dcf32e92ccdc2116ca73c79ed29",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TTLCache.__init__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "49edf78ef84a98dfbb7e12d353b7bacb82592f09bc7dd826bf274d2bb486055b",
+      "dependency_hash": "7722341ba707208bb07600b069446238754dfb415c83f06811a75aeb6f3427b9"
+    },
+    "src/cachetools/__init__.py::TTLCache.__contains__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "becbc6224eefd20d8cb864da1d5c001cabef41560cb59b8515982687f44aa313",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TTLCache.__getitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "b9d6e65fdf51952619e893fef83072637d3742e7686a28ad431c2aa883e7789f",
+      "dependency_hash": "e4cdafd2ad8ffc24be96467a42c206ba5c9e9181a7a002fcdc883f51d5c63c91"
+    },
+    "src/cachetools/__init__.py::TTLCache.__setitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "0183cebd5416e46158b6c72fc58365b96c88fc24266f37e35ed90d1b454163c9",
+      "dependency_hash": "5546840b218a35c3ca348bfb6d25ee7b29f6b256bb77a04c923bdd5bf3afea16"
+    },
+    "src/cachetools/__init__.py::TTLCache.__delitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "82aa02bdbda990ae7d0fcc730bf30ef389f16259de75b0ef6a1bab430c2beb0a",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TTLCache.__iter__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "51e01654ad42ecd6806041327c36d05dce5bbc9cd9d91d209c7444fad3cc0428",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TTLCache.__setstate__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "8a0f58f95568abd29a4946b18243391ef01a25510aca4102791887205d4f728b",
+      "dependency_hash": "47cba63c7b05e178caccbded79a00f019c995094c4f2bc1feb280142b58f0418"
+    },
+    "src/cachetools/__init__.py::TTLCache.ttl": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "f8fe3f04d0cbe8f4b581b5ac6d83c18a97a5e0fe96218986181bf23b190d7f4d",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TTLCache.expire": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "c044616e2449f6c794e88b063e54d7ffdfa138eb8ab44f99136edb44a6f59979",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TTLCache.popitem": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "429424c7c22b53a77efd5fe972dbe0b1b9bd2c30ee16c1c26eb630ae52dff263",
+      "dependency_hash": "47cba63c7b05e178caccbded79a00f019c995094c4f2bc1feb280142b58f0418"
+    },
+    "src/cachetools/__init__.py::TTLCache.clear": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "7da976fb36dda0775c034fbc16b61dd1fa1734a991d3bb5b80349248cae58984",
+      "dependency_hash": "12cb9f152141519ea1229be0bcc0bfebc419493b48c3fed930d1f59f7aaa5fb6"
+    },
+    "src/cachetools/__init__.py::TTLCache.__getlink": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "0433a450bdfb368570b34ba82cd647c3ccd7f60b67cb1d98a34499fd5cdfa03a",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TLRUCache": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "e2a6ab5e4137a4a9b6c5021dcce43cb4434e395ced74207437a35106c3375fc3",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TLRUCache.__init__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "aac55339c7296b1a61da828699e4d0fa04a075a5cb32f7234550069e5da9838d",
+      "dependency_hash": "7722341ba707208bb07600b069446238754dfb415c83f06811a75aeb6f3427b9"
+    },
+    "src/cachetools/__init__.py::TLRUCache.__contains__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "6a18f2c4a9fc53d984b1d9ede04d31e39c36f98db33b01af71a28230cfb75eda",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TLRUCache.__getitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "cce0185f7af56fcad9191e9ca144e079a8c8ce2a98d1a6ee03e1ef739e1ee9c9",
+      "dependency_hash": "a4e7f926255addb9e65c9d8f7927d1f766dc151831ccb515763b37a8cc8820f0"
+    },
+    "src/cachetools/__init__.py::TLRUCache.__setitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "6fff90330f6861d619906beeaf917fbb51262cdd9015a36b97e72680bb6a9b2f",
+      "dependency_hash": "099edaf39fe52b1c50614799dea9d2883c2a22cdc03d9e8dd1a3065ed8c13bbf"
+    },
+    "src/cachetools/__init__.py::TLRUCache.__delitem__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "5113f4a2bf35e98d9734235df3947bba3fb7b95581a9fb79efd9e9cd464828a9",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TLRUCache.__iter__": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "24471aceb09821c084b8e1b4c245dfbb4060c1fd0b60c971e62c9f45813af308",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TLRUCache.ttu": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "958b885f43a409b459e8ce58df23b4f232eb9bb268601ac5b3daa843e4cdda22",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TLRUCache.expire": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "24d41f2d03ed89a6e26c2a88c449a0780c9e548093f645cf35907f64e8d28618",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::TLRUCache.popitem": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "a54a476914ccccb07462c4b2859c90228039317c56c312df1a5d10ceac35c603",
+      "dependency_hash": "e6ef66ecc5d81dcf984bdf1c1c1921482cbd176a69092d53dbf24c7a48da9e4b"
+    },
+    "src/cachetools/__init__.py::TLRUCache.clear": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "06fc3d729bad8585c28eea3f102f73d0d1b359f51298bca03a8c7c1fd9a2a8cf",
+      "dependency_hash": "6040b566c86fc0c6bc15cd7332a737fcecb8b08159b89897d9c1356d3103f194"
+    },
+    "src/cachetools/__init__.py::TLRUCache.__getitem": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "d1dd90825eb614a452830966810c24bfe8a83aa04f7dfdd9170fad4637399086",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::module": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::_condition_info": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "f4fe6b383c25ecc8fae3e40f71b4288ca3cff19e39f92876468ec55218b50fa4",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::_locked_info": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "cfc0397a9ba5cf8ccce9cd3fe9e6d9a7cedeb6d2ba72f8a024faacf3345d9c89",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::_unlocked_info": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "2847cbec58cc1ddabc1ead4cd1a0fbb2d39b5c89b19558ddbdfa541afb32bc22",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::_uncached_info": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "ee543f30f4e1997b5de3fdccce116acd05abd6e565968c274b8f2ee4ab89d212",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::_condition": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "7958d5c67328a91c6b40f214c9f253f12a9558db01d25617fb441101c15c882e",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::_locked": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "a565c20aaf802bb234dd20aec0ffbada55edcc56fb01877013ea108215f88ada",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::_unlocked": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "61180ada6bd37c0edc0596c5af8b12ccc391424fb579ad9b22a9437c587fbcdb",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::_uncached": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "87b49761164020379c7d10ea00f69b0ca2192f8260d4f0d3aeef64e1dcb9dfda",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::_wrapper": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "bca9842ff564a986fb964e6a984a77077bf07dc3b13e23ace02e5525fb479023",
+      "dependency_hash": "32e7b7c11edc9610a244b909cdb452b9b2f0f6531a232d4a819208073dd852a6"
+    },
+    "src/cachetools/_cachedmethod.py::module": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_warn_classmethod": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "9f5da7499446a0c891835d45c2b15e80b6c142f47d0364540aac90b64fc8456d",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_warn_instance_dict": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "6ef1640ea3f2e99a8027254e999e834258819e3d95b8470d469eaea600844de0",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_none": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "bb40853f5dee73237dbb527a123dfa6a275431c14489f964b51c229890e62f4d",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_condition_info": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "f5bbcb7d5e7c7599de2bc898c9f6bd000df2f2d9150c1e0cb773c438bbe19ffc",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_locked_info": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "b1025b2cf25813c8a1ce0f65073f732a11977d98574b1411839b0fa7f0fdd89f",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_unlocked_info": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "4212f409828bac1a8fbd309823dee7feeae69690e0630e9e5e15f95e30ea787a",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_condition": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "e7d881cee3a68866f6e546a22d9638f4cc94bee2ded2ec53767fc42638732bb7",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_locked": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "238d09cb22ed5e2903f567964c130f442655dd5062d09fd66db45f0939146a2c",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_unlocked": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "6ec40c58cb72cc313a77c3cdc1253bdfb913e88648491c4a395aa6c27251ac22",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_wrapper": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "8c9a6332e47257def219aad1b07e490e20c9b07e62ffa3ba4d7f894154204c5b",
+      "dependency_hash": "40bdeb6f50b997997b3a53951be8a903055ed2a84de35af7dd478e80815647f2"
+    },
+    "src/cachetools/_cachedmethod.py::_WrapperBase": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "c14f4bfa5ca846a82352c56ac6a1ff2d24b2ad6e7bcb0da8e1ac8dda06341c95",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_WrapperBase.__init__": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "6cf45d6c0da74eadade0cbcae0e8baf67f948a1d6f951713161b54b741ef4632",
+      "dependency_hash": "a25ac7630e3f555106b70318621b5a816d862884c6181742c394fa83b53b9514"
+    },
+    "src/cachetools/_cachedmethod.py::_WrapperBase.__call__": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "f4aa0d5d4f996aea57fd522969a8609bd324e4addcd8b36eb64052a216804881",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_WrapperBase.cache_clear": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "b0e327718d0560c05f2d7e4257a5c615c57b97d1d0d9440f9dedf38e26fd3ef9",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_WrapperBase.cache": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "62c3e0de479ac82f378b1993eb9ec167ed140a76eb2b60844d1419f462d30190",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_WrapperBase.cache_key": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "dbcd2a1c9f70941f1195a3e59c08dd86ae9086a656bd4c88452fc9f23e68935c",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_WrapperBase.cache_lock": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "b4dcc52c9571d53c8af3ba79ec3fd0a64a9a999313d90b48a72c16656a07041a",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_WrapperBase.cache_condition": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "3579249a4f88dff4d73b20795e680dea9832b1f03bfb751534eb951f92cbb8d3",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_DescriptorBase": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "23f0518ebe00fc64e1aad9e67eb2546fbd03ae908d8eb5b8b1ebf587424c006c",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_DescriptorBase.__init__": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "6dd600b924f90dc268014c2a7bb7ceb564a323c6a77ae14634ff33eb801197c3",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_DescriptorBase.__set_name__": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "b3e0dc277abd64943f3b5f3dff088d0baa08901491d929472ed94c7c8d0859c7",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_DescriptorBase.__get__": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "b5b5cd9472e4a6d0035d88170dd4a8223050cc83e26c1de1f77abc579871f293",
+      "dependency_hash": "1d9c313de38b6086c152a5681e16f3d096e8c3883d52ee81f3d7c549aee9a939"
+    },
+    "src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "60d3704714919f71ce3c3fb0eaf4f801257323d58d536d492c632c7109e48040",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.__init__": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "3f52725c47fbb5afe713056fda5348e7255f10a968ac9ae62c051cab9afcf2dc",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.__call__": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "a64aaab630ca43ba5eb7b22262e3ed7a1e0289fefa4b6126d21bd9041372559a",
+      "dependency_hash": "a25ac7630e3f555106b70318621b5a816d862884c6181742c394fa83b53b9514"
+    },
+    "src/cachetools/_cachedmethod.py::_DeprecatedDescriptorBase.cache_clear": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "e811db040c382396826170ebf527a78a408585dea2a728879a766e5c76e427f8",
+      "dependency_hash": "a25ac7630e3f555106b70318621b5a816d862884c6181742c394fa83b53b9514"
+    },
+    "src/cachetools/func.py::module": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/cachetools/func.py::_cache": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "be1afa144b130b142628b2ce27369f85e32fde5d2ff0db395cb9e4a20dad3f53",
+      "dependency_hash": "eb522a5db299ffe4325c66fb1e35a477fecb05c3aa9eea60f63e9517aa3085ca"
+    },
+    "src/cachetools/func.py::fifo_cache": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "5d2c251794ef3b042f753e1951769815424fe9f67f27a2926f616881fc31651c",
+      "dependency_hash": "f2a25efd883bf961ffcad20a524228aaa578e957c235f58bb6ae76dcaaf8e69c"
+    },
+    "src/cachetools/func.py::lfu_cache": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "a790349448caee9ef462ee0376ab6125b1fafdd34052f88396997f626e9e406e",
+      "dependency_hash": "f2a25efd883bf961ffcad20a524228aaa578e957c235f58bb6ae76dcaaf8e69c"
+    },
+    "src/cachetools/func.py::lru_cache": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "6dc2b8f9f80c72cc36c4e71c5ce04064b535484bb2b687a367fd4b706c2d6f39",
+      "dependency_hash": "f2a25efd883bf961ffcad20a524228aaa578e957c235f58bb6ae76dcaaf8e69c"
+    },
+    "src/cachetools/func.py::rr_cache": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "6c6c76d3510a7062e4463c0e32ef1e208ed3b99430cf5fb97173cb180a0e5f5a",
+      "dependency_hash": "f2a25efd883bf961ffcad20a524228aaa578e957c235f58bb6ae76dcaaf8e69c"
+    },
+    "src/cachetools/func.py::ttl_cache": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "e9a3693caa1d350f9b07c51244f92832fbdedf1959b76e85a26ca930fe812b8a",
+      "dependency_hash": "f2a25efd883bf961ffcad20a524228aaa578e957c235f58bb6ae76dcaaf8e69c"
+    },
+    "src/cachetools/func.py::_UnboundTTLCache": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "69ab1ca5e74cdd943dcda337cc441ce59c3cd09bcb0da36352e478a030a6682e",
+      "dependency_hash": ""
+    },
+    "src/cachetools/func.py::_UnboundTTLCache.__init__": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "73fe03b7c8dbad015ebaa6c2ed65bf49b290a06dd984cc36f94f0d62e94dabdc",
+      "dependency_hash": ""
+    },
+    "src/cachetools/func.py::_UnboundTTLCache.maxsize": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "cae95404c45bf4173bb1f9c4486499e89523fcfb7e72367f86eac5b02d171a61",
+      "dependency_hash": ""
+    },
+    "src/cachetools/keys.py::module": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "src/cachetools/keys.py::hashkey": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "3655c8b958630ff87f65733378e45f121a70bf2ab2460c27a3f8430dccd19f6f",
+      "dependency_hash": ""
+    },
+    "src/cachetools/keys.py::methodkey": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "7e2b21b5dd48b0c3339cac974e2fb500e0154894aabf430626d7c7aad1de94be",
+      "dependency_hash": "baaef27eb18e476b4eab08a90c0cdde47e2a91985d783aec82e42dd0c07413c6"
+    },
+    "src/cachetools/keys.py::typedkey": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "55115ed29f18bc008e442b75282318994ddefa602a0c59dfca1d5e8341262486",
+      "dependency_hash": ""
+    },
+    "src/cachetools/keys.py::typedmethodkey": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "55f15ebf88e6baeb4b360e70359fd62905826fe4dd8369834618887bccd449e0",
+      "dependency_hash": "4d3c309a9c763254ecdbe9c97b0f9aff40b710764f0306126f0e22f16967b350"
+    },
+    "src/cachetools/keys.py::_HashedTuple": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "7794c9ae340c58f075a089ff0d6ef3398fe1d3aa075f184ad7df43ff535e65a6",
+      "dependency_hash": ""
+    },
+    "src/cachetools/keys.py::_HashedTuple.__hash__": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "d27c112663b7ec8e7d721fe1a392a50bff75cd81880abcf56bc7fde91be4e2bb",
+      "dependency_hash": ""
+    },
+    "src/cachetools/keys.py::_HashedTuple.__add__": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "94f541dee2a1c0e4d2f6895055d72e96900be6ef8c7acc7c41baf781a5b9cf66",
+      "dependency_hash": ""
+    },
+    "src/cachetools/keys.py::_HashedTuple.__radd__": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "290d33d51841b73d380dd2c5b1fe4cc2d9f9e7937478c72cf65e4612194d35b4",
+      "dependency_hash": ""
+    },
+    "src/cachetools/keys.py::_HashedTuple.__getstate__": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "59f22f512c43fbe92bea4f8a6b5a4fd6a2aeb449e9f90ad962312e12b0a7111a",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cached.py::src/cachetools/_cached.py": {
+      "source_hash": "3f301c0cfbf6a108ca2ffca574568198164f9599439b595c859f6450a4da795b",
+      "doc_hash": "c66043303f3ed8e6dc7e4a0adee9aab925dd2df3a3be794f1f6bbbec640a98fd",
+      "dependency_hash": ""
+    },
+    "src/cachetools/__init__.py::src/cachetools/__init__.py": {
+      "source_hash": "fadf75eeab248d737ee23903efd5363e117719b47c434d7fd02a2f166a955b3c",
+      "doc_hash": "b4da0ac07161292971e91b826a057eac45bd90317d2ea20ce925a9f158aaa00b",
+      "dependency_hash": ""
+    },
+    "src/cachetools/func.py::src/cachetools/func.py": {
+      "source_hash": "750ef718eb11fd64193bd0d020e3de575e670194682196560665369fa7bca628",
+      "doc_hash": "f679e605cff2c7c35ce45f3251c3d1fc07e33d82d7c8caec7d03c196fccfc84a",
+      "dependency_hash": ""
+    },
+    "src/cachetools/_cachedmethod.py::src/cachetools/_cachedmethod.py": {
+      "source_hash": "ad2e75ebb6d3131225f36ce63c6f281700e675aff79ce2d447f8e97132b4ecb4",
+      "doc_hash": "a7b4dcf3987259340a3188581727d1340c26b45071e163f7f2c0f78809f2936b",
+      "dependency_hash": ""
+    },
+    "src/cachetools/keys.py::src/cachetools/keys.py": {
+      "source_hash": "9550bd6914744c2fc6fd211dfb83cdae2d6206b1a1bfcf052d017cb23b39b49e",
+      "doc_hash": "c5ff7a16b5a7868835fd8dfbe477a54744b933b3ca7db808ede560c4ee983ed0",
+      "dependency_hash": ""
+    }
+  }
+}

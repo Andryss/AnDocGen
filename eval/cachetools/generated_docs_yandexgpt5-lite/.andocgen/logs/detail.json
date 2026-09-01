@@ -1,0 +1,330 @@
+{
+  "parse_errors": [],
+  "generation_errors": [],
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/__init__.py",
+      "entity_type": "method",
+      "entity_name": "LFUCache.popitem",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/__init__.py",
+      "entity_type": "method",
+      "entity_name": "LRUCache.popitem",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/__init__.py",
+      "entity_type": "method",
+      "entity_name": "TLRUCache.__iter__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "src/cachetools/__init__.py",
+      "entity_type": "method",
+      "entity_name": "_DefaultSize.__setitem__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/_cached.py",
+      "entity_type": "function",
+      "entity_name": "_condition_info",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/_cached.py",
+      "entity_type": "function",
+      "entity_name": "_locked",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/_cached.py",
+      "entity_type": "function",
+      "entity_name": "_locked_info",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/_cached.py",
+      "entity_type": "function",
+      "entity_name": "_uncached_info",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/_cached.py",
+      "entity_type": "function",
+      "entity_name": "_unlocked",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/_cached.py",
+      "entity_type": "function",
+      "entity_name": "_unlocked_info",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "method",
+      "entity_name": "_DescriptorBase.__set_name__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "method",
+      "entity_name": "_DescriptorBase.__set_name__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "function",
+      "entity_name": "_condition",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "function",
+      "entity_name": "_condition_info",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "function",
+      "entity_name": "_locked",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "function",
+      "entity_name": "_locked_info",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "function",
+      "entity_name": "_unlocked",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "function",
+      "entity_name": "_unlocked_info",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/__init__.py",
+      "entity_type": "method",
+      "entity_name": "Cache.__setitem__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/__init__.py",
+      "entity_type": "method",
+      "entity_name": "Cache.__setitem__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/__init__.py",
+      "entity_type": "method",
+      "entity_name": "TTLCache.__setitem__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/__init__.py",
+      "entity_type": "method",
+      "entity_name": "TTLCache.__setstate__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "src/cachetools/__init__.py",
+      "entity_type": "method",
+      "entity_name": "_TimedCache.setdefault",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "method",
+      "entity_name": "_DeprecatedDescriptorBase.__call__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "method",
+      "entity_name": "_DeprecatedDescriptorBase.cache_clear",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/_cached.py",
+      "entity_type": "function",
+      "entity_name": "_wrapper",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "method",
+      "entity_name": "_DescriptorBase.__get__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "method",
+      "entity_name": "_WrapperBase.__init__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "method",
+      "entity_name": "_WrapperBase.__init__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "src/cachetools/_cachedmethod.py",
+      "entity_type": "function",
+      "entity_name": "_wrapper",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/func.py",
+      "entity_type": "function",
+      "entity_name": "_cache",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/keys.py",
+      "entity_type": "function",
+      "entity_name": "methodkey",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/keys.py",
+      "entity_type": "function",
+      "entity_name": "typedmethodkey",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/func.py",
+      "entity_type": "function",
+      "entity_name": "fifo_cache",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/func.py",
+      "entity_type": "function",
+      "entity_name": "rr_cache",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "src/cachetools/func.py",
+      "entity_type": "function",
+      "entity_name": "ttl_cache",
+      "detail": null
+    }
+  ]
+}

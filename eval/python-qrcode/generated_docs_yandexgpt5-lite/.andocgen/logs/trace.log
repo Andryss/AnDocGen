@@ -1,0 +1,848 @@
+2026-09-01 19:37:45,894 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/python-qrcode provider=openai dry_run=False
+2026-09-01 19:37:45,894 INFO Output directory: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite
+2026-09-01 19:37:45,894 INFO [scan] start
+2026-09-01 19:37:45,895 INFO [scan] done (1ms)
+2026-09-01 19:37:45,895 INFO Found 25 files
+2026-09-01 19:37:45,895 INFO [parse] start 25 files
+2026-09-01 19:37:45,895 DEBUG Parsing: qrcode/LUT.py
+2026-09-01 19:37:45,896 DEBUG   parsed qrcode/LUT.py: 0 functions, 0 classes
+2026-09-01 19:37:45,896 DEBUG Parsing: qrcode/__init__.py
+2026-09-01 19:37:45,896 DEBUG   parsed qrcode/__init__.py: 1 functions, 0 classes
+2026-09-01 19:37:45,896 DEBUG Parsing: qrcode/__main__.py
+2026-09-01 19:37:45,896 DEBUG   parsed qrcode/__main__.py: 0 functions, 0 classes
+2026-09-01 19:37:45,896 DEBUG Parsing: qrcode/base.py
+2026-09-01 19:37:45,898 DEBUG   parsed qrcode/base.py: 3 functions, 2 classes
+2026-09-01 19:37:45,898 DEBUG Parsing: qrcode/compat/__init__.py
+2026-09-01 19:37:45,898 DEBUG   parsed qrcode/compat/__init__.py: 0 functions, 0 classes
+2026-09-01 19:37:45,898 DEBUG Parsing: qrcode/compat/etree.py
+2026-09-01 19:37:45,898 DEBUG   parsed qrcode/compat/etree.py: 0 functions, 0 classes
+2026-09-01 19:37:45,898 DEBUG Parsing: qrcode/compat/png.py
+2026-09-01 19:37:45,899 DEBUG   parsed qrcode/compat/png.py: 0 functions, 0 classes
+2026-09-01 19:37:45,899 DEBUG Parsing: qrcode/console_scripts.py
+2026-09-01 19:37:45,900 DEBUG   parsed qrcode/console_scripts.py: 4 functions, 0 classes
+2026-09-01 19:37:45,900 DEBUG Parsing: qrcode/constants.py
+2026-09-01 19:37:45,900 DEBUG   parsed qrcode/constants.py: 0 functions, 0 classes
+2026-09-01 19:37:45,900 DEBUG Parsing: qrcode/exceptions.py
+2026-09-01 19:37:45,900 DEBUG   parsed qrcode/exceptions.py: 0 functions, 1 classes
+2026-09-01 19:37:45,900 DEBUG Parsing: qrcode/image/__init__.py
+2026-09-01 19:37:45,900 DEBUG   parsed qrcode/image/__init__.py: 0 functions, 0 classes
+2026-09-01 19:37:45,900 DEBUG Parsing: qrcode/image/base.py
+2026-09-01 19:37:45,901 DEBUG   parsed qrcode/image/base.py: 0 functions, 2 classes
+2026-09-01 19:37:45,901 DEBUG Parsing: qrcode/image/pil.py
+2026-09-01 19:37:45,901 DEBUG   parsed qrcode/image/pil.py: 0 functions, 1 classes
+2026-09-01 19:37:45,901 DEBUG Parsing: qrcode/image/pure.py
+2026-09-01 19:37:45,902 DEBUG   parsed qrcode/image/pure.py: 0 functions, 1 classes
+2026-09-01 19:37:45,902 DEBUG Parsing: qrcode/image/styledpil.py
+2026-09-01 19:37:45,902 DEBUG   parsed qrcode/image/styledpil.py: 0 functions, 1 classes
+2026-09-01 19:37:45,903 DEBUG Parsing: qrcode/image/styles/__init__.py
+2026-09-01 19:37:45,903 DEBUG   parsed qrcode/image/styles/__init__.py: 0 functions, 0 classes
+2026-09-01 19:37:45,903 DEBUG Parsing: qrcode/image/styles/colormasks.py
+2026-09-01 19:37:45,904 DEBUG   parsed qrcode/image/styles/colormasks.py: 0 functions, 7 classes
+2026-09-01 19:37:45,904 DEBUG Parsing: qrcode/image/styles/moduledrawers/__init__.py
+2026-09-01 19:37:45,904 DEBUG   parsed qrcode/image/styles/moduledrawers/__init__.py: 1 functions, 0 classes
+2026-09-01 19:37:45,904 DEBUG Parsing: qrcode/image/styles/moduledrawers/base.py
+2026-09-01 19:37:45,905 DEBUG   parsed qrcode/image/styles/moduledrawers/base.py: 0 functions, 1 classes
+2026-09-01 19:37:45,905 DEBUG Parsing: qrcode/image/styles/moduledrawers/pil.py
+2026-09-01 19:37:45,908 DEBUG   parsed qrcode/image/styles/moduledrawers/pil.py: 0 functions, 8 classes
+2026-09-01 19:37:45,908 DEBUG Parsing: qrcode/image/styles/moduledrawers/svg.py
+2026-09-01 19:37:45,909 DEBUG   parsed qrcode/image/styles/moduledrawers/svg.py: 0 functions, 8 classes
+2026-09-01 19:37:45,909 DEBUG Parsing: qrcode/image/svg.py
+2026-09-01 19:37:45,910 DEBUG   parsed qrcode/image/svg.py: 0 functions, 5 classes
+2026-09-01 19:37:45,910 DEBUG Parsing: qrcode/main.py
+2026-09-01 19:37:45,914 DEBUG   parsed qrcode/main.py: 5 functions, 2 classes
+2026-09-01 19:37:45,915 DEBUG Parsing: qrcode/release.py
+2026-09-01 19:37:45,915 DEBUG   parsed qrcode/release.py: 1 functions, 0 classes
+2026-09-01 19:37:45,915 DEBUG Parsing: qrcode/util.py
+2026-09-01 19:37:45,919 DEBUG   parsed qrcode/util.py: 20 functions, 2 classes
+2026-09-01 19:37:45,919 INFO [parse] done 25 files (23ms)
+2026-09-01 19:37:45,919 INFO [call_graph] start
+2026-09-01 19:37:45,920 INFO [call_graph] done (1ms)
+2026-09-01 19:37:45,920 DEBUG Call graph: 189 nodes, 501 edges
+2026-09-01 19:37:45,920 INFO Generating documentation for 249 entities
+2026-09-01 19:37:45,920 INFO [generate] start 249 entities
+2026-09-01 19:37:45,921 INFO Generating function:run_example (qrcode/__init__.py::run_example)
+2026-09-01 19:37:45,921 INFO LLM request entity=qrcode/__init__.py::run_example system_chars=1885 user_chars=2831
+2026-09-01 19:37:45,921 INFO Generating method:Polynomial.__getitem__ (qrcode/base.py::Polynomial.__getitem__)
+2026-09-01 19:37:45,922 INFO LLM request entity=qrcode/base.py::Polynomial.__getitem__ system_chars=1885 user_chars=2331
+2026-09-01 19:37:49,152 INFO LLM response entity=qrcode/base.py::Polynomial.__getitem__ status=parsed chars=697 duration_ms=3231
+2026-09-01 19:37:49,153 INFO Generating method:Polynomial.__init__ (qrcode/base.py::Polynomial.__init__)
+2026-09-01 19:37:49,153 INFO LLM request entity=qrcode/base.py::Polynomial.__init__ system_chars=1885 user_chars=2552
+2026-09-01 19:37:51,790 INFO LLM response entity=qrcode/__init__.py::run_example status=parsed chars=1285 duration_ms=5869
+2026-09-01 19:37:51,792 INFO Generating method:Polynomial.__iter__ (qrcode/base.py::Polynomial.__iter__)
+2026-09-01 19:37:51,792 INFO LLM request entity=qrcode/base.py::Polynomial.__iter__ system_chars=1885 user_chars=2319
+2026-09-01 19:37:52,153 INFO LLM response entity=qrcode/base.py::Polynomial.__init__ status=parsed chars=784 duration_ms=2999
+2026-09-01 19:37:52,154 INFO Generating method:Polynomial.__len__ (qrcode/base.py::Polynomial.__len__)
+2026-09-01 19:37:52,154 INFO LLM request entity=qrcode/base.py::Polynomial.__len__ system_chars=1885 user_chars=2316
+2026-09-01 19:37:53,532 INFO LLM response entity=qrcode/base.py::Polynomial.__iter__ status=parsed chars=366 duration_ms=1740
+2026-09-01 19:37:53,533 INFO Generating function:gexp (qrcode/base.py::gexp)
+2026-09-01 19:37:53,533 INFO LLM request entity=qrcode/base.py::gexp system_chars=1885 user_chars=2303
+2026-09-01 19:37:54,940 INFO LLM response entity=qrcode/base.py::Polynomial.__len__ status=parsed chars=703 duration_ms=2786
+2026-09-01 19:37:54,941 INFO Generating function:glog (qrcode/base.py::glog)
+2026-09-01 19:37:54,941 INFO LLM request entity=qrcode/base.py::glog system_chars=1885 user_chars=2370
+2026-09-01 19:37:56,164 INFO LLM response entity=qrcode/base.py::gexp status=parsed chars=546 duration_ms=2631
+2026-09-01 19:37:56,164 INFO Generating function:rs_blocks (qrcode/base.py::rs_blocks)
+2026-09-01 19:37:56,164 INFO LLM request entity=qrcode/base.py::rs_blocks system_chars=1885 user_chars=2834
+2026-09-01 19:37:57,896 INFO LLM response entity=qrcode/base.py::glog status=parsed chars=727 duration_ms=2955
+2026-09-01 19:37:57,896 INFO Generating function:commas (qrcode/console_scripts.py::commas)
+2026-09-01 19:37:57,897 INFO LLM request entity=qrcode/console_scripts.py::commas system_chars=1885 user_chars=2666
+2026-09-01 19:37:59,679 INFO LLM response entity=qrcode/base.py::rs_blocks status=parsed chars=773 duration_ms=3515
+2026-09-01 19:37:59,680 INFO Generating function:get_factory (qrcode/console_scripts.py::get_factory)
+2026-09-01 19:37:59,681 INFO LLM request entity=qrcode/console_scripts.py::get_factory system_chars=1885 user_chars=2710
+2026-09-01 19:38:01,589 INFO LLM response entity=qrcode/console_scripts.py::commas status=parsed chars=901 duration_ms=3692
+2026-09-01 19:38:01,589 INFO Generating method:BaseImage.check_kind (qrcode/image/base.py::BaseImage.check_kind)
+2026-09-01 19:38:01,589 INFO LLM request entity=qrcode/image/base.py::BaseImage.check_kind system_chars=1885 user_chars=2891
+2026-09-01 19:38:02,488 INFO LLM response entity=qrcode/console_scripts.py::get_factory status=parsed chars=593 duration_ms=2808
+2026-09-01 19:38:02,489 INFO Generating method:BaseImage.drawrect (qrcode/image/base.py::BaseImage.drawrect)
+2026-09-01 19:38:02,489 INFO LLM request entity=qrcode/image/base.py::BaseImage.drawrect system_chars=1885 user_chars=2525
+2026-09-01 19:38:04,270 INFO LLM response entity=qrcode/image/base.py::BaseImage.check_kind status=parsed chars=609 duration_ms=2681
+2026-09-01 19:38:04,271 INFO Generating method:BaseImage.drawrect_context (qrcode/image/base.py::BaseImage.drawrect_context)
+2026-09-01 19:38:04,272 INFO LLM request entity=qrcode/image/base.py::BaseImage.drawrect_context system_chars=1885 user_chars=2705
+2026-09-01 19:38:05,273 INFO LLM response entity=qrcode/image/base.py::BaseImage.drawrect status=parsed chars=579 duration_ms=2784
+2026-09-01 19:38:05,273 INFO Generating method:BaseImage.get_image (qrcode/image/base.py::BaseImage.get_image)
+2026-09-01 19:38:05,274 INFO LLM request entity=qrcode/image/base.py::BaseImage.get_image system_chars=1885 user_chars=2566
+2026-09-01 19:38:07,278 INFO LLM response entity=qrcode/image/base.py::BaseImage.get_image status=parsed chars=489 duration_ms=2005
+2026-09-01 19:38:07,279 INFO Generating method:BaseImage.init_new_image (qrcode/image/base.py::BaseImage.init_new_image)
+2026-09-01 19:38:07,279 INFO LLM request entity=qrcode/image/base.py::BaseImage.init_new_image system_chars=1885 user_chars=2419
+2026-09-01 19:38:08,413 INFO LLM response entity=qrcode/image/base.py::BaseImage.drawrect_context status=parsed chars=838 duration_ms=4141
+2026-09-01 19:38:08,413 INFO Generating method:BaseImage.is_eye (qrcode/image/base.py::BaseImage.is_eye)
+2026-09-01 19:38:08,413 INFO LLM request entity=qrcode/image/base.py::BaseImage.is_eye system_chars=1885 user_chars=2710
+2026-09-01 19:38:09,112 INFO LLM response entity=qrcode/image/base.py::BaseImage.init_new_image status=parsed chars=337 duration_ms=1833
+2026-09-01 19:38:09,113 INFO Generating method:BaseImage.new_image (qrcode/image/base.py::BaseImage.new_image)
+2026-09-01 19:38:09,113 INFO LLM request entity=qrcode/image/base.py::BaseImage.new_image system_chars=1885 user_chars=2588
+2026-09-01 19:38:11,782 INFO LLM response entity=qrcode/image/base.py::BaseImage.is_eye status=parsed chars=833 duration_ms=3369
+2026-09-01 19:38:11,783 INFO Generating method:BaseImage.pixel_box (qrcode/image/base.py::BaseImage.pixel_box)
+2026-09-01 19:38:11,783 INFO LLM request entity=qrcode/image/base.py::BaseImage.pixel_box system_chars=1885 user_chars=2878
+2026-09-01 19:38:13,460 INFO LLM response entity=qrcode/image/base.py::BaseImage.new_image status=parsed chars=968 duration_ms=4347
+2026-09-01 19:38:13,460 INFO Generating method:BaseImage.process (qrcode/image/base.py::BaseImage.process)
+2026-09-01 19:38:13,460 INFO LLM request entity=qrcode/image/base.py::BaseImage.process system_chars=1885 user_chars=2582
+2026-09-01 19:38:14,830 INFO LLM response entity=qrcode/image/base.py::BaseImage.pixel_box status=parsed chars=832 duration_ms=3047
+2026-09-01 19:38:14,831 INFO Generating method:BaseImage.save (qrcode/image/base.py::BaseImage.save)
+2026-09-01 19:38:14,831 INFO LLM request entity=qrcode/image/base.py::BaseImage.save system_chars=1885 user_chars=2490
+2026-09-01 19:38:15,155 INFO LLM response entity=qrcode/image/base.py::BaseImage.process status=parsed chars=348 duration_ms=1695
+2026-09-01 19:38:15,157 INFO Generating method:BaseImageWithDrawer.drawrect_context (qrcode/image/base.py::BaseImageWithDrawer.drawrect_context)
+2026-09-01 19:38:15,157 INFO LLM request entity=qrcode/image/base.py::BaseImageWithDrawer.drawrect_context system_chars=1885 user_chars=2875
+2026-09-01 19:38:18,779 INFO LLM response entity=qrcode/image/base.py::BaseImage.save status=parsed chars=884 duration_ms=3948
+2026-09-01 19:38:18,780 INFO Generating method:BaseImageWithDrawer.get_default_eye_drawer (qrcode/image/base.py::BaseImageWithDrawer.get_default_eye_drawer)
+2026-09-01 19:38:18,780 INFO LLM request entity=qrcode/image/base.py::BaseImageWithDrawer.get_default_eye_drawer system_chars=1885 user_chars=2567
+2026-09-01 19:38:19,425 INFO LLM response entity=qrcode/image/base.py::BaseImageWithDrawer.drawrect_context status=parsed chars=952 duration_ms=4269
+2026-09-01 19:38:19,427 INFO Generating method:BaseImageWithDrawer.get_default_module_drawer (qrcode/image/base.py::BaseImageWithDrawer.get_default_module_drawer)
+2026-09-01 19:38:19,427 INFO LLM request entity=qrcode/image/base.py::BaseImageWithDrawer.get_default_module_drawer system_chars=1885 user_chars=2573
+2026-09-01 19:38:21,257 INFO LLM response entity=qrcode/image/base.py::BaseImageWithDrawer.get_default_module_drawer status=parsed chars=419 duration_ms=1830
+2026-09-01 19:38:21,259 INFO LLM response entity=qrcode/image/base.py::BaseImageWithDrawer.get_default_eye_drawer status=parsed chars=549 duration_ms=2479
+2026-09-01 19:38:21,260 INFO Generating method:BaseImageWithDrawer.get_drawer (qrcode/image/base.py::BaseImageWithDrawer.get_drawer)
+2026-09-01 19:38:21,260 INFO LLM request entity=qrcode/image/base.py::BaseImageWithDrawer.get_drawer system_chars=1885 user_chars=2701
+2026-09-01 19:38:21,261 INFO Generating method:BaseImageWithDrawer.init_new_image (qrcode/image/base.py::BaseImageWithDrawer.init_new_image)
+2026-09-01 19:38:21,261 INFO LLM request entity=qrcode/image/base.py::BaseImageWithDrawer.init_new_image system_chars=1885 user_chars=2624
+2026-09-01 19:38:23,866 INFO LLM response entity=qrcode/image/base.py::BaseImageWithDrawer.get_drawer status=parsed chars=706 duration_ms=2606
+2026-09-01 19:38:23,867 INFO Generating method:PilImage.__getattr__ (qrcode/image/pil.py::PilImage.__getattr__)
+2026-09-01 19:38:23,867 INFO LLM request entity=qrcode/image/pil.py::PilImage.__getattr__ system_chars=1885 user_chars=2364
+2026-09-01 19:38:24,360 INFO LLM response entity=qrcode/image/base.py::BaseImageWithDrawer.init_new_image status=parsed chars=879 duration_ms=3099
+2026-09-01 19:38:24,361 INFO Generating method:PilImage.drawrect (qrcode/image/pil.py::PilImage.drawrect)
+2026-09-01 19:38:24,361 INFO LLM request entity=qrcode/image/pil.py::PilImage.drawrect system_chars=1885 user_chars=2416
+2026-09-01 19:38:27,276 INFO LLM response entity=qrcode/image/pil.py::PilImage.__getattr__ status=parsed chars=742 duration_ms=3408
+2026-09-01 19:38:27,276 INFO LLM response entity=qrcode/image/pil.py::PilImage.drawrect status=parsed chars=613 duration_ms=2915
+2026-09-01 19:38:27,277 INFO Generating method:PilImage.new_image (qrcode/image/pil.py::PilImage.new_image)
+2026-09-01 19:38:27,277 INFO LLM request entity=qrcode/image/pil.py::PilImage.new_image system_chars=1885 user_chars=3221
+2026-09-01 19:38:27,278 INFO Generating method:PyPNGImage.border_rows_iter (qrcode/image/pure.py::PyPNGImage.border_rows_iter)
+2026-09-01 19:38:27,278 INFO LLM request entity=qrcode/image/pure.py::PyPNGImage.border_rows_iter system_chars=1885 user_chars=2543
+2026-09-01 19:38:28,692 INFO LLM response entity=qrcode/image/pure.py::PyPNGImage.border_rows_iter status=parsed chars=280 duration_ms=1415
+2026-09-01 19:38:28,693 INFO Generating method:PyPNGImage.drawrect (qrcode/image/pure.py::PyPNGImage.drawrect)
+2026-09-01 19:38:28,693 INFO LLM request entity=qrcode/image/pure.py::PyPNGImage.drawrect system_chars=1885 user_chars=2440
+2026-09-01 19:38:31,380 INFO LLM response entity=qrcode/image/pure.py::PyPNGImage.drawrect status=parsed chars=624 duration_ms=2686
+2026-09-01 19:38:31,381 INFO Generating method:PyPNGImage.new_image (qrcode/image/pure.py::PyPNGImage.new_image)
+2026-09-01 19:38:31,381 INFO LLM request entity=qrcode/image/pure.py::PyPNGImage.new_image system_chars=1885 user_chars=2555
+2026-09-01 19:38:31,761 INFO LLM response entity=qrcode/image/pil.py::PilImage.new_image status=parsed chars=1080 duration_ms=4484
+2026-09-01 19:38:31,762 INFO Generating method:StyledPilImage.__getattr__ (qrcode/image/styledpil.py::StyledPilImage.__getattr__)
+2026-09-01 19:38:31,762 INFO LLM request entity=qrcode/image/styledpil.py::StyledPilImage.__getattr__ system_chars=1885 user_chars=2638
+2026-09-01 19:38:34,100 INFO LLM response entity=qrcode/image/pure.py::PyPNGImage.new_image status=parsed chars=641 duration_ms=2719
+2026-09-01 19:38:34,102 INFO Generating method:StyledPilImage.__init__ (qrcode/image/styledpil.py::StyledPilImage.__init__)
+2026-09-01 19:38:34,102 INFO LLM request entity=qrcode/image/styledpil.py::StyledPilImage.__init__ system_chars=1885 user_chars=4235
+2026-09-01 19:38:34,902 INFO LLM response entity=qrcode/image/styledpil.py::StyledPilImage.__getattr__ status=parsed chars=582 duration_ms=3140
+2026-09-01 19:38:34,904 INFO Generating method:StyledPilImage.draw_embedded_image (qrcode/image/styledpil.py::StyledPilImage.draw_embedded_image)
+2026-09-01 19:38:34,904 INFO LLM request entity=qrcode/image/styledpil.py::StyledPilImage.draw_embedded_image system_chars=1885 user_chars=3389
+2026-09-01 19:38:36,608 INFO LLM response entity=qrcode/image/styledpil.py::StyledPilImage.draw_embedded_image status=parsed chars=356 duration_ms=1704
+2026-09-01 19:38:36,609 INFO Generating method:StyledPilImage.drawrect (qrcode/image/styledpil.py::StyledPilImage.drawrect)
+2026-09-01 19:38:36,610 INFO LLM request entity=qrcode/image/styledpil.py::StyledPilImage.drawrect system_chars=1885 user_chars=2659
+2026-09-01 19:38:36,849 INFO LLM response entity=qrcode/image/styledpil.py::StyledPilImage.__init__ status=parsed chars=747 duration_ms=2747
+2026-09-01 19:38:36,850 INFO Generating method:StyledPilImage.init_new_image (qrcode/image/styledpil.py::StyledPilImage.init_new_image)
+2026-09-01 19:38:36,850 INFO LLM request entity=qrcode/image/styledpil.py::StyledPilImage.init_new_image system_chars=1885 user_chars=2685
+2026-09-01 19:38:39,208 INFO LLM response entity=qrcode/image/styledpil.py::StyledPilImage.init_new_image status=parsed chars=525 duration_ms=2358
+2026-09-01 19:38:39,209 INFO Generating method:StyledPilImage.new_image (qrcode/image/styledpil.py::StyledPilImage.new_image)
+2026-09-01 19:38:39,210 INFO LLM request entity=qrcode/image/styledpil.py::StyledPilImage.new_image system_chars=1885 user_chars=3026
+2026-09-01 19:38:39,286 INFO LLM response entity=qrcode/image/styledpil.py::StyledPilImage.drawrect status=parsed chars=593 duration_ms=2677
+2026-09-01 19:38:39,287 INFO Generating method:HorizontalGradiantColorMask.__init__ (qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask.__init__)
+2026-09-01 19:38:39,287 INFO LLM request entity=qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask.__init__ system_chars=1885 user_chars=2627
+2026-09-01 19:38:42,350 INFO LLM response entity=qrcode/image/styledpil.py::StyledPilImage.new_image status=parsed chars=737 duration_ms=3141
+2026-09-01 19:38:42,352 INFO Generating method:HorizontalGradiantColorMask.get_fg_pixel (qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask.get_fg_pixel)
+2026-09-01 19:38:42,352 INFO LLM request entity=qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask.get_fg_pixel system_chars=1885 user_chars=2505
+2026-09-01 19:38:43,225 INFO LLM response entity=qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask.__init__ status=parsed chars=765 duration_ms=3937
+2026-09-01 19:38:43,226 INFO Generating method:ImageColorMask.__init__ (qrcode/image/styles/colormasks.py::ImageColorMask.__init__)
+2026-09-01 19:38:43,226 INFO LLM request entity=qrcode/image/styles/colormasks.py::ImageColorMask.__init__ system_chars=1885 user_chars=2683
+2026-09-01 19:38:45,643 INFO LLM response entity=qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask.get_fg_pixel status=parsed chars=827 duration_ms=3292
+2026-09-01 19:38:45,645 INFO Generating method:ImageColorMask.get_fg_pixel (qrcode/image/styles/colormasks.py::ImageColorMask.get_fg_pixel)
+2026-09-01 19:38:45,645 INFO LLM request entity=qrcode/image/styles/colormasks.py::ImageColorMask.get_fg_pixel system_chars=1885 user_chars=2430
+2026-09-01 19:38:47,294 INFO LLM response entity=qrcode/image/styles/colormasks.py::ImageColorMask.__init__ status=parsed chars=847 duration_ms=4069
+2026-09-01 19:38:47,295 INFO Generating method:ImageColorMask.initialize (qrcode/image/styles/colormasks.py::ImageColorMask.initialize)
+2026-09-01 19:38:47,296 INFO LLM request entity=qrcode/image/styles/colormasks.py::ImageColorMask.initialize system_chars=1885 user_chars=2502
+2026-09-01 19:38:49,426 INFO LLM response entity=qrcode/image/styles/colormasks.py::ImageColorMask.get_fg_pixel status=parsed chars=916 duration_ms=3781
+2026-09-01 19:38:49,427 INFO Generating method:QRColorMask.extrap_num (qrcode/image/styles/colormasks.py::QRColorMask.extrap_num)
+2026-09-01 19:38:49,427 INFO LLM request entity=qrcode/image/styles/colormasks.py::QRColorMask.extrap_num system_chars=1885 user_chars=2410
+2026-09-01 19:38:50,208 INFO LLM response entity=qrcode/image/styles/colormasks.py::ImageColorMask.initialize status=parsed chars=784 duration_ms=2912
+2026-09-01 19:38:50,209 INFO Generating method:QRColorMask.get_bg_pixel (qrcode/image/styles/colormasks.py::QRColorMask.get_bg_pixel)
+2026-09-01 19:38:50,210 INFO LLM request entity=qrcode/image/styles/colormasks.py::QRColorMask.get_bg_pixel system_chars=1885 user_chars=2344
+2026-09-01 19:38:52,442 INFO LLM response entity=qrcode/image/styles/colormasks.py::QRColorMask.extrap_num status=parsed chars=771 duration_ms=3014
+2026-09-01 19:38:52,443 INFO Generating method:QRColorMask.get_fg_pixel (qrcode/image/styles/colormasks.py::QRColorMask.get_fg_pixel)
+2026-09-01 19:38:52,443 INFO LLM request entity=qrcode/image/styles/colormasks.py::QRColorMask.get_fg_pixel system_chars=1885 user_chars=2380
+2026-09-01 19:38:55,134 INFO LLM response entity=qrcode/image/styles/colormasks.py::QRColorMask.get_fg_pixel status=parsed chars=635 duration_ms=2691
+2026-09-01 19:38:55,135 INFO Generating method:QRColorMask.initialize (qrcode/image/styles/colormasks.py::QRColorMask.initialize)
+2026-09-01 19:38:55,135 INFO LLM request entity=qrcode/image/styles/colormasks.py::QRColorMask.initialize system_chars=1885 user_chars=2373
+2026-09-01 19:38:55,283 INFO LLM response entity=qrcode/image/styles/colormasks.py::QRColorMask.get_bg_pixel status=parsed chars=856 duration_ms=5074
+2026-09-01 19:38:55,284 INFO Generating method:QRColorMask.interp_num (qrcode/image/styles/colormasks.py::QRColorMask.interp_num)
+2026-09-01 19:38:55,284 INFO LLM request entity=qrcode/image/styles/colormasks.py::QRColorMask.interp_num system_chars=1885 user_chars=2358
+2026-09-01 19:38:58,285 INFO LLM response entity=qrcode/image/styles/colormasks.py::QRColorMask.initialize status=parsed chars=657 duration_ms=3150
+2026-09-01 19:38:58,286 INFO Generating method:RadialGradiantColorMask.__init__ (qrcode/image/styles/colormasks.py::RadialGradiantColorMask.__init__)
+2026-09-01 19:38:58,286 INFO LLM request entity=qrcode/image/styles/colormasks.py::RadialGradiantColorMask.__init__ system_chars=1885 user_chars=2626
+2026-09-01 19:38:59,088 INFO LLM response entity=qrcode/image/styles/colormasks.py::QRColorMask.interp_num status=parsed chars=749 duration_ms=3804
+2026-09-01 19:38:59,089 INFO Generating method:RadialGradiantColorMask.get_fg_pixel (qrcode/image/styles/colormasks.py::RadialGradiantColorMask.get_fg_pixel)
+2026-09-01 19:38:59,089 INFO LLM request entity=qrcode/image/styles/colormasks.py::RadialGradiantColorMask.get_fg_pixel system_chars=1885 user_chars=2676
+2026-09-01 19:39:02,289 INFO LLM response entity=qrcode/image/styles/colormasks.py::RadialGradiantColorMask.__init__ status=parsed chars=756 duration_ms=4003
+2026-09-01 19:39:02,290 INFO Generating method:SolidFillColorMask.__init__ (qrcode/image/styles/colormasks.py::SolidFillColorMask.__init__)
+2026-09-01 19:39:02,290 INFO LLM request entity=qrcode/image/styles/colormasks.py::SolidFillColorMask.__init__ system_chars=1885 user_chars=2555
+2026-09-01 19:39:03,063 INFO LLM response entity=qrcode/image/styles/colormasks.py::RadialGradiantColorMask.get_fg_pixel status=parsed chars=905 duration_ms=3974
+2026-09-01 19:39:03,064 INFO Generating method:SolidFillColorMask.apply_mask (qrcode/image/styles/colormasks.py::SolidFillColorMask.apply_mask)
+2026-09-01 19:39:03,064 INFO LLM request entity=qrcode/image/styles/colormasks.py::SolidFillColorMask.apply_mask system_chars=1885 user_chars=3007
+2026-09-01 19:39:05,867 INFO LLM response entity=qrcode/image/styles/colormasks.py::SolidFillColorMask.__init__ status=parsed chars=704 duration_ms=3576
+2026-09-01 19:39:05,867 INFO Generating method:SolidFillColorMask.get_fg_pixel (qrcode/image/styles/colormasks.py::SolidFillColorMask.get_fg_pixel)
+2026-09-01 19:39:05,868 INFO LLM request entity=qrcode/image/styles/colormasks.py::SolidFillColorMask.get_fg_pixel system_chars=1885 user_chars=2419
+2026-09-01 19:39:08,432 INFO LLM response entity=qrcode/image/styles/colormasks.py::SolidFillColorMask.apply_mask status=parsed chars=1350 duration_ms=5368
+2026-09-01 19:39:08,432 INFO Generating method:SquareGradiantColorMask.__init__ (qrcode/image/styles/colormasks.py::SquareGradiantColorMask.__init__)
+2026-09-01 19:39:08,433 INFO LLM request entity=qrcode/image/styles/colormasks.py::SquareGradiantColorMask.__init__ system_chars=1885 user_chars=2626
+2026-09-01 19:39:09,522 INFO LLM response entity=qrcode/image/styles/colormasks.py::SolidFillColorMask.get_fg_pixel status=parsed chars=761 duration_ms=3654
+2026-09-01 19:39:09,523 INFO Generating method:SquareGradiantColorMask.get_fg_pixel (qrcode/image/styles/colormasks.py::SquareGradiantColorMask.get_fg_pixel)
+2026-09-01 19:39:09,523 INFO LLM request entity=qrcode/image/styles/colormasks.py::SquareGradiantColorMask.get_fg_pixel system_chars=1885 user_chars=2650
+2026-09-01 19:39:12,358 INFO LLM response entity=qrcode/image/styles/colormasks.py::SquareGradiantColorMask.__init__ status=parsed chars=820 duration_ms=3925
+2026-09-01 19:39:12,359 INFO Generating method:VerticalGradiantColorMask.__init__ (qrcode/image/styles/colormasks.py::VerticalGradiantColorMask.__init__)
+2026-09-01 19:39:12,359 INFO LLM request entity=qrcode/image/styles/colormasks.py::VerticalGradiantColorMask.__init__ system_chars=1885 user_chars=2625
+2026-09-01 19:39:13,239 INFO LLM response entity=qrcode/image/styles/colormasks.py::SquareGradiantColorMask.get_fg_pixel status=parsed chars=901 duration_ms=3716
+2026-09-01 19:39:13,240 INFO Generating method:VerticalGradiantColorMask.get_fg_pixel (qrcode/image/styles/colormasks.py::VerticalGradiantColorMask.get_fg_pixel)
+2026-09-01 19:39:13,240 INFO LLM request entity=qrcode/image/styles/colormasks.py::VerticalGradiantColorMask.get_fg_pixel system_chars=1885 user_chars=2503
+2026-09-01 19:39:16,321 INFO LLM response entity=qrcode/image/styles/colormasks.py::VerticalGradiantColorMask.__init__ status=parsed chars=985 duration_ms=3962
+2026-09-01 19:39:16,322 INFO Generating function:__getattr__ (qrcode/image/styles/moduledrawers/__init__.py::__getattr__)
+2026-09-01 19:39:16,322 INFO LLM request entity=qrcode/image/styles/moduledrawers/__init__.py::__getattr__ system_chars=1885 user_chars=3611
+2026-09-01 19:39:16,590 INFO LLM response entity=qrcode/image/styles/colormasks.py::VerticalGradiantColorMask.get_fg_pixel status=parsed chars=769 duration_ms=3350
+2026-09-01 19:39:16,591 INFO Generating method:QRModuleDrawer.__init__ (qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.__init__)
+2026-09-01 19:39:16,591 INFO LLM request entity=qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.__init__ system_chars=1885 user_chars=2335
+2026-09-01 19:39:18,255 INFO LLM response entity=qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.__init__ status=parsed chars=386 duration_ms=1664
+2026-09-01 19:39:18,256 INFO Generating method:QRModuleDrawer.drawrect (qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.drawrect)
+2026-09-01 19:39:18,256 INFO LLM request entity=qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.drawrect system_chars=1885 user_chars=2388
+2026-09-01 19:39:20,542 INFO LLM response entity=qrcode/image/styles/moduledrawers/__init__.py::__getattr__ status=parsed chars=1062 duration_ms=4220
+2026-09-01 19:39:20,543 INFO Generating method:QRModuleDrawer.initialize (qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.initialize)
+2026-09-01 19:39:20,544 INFO LLM request entity=qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.initialize system_chars=1885 user_chars=2365
+2026-09-01 19:39:20,864 INFO LLM response entity=qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.drawrect status=parsed chars=592 duration_ms=2608
+2026-09-01 19:39:20,865 INFO Generating method:CircleModuleDrawer.drawrect (qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer.drawrect)
+2026-09-01 19:39:20,866 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer.drawrect system_chars=1885 user_chars=2602
+2026-09-01 19:39:22,803 INFO LLM response entity=qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.initialize status=parsed chars=567 duration_ms=2260
+2026-09-01 19:39:22,804 INFO Generating method:CircleModuleDrawer.initialize (qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer.initialize)
+2026-09-01 19:39:22,804 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer.initialize system_chars=1885 user_chars=3004
+2026-09-01 19:39:23,350 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer.drawrect status=parsed chars=601 duration_ms=2485
+2026-09-01 19:39:23,351 INFO Generating method:GappedCircleModuleDrawer.__init__ (qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.__init__)
+2026-09-01 19:39:23,351 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.__init__ system_chars=1885 user_chars=2550
+2026-09-01 19:39:25,782 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.__init__ status=parsed chars=476 duration_ms=2431
+2026-09-01 19:39:25,783 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer.initialize status=parsed chars=621 duration_ms=2979
+2026-09-01 19:39:25,783 INFO Generating method:GappedCircleModuleDrawer.drawrect (qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.drawrect)
+2026-09-01 19:39:25,784 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.drawrect system_chars=1885 user_chars=2608
+2026-09-01 19:39:25,784 INFO Generating method:GappedCircleModuleDrawer.initialize (qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.initialize)
+2026-09-01 19:39:25,784 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.initialize system_chars=1885 user_chars=3095
+2026-09-01 19:39:28,359 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.drawrect status=parsed chars=541 duration_ms=2575
+2026-09-01 19:39:28,360 INFO Generating method:GappedSquareModuleDrawer.__init__ (qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.__init__)
+2026-09-01 19:39:28,360 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.__init__ system_chars=1885 user_chars=2550
+2026-09-01 19:39:28,478 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.initialize status=parsed chars=714 duration_ms=2694
+2026-09-01 19:39:28,478 INFO Generating method:GappedSquareModuleDrawer.drawrect (qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.drawrect)
+2026-09-01 19:39:28,479 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.drawrect system_chars=1885 user_chars=2816
+2026-09-01 19:39:30,598 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.__init__ status=parsed chars=439 duration_ms=2238
+2026-09-01 19:39:30,600 INFO Generating method:GappedSquareModuleDrawer.initialize (qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.initialize)
+2026-09-01 19:39:30,600 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.initialize system_chars=1885 user_chars=2680
+2026-09-01 19:39:31,901 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.drawrect status=parsed chars=761 duration_ms=3422
+2026-09-01 19:39:31,901 INFO Generating method:HorizontalBarsDrawer.__init__ (qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.__init__)
+2026-09-01 19:39:31,901 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.__init__ system_chars=1885 user_chars=2561
+2026-09-01 19:39:34,012 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.__init__ status=parsed chars=534 duration_ms=2111
+2026-09-01 19:39:34,013 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.initialize status=parsed chars=728 duration_ms=3413
+2026-09-01 19:39:34,014 INFO Generating method:HorizontalBarsDrawer.drawrect (qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.drawrect)
+2026-09-01 19:39:34,014 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.drawrect system_chars=1885 user_chars=3011
+2026-09-01 19:39:34,014 INFO Generating method:HorizontalBarsDrawer.setup_edges (qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.setup_edges)
+2026-09-01 19:39:34,015 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.setup_edges system_chars=1885 user_chars=3380
+2026-09-01 19:39:35,903 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.setup_edges status=parsed chars=366 duration_ms=1888
+2026-09-01 19:39:35,904 INFO Generating method:RoundedModuleDrawer.__init__ (qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.__init__)
+2026-09-01 19:39:35,904 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.__init__ system_chars=1885 user_chars=2549
+2026-09-01 19:39:37,019 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.drawrect status=parsed chars=674 duration_ms=3004
+2026-09-01 19:39:37,019 INFO Generating method:RoundedModuleDrawer.drawrect (qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.drawrect)
+2026-09-01 19:39:37,019 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.drawrect system_chars=1885 user_chars=3407
+2026-09-01 19:39:38,222 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.__init__ status=parsed chars=480 duration_ms=2318
+2026-09-01 19:39:38,223 INFO Generating method:RoundedModuleDrawer.setup_corners (qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.setup_corners)
+2026-09-01 19:39:38,223 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.setup_corners system_chars=1885 user_chars=3656
+2026-09-01 19:39:39,829 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.setup_corners status=parsed chars=316 duration_ms=1607
+2026-09-01 19:39:39,830 INFO Generating method:SquareModuleDrawer.drawrect (qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer.drawrect)
+2026-09-01 19:39:39,830 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer.drawrect system_chars=1885 user_chars=2600
+2026-09-01 19:39:40,112 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.drawrect status=parsed chars=670 duration_ms=3093
+2026-09-01 19:39:40,113 INFO Generating method:SquareModuleDrawer.initialize (qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer.initialize)
+2026-09-01 19:39:40,113 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer.initialize system_chars=1885 user_chars=2607
+2026-09-01 19:39:42,843 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer.drawrect status=parsed chars=728 duration_ms=3012
+2026-09-01 19:39:42,844 INFO Generating method:VerticalBarsDrawer.__init__ (qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.__init__)
+2026-09-01 19:39:42,844 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.__init__ system_chars=1885 user_chars=2565
+2026-09-01 19:39:43,264 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer.initialize status=parsed chars=835 duration_ms=3151
+2026-09-01 19:39:43,265 INFO Generating method:VerticalBarsDrawer.drawrect (qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.drawrect)
+2026-09-01 19:39:43,266 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.drawrect system_chars=1885 user_chars=3010
+2026-09-01 19:39:45,104 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.__init__ status=parsed chars=509 duration_ms=2260
+2026-09-01 19:39:45,105 INFO Generating method:VerticalBarsDrawer.setup_edges (qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.setup_edges)
+2026-09-01 19:39:45,105 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.setup_edges system_chars=1885 user_chars=3357
+2026-09-01 19:39:46,052 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.drawrect status=parsed chars=686 duration_ms=2787
+2026-09-01 19:39:46,054 INFO Generating method:BaseSvgQRModuleDrawer.__init__ (qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.__init__)
+2026-09-01 19:39:46,054 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.__init__ system_chars=1885 user_chars=2541
+2026-09-01 19:39:47,156 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.setup_edges status=parsed chars=450 duration_ms=2051
+2026-09-01 19:39:47,157 INFO Generating method:BaseSvgQRModuleDrawer.coords (qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.coords)
+2026-09-01 19:39:47,157 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.coords system_chars=1885 user_chars=2750
+2026-09-01 19:39:48,107 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.__init__ status=parsed chars=478 duration_ms=2053
+2026-09-01 19:39:48,108 INFO Generating method:BaseSvgQRModuleDrawer.initialize (qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.initialize)
+2026-09-01 19:39:48,108 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.initialize system_chars=1885 user_chars=2714
+2026-09-01 19:39:50,971 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.coords status=parsed chars=816 duration_ms=3813
+2026-09-01 19:39:50,972 INFO Generating method:SvgCircleDrawer.el (qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer.el)
+2026-09-01 19:39:50,972 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer.el system_chars=1885 user_chars=2746
+2026-09-01 19:39:53,246 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.initialize status=parsed chars=1155 duration_ms=5138
+2026-09-01 19:39:53,247 INFO Generating method:SvgCircleDrawer.initialize (qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer.initialize)
+2026-09-01 19:39:53,247 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer.initialize system_chars=1885 user_chars=2674
+2026-09-01 19:39:53,287 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer.el status=parsed chars=502 duration_ms=2315
+2026-09-01 19:39:53,288 INFO Generating method:SvgPathCircleDrawer.initialize (qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer.initialize)
+2026-09-01 19:39:53,288 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer.initialize system_chars=1885 user_chars=2630
+2026-09-01 19:39:56,033 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer.initialize status=parsed chars=675 duration_ms=2785
+2026-09-01 19:39:56,034 INFO Generating method:SvgPathCircleDrawer.subpath (qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer.subpath)
+2026-09-01 19:39:56,034 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer.subpath system_chars=1885 user_chars=3100
+2026-09-01 19:39:56,227 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer.initialize status=parsed chars=798 duration_ms=2939
+2026-09-01 19:39:56,228 INFO Generating method:SvgPathQRModuleDrawer.subpath (qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer.subpath)
+2026-09-01 19:39:56,228 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer.subpath system_chars=1885 user_chars=2601
+2026-09-01 19:39:58,992 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer.subpath status=parsed chars=445 duration_ms=2764
+2026-09-01 19:39:58,994 INFO Generating method:SvgPathSquareDrawer.subpath (qrcode/image/styles/moduledrawers/svg.py::SvgPathSquareDrawer.subpath)
+2026-09-01 19:39:58,994 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathSquareDrawer.subpath system_chars=1885 user_chars=2851
+2026-09-01 19:40:00,299 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer.subpath status=parsed chars=760 duration_ms=4265
+2026-09-01 19:40:00,300 INFO Generating method:SvgQRModuleDrawer.el (qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.el)
+2026-09-01 19:40:00,300 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.el system_chars=1885 user_chars=2568
+2026-09-01 19:40:02,208 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.el status=parsed chars=381 duration_ms=1908
+2026-09-01 19:40:02,208 INFO Generating method:SvgQRModuleDrawer.initialize (qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.initialize)
+2026-09-01 19:40:02,209 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.initialize system_chars=1885 user_chars=2621
+2026-09-01 19:40:02,526 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathSquareDrawer.subpath status=parsed chars=619 duration_ms=3532
+2026-09-01 19:40:02,527 INFO Generating method:SvgSquareDrawer.el (qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer.el)
+2026-09-01 19:40:02,527 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer.el system_chars=1885 user_chars=2786
+2026-09-01 19:40:04,630 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer.el status=parsed chars=482 duration_ms=2102
+2026-09-01 19:40:04,630 INFO Generating method:SvgSquareDrawer.initialize (qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer.initialize)
+2026-09-01 19:40:04,630 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer.initialize system_chars=1885 user_chars=2677
+2026-09-01 19:40:04,942 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.initialize status=parsed chars=651 duration_ms=2734
+2026-09-01 19:40:04,943 INFO Generating method:SvgFragmentImage._write (qrcode/image/svg.py::SvgFragmentImage._write)
+2026-09-01 19:40:04,944 INFO LLM request entity=qrcode/image/svg.py::SvgFragmentImage._write system_chars=1885 user_chars=2590
+2026-09-01 19:40:06,779 INFO LLM response entity=qrcode/image/svg.py::SvgFragmentImage._write status=parsed chars=459 duration_ms=1835
+2026-09-01 19:40:06,779 INFO Generating method:SvgFragmentImage.drawrect (qrcode/image/svg.py::SvgFragmentImage.drawrect)
+2026-09-01 19:40:06,779 INFO LLM request entity=qrcode/image/svg.py::SvgFragmentImage.drawrect system_chars=1885 user_chars=2588
+2026-09-01 19:40:08,373 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer.initialize status=parsed chars=722 duration_ms=3743
+2026-09-01 19:40:08,374 INFO Generating method:SvgFragmentImage.to_string (qrcode/image/svg.py::SvgFragmentImage.to_string)
+2026-09-01 19:40:08,374 INFO LLM request entity=qrcode/image/svg.py::SvgFragmentImage.to_string system_chars=1885 user_chars=2575
+2026-09-01 19:40:09,836 INFO LLM response entity=qrcode/image/svg.py::SvgFragmentImage.drawrect status=parsed chars=573 duration_ms=3056
+2026-09-01 19:40:09,837 INFO Generating method:SvgFragmentImage.units (qrcode/image/svg.py::SvgFragmentImage.units)
+2026-09-01 19:40:09,837 INFO LLM request entity=qrcode/image/svg.py::SvgFragmentImage.units system_chars=1885 user_chars=3059
+2026-09-01 19:40:10,839 INFO LLM response entity=qrcode/image/svg.py::SvgFragmentImage.to_string status=parsed chars=549 duration_ms=2465
+2026-09-01 19:40:10,841 INFO Generating method:SvgImage._svg (qrcode/image/svg.py::SvgImage._svg)
+2026-09-01 19:40:10,841 INFO LLM request entity=qrcode/image/svg.py::SvgImage._svg system_chars=1885 user_chars=3049
+2026-09-01 19:40:12,597 INFO LLM response entity=qrcode/image/svg.py::SvgFragmentImage.units status=parsed chars=792 duration_ms=2760
+2026-09-01 19:40:12,598 INFO Generating method:SvgImage._write (qrcode/image/svg.py::SvgImage._write)
+2026-09-01 19:40:12,598 INFO LLM request entity=qrcode/image/svg.py::SvgImage._write system_chars=1885 user_chars=2710
+2026-09-01 19:40:14,755 INFO LLM response entity=qrcode/image/svg.py::SvgImage._svg status=parsed chars=821 duration_ms=3914
+2026-09-01 19:40:14,756 INFO Generating method:SvgPathImage.__init__ (qrcode/image/svg.py::SvgPathImage.__init__)
+2026-09-01 19:40:14,756 INFO LLM request entity=qrcode/image/svg.py::SvgPathImage.__init__ system_chars=1885 user_chars=2691
+2026-09-01 19:40:14,790 INFO LLM response entity=qrcode/image/svg.py::SvgImage._write status=parsed chars=463 duration_ms=2192
+2026-09-01 19:40:14,791 INFO Generating method:SvgPathImage._svg (qrcode/image/svg.py::SvgPathImage._svg)
+2026-09-01 19:40:14,791 INFO LLM request entity=qrcode/image/svg.py::SvgPathImage._svg system_chars=1885 user_chars=2811
+2026-09-01 19:40:17,138 INFO LLM response entity=qrcode/image/svg.py::SvgPathImage.__init__ status=parsed chars=615 duration_ms=2381
+2026-09-01 19:40:17,139 INFO Generating method:SvgPathImage.process (qrcode/image/svg.py::SvgPathImage.process)
+2026-09-01 19:40:17,139 INFO LLM request entity=qrcode/image/svg.py::SvgPathImage.process system_chars=1885 user_chars=2802
+2026-09-01 19:40:18,768 INFO LLM response entity=qrcode/image/svg.py::SvgPathImage._svg status=parsed chars=1058 duration_ms=3977
+2026-09-01 19:40:18,769 INFO Generating method:ActiveWithNeighbors.__bool__ (qrcode/main.py::ActiveWithNeighbors.__bool__)
+2026-09-01 19:40:18,769 INFO LLM request entity=qrcode/main.py::ActiveWithNeighbors.__bool__ system_chars=1885 user_chars=2578
+2026-09-01 19:40:19,461 INFO LLM response entity=qrcode/image/svg.py::SvgPathImage.process status=parsed chars=504 duration_ms=2322
+2026-09-01 19:40:19,462 INFO Generating method:QRCode.add_data (qrcode/main.py::QRCode.add_data)
+2026-09-01 19:40:19,462 INFO LLM request entity=qrcode/main.py::QRCode.add_data system_chars=1885 user_chars=3343
+2026-09-01 19:40:20,366 INFO LLM response entity=qrcode/main.py::ActiveWithNeighbors.__bool__ status=parsed chars=373 duration_ms=1598
+2026-09-01 19:40:20,368 INFO Generating method:QRCode.clear (qrcode/main.py::QRCode.clear)
+2026-09-01 19:40:20,368 INFO LLM request entity=qrcode/main.py::QRCode.clear system_chars=1885 user_chars=2768
+2026-09-01 19:40:21,890 INFO LLM response entity=qrcode/main.py::QRCode.clear status=parsed chars=326 duration_ms=1522
+2026-09-01 19:40:21,891 INFO Generating method:QRCode.is_constrained (qrcode/main.py::QRCode.is_constrained)
+2026-09-01 19:40:21,891 INFO LLM request entity=qrcode/main.py::QRCode.is_constrained system_chars=1885 user_chars=2730
+2026-09-01 19:40:23,785 INFO LLM response entity=qrcode/main.py::QRCode.add_data status=parsed chars=931 duration_ms=4323
+2026-09-01 19:40:23,786 INFO Generating method:QRCode.map_data (qrcode/main.py::QRCode.map_data)
+2026-09-01 19:40:23,786 INFO LLM request entity=qrcode/main.py::QRCode.map_data system_chars=1885 user_chars=3656
+2026-09-01 19:40:25,477 INFO LLM response entity=qrcode/main.py::QRCode.is_constrained status=parsed chars=815 duration_ms=3586
+2026-09-01 19:40:25,478 INFO Generating method:QRCode.setup_position_adjust_pattern (qrcode/main.py::QRCode.setup_position_adjust_pattern)
+2026-09-01 19:40:25,478 INFO LLM request entity=qrcode/main.py::QRCode.setup_position_adjust_pattern system_chars=1885 user_chars=3166
+2026-09-01 19:40:27,175 INFO LLM response entity=qrcode/main.py::QRCode.map_data status=parsed chars=609 duration_ms=3389
+2026-09-01 19:40:27,177 INFO Generating method:QRCode.setup_position_probe_pattern (qrcode/main.py::QRCode.setup_position_probe_pattern)
+2026-09-01 19:40:27,177 INFO LLM request entity=qrcode/main.py::QRCode.setup_position_probe_pattern system_chars=1885 user_chars=3170
+2026-09-01 19:40:27,899 INFO LLM response entity=qrcode/main.py::QRCode.setup_position_adjust_pattern status=parsed chars=448 duration_ms=2421
+2026-09-01 19:40:27,900 INFO Generating method:QRCode.setup_timing_pattern (qrcode/main.py::QRCode.setup_timing_pattern)
+2026-09-01 19:40:27,901 INFO LLM request entity=qrcode/main.py::QRCode.setup_timing_pattern system_chars=1885 user_chars=2893
+2026-09-01 19:40:29,705 INFO LLM response entity=qrcode/main.py::QRCode.setup_timing_pattern status=parsed chars=334 duration_ms=1805
+2026-09-01 19:40:29,706 INFO Generating method:QRCode.setup_type_info (qrcode/main.py::QRCode.setup_type_info)
+2026-09-01 19:40:29,707 INFO LLM request entity=qrcode/main.py::QRCode.setup_type_info system_chars=1885 user_chars=3371
+2026-09-01 19:40:29,830 INFO LLM response entity=qrcode/main.py::QRCode.setup_position_probe_pattern status=parsed chars=622 duration_ms=2653
+2026-09-01 19:40:29,831 INFO Generating method:QRCode.setup_type_number (qrcode/main.py::QRCode.setup_type_number)
+2026-09-01 19:40:29,831 INFO LLM request entity=qrcode/main.py::QRCode.setup_type_number system_chars=1885 user_chars=2892
+2026-09-01 19:40:32,114 INFO LLM response entity=qrcode/main.py::QRCode.setup_type_number status=parsed chars=382 duration_ms=2283
+2026-09-01 19:40:32,115 INFO Generating function:_check_border (qrcode/main.py::_check_border)
+2026-09-01 19:40:32,115 INFO LLM request entity=qrcode/main.py::_check_border system_chars=1885 user_chars=2682
+2026-09-01 19:40:32,477 INFO LLM response entity=qrcode/main.py::QRCode.setup_type_info status=parsed chars=543 duration_ms=2771
+2026-09-01 19:40:32,479 INFO Generating function:_check_box_size (qrcode/main.py::_check_box_size)
+2026-09-01 19:40:32,479 INFO LLM request entity=qrcode/main.py::_check_box_size system_chars=1885 user_chars=2653
+2026-09-01 19:40:34,483 INFO LLM response entity=qrcode/main.py::_check_border status=parsed chars=503 duration_ms=2368
+2026-09-01 19:40:34,484 INFO Generating function:_check_mask_pattern (qrcode/main.py::_check_mask_pattern)
+2026-09-01 19:40:34,484 INFO LLM request entity=qrcode/main.py::_check_mask_pattern system_chars=1885 user_chars=2891
+2026-09-01 19:40:35,024 INFO LLM response entity=qrcode/main.py::_check_box_size status=parsed chars=523 duration_ms=2545
+2026-09-01 19:40:35,025 INFO Generating function:copy_2d_array (qrcode/main.py::copy_2d_array)
+2026-09-01 19:40:35,025 INFO LLM request entity=qrcode/main.py::copy_2d_array system_chars=1885 user_chars=2573
+2026-09-01 19:40:37,142 INFO LLM response entity=qrcode/main.py::_check_mask_pattern status=parsed chars=682 duration_ms=2658
+2026-09-01 19:40:37,143 INFO Generating function:make (qrcode/main.py::make)
+2026-09-01 19:40:37,143 INFO LLM request entity=qrcode/main.py::make system_chars=1885 user_chars=2617
+2026-09-01 19:40:37,179 INFO LLM response entity=qrcode/main.py::copy_2d_array status=parsed chars=464 duration_ms=2154
+2026-09-01 19:40:37,179 INFO Generating function:update_manpage (qrcode/release.py::update_manpage)
+2026-09-01 19:40:37,179 INFO LLM request entity=qrcode/release.py::update_manpage system_chars=1885 user_chars=3313
+2026-09-01 19:40:39,540 INFO LLM response entity=qrcode/release.py::update_manpage status=parsed chars=479 duration_ms=2361
+2026-09-01 19:40:39,541 INFO Generating function:BCH_digit (qrcode/util.py::BCH_digit)
+2026-09-01 19:40:39,541 INFO LLM request entity=qrcode/util.py::BCH_digit system_chars=1885 user_chars=2430
+2026-09-01 19:40:41,948 INFO LLM response entity=qrcode/util.py::BCH_digit status=parsed chars=482 duration_ms=2407
+2026-09-01 19:40:41,949 INFO Generating method:BitBuffer.__init__ (qrcode/util.py::BitBuffer.__init__)
+2026-09-01 19:40:41,949 INFO LLM request entity=qrcode/util.py::BitBuffer.__init__ system_chars=1885 user_chars=2402
+2026-09-01 19:40:42,418 INFO LLM response entity=qrcode/main.py::make status=parsed chars=1143 duration_ms=5275
+2026-09-01 19:40:42,418 INFO Generating method:BitBuffer.__len__ (qrcode/util.py::BitBuffer.__len__)
+2026-09-01 19:40:42,419 INFO LLM request entity=qrcode/util.py::BitBuffer.__len__ system_chars=1885 user_chars=2367
+2026-09-01 19:40:43,754 INFO LLM response entity=qrcode/util.py::BitBuffer.__init__ status=parsed chars=349 duration_ms=1804
+2026-09-01 19:40:43,755 INFO Generating method:BitBuffer.__repr__ (qrcode/util.py::BitBuffer.__repr__)
+2026-09-01 19:40:43,755 INFO LLM request entity=qrcode/util.py::BitBuffer.__repr__ system_chars=1885 user_chars=2397
+2026-09-01 19:40:44,580 INFO LLM response entity=qrcode/util.py::BitBuffer.__len__ status=parsed chars=412 duration_ms=2162
+2026-09-01 19:40:44,581 INFO Generating method:BitBuffer.get (qrcode/util.py::BitBuffer.get)
+2026-09-01 19:40:44,581 INFO LLM request entity=qrcode/util.py::BitBuffer.get system_chars=1885 user_chars=2449
+2026-09-01 19:40:46,665 INFO LLM response entity=qrcode/util.py::BitBuffer.__repr__ status=parsed chars=765 duration_ms=2910
+2026-09-01 19:40:46,666 INFO Generating method:BitBuffer.put_bit (qrcode/util.py::BitBuffer.put_bit)
+2026-09-01 19:40:46,667 INFO LLM request entity=qrcode/util.py::BitBuffer.put_bit system_chars=1885 user_chars=2561
+2026-09-01 19:40:46,780 INFO LLM response entity=qrcode/util.py::BitBuffer.get status=parsed chars=496 duration_ms=2198
+2026-09-01 19:40:46,781 INFO Generating method:QRData.__len__ (qrcode/util.py::QRData.__len__)
+2026-09-01 19:40:46,781 INFO LLM request entity=qrcode/util.py::QRData.__len__ system_chars=1885 user_chars=2367
+2026-09-01 19:40:48,875 INFO LLM response entity=qrcode/util.py::QRData.__len__ status=parsed chars=496 duration_ms=2094
+2026-09-01 19:40:48,876 INFO LLM response entity=qrcode/util.py::BitBuffer.put_bit status=parsed chars=542 duration_ms=2209
+2026-09-01 19:40:48,876 INFO Generating method:QRData.__repr__ (qrcode/util.py::QRData.__repr__)
+2026-09-01 19:40:48,877 INFO LLM request entity=qrcode/util.py::QRData.__repr__ system_chars=1885 user_chars=2370
+2026-09-01 19:40:48,877 INFO Generating method:QRData.write (qrcode/util.py::QRData.write)
+2026-09-01 19:40:48,878 INFO LLM request entity=qrcode/util.py::QRData.write system_chars=1885 user_chars=3171
+2026-09-01 19:40:51,268 INFO LLM response entity=qrcode/util.py::QRData.__repr__ status=parsed chars=535 duration_ms=2391
+2026-09-01 19:40:51,269 INFO Generating function:_data_count (qrcode/util.py::_data_count)
+2026-09-01 19:40:51,269 INFO LLM request entity=qrcode/util.py::_data_count system_chars=1885 user_chars=2373
+2026-09-01 19:40:51,883 INFO LLM response entity=qrcode/util.py::QRData.write status=parsed chars=665 duration_ms=3006
+2026-09-01 19:40:51,884 INFO Generating function:_lost_point_level1 (qrcode/util.py::_lost_point_level1)
+2026-09-01 19:40:51,884 INFO LLM request entity=qrcode/util.py::_lost_point_level1 system_chars=1885 user_chars=3529
+2026-09-01 19:40:53,460 INFO LLM response entity=qrcode/util.py::_data_count status=parsed chars=520 duration_ms=2191
+2026-09-01 19:40:53,462 INFO Generating function:_lost_point_level2 (qrcode/util.py::_lost_point_level2)
+2026-09-01 19:40:53,462 INFO LLM request entity=qrcode/util.py::_lost_point_level2 system_chars=1885 user_chars=3232
+2026-09-01 19:40:55,193 INFO LLM response entity=qrcode/util.py::_lost_point_level1 status=parsed chars=632 duration_ms=3309
+2026-09-01 19:40:55,194 INFO Generating function:_lost_point_level3 (qrcode/util.py::_lost_point_level3)
+2026-09-01 19:40:55,194 INFO LLM request entity=qrcode/util.py::_lost_point_level3 system_chars=1885 user_chars=5241
+2026-09-01 19:40:56,099 INFO LLM response entity=qrcode/util.py::_lost_point_level2 status=parsed chars=648 duration_ms=2637
+2026-09-01 19:40:56,100 INFO Generating function:_lost_point_level4 (qrcode/util.py::_lost_point_level4)
+2026-09-01 19:40:56,100 INFO LLM request entity=qrcode/util.py::_lost_point_level4 system_chars=1885 user_chars=2582
+2026-09-01 19:40:58,767 INFO LLM response entity=qrcode/util.py::_lost_point_level4 status=parsed chars=678 duration_ms=2667
+2026-09-01 19:40:58,768 INFO Generating function:_optimal_split (qrcode/util.py::_optimal_split)
+2026-09-01 19:40:58,768 INFO LLM request entity=qrcode/util.py::_optimal_split system_chars=1885 user_chars=2661
+2026-09-01 19:41:03,384 INFO LLM response entity=qrcode/util.py::_optimal_split status=parsed chars=1141 duration_ms=4615
+2026-09-01 19:41:03,384 INFO Generating function:check_version (qrcode/util.py::check_version)
+2026-09-01 19:41:03,384 INFO LLM request entity=qrcode/util.py::check_version system_chars=1885 user_chars=2466
+2026-09-01 19:41:06,332 INFO LLM response entity=qrcode/util.py::check_version status=parsed chars=679 duration_ms=2948
+2026-09-01 19:41:06,333 INFO Generating function:create_bytes (qrcode/util.py::create_bytes)
+2026-09-01 19:41:06,333 INFO LLM request entity=qrcode/util.py::create_bytes system_chars=1885 user_chars=3798
+2026-09-01 19:41:08,597 INFO LLM response entity=qrcode/util.py::_lost_point_level3 status=parsed chars=3637 duration_ms=13403
+2026-09-01 19:41:08,597 INFO Generating function:mask_func (qrcode/util.py::mask_func)
+2026-09-01 19:41:08,597 INFO LLM request entity=qrcode/util.py::mask_func system_chars=1885 user_chars=3210
+2026-09-01 19:41:09,149 INFO LLM response entity=qrcode/util.py::create_bytes status=parsed chars=676 duration_ms=2816
+2026-09-01 19:41:09,150 INFO Generating function:mode_sizes_for_version (qrcode/util.py::mode_sizes_for_version)
+2026-09-01 19:41:09,150 INFO LLM request entity=qrcode/util.py::mode_sizes_for_version system_chars=1885 user_chars=2501
+2026-09-01 19:41:12,315 INFO LLM response entity=qrcode/util.py::mode_sizes_for_version status=parsed chars=780 duration_ms=3165
+2026-09-01 19:41:12,316 INFO Generating function:optimal_mode (qrcode/util.py::optimal_mode)
+2026-09-01 19:41:12,316 INFO LLM request entity=qrcode/util.py::optimal_mode system_chars=1885 user_chars=2618
+2026-09-01 19:41:13,345 INFO LLM response entity=qrcode/util.py::mask_func status=parsed chars=1280 duration_ms=4748
+2026-09-01 19:41:13,346 INFO Generating function:pattern_position (qrcode/util.py::pattern_position)
+2026-09-01 19:41:13,346 INFO LLM request entity=qrcode/util.py::pattern_position system_chars=1885 user_chars=2404
+2026-09-01 19:41:15,094 INFO LLM response entity=qrcode/util.py::optimal_mode status=parsed chars=649 duration_ms=2778
+2026-09-01 19:41:15,095 INFO Generating function:to_bytestring (qrcode/util.py::to_bytestring)
+2026-09-01 19:41:15,096 INFO LLM request entity=qrcode/util.py::to_bytestring system_chars=1885 user_chars=2638
+2026-09-01 19:41:15,867 INFO LLM response entity=qrcode/util.py::pattern_position status=parsed chars=522 duration_ms=2521
+2026-09-01 19:41:17,640 INFO LLM response entity=qrcode/util.py::to_bytestring status=parsed chars=608 duration_ms=2545
+2026-09-01 19:41:17,641 INFO Generating method:Polynomial.__mod__ (qrcode/base.py::Polynomial.__mod__)
+2026-09-01 19:41:17,641 INFO LLM request entity=qrcode/base.py::Polynomial.__mod__ system_chars=1885 user_chars=3138
+2026-09-01 19:41:17,641 INFO Generating method:Polynomial.__mul__ (qrcode/base.py::Polynomial.__mul__)
+2026-09-01 19:41:17,642 INFO LLM request entity=qrcode/base.py::Polynomial.__mul__ system_chars=1885 user_chars=2875
+2026-09-01 19:41:20,037 INFO LLM response entity=qrcode/base.py::Polynomial.__mul__ status=parsed chars=511 duration_ms=2395
+2026-09-01 19:41:20,038 INFO Generating function:get_drawer_help (qrcode/console_scripts.py::get_drawer_help)
+2026-09-01 19:41:20,038 INFO LLM request entity=qrcode/console_scripts.py::get_drawer_help system_chars=1885 user_chars=3317
+2026-09-01 19:41:20,533 INFO LLM response entity=qrcode/base.py::Polynomial.__mod__ status=parsed chars=699 duration_ms=2891
+2026-09-01 19:41:20,534 INFO Generating method:BaseImage.__init__ (qrcode/image/base.py::BaseImage.__init__)
+2026-09-01 19:41:20,534 INFO LLM request entity=qrcode/image/base.py::BaseImage.__init__ system_chars=1885 user_chars=2912
+2026-09-01 19:41:22,572 INFO LLM response entity=qrcode/console_scripts.py::get_drawer_help status=parsed chars=540 duration_ms=2534
+2026-09-01 19:41:22,573 INFO Generating method:BaseImageWithDrawer.__init__ (qrcode/image/base.py::BaseImageWithDrawer.__init__)
+2026-09-01 19:41:22,573 INFO LLM request entity=qrcode/image/base.py::BaseImageWithDrawer.__init__ system_chars=1885 user_chars=3353
+2026-09-01 19:41:27,274 INFO LLM response entity=qrcode/image/base.py::BaseImageWithDrawer.__init__ status=parsed chars=1180 duration_ms=4701
+2026-09-01 19:41:27,275 INFO Generating method:PyPNGImage.rows_iter (qrcode/image/pure.py::PyPNGImage.rows_iter)
+2026-09-01 19:41:27,275 INFO LLM request entity=qrcode/image/pure.py::PyPNGImage.rows_iter system_chars=1885 user_chars=2993
+2026-09-01 19:41:27,989 INFO LLM response entity=qrcode/image/base.py::BaseImage.__init__ status=parsed chars=1702 duration_ms=7455
+2026-09-01 19:41:27,990 INFO Generating method:StyledPilImage.draw_embeded_image (qrcode/image/styledpil.py::StyledPilImage.draw_embeded_image)
+2026-09-01 19:41:27,990 INFO LLM request entity=qrcode/image/styledpil.py::StyledPilImage.draw_embeded_image system_chars=1885 user_chars=2760
+2026-09-01 19:41:29,873 INFO LLM response entity=qrcode/image/styledpil.py::StyledPilImage.draw_embeded_image status=parsed chars=460 duration_ms=1883
+2026-09-01 19:41:29,874 INFO Generating method:StyledPilImage.process (qrcode/image/styledpil.py::StyledPilImage.process)
+2026-09-01 19:41:29,875 INFO LLM request entity=qrcode/image/styledpil.py::StyledPilImage.process system_chars=1885 user_chars=2813
+2026-09-01 19:41:31,322 INFO LLM response entity=qrcode/image/pure.py::PyPNGImage.rows_iter status=parsed chars=964 duration_ms=4047
+2026-09-01 19:41:31,323 INFO Generating method:QRColorMask.extrap_color (qrcode/image/styles/colormasks.py::QRColorMask.extrap_color)
+2026-09-01 19:41:31,324 INFO LLM request entity=qrcode/image/styles/colormasks.py::QRColorMask.extrap_color system_chars=1885 user_chars=2816
+2026-09-01 19:41:31,841 INFO LLM response entity=qrcode/image/styledpil.py::StyledPilImage.process status=parsed chars=511 duration_ms=1967
+2026-09-01 19:41:31,842 INFO Generating method:QRColorMask.interp_color (qrcode/image/styles/colormasks.py::QRColorMask.interp_color)
+2026-09-01 19:41:31,842 INFO LLM request entity=qrcode/image/styles/colormasks.py::QRColorMask.interp_color system_chars=1885 user_chars=2554
+2026-09-01 19:41:35,255 INFO LLM response entity=qrcode/image/styles/colormasks.py::QRColorMask.extrap_color status=parsed chars=870 duration_ms=3932
+2026-09-01 19:41:35,256 INFO Generating method:HorizontalBarsDrawer.initialize (qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.initialize)
+2026-09-01 19:41:35,257 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.initialize system_chars=1885 user_chars=2871
+2026-09-01 19:41:35,448 INFO LLM response entity=qrcode/image/styles/colormasks.py::QRColorMask.interp_color status=parsed chars=1036 duration_ms=3606
+2026-09-01 19:41:35,449 INFO Generating method:RoundedModuleDrawer.initialize (qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.initialize)
+2026-09-01 19:41:35,449 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.initialize system_chars=1885 user_chars=2772
+2026-09-01 19:41:38,347 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.initialize status=parsed chars=761 duration_ms=3091
+2026-09-01 19:41:38,348 INFO Generating method:VerticalBarsDrawer.initialize (qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.initialize)
+2026-09-01 19:41:38,349 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.initialize system_chars=1885 user_chars=2801
+2026-09-01 19:41:38,593 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.initialize status=parsed chars=840 duration_ms=3143
+2026-09-01 19:41:38,594 INFO Generating method:SvgPathQRModuleDrawer.drawrect (qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer.drawrect)
+2026-09-01 19:41:38,594 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer.drawrect system_chars=1885 user_chars=2774
+2026-09-01 19:41:41,021 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer.drawrect status=parsed chars=581 duration_ms=2427
+2026-09-01 19:41:41,022 INFO Generating method:SvgQRModuleDrawer.drawrect (qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.drawrect)
+2026-09-01 19:41:41,022 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.drawrect system_chars=1885 user_chars=2710
+2026-09-01 19:41:43,572 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.initialize status=parsed chars=1379 duration_ms=5223
+2026-09-01 19:41:43,572 INFO Generating method:SvgFragmentImage.save (qrcode/image/svg.py::SvgFragmentImage.save)
+2026-09-01 19:41:43,573 INFO LLM request entity=qrcode/image/svg.py::SvgFragmentImage.save system_chars=1885 user_chars=2692
+2026-09-01 19:41:43,742 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.drawrect status=parsed chars=615 duration_ms=2720
+2026-09-01 19:41:43,743 INFO Generating method:SvgFragmentImage.__init__ (qrcode/image/svg.py::SvgFragmentImage.__init__)
+2026-09-01 19:41:43,743 INFO LLM request entity=qrcode/image/svg.py::SvgFragmentImage.__init__ system_chars=1885 user_chars=2875
+2026-09-01 19:41:46,277 INFO LLM response entity=qrcode/image/svg.py::SvgFragmentImage.save status=parsed chars=641 duration_ms=2705
+2026-09-01 19:41:46,278 INFO Generating method:SvgFragmentImage._svg (qrcode/image/svg.py::SvgFragmentImage._svg)
+2026-09-01 19:41:46,279 INFO LLM request entity=qrcode/image/svg.py::SvgFragmentImage._svg system_chars=1885 user_chars=2950
+2026-09-01 19:41:46,418 INFO LLM response entity=qrcode/image/svg.py::SvgFragmentImage.__init__ status=parsed chars=703 duration_ms=2675
+2026-09-01 19:41:46,419 INFO Generating method:QRCode.active_with_neighbors (qrcode/main.py::QRCode.active_with_neighbors)
+2026-09-01 19:41:46,419 INFO LLM request entity=qrcode/main.py::QRCode.active_with_neighbors system_chars=1885 user_chars=3026
+2026-09-01 19:41:50,088 INFO LLM response entity=qrcode/main.py::QRCode.active_with_neighbors status=parsed chars=910 duration_ms=3668
+2026-09-01 19:41:50,089 INFO Generating method:QRCode.__init__ (qrcode/main.py::QRCode.__init__)
+2026-09-01 19:41:50,089 INFO LLM request entity=qrcode/main.py::QRCode.__init__ system_chars=1885 user_chars=3606
+2026-09-01 19:41:50,815 INFO LLM response entity=qrcode/image/svg.py::SvgFragmentImage._svg status=parsed chars=1269 duration_ms=4537
+2026-09-01 19:41:50,817 INFO Generating method:QRCode.mask_pattern (qrcode/main.py::QRCode.mask_pattern)
+2026-09-01 19:41:50,817 INFO LLM request entity=qrcode/main.py::QRCode.mask_pattern system_chars=1885 user_chars=2920
+2026-09-01 19:41:52,997 INFO LLM response entity=qrcode/main.py::QRCode.mask_pattern status=parsed chars=488 duration_ms=2180
+2026-09-01 19:41:52,998 INFO Generating method:QRCode.makeImpl (qrcode/main.py::QRCode.makeImpl)
+2026-09-01 19:41:52,998 INFO LLM request entity=qrcode/main.py::QRCode.makeImpl system_chars=1885 user_chars=4303
+2026-09-01 19:41:56,110 INFO LLM response entity=qrcode/main.py::QRCode.__init__ status=parsed chars=1623 duration_ms=6021
+2026-09-01 19:41:56,111 INFO Generating function:BCH_type_info (qrcode/util.py::BCH_type_info)
+2026-09-01 19:41:56,111 INFO LLM request entity=qrcode/util.py::BCH_type_info system_chars=1885 user_chars=2602
+2026-09-01 19:41:57,520 INFO LLM response entity=qrcode/main.py::QRCode.makeImpl status=parsed chars=1114 duration_ms=4522
+2026-09-01 19:41:57,521 INFO Generating function:BCH_type_number (qrcode/util.py::BCH_type_number)
+2026-09-01 19:41:57,521 INFO LLM request entity=qrcode/util.py::BCH_type_number system_chars=1885 user_chars=2592
+2026-09-01 19:41:58,389 INFO LLM response entity=qrcode/util.py::BCH_type_info status=parsed chars=488 duration_ms=2278
+2026-09-01 19:41:58,390 INFO Generating method:BitBuffer.put (qrcode/util.py::BitBuffer.put)
+2026-09-01 19:41:58,390 INFO LLM request entity=qrcode/util.py::BitBuffer.put system_chars=1885 user_chars=2524
+2026-09-01 19:41:59,609 INFO LLM response entity=qrcode/util.py::BCH_type_number status=parsed chars=480 duration_ms=2089
+2026-09-01 19:41:59,610 INFO Generating function:lost_point (qrcode/util.py::lost_point)
+2026-09-01 19:41:59,611 INFO LLM request entity=qrcode/util.py::lost_point system_chars=1885 user_chars=3155
+2026-09-01 19:42:02,231 INFO LLM response entity=qrcode/util.py::BitBuffer.put status=parsed chars=854 duration_ms=3841
+2026-09-01 19:42:02,231 INFO Generating function:length_in_bits (qrcode/util.py::length_in_bits)
+2026-09-01 19:42:02,232 INFO LLM request entity=qrcode/util.py::length_in_bits system_chars=1885 user_chars=2883
+2026-09-01 19:42:02,381 INFO LLM response entity=qrcode/util.py::lost_point status=parsed chars=699 duration_ms=2770
+2026-09-01 19:42:02,381 INFO Generating method:QRData.__init__ (qrcode/util.py::QRData.__init__)
+2026-09-01 19:42:02,382 INFO LLM request entity=qrcode/util.py::QRData.__init__ system_chars=1885 user_chars=3339
+2026-09-01 19:42:05,742 INFO LLM response entity=qrcode/util.py::length_in_bits status=parsed chars=841 duration_ms=3510
+2026-09-01 19:42:05,743 INFO LLM response entity=qrcode/util.py::QRData.__init__ status=parsed chars=842 duration_ms=3362
+2026-09-01 19:42:05,743 INFO Generating function:optimal_data_chunks (qrcode/util.py::optimal_data_chunks)
+2026-09-01 19:42:05,744 INFO LLM request entity=qrcode/util.py::optimal_data_chunks system_chars=1885 user_chars=3801
+2026-09-01 19:42:08,854 INFO LLM response entity=qrcode/util.py::optimal_data_chunks status=parsed chars=803 duration_ms=3110
+2026-09-01 19:42:08,855 INFO Generating function:main (qrcode/console_scripts.py::main)
+2026-09-01 19:42:08,856 INFO LLM request entity=qrcode/console_scripts.py::main system_chars=1885 user_chars=6117
+2026-09-01 19:42:08,856 INFO Generating method:PyPNGImage.save (qrcode/image/pure.py::PyPNGImage.save)
+2026-09-01 19:42:08,856 INFO LLM request entity=qrcode/image/pure.py::PyPNGImage.save system_chars=1885 user_chars=2629
+2026-09-01 19:42:12,065 INFO LLM response entity=qrcode/console_scripts.py::main status=parsed chars=719 duration_ms=3210
+2026-09-01 19:42:12,067 INFO Generating method:QRColorMask.apply_mask (qrcode/image/styles/colormasks.py::QRColorMask.apply_mask)
+2026-09-01 19:42:12,067 INFO LLM request entity=qrcode/image/styles/colormasks.py::QRColorMask.apply_mask system_chars=1885 user_chars=3901
+2026-09-01 19:42:13,458 INFO LLM response entity=qrcode/image/pure.py::PyPNGImage.save status=parsed chars=1090 duration_ms=4602
+2026-09-01 19:42:13,458 INFO Generating method:SvgFragmentImage.new_image (qrcode/image/svg.py::SvgFragmentImage.new_image)
+2026-09-01 19:42:13,458 INFO LLM request entity=qrcode/image/svg.py::SvgFragmentImage.new_image system_chars=1885 user_chars=2734
+2026-09-01 19:42:15,309 INFO LLM response entity=qrcode/image/styles/colormasks.py::QRColorMask.apply_mask status=parsed chars=812 duration_ms=3243
+2026-09-01 19:42:15,311 INFO Generating method:QRCode.best_mask_pattern (qrcode/main.py::QRCode.best_mask_pattern)
+2026-09-01 19:42:15,311 INFO LLM request entity=qrcode/main.py::QRCode.best_mask_pattern system_chars=1885 user_chars=3152
+2026-09-01 19:42:15,735 INFO LLM response entity=qrcode/image/svg.py::SvgFragmentImage.new_image status=parsed chars=542 duration_ms=2276
+2026-09-01 19:42:15,736 INFO Generating function:create_data (qrcode/util.py::create_data)
+2026-09-01 19:42:15,736 INFO LLM request entity=qrcode/util.py::create_data system_chars=1885 user_chars=3834
+2026-09-01 19:42:17,366 INFO LLM response entity=qrcode/main.py::QRCode.best_mask_pattern status=parsed chars=450 duration_ms=2055
+2026-09-01 19:42:20,094 INFO LLM response entity=qrcode/util.py::create_data status=parsed chars=1077 duration_ms=4358
+2026-09-01 19:42:20,096 INFO Generating method:PilImage.save (qrcode/image/pil.py::PilImage.save)
+2026-09-01 19:42:20,096 INFO LLM request entity=qrcode/image/pil.py::PilImage.save system_chars=1885 user_chars=2491
+2026-09-01 19:42:20,096 INFO Generating method:StyledPilImage.save (qrcode/image/styledpil.py::StyledPilImage.save)
+2026-09-01 19:42:20,097 INFO LLM request entity=qrcode/image/styledpil.py::StyledPilImage.save system_chars=1885 user_chars=2778
+2026-09-01 19:42:22,803 INFO LLM response entity=qrcode/image/styledpil.py::StyledPilImage.save status=parsed chars=625 duration_ms=2705
+2026-09-01 19:42:22,804 INFO Generating method:QRCode.best_fit (qrcode/main.py::QRCode.best_fit)
+2026-09-01 19:42:22,804 INFO LLM request entity=qrcode/main.py::QRCode.best_fit system_chars=1885 user_chars=3766
+2026-09-01 19:42:23,204 INFO LLM response entity=qrcode/image/pil.py::PilImage.save status=parsed chars=803 duration_ms=3108
+2026-09-01 19:42:23,206 INFO Generating method:QRCode.get_matrix (qrcode/main.py::QRCode.get_matrix)
+2026-09-01 19:42:23,206 INFO LLM request entity=qrcode/main.py::QRCode.get_matrix system_chars=1885 user_chars=3312
+2026-09-01 19:42:26,215 INFO LLM response entity=qrcode/main.py::QRCode.best_fit status=parsed chars=935 duration_ms=3411
+2026-09-01 19:42:26,216 INFO Generating method:QRCode.make (qrcode/main.py::QRCode.make)
+2026-09-01 19:42:26,216 INFO LLM request entity=qrcode/main.py::QRCode.make system_chars=1885 user_chars=3423
+2026-09-01 19:42:26,917 INFO LLM response entity=qrcode/main.py::QRCode.get_matrix status=parsed chars=1103 duration_ms=3711
+2026-09-01 19:42:26,918 INFO Generating method:QRCode.make_image (qrcode/main.py::QRCode.make_image)
+2026-09-01 19:42:26,918 INFO LLM request entity=qrcode/main.py::QRCode.make_image system_chars=1885 user_chars=5006
+2026-09-01 19:42:30,686 INFO LLM response entity=qrcode/main.py::QRCode.make status=parsed chars=1125 duration_ms=4469
+2026-09-01 19:42:30,687 INFO Generating method:QRCode.print_ascii (qrcode/main.py::QRCode.print_ascii)
+2026-09-01 19:42:30,687 INFO LLM request entity=qrcode/main.py::QRCode.print_ascii system_chars=1885 user_chars=4214
+2026-09-01 19:42:32,032 INFO LLM response entity=qrcode/main.py::QRCode.make_image status=parsed chars=1308 duration_ms=5114
+2026-09-01 19:42:32,033 INFO Generating method:QRCode.print_tty (qrcode/main.py::QRCode.print_tty)
+2026-09-01 19:42:32,033 INFO LLM request entity=qrcode/main.py::QRCode.print_tty system_chars=1885 user_chars=3593
+2026-09-01 19:42:34,204 INFO LLM response entity=qrcode/main.py::QRCode.print_ascii status=parsed chars=921 duration_ms=3517
+2026-09-01 19:42:34,206 INFO Generating method:QRCode.version (qrcode/main.py::QRCode.version)
+2026-09-01 19:42:34,206 INFO LLM request entity=qrcode/main.py::QRCode.version system_chars=1885 user_chars=2800
+2026-09-01 19:42:34,265 INFO LLM response entity=qrcode/main.py::QRCode.print_tty status=parsed chars=550 duration_ms=2233
+2026-09-01 19:42:38,057 INFO LLM response entity=qrcode/main.py::QRCode.version status=parsed chars=924 duration_ms=3851
+2026-09-01 19:42:38,058 INFO Generating class:Polynomial (qrcode/base.py::Polynomial)
+2026-09-01 19:42:38,059 INFO LLM request entity=qrcode/base.py::Polynomial system_chars=1713 user_chars=2789
+2026-09-01 19:42:38,059 INFO Generating class:RSBlock (qrcode/base.py::RSBlock)
+2026-09-01 19:42:38,061 INFO LLM request entity=qrcode/base.py::RSBlock system_chars=1713 user_chars=2242
+2026-09-01 19:42:39,151 INFO LLM response entity=qrcode/base.py::RSBlock status=parsed chars=140 duration_ms=1090
+2026-09-01 19:42:39,151 INFO Generating class:DataOverflowError (qrcode/exceptions.py::DataOverflowError)
+2026-09-01 19:42:39,152 INFO LLM request entity=qrcode/exceptions.py::DataOverflowError system_chars=1713 user_chars=2190
+2026-09-01 19:42:39,962 INFO LLM response entity=qrcode/exceptions.py::DataOverflowError status=parsed chars=165 duration_ms=810
+2026-09-01 19:42:39,963 INFO Generating class:BaseImage (qrcode/image/base.py::BaseImage)
+2026-09-01 19:42:39,964 INFO LLM request entity=qrcode/image/base.py::BaseImage system_chars=1713 user_chars=3507
+2026-09-01 19:42:40,409 INFO LLM response entity=qrcode/base.py::Polynomial status=parsed chars=552 duration_ms=2351
+2026-09-01 19:42:40,410 INFO Generating class:BaseImageWithDrawer (qrcode/image/base.py::BaseImageWithDrawer)
+2026-09-01 19:42:40,410 INFO LLM request entity=qrcode/image/base.py::BaseImageWithDrawer system_chars=1713 user_chars=3225
+2026-09-01 19:42:41,468 INFO LLM response entity=qrcode/image/base.py::BaseImage status=parsed chars=471 duration_ms=1505
+2026-09-01 19:42:41,469 INFO Generating class:PilImage (qrcode/image/pil.py::PilImage)
+2026-09-01 19:42:41,469 INFO LLM request entity=qrcode/image/pil.py::PilImage system_chars=1713 user_chars=2758
+2026-09-01 19:42:41,633 INFO LLM response entity=qrcode/image/base.py::BaseImageWithDrawer status=parsed chars=260 duration_ms=1223
+2026-09-01 19:42:41,633 INFO Generating class:PyPNGImage (qrcode/image/pure.py::PyPNGImage)
+2026-09-01 19:42:41,633 INFO LLM request entity=qrcode/image/pure.py::PyPNGImage system_chars=1713 user_chars=2763
+2026-09-01 19:42:42,770 INFO LLM response entity=qrcode/image/pil.py::PilImage status=parsed chars=375 duration_ms=1301
+2026-09-01 19:42:42,770 INFO Generating class:StyledPilImage (qrcode/image/styledpil.py::StyledPilImage)
+2026-09-01 19:42:42,770 INFO LLM request entity=qrcode/image/styledpil.py::StyledPilImage system_chars=1713 user_chars=4789
+2026-09-01 19:42:42,886 INFO LLM response entity=qrcode/image/pure.py::PyPNGImage status=parsed chars=351 duration_ms=1252
+2026-09-01 19:42:42,886 INFO Generating class:QRColorMask (qrcode/image/styles/colormasks.py::QRColorMask)
+2026-09-01 19:42:42,886 INFO LLM request entity=qrcode/image/styles/colormasks.py::QRColorMask system_chars=1713 user_chars=3930
+2026-09-01 19:42:44,175 INFO LLM response entity=qrcode/image/styles/colormasks.py::QRColorMask status=parsed chars=429 duration_ms=1289
+2026-09-01 19:42:44,176 INFO Generating class:SolidFillColorMask (qrcode/image/styles/colormasks.py::SolidFillColorMask)
+2026-09-01 19:42:44,176 INFO LLM request entity=qrcode/image/styles/colormasks.py::SolidFillColorMask system_chars=1713 user_chars=2802
+2026-09-01 19:42:44,728 INFO LLM response entity=qrcode/image/styledpil.py::StyledPilImage status=parsed chars=658 duration_ms=1958
+2026-09-01 19:42:44,730 INFO Generating class:RadialGradiantColorMask (qrcode/image/styles/colormasks.py::RadialGradiantColorMask)
+2026-09-01 19:42:44,730 INFO LLM request entity=qrcode/image/styles/colormasks.py::RadialGradiantColorMask system_chars=1713 user_chars=2738
+2026-09-01 19:42:45,691 INFO LLM response entity=qrcode/image/styles/colormasks.py::SolidFillColorMask status=parsed chars=379 duration_ms=1515
+2026-09-01 19:42:45,692 INFO Generating class:SquareGradiantColorMask (qrcode/image/styles/colormasks.py::SquareGradiantColorMask)
+2026-09-01 19:42:45,692 INFO LLM request entity=qrcode/image/styles/colormasks.py::SquareGradiantColorMask system_chars=1713 user_chars=2685
+2026-09-01 19:42:45,925 INFO LLM response entity=qrcode/image/styles/colormasks.py::RadialGradiantColorMask status=parsed chars=368 duration_ms=1195
+2026-09-01 19:42:45,926 INFO Generating class:HorizontalGradiantColorMask (qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask)
+2026-09-01 19:42:45,926 INFO LLM request entity=qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask system_chars=1713 user_chars=2691
+2026-09-01 19:42:47,188 INFO LLM response entity=qrcode/image/styles/colormasks.py::SquareGradiantColorMask status=parsed chars=440 duration_ms=1496
+2026-09-01 19:42:47,189 INFO Generating class:VerticalGradiantColorMask (qrcode/image/styles/colormasks.py::VerticalGradiantColorMask)
+2026-09-01 19:42:47,189 INFO LLM request entity=qrcode/image/styles/colormasks.py::VerticalGradiantColorMask system_chars=1713 user_chars=2704
+2026-09-01 19:42:47,499 INFO LLM response entity=qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask status=parsed chars=482 duration_ms=1572
+2026-09-01 19:42:47,500 INFO Generating class:ImageColorMask (qrcode/image/styles/colormasks.py::ImageColorMask)
+2026-09-01 19:42:47,500 INFO LLM request entity=qrcode/image/styles/colormasks.py::ImageColorMask system_chars=1713 user_chars=2834
+2026-09-01 19:42:48,554 INFO LLM response entity=qrcode/image/styles/colormasks.py::VerticalGradiantColorMask status=parsed chars=433 duration_ms=1365
+2026-09-01 19:42:48,555 INFO Generating class:QRModuleDrawer (qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer)
+2026-09-01 19:42:48,555 INFO LLM request entity=qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer system_chars=1713 user_chars=3149
+2026-09-01 19:42:48,799 INFO LLM response entity=qrcode/image/styles/colormasks.py::ImageColorMask status=parsed chars=450 duration_ms=1299
+2026-09-01 19:42:48,801 INFO Generating class:StyledPilQRModuleDrawer (qrcode/image/styles/moduledrawers/pil.py::StyledPilQRModuleDrawer)
+2026-09-01 19:42:48,801 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::StyledPilQRModuleDrawer system_chars=1713 user_chars=2609
+2026-09-01 19:42:49,594 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::StyledPilQRModuleDrawer status=parsed chars=194 duration_ms=793
+2026-09-01 19:42:49,594 INFO Generating class:SquareModuleDrawer (qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer)
+2026-09-01 19:42:49,594 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer system_chars=1713 user_chars=2702
+2026-09-01 19:42:50,098 INFO LLM response entity=qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer status=parsed chars=591 duration_ms=1544
+2026-09-01 19:42:50,099 INFO Generating class:GappedSquareModuleDrawer (qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer)
+2026-09-01 19:42:50,100 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer system_chars=1713 user_chars=2893
+2026-09-01 19:42:50,586 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer status=parsed chars=321 duration_ms=992
+2026-09-01 19:42:50,587 INFO Generating class:CircleModuleDrawer (qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer)
+2026-09-01 19:42:50,587 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer system_chars=1713 user_chars=2677
+2026-09-01 19:42:51,102 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer status=parsed chars=344 duration_ms=1002
+2026-09-01 19:42:51,103 INFO Generating class:GappedCircleModuleDrawer (qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer)
+2026-09-01 19:42:51,103 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer system_chars=1713 user_chars=2904
+2026-09-01 19:42:52,204 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer status=parsed chars=383 duration_ms=1617
+2026-09-01 19:42:52,204 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer status=parsed chars=397 duration_ms=1101
+2026-09-01 19:42:52,205 INFO Generating class:RoundedModuleDrawer (qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer)
+2026-09-01 19:42:52,205 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer system_chars=1713 user_chars=3204
+2026-09-01 19:42:52,205 INFO Generating class:VerticalBarsDrawer (qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer)
+2026-09-01 19:42:52,205 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer system_chars=1713 user_chars=3014
+2026-09-01 19:42:53,523 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer status=parsed chars=322 duration_ms=1318
+2026-09-01 19:42:53,523 INFO Generating class:HorizontalBarsDrawer (qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer)
+2026-09-01 19:42:53,523 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer system_chars=1713 user_chars=3102
+2026-09-01 19:42:53,715 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer status=parsed chars=470 duration_ms=1510
+2026-09-01 19:42:53,717 INFO Generating class:Coords (qrcode/image/styles/moduledrawers/svg.py::Coords)
+2026-09-01 19:42:53,717 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::Coords system_chars=1713 user_chars=2401
+2026-09-01 19:42:54,491 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::Coords status=parsed chars=157 duration_ms=774
+2026-09-01 19:42:54,492 INFO Generating class:BaseSvgQRModuleDrawer (qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer)
+2026-09-01 19:42:54,492 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer system_chars=1713 user_chars=2793
+2026-09-01 19:42:54,913 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer status=parsed chars=538 duration_ms=1390
+2026-09-01 19:42:54,914 INFO Generating class:SvgQRModuleDrawer (qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer)
+2026-09-01 19:42:54,914 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer system_chars=1713 user_chars=2712
+2026-09-01 19:42:55,918 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer status=parsed chars=477 duration_ms=1425
+2026-09-01 19:42:55,919 INFO Generating class:SvgSquareDrawer (qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer)
+2026-09-01 19:42:55,919 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer system_chars=1713 user_chars=2613
+2026-09-01 19:42:56,022 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer status=parsed chars=328 duration_ms=1109
+2026-09-01 19:42:56,023 INFO Generating class:SvgCircleDrawer (qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer)
+2026-09-01 19:42:56,023 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer system_chars=1713 user_chars=2624
+2026-09-01 19:42:57,279 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer status=parsed chars=391 duration_ms=1256
+2026-09-01 19:42:57,280 INFO Generating class:SvgPathQRModuleDrawer (qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer)
+2026-09-01 19:42:57,280 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer system_chars=1713 user_chars=2635
+2026-09-01 19:42:57,368 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer status=parsed chars=454 duration_ms=1449
+2026-09-01 19:42:57,368 INFO Generating class:SvgPathSquareDrawer (qrcode/image/styles/moduledrawers/svg.py::SvgPathSquareDrawer)
+2026-09-01 19:42:57,368 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathSquareDrawer system_chars=1713 user_chars=2585
+2026-09-01 19:42:58,542 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathSquareDrawer status=parsed chars=316 duration_ms=1174
+2026-09-01 19:42:58,543 INFO Generating class:SvgPathCircleDrawer (qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer)
+2026-09-01 19:42:58,543 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer system_chars=1713 user_chars=2695
+2026-09-01 19:42:58,765 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer status=parsed chars=348 duration_ms=1485
+2026-09-01 19:42:58,766 INFO Generating class:SvgFragmentImage (qrcode/image/svg.py::SvgFragmentImage)
+2026-09-01 19:42:58,766 INFO LLM request entity=qrcode/image/svg.py::SvgFragmentImage system_chars=1713 user_chars=3467
+2026-09-01 19:43:00,101 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer status=parsed chars=411 duration_ms=1558
+2026-09-01 19:43:00,102 INFO Generating class:SvgImage (qrcode/image/svg.py::SvgImage)
+2026-09-01 19:43:00,102 INFO LLM request entity=qrcode/image/svg.py::SvgImage system_chars=1713 user_chars=2773
+2026-09-01 19:43:00,135 INFO LLM response entity=qrcode/image/svg.py::SvgFragmentImage status=parsed chars=363 duration_ms=1368
+2026-09-01 19:43:00,135 INFO Generating class:SvgPathImage (qrcode/image/svg.py::SvgPathImage)
+2026-09-01 19:43:00,135 INFO LLM request entity=qrcode/image/svg.py::SvgPathImage system_chars=1713 user_chars=2965
+2026-09-01 19:43:01,225 INFO LLM response entity=qrcode/image/svg.py::SvgImage status=parsed chars=287 duration_ms=1122
+2026-09-01 19:43:01,225 INFO Generating class:SvgFillImage (qrcode/image/svg.py::SvgFillImage)
+2026-09-01 19:43:01,225 INFO LLM request entity=qrcode/image/svg.py::SvgFillImage system_chars=1713 user_chars=2524
+2026-09-01 19:43:01,704 INFO LLM response entity=qrcode/image/svg.py::SvgPathImage status=parsed chars=383 duration_ms=1569
+2026-09-01 19:43:01,705 INFO Generating class:SvgPathFillImage (qrcode/image/svg.py::SvgPathFillImage)
+2026-09-01 19:43:01,705 INFO LLM request entity=qrcode/image/svg.py::SvgPathFillImage system_chars=1713 user_chars=2540
+2026-09-01 19:43:02,306 INFO LLM response entity=qrcode/image/svg.py::SvgFillImage status=parsed chars=249 duration_ms=1081
+2026-09-01 19:43:02,306 INFO Generating class:ActiveWithNeighbors (qrcode/main.py::ActiveWithNeighbors)
+2026-09-01 19:43:02,306 INFO LLM request entity=qrcode/main.py::ActiveWithNeighbors system_chars=1713 user_chars=2632
+2026-09-01 19:43:02,818 INFO LLM response entity=qrcode/image/svg.py::SvgPathFillImage status=parsed chars=229 duration_ms=1112
+2026-09-01 19:43:02,819 INFO Generating class:QRCode (qrcode/main.py::QRCode)
+2026-09-01 19:43:02,819 INFO LLM request entity=qrcode/main.py::QRCode system_chars=1713 user_chars=5421
+2026-09-01 19:43:03,048 INFO LLM response entity=qrcode/main.py::ActiveWithNeighbors status=parsed chars=113 duration_ms=742
+2026-09-01 19:43:03,048 INFO Generating class:QRData (qrcode/util.py::QRData)
+2026-09-01 19:43:03,049 INFO LLM request entity=qrcode/util.py::QRData system_chars=1713 user_chars=2770
+2026-09-01 19:43:04,501 INFO LLM response entity=qrcode/main.py::QRCode status=parsed chars=596 duration_ms=1682
+2026-09-01 19:43:04,502 INFO Generating class:BitBuffer (qrcode/util.py::BitBuffer)
+2026-09-01 19:43:04,502 INFO LLM request entity=qrcode/util.py::BitBuffer system_chars=1713 user_chars=2770
+2026-09-01 19:43:04,572 INFO LLM response entity=qrcode/util.py::QRData status=parsed chars=484 duration_ms=1524
+2026-09-01 19:43:06,079 INFO LLM response entity=qrcode/util.py::BitBuffer status=parsed chars=513 duration_ms=1577
+2026-09-01 19:43:06,080 INFO Generating module:qrcode/LUT.py (qrcode/LUT.py::module)
+2026-09-01 19:43:06,080 INFO LLM request entity=qrcode/LUT.py::module system_chars=1384 user_chars=2134
+2026-09-01 19:43:06,080 INFO Generating module:qrcode/__init__.py (qrcode/__init__.py::module)
+2026-09-01 19:43:06,081 INFO LLM request entity=qrcode/__init__.py::module system_chars=1384 user_chars=2649
+2026-09-01 19:43:06,758 INFO LLM response entity=qrcode/LUT.py::module status=parsed chars=166 duration_ms=679
+2026-09-01 19:43:06,759 INFO Generating module:qrcode/__main__.py (qrcode/__main__.py::module)
+2026-09-01 19:43:06,759 INFO LLM request entity=qrcode/__main__.py::module system_chars=1384 user_chars=2196
+2026-09-01 19:43:07,177 INFO LLM response entity=qrcode/__init__.py::module status=parsed chars=242 duration_ms=1097
+2026-09-01 19:43:07,178 INFO Generating module:qrcode/base.py (qrcode/base.py::module)
+2026-09-01 19:43:07,178 INFO LLM request entity=qrcode/base.py::module system_chars=1384 user_chars=2862
+2026-09-01 19:43:08,587 INFO LLM response entity=qrcode/__main__.py::module status=parsed chars=495 duration_ms=1827
+2026-09-01 19:43:08,587 INFO Generating module:qrcode/compat/__init__.py (qrcode/compat/__init__.py::module)
+2026-09-01 19:43:08,588 INFO LLM request entity=qrcode/compat/__init__.py::module system_chars=1384 user_chars=2158
+2026-09-01 19:43:09,765 INFO LLM response entity=qrcode/compat/__init__.py::module status=parsed chars=245 duration_ms=1177
+2026-09-01 19:43:09,765 INFO Generating module:qrcode/compat/etree.py (qrcode/compat/etree.py::module)
+2026-09-01 19:43:09,765 INFO LLM request entity=qrcode/compat/etree.py::module system_chars=1384 user_chars=2152
+2026-09-01 19:43:10,270 INFO LLM response entity=qrcode/base.py::module status=parsed chars=808 duration_ms=3091
+2026-09-01 19:43:10,270 INFO Generating module:qrcode/compat/png.py (qrcode/compat/png.py::module)
+2026-09-01 19:43:10,270 INFO LLM request entity=qrcode/compat/png.py::module system_chars=1384 user_chars=2148
+2026-09-01 19:43:10,969 INFO LLM response entity=qrcode/compat/etree.py::module status=parsed chars=375 duration_ms=1203
+2026-09-01 19:43:10,969 INFO Generating module:qrcode/console_scripts.py (qrcode/console_scripts.py::module)
+2026-09-01 19:43:10,969 INFO LLM request entity=qrcode/console_scripts.py::module system_chars=1384 user_chars=3204
+2026-09-01 19:43:11,428 INFO LLM response entity=qrcode/compat/png.py::module status=parsed chars=296 duration_ms=1158
+2026-09-01 19:43:11,429 INFO Generating module:qrcode/constants.py (qrcode/constants.py::module)
+2026-09-01 19:43:11,429 INFO LLM request entity=qrcode/constants.py::module system_chars=1384 user_chars=2201
+2026-09-01 19:43:12,913 INFO LLM response entity=qrcode/constants.py::module status=parsed chars=388 duration_ms=1484
+2026-09-01 19:43:12,914 INFO Generating module:qrcode/exceptions.py (qrcode/exceptions.py::module)
+2026-09-01 19:43:12,914 INFO LLM request entity=qrcode/exceptions.py::module system_chars=1384 user_chars=2389
+2026-09-01 19:43:13,980 INFO LLM response entity=qrcode/console_scripts.py::module status=parsed chars=693 duration_ms=3011
+2026-09-01 19:43:13,980 INFO Generating module:qrcode/image/__init__.py (qrcode/image/__init__.py::module)
+2026-09-01 19:43:13,980 INFO LLM request entity=qrcode/image/__init__.py::module system_chars=1384 user_chars=2156
+2026-09-01 19:43:14,036 INFO LLM response entity=qrcode/exceptions.py::module status=parsed chars=300 duration_ms=1122
+2026-09-01 19:43:14,037 INFO Generating module:qrcode/image/base.py (qrcode/image/base.py::module)
+2026-09-01 19:43:14,037 INFO LLM request entity=qrcode/image/base.py::module system_chars=1384 user_chars=2629
+2026-09-01 19:43:15,159 INFO LLM response entity=qrcode/image/__init__.py::module status=parsed chars=379 duration_ms=1179
+2026-09-01 19:43:15,159 INFO Generating module:qrcode/image/pil.py (qrcode/image/pil.py::module)
+2026-09-01 19:43:15,159 INFO LLM request entity=qrcode/image/pil.py::module system_chars=1384 user_chars=2460
+2026-09-01 19:43:15,396 INFO LLM response entity=qrcode/image/base.py::module status=parsed chars=347 duration_ms=1359
+2026-09-01 19:43:15,396 INFO Generating module:qrcode/image/pure.py (qrcode/image/pure.py::module)
+2026-09-01 19:43:15,396 INFO LLM request entity=qrcode/image/pure.py::module system_chars=1384 user_chars=2516
+2026-09-01 19:43:16,189 INFO LLM response entity=qrcode/image/pil.py::module status=parsed chars=244 duration_ms=1030
+2026-09-01 19:43:16,190 INFO Generating module:qrcode/image/styledpil.py (qrcode/image/styledpil.py::module)
+2026-09-01 19:43:16,190 INFO LLM request entity=qrcode/image/styledpil.py::module system_chars=1384 user_chars=2824
+2026-09-01 19:43:16,994 INFO LLM response entity=qrcode/image/pure.py::module status=parsed chars=496 duration_ms=1597
+2026-09-01 19:43:16,995 INFO Generating module:qrcode/image/styles/__init__.py (qrcode/image/styles/__init__.py::module)
+2026-09-01 19:43:16,996 INFO LLM request entity=qrcode/image/styles/__init__.py::module system_chars=1384 user_chars=2170
+2026-09-01 19:43:17,594 INFO LLM response entity=qrcode/image/styledpil.py::module status=parsed chars=326 duration_ms=1404
+2026-09-01 19:43:17,595 INFO Generating module:qrcode/image/styles/colormasks.py (qrcode/image/styles/colormasks.py::module)
+2026-09-01 19:43:17,595 INFO LLM request entity=qrcode/image/styles/colormasks.py::module system_chars=1384 user_chars=3482
+2026-09-01 19:43:17,781 INFO LLM response entity=qrcode/image/styles/__init__.py::module status=parsed chars=176 duration_ms=785
+2026-09-01 19:43:17,782 INFO Generating module:qrcode/image/styles/moduledrawers/__init__.py (qrcode/image/styles/moduledrawers/__init__.py::module)
+2026-09-01 19:43:17,782 INFO LLM request entity=qrcode/image/styles/moduledrawers/__init__.py::module system_chars=1384 user_chars=2709
+2026-09-01 19:43:19,214 INFO LLM response entity=qrcode/image/styles/moduledrawers/__init__.py::module status=parsed chars=402 duration_ms=1432
+2026-09-01 19:43:19,215 INFO Generating module:qrcode/image/styles/moduledrawers/base.py (qrcode/image/styles/moduledrawers/base.py::module)
+2026-09-01 19:43:19,215 INFO LLM request entity=qrcode/image/styles/moduledrawers/base.py::module system_chars=1384 user_chars=2710
+2026-09-01 19:43:21,036 INFO LLM response entity=qrcode/image/styles/moduledrawers/base.py::module status=parsed chars=463 duration_ms=1821
+2026-09-01 19:43:21,038 INFO Generating module:qrcode/image/styles/moduledrawers/pil.py (qrcode/image/styles/moduledrawers/pil.py::module)
+2026-09-01 19:43:21,038 INFO LLM request entity=qrcode/image/styles/moduledrawers/pil.py::module system_chars=1384 user_chars=3994
+2026-09-01 19:43:21,241 INFO LLM response entity=qrcode/image/styles/colormasks.py::module status=parsed chars=1291 duration_ms=3647
+2026-09-01 19:43:21,243 INFO Generating module:qrcode/image/styles/moduledrawers/svg.py (qrcode/image/styles/moduledrawers/svg.py::module)
+2026-09-01 19:43:21,243 INFO LLM request entity=qrcode/image/styles/moduledrawers/svg.py::module system_chars=1384 user_chars=3909
+2026-09-01 19:43:26,326 INFO LLM response entity=qrcode/image/styles/moduledrawers/pil.py::module status=parsed chars=1954 duration_ms=5288
+2026-09-01 19:43:26,327 INFO Generating module:qrcode/image/svg.py (qrcode/image/svg.py::module)
+2026-09-01 19:43:26,327 INFO LLM request entity=qrcode/image/svg.py::module system_chars=1384 user_chars=3275
+2026-09-01 19:43:26,347 INFO LLM response entity=qrcode/image/styles/moduledrawers/svg.py::module status=parsed chars=1549 duration_ms=5104
+2026-09-01 19:43:26,347 INFO Generating module:qrcode/main.py (qrcode/main.py::module)
+2026-09-01 19:43:26,347 INFO LLM request entity=qrcode/main.py::module system_chars=1384 user_chars=3576
+2026-09-01 19:43:29,035 INFO LLM response entity=qrcode/image/svg.py::module status=parsed chars=848 duration_ms=2708
+2026-09-01 19:43:29,037 INFO Generating module:qrcode/release.py (qrcode/release.py::module)
+2026-09-01 19:43:29,037 INFO LLM request entity=qrcode/release.py::module system_chars=1384 user_chars=2486
+2026-09-01 19:43:29,939 INFO LLM response entity=qrcode/release.py::module status=parsed chars=228 duration_ms=902
+2026-09-01 19:43:29,940 INFO Generating module:qrcode/util.py (qrcode/util.py::module)
+2026-09-01 19:43:29,940 INFO LLM request entity=qrcode/util.py::module system_chars=1384 user_chars=4907
+2026-09-01 19:43:30,410 INFO LLM response entity=qrcode/main.py::module status=parsed chars=1294 duration_ms=4063
+2026-09-01 19:43:39,075 INFO LLM response entity=qrcode/util.py::module status=parsed chars=2940 duration_ms=9134
+2026-09-01 19:43:39,076 INFO [generate] done 249 entities (353156ms)
+2026-09-01 19:43:39,076 INFO [validate] start
+2026-09-01 19:43:39,102 INFO [validate] done (26ms)
+2026-09-01 19:43:39,103 INFO Validation: 46 warnings, 0 errors
+2026-09-01 19:43:39,103 INFO [write] start
+2026-09-01 19:43:39,108 INFO [write] done (6ms)
+2026-09-01 19:43:39,108 INFO Wrote 31 output files
+2026-09-01 19:43:39,108 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/LUT.py.md
+2026-09-01 19:43:39,108 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/__init__.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/__main__.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/base.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/compat/__init__.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/compat/etree.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/compat/png.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/console_scripts.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/constants.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/exceptions.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/__init__.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/base.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/pil.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/pure.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/styledpil.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/styles/__init__.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/styles/colormasks.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/styles/moduledrawers/__init__.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/styles/moduledrawers/base.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/styles/moduledrawers/pil.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/styles/moduledrawers/svg.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/svg.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/main.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/release.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/util.py.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/README.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/README.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/compat/README.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/README.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/styles/README.md
+2026-09-01 19:43:39,109 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/python-qrcode/generated_docs_yandexgpt5-lite/qrcode/image/styles/moduledrawers/README.md
+2026-09-01 19:43:39,121 INFO Pipeline finished in 353.23s

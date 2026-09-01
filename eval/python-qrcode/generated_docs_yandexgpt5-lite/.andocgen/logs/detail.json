@@ -1,0 +1,420 @@
+{
+  "parse_errors": [],
+  "generation_errors": [],
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/__init__.py",
+      "entity_type": "function",
+      "entity_name": "run_example",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "qrcode/base.py",
+      "entity_type": "method",
+      "entity_name": "Polynomial.__init__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/console_scripts.py",
+      "entity_type": "function",
+      "entity_name": "get_factory",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "qrcode/image/base.py",
+      "entity_type": "method",
+      "entity_name": "BaseImageWithDrawer.drawrect_context",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/image/pure.py",
+      "entity_type": "method",
+      "entity_name": "PyPNGImage.new_image",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/image/styledpil.py",
+      "entity_type": "method",
+      "entity_name": "StyledPilImage.init_new_image",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "qrcode/image/styles/colormasks.py",
+      "entity_type": "method",
+      "entity_name": "QRColorMask.get_fg_pixel",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "qrcode/image/styles/moduledrawers/__init__.py",
+      "entity_type": "function",
+      "entity_name": "__getattr__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/image/styles/moduledrawers/pil.py",
+      "entity_type": "method",
+      "entity_name": "SquareModuleDrawer.initialize",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/image/styles/moduledrawers/svg.py",
+      "entity_type": "method",
+      "entity_name": "SvgPathCircleDrawer.initialize",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "qrcode/image/styles/moduledrawers/svg.py",
+      "entity_type": "method",
+      "entity_name": "SvgQRModuleDrawer.el",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "qrcode/image/svg.py",
+      "entity_type": "method",
+      "entity_name": "SvgFragmentImage.drawrect",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "qrcode/image/svg.py",
+      "entity_type": "method",
+      "entity_name": "SvgImage._svg",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/image/svg.py",
+      "entity_type": "method",
+      "entity_name": "SvgPathImage.process",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "_optimal_split",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "_optimal_split",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "High cyclomatic complexity (41)",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "_lost_point_level3",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "mask_func",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/console_scripts.py",
+      "entity_type": "function",
+      "entity_name": "get_drawer_help",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/image/base.py",
+      "entity_type": "method",
+      "entity_name": "BaseImageWithDrawer.__init__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/image/base.py",
+      "entity_type": "method",
+      "entity_name": "BaseImage.__init__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "qrcode/image/pure.py",
+      "entity_type": "method",
+      "entity_name": "PyPNGImage.rows_iter",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/image/styles/colormasks.py",
+      "entity_type": "method",
+      "entity_name": "QRColorMask.extrap_color",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/main.py",
+      "entity_type": "method",
+      "entity_name": "QRCode.active_with_neighbors",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "qrcode/image/svg.py",
+      "entity_type": "method",
+      "entity_name": "SvgFragmentImage._svg",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "qrcode/main.py",
+      "entity_type": "method",
+      "entity_name": "QRCode.mask_pattern",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/main.py",
+      "entity_type": "method",
+      "entity_name": "QRCode.mask_pattern",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/main.py",
+      "entity_type": "method",
+      "entity_name": "QRCode.makeImpl",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "BCH_type_info",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Summary appears too short",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "BCH_type_number",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "lost_point",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "length_in_bits",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/util.py",
+      "entity_type": "method",
+      "entity_name": "QRData.__init__",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "optimal_data_chunks",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Function appears to perform I/O or other side effects but side_effects is empty",
+      "module_path": "qrcode/console_scripts.py",
+      "entity_type": "function",
+      "entity_name": "main",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/console_scripts.py",
+      "entity_type": "function",
+      "entity_name": "main",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Function appears to perform I/O or other side effects but side_effects is empty",
+      "module_path": "qrcode/image/pure.py",
+      "entity_type": "method",
+      "entity_name": "PyPNGImage.save",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/image/styles/colormasks.py",
+      "entity_type": "method",
+      "entity_name": "QRColorMask.apply_mask",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/image/svg.py",
+      "entity_type": "method",
+      "entity_name": "SvgFragmentImage.new_image",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/main.py",
+      "entity_type": "method",
+      "entity_name": "QRCode.best_mask_pattern",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "create_data",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/util.py",
+      "entity_type": "function",
+      "entity_name": "create_data",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/main.py",
+      "entity_type": "method",
+      "entity_name": "QRCode.best_fit",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/main.py",
+      "entity_type": "method",
+      "entity_name": "QRCode.make",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/main.py",
+      "entity_type": "method",
+      "entity_name": "QRCode.make_image",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "qrcode/main.py",
+      "entity_type": "method",
+      "entity_name": "QRCode.version",
+      "detail": null
+    }
+  ]
+}

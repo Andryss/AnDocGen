@@ -195,6 +195,31 @@ def test_russian_language_check_covers_class_fields() -> None:
     assert any("different language" in issue.message for issue in issues)
 
 
+def test_russian_language_check_allows_technical_reference_fields() -> None:
+    ctx = EntityContext(
+        entity_type="function",
+        entity_name="load",
+        entity_id="loader.py::load",
+        module_path="loader.py",
+        project_name="demo",
+        output_language="ru",
+        function=FunctionModel(name="load", parameters=[], returns="str"),
+    )
+    block = DocBlock(
+        entity_type="function",
+        entity_name="load",
+        module_path="loader.py",
+        summary="Загружает значение.",
+        raises="ValueError, RuntimeError",
+        see_also="Loader.load, json.loads, pathlib.Path.read_text",
+        content="Загружает значение.",
+    )
+
+    issues = create_validator(ValidationConfig()).validate([block], [ctx], ValidationConfig())
+
+    assert not [issue for issue in issues if "different language" in issue.message]
+
+
 def test_class_signature_without_object() -> None:
     from andocgen.context.implementations.default_context import _class_signature
     from andocgen.models.entities import ClassModel

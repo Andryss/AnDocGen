@@ -1,0 +1,207 @@
+2026-09-01 19:31:46,575 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/schedule/schedule/schedule provider=openai dry_run=False
+2026-09-01 19:31:46,575 INFO Output directory: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/schedule/generated_docs_yandexgpt5-lite
+2026-09-01 19:31:46,575 INFO [scan] start
+2026-09-01 19:31:46,576 INFO [scan] done (0ms)
+2026-09-01 19:31:46,576 INFO Found 1 files
+2026-09-01 19:31:46,576 INFO [parse] start 1 files
+2026-09-01 19:31:46,576 DEBUG Parsing: __init__.py
+2026-09-01 19:31:46,581 DEBUG   parsed __init__.py: 11 functions, 6 classes
+2026-09-01 19:31:46,581 INFO [parse] done 1 files (5ms)
+2026-09-01 19:31:46,581 INFO [call_graph] start
+2026-09-01 19:31:46,581 INFO [call_graph] done (0ms)
+2026-09-01 19:31:46,581 DEBUG Call graph: 54 nodes, 105 edges
+2026-09-01 19:31:46,581 INFO Generating documentation for 61 entities
+2026-09-01 19:31:46,581 INFO [generate] start 61 entities
+2026-09-01 19:31:46,582 INFO Generating method:Job.__init__ (__init__.py::Job.__init__)
+2026-09-01 19:31:46,582 INFO LLM request entity=__init__.py::Job.__init__ system_chars=1885 user_chars=1683
+2026-09-01 19:31:46,582 INFO Generating method:Job.__lt__ (__init__.py::Job.__lt__)
+2026-09-01 19:31:46,582 INFO LLM request entity=__init__.py::Job.__lt__ system_chars=1885 user_chars=663
+2026-09-01 19:31:49,592 INFO LLM response entity=__init__.py::Job.__lt__ status=parsed chars=746 duration_ms=3010
+2026-09-01 19:31:49,593 INFO Generating method:Job.__repr__ (__init__.py::Job.__repr__)
+2026-09-01 19:31:49,593 INFO LLM request entity=__init__.py::Job.__repr__ system_chars=1885 user_chars=2005
+2026-09-01 19:31:49,711 INFO LLM response entity=__init__.py::Job.__init__ status=parsed chars=671 duration_ms=3129
+2026-09-01 19:31:49,712 INFO Generating method:Job.__str__ (__init__.py::Job.__str__)
+2026-09-01 19:31:49,712 INFO LLM request entity=__init__.py::Job.__str__ system_chars=1885 user_chars=906
+2026-09-01 19:31:51,390 INFO LLM response entity=__init__.py::Job.__str__ status=parsed chars=357 duration_ms=1678
+2026-09-01 19:31:51,391 INFO Generating method:Job._correct_utc_offset (__init__.py::Job._correct_utc_offset)
+2026-09-01 19:31:51,392 INFO LLM request entity=__init__.py::Job._correct_utc_offset system_chars=1885 user_chars=2750
+2026-09-01 19:31:52,052 INFO LLM response entity=__init__.py::Job.__repr__ status=parsed chars=590 duration_ms=2459
+2026-09-01 19:31:52,053 INFO Generating method:Job._decode_datetimestr (__init__.py::Job._decode_datetimestr)
+2026-09-01 19:31:52,053 INFO LLM request entity=__init__.py::Job._decode_datetimestr system_chars=1885 user_chars=691
+2026-09-01 19:31:55,505 INFO LLM response entity=__init__.py::Job._correct_utc_offset status=parsed chars=1003 duration_ms=4113
+2026-09-01 19:31:55,506 INFO Generating method:Job._is_overdue (__init__.py::Job._is_overdue)
+2026-09-01 19:31:55,506 INFO LLM request entity=__init__.py::Job._is_overdue system_chars=1885 user_chars=522
+2026-09-01 19:31:55,684 INFO LLM response entity=__init__.py::Job._decode_datetimestr status=parsed chars=935 duration_ms=3630
+2026-09-01 19:31:55,685 INFO Generating method:Job.at (__init__.py::Job.at)
+2026-09-01 19:31:55,685 INFO LLM request entity=__init__.py::Job.at system_chars=1885 user_chars=4681
+2026-09-01 19:31:58,114 INFO LLM response entity=__init__.py::Job._is_overdue status=parsed chars=556 duration_ms=2608
+2026-09-01 19:31:58,115 INFO Generating method:Job.day (__init__.py::Job.day)
+2026-09-01 19:31:58,115 INFO LLM request entity=__init__.py::Job.day system_chars=1885 user_chars=524
+2026-09-01 19:32:00,523 INFO LLM response entity=__init__.py::Job.day status=parsed chars=494 duration_ms=2407
+2026-09-01 19:32:00,524 INFO LLM response entity=__init__.py::Job.at status=parsed chars=1132 duration_ms=4838
+2026-09-01 19:32:00,524 INFO Generating method:Job.days (__init__.py::Job.days)
+2026-09-01 19:32:00,524 INFO LLM request entity=__init__.py::Job.days system_chars=1885 user_chars=458
+2026-09-01 19:32:00,524 INFO Generating method:Job.friday (__init__.py::Job.friday)
+2026-09-01 19:32:00,525 INFO LLM request entity=__init__.py::Job.friday system_chars=1885 user_chars=750
+2026-09-01 19:32:02,240 INFO LLM response entity=__init__.py::Job.days status=parsed chars=402 duration_ms=1715
+2026-09-01 19:32:02,241 INFO Generating method:Job.hour (__init__.py::Job.hour)
+2026-09-01 19:32:02,241 INFO LLM request entity=__init__.py::Job.hour system_chars=1885 user_chars=529
+2026-09-01 19:32:03,678 INFO LLM response entity=__init__.py::Job.friday status=parsed chars=900 duration_ms=3153
+2026-09-01 19:32:03,679 INFO Generating method:Job.hours (__init__.py::Job.hours)
+2026-09-01 19:32:03,679 INFO LLM request entity=__init__.py::Job.hours system_chars=1885 user_chars=461
+2026-09-01 19:32:05,100 INFO LLM response entity=__init__.py::Job.hour status=parsed chars=814 duration_ms=2859
+2026-09-01 19:32:05,101 INFO Generating method:Job.minute (__init__.py::Job.minute)
+2026-09-01 19:32:05,101 INFO LLM request entity=__init__.py::Job.minute system_chars=1885 user_chars=539
+2026-09-01 19:32:05,314 INFO LLM response entity=__init__.py::Job.hours status=parsed chars=400 duration_ms=1635
+2026-09-01 19:32:05,315 INFO Generating method:Job.minutes (__init__.py::Job.minutes)
+2026-09-01 19:32:05,315 INFO LLM request entity=__init__.py::Job.minutes system_chars=1885 user_chars=467
+2026-09-01 19:32:07,021 INFO LLM response entity=__init__.py::Job.minutes status=parsed chars=471 duration_ms=1705
+2026-09-01 19:32:07,022 INFO Generating method:Job.monday (__init__.py::Job.monday)
+2026-09-01 19:32:07,022 INFO LLM request entity=__init__.py::Job.monday system_chars=1885 user_chars=750
+2026-09-01 19:32:07,552 INFO LLM response entity=__init__.py::Job.minute status=parsed chars=518 duration_ms=2451
+2026-09-01 19:32:07,553 INFO Generating method:Job.saturday (__init__.py::Job.saturday)
+2026-09-01 19:32:07,553 INFO LLM request entity=__init__.py::Job.saturday system_chars=1885 user_chars=760
+2026-09-01 19:32:10,280 INFO LLM response entity=__init__.py::Job.monday status=parsed chars=884 duration_ms=3259
+2026-09-01 19:32:10,281 INFO Generating method:Job.second (__init__.py::Job.second)
+2026-09-01 19:32:10,282 INFO LLM request entity=__init__.py::Job.second system_chars=1885 user_chars=539
+2026-09-01 19:32:10,628 INFO LLM response entity=__init__.py::Job.saturday status=parsed chars=775 duration_ms=3074
+2026-09-01 19:32:10,628 INFO Generating method:Job.seconds (__init__.py::Job.seconds)
+2026-09-01 19:32:10,629 INFO LLM request entity=__init__.py::Job.seconds system_chars=1885 user_chars=467
+2026-09-01 19:32:12,281 INFO LLM response entity=__init__.py::Job.seconds status=parsed chars=427 duration_ms=1653
+2026-09-01 19:32:12,282 INFO Generating method:Job.should_run (__init__.py::Job.should_run)
+2026-09-01 19:32:12,283 INFO LLM request entity=__init__.py::Job.should_run system_chars=1885 user_chars=705
+2026-09-01 19:32:12,865 INFO LLM response entity=__init__.py::Job.second status=parsed chars=743 duration_ms=2583
+2026-09-01 19:32:12,866 INFO Generating method:Job.sunday (__init__.py::Job.sunday)
+2026-09-01 19:32:12,866 INFO LLM request entity=__init__.py::Job.sunday system_chars=1885 user_chars=750
+2026-09-01 19:32:14,151 INFO LLM response entity=__init__.py::Job.should_run status=parsed chars=446 duration_ms=1869
+2026-09-01 19:32:14,153 INFO Generating method:Job.tag (__init__.py::Job.tag)
+2026-09-01 19:32:14,153 INFO LLM request entity=__init__.py::Job.tag system_chars=1885 user_chars=1034
+2026-09-01 19:32:16,347 INFO LLM response entity=__init__.py::Job.sunday status=parsed chars=926 duration_ms=3480
+2026-09-01 19:32:16,348 INFO Generating method:Job.thursday (__init__.py::Job.thursday)
+2026-09-01 19:32:16,348 INFO LLM request entity=__init__.py::Job.thursday system_chars=1885 user_chars=760
+2026-09-01 19:32:17,327 INFO LLM response entity=__init__.py::Job.tag status=parsed chars=935 duration_ms=3174
+2026-09-01 19:32:17,328 INFO Generating method:Job.to (__init__.py::Job.to)
+2026-09-01 19:32:17,328 INFO LLM request entity=__init__.py::Job.to system_chars=1885 user_chars=1340
+2026-09-01 19:32:20,090 INFO LLM response entity=__init__.py::Job.to status=parsed chars=771 duration_ms=2762
+2026-09-01 19:32:20,091 INFO Generating method:Job.tuesday (__init__.py::Job.tuesday)
+2026-09-01 19:32:20,091 INFO LLM request entity=__init__.py::Job.tuesday system_chars=1885 user_chars=755
+2026-09-01 19:32:20,274 INFO LLM response entity=__init__.py::Job.thursday status=parsed chars=927 duration_ms=3926
+2026-09-01 19:32:20,275 INFO Generating method:Job.wednesday (__init__.py::Job.wednesday)
+2026-09-01 19:32:20,275 INFO LLM request entity=__init__.py::Job.wednesday system_chars=1885 user_chars=765
+2026-09-01 19:32:23,817 INFO LLM response entity=__init__.py::Job.tuesday status=parsed chars=906 duration_ms=3726
+2026-09-01 19:32:23,818 INFO Generating method:Job.week (__init__.py::Job.week)
+2026-09-01 19:32:23,818 INFO LLM request entity=__init__.py::Job.week system_chars=1885 user_chars=529
+2026-09-01 19:32:24,319 INFO LLM response entity=__init__.py::Job.wednesday status=parsed chars=958 duration_ms=4044
+2026-09-01 19:32:24,320 INFO Generating method:Job.weeks (__init__.py::Job.weeks)
+2026-09-01 19:32:24,320 INFO LLM request entity=__init__.py::Job.weeks system_chars=1885 user_chars=461
+2026-09-01 19:32:25,710 INFO LLM response entity=__init__.py::Job.week status=parsed chars=487 duration_ms=1892
+2026-09-01 19:32:25,711 INFO Generating method:Scheduler.__init__ (__init__.py::Scheduler.__init__)
+2026-09-01 19:32:25,711 INFO LLM request entity=__init__.py::Scheduler.__init__ system_chars=1885 user_chars=467
+2026-09-01 19:32:26,157 INFO LLM response entity=__init__.py::Job.weeks status=parsed chars=399 duration_ms=1837
+2026-09-01 19:32:26,158 INFO Generating method:Scheduler.cancel_job (__init__.py::Scheduler.cancel_job)
+2026-09-01 19:32:26,158 INFO LLM request entity=__init__.py::Scheduler.cancel_job system_chars=1885 user_chars=828
+2026-09-01 19:32:27,315 INFO LLM response entity=__init__.py::Scheduler.__init__ status=parsed chars=408 duration_ms=1604
+2026-09-01 19:32:27,316 INFO Generating method:Scheduler.clear (__init__.py::Scheduler.clear)
+2026-09-01 19:32:27,316 INFO LLM request entity=__init__.py::Scheduler.clear system_chars=1885 user_chars=1107
+2026-09-01 19:32:28,257 INFO LLM response entity=__init__.py::Scheduler.cancel_job status=parsed chars=486 duration_ms=2099
+2026-09-01 19:32:28,258 INFO Generating method:Scheduler.every (__init__.py::Scheduler.every)
+2026-09-01 19:32:28,258 INFO LLM request entity=__init__.py::Scheduler.every system_chars=1885 user_chars=807
+2026-09-01 19:32:29,854 INFO LLM response entity=__init__.py::Scheduler.clear status=parsed chars=704 duration_ms=2538
+2026-09-01 19:32:29,855 INFO Generating method:Scheduler.get_jobs (__init__.py::Scheduler.get_jobs)
+2026-09-01 19:32:29,856 INFO LLM request entity=__init__.py::Scheduler.get_jobs system_chars=1885 user_chars=998
+2026-09-01 19:32:30,827 INFO LLM response entity=__init__.py::Scheduler.every status=parsed chars=516 duration_ms=2569
+2026-09-01 19:32:30,828 INFO Generating method:Scheduler.idle_seconds (__init__.py::Scheduler.idle_seconds)
+2026-09-01 19:32:30,828 INFO LLM request entity=__init__.py::Scheduler.idle_seconds system_chars=1885 user_chars=882
+2026-09-01 19:32:32,625 INFO LLM response entity=__init__.py::Scheduler.get_jobs status=parsed chars=779 duration_ms=2769
+2026-09-01 19:32:32,626 INFO Generating function:_weekday_index (__init__.py::_weekday_index)
+2026-09-01 19:32:32,626 INFO LLM request entity=__init__.py::_weekday_index system_chars=1885 user_chars=779
+2026-09-01 19:32:33,036 INFO LLM response entity=__init__.py::Scheduler.idle_seconds status=parsed chars=509 duration_ms=2207
+2026-09-01 19:32:33,037 INFO Generating function:cancel_job (__init__.py::cancel_job)
+2026-09-01 19:32:33,037 INFO LLM request entity=__init__.py::cancel_job system_chars=1885 user_chars=727
+2026-09-01 19:32:35,043 INFO LLM response entity=__init__.py::cancel_job status=parsed chars=493 duration_ms=2006
+2026-09-01 19:32:35,044 INFO Generating function:clear (__init__.py::clear)
+2026-09-01 19:32:35,044 INFO LLM request entity=__init__.py::clear system_chars=1885 user_chars=714
+2026-09-01 19:32:35,376 INFO LLM response entity=__init__.py::_weekday_index status=parsed chars=741 duration_ms=2749
+2026-09-01 19:32:35,377 INFO Generating function:every (__init__.py::every)
+2026-09-01 19:32:35,377 INFO LLM request entity=__init__.py::every system_chars=1885 user_chars=712
+2026-09-01 19:32:37,162 INFO LLM response entity=__init__.py::clear status=parsed chars=502 duration_ms=2118
+2026-09-01 19:32:37,163 INFO Generating function:get_jobs (__init__.py::get_jobs)
+2026-09-01 19:32:37,164 INFO LLM request entity=__init__.py::get_jobs system_chars=1885 user_chars=747
+2026-09-01 19:32:37,752 INFO LLM response entity=__init__.py::every status=parsed chars=545 duration_ms=2376
+2026-09-01 19:32:37,754 INFO Generating function:idle_seconds (__init__.py::idle_seconds)
+2026-09-01 19:32:37,754 INFO LLM request entity=__init__.py::idle_seconds system_chars=1885 user_chars=746
+2026-09-01 19:32:39,457 INFO LLM response entity=__init__.py::get_jobs status=parsed chars=516 duration_ms=2293
+2026-09-01 19:32:39,457 INFO Generating function:next_run (__init__.py::next_run)
+2026-09-01 19:32:39,458 INFO LLM request entity=__init__.py::next_run system_chars=1885 user_chars=769
+2026-09-01 19:32:39,606 INFO LLM response entity=__init__.py::idle_seconds status=parsed chars=462 duration_ms=1852
+2026-09-01 19:32:39,606 INFO Generating function:repeat (__init__.py::repeat)
+2026-09-01 19:32:39,607 INFO LLM request entity=__init__.py::repeat system_chars=1885 user_chars=968
+2026-09-01 19:32:42,066 INFO LLM response entity=__init__.py::next_run status=parsed chars=527 duration_ms=2609
+2026-09-01 19:32:42,067 INFO Generating function:run_all (__init__.py::run_all)
+2026-09-01 19:32:42,067 INFO LLM request entity=__init__.py::run_all system_chars=1885 user_chars=744
+2026-09-01 19:32:43,973 INFO LLM response entity=__init__.py::repeat status=parsed chars=1097 duration_ms=4366
+2026-09-01 19:32:43,973 INFO Generating function:run_pending (__init__.py::run_pending)
+2026-09-01 19:32:43,974 INFO LLM request entity=__init__.py::run_pending system_chars=1885 user_chars=723
+2026-09-01 19:32:45,277 INFO LLM response entity=__init__.py::run_all status=parsed chars=547 duration_ms=3210
+2026-09-01 19:32:45,785 INFO LLM response entity=__init__.py::run_pending status=parsed chars=379 duration_ms=1812
+2026-09-01 19:32:45,786 INFO Generating method:Job._move_to_at_time (__init__.py::Job._move_to_at_time)
+2026-09-01 19:32:45,786 INFO LLM request entity=__init__.py::Job._move_to_at_time system_chars=1885 user_chars=1617
+2026-09-01 19:32:45,787 INFO Generating method:Job.until (__init__.py::Job.until)
+2026-09-01 19:32:45,787 INFO LLM request entity=__init__.py::Job.until system_chars=1885 user_chars=4398
+2026-09-01 19:32:48,892 INFO LLM response entity=__init__.py::Job._move_to_at_time status=parsed chars=714 duration_ms=3105
+2026-09-01 19:32:48,892 INFO Generating method:Scheduler._run_job (__init__.py::Scheduler._run_job)
+2026-09-01 19:32:48,893 INFO LLM request entity=__init__.py::Scheduler._run_job system_chars=1885 user_chars=663
+2026-09-01 19:32:50,532 INFO LLM response entity=__init__.py::Job.until status=parsed chars=1287 duration_ms=4745
+2026-09-01 19:32:50,533 INFO Generating method:Scheduler.get_next_run (__init__.py::Scheduler.get_next_run)
+2026-09-01 19:32:50,533 INFO LLM request entity=__init__.py::Scheduler.get_next_run system_chars=1885 user_chars=1316
+2026-09-01 19:32:52,002 INFO LLM response entity=__init__.py::Scheduler._run_job status=parsed chars=866 duration_ms=3109
+2026-09-01 19:32:52,002 INFO Generating function:_move_to_next_weekday (__init__.py::_move_to_next_weekday)
+2026-09-01 19:32:52,002 INFO LLM request entity=__init__.py::_move_to_next_weekday system_chars=1885 user_chars=1237
+2026-09-01 19:32:53,728 INFO LLM response entity=__init__.py::Scheduler.get_next_run status=parsed chars=939 duration_ms=3195
+2026-09-01 19:32:56,116 INFO LLM response entity=__init__.py::_move_to_next_weekday status=parsed chars=1168 duration_ms=4114
+2026-09-01 19:32:56,117 INFO Generating method:Scheduler.run_all (__init__.py::Scheduler.run_all)
+2026-09-01 19:32:56,118 INFO LLM request entity=__init__.py::Scheduler.run_all system_chars=1885 user_chars=1466
+2026-09-01 19:32:56,118 INFO Generating method:Scheduler.run_pending (__init__.py::Scheduler.run_pending)
+2026-09-01 19:32:56,119 INFO LLM request entity=__init__.py::Scheduler.run_pending system_chars=1885 user_chars=1462
+2026-09-01 19:32:57,743 INFO LLM response entity=__init__.py::Scheduler.run_pending status=parsed chars=444 duration_ms=1624
+2026-09-01 19:32:57,744 INFO Generating method:Job._schedule_next_run (__init__.py::Job._schedule_next_run)
+2026-09-01 19:32:57,744 INFO LLM request entity=__init__.py::Job._schedule_next_run system_chars=1885 user_chars=2929
+2026-09-01 19:32:58,514 INFO LLM response entity=__init__.py::Scheduler.run_all status=parsed chars=677 duration_ms=2396
+2026-09-01 19:33:00,210 INFO LLM response entity=__init__.py::Job._schedule_next_run status=parsed chars=711 duration_ms=2466
+2026-09-01 19:33:00,212 INFO Generating method:Job.do (__init__.py::Job.do)
+2026-09-01 19:33:00,212 INFO LLM request entity=__init__.py::Job.do system_chars=1885 user_chars=1519
+2026-09-01 19:33:00,212 INFO Generating method:Job.run (__init__.py::Job.run)
+2026-09-01 19:33:00,212 INFO LLM request entity=__init__.py::Job.run system_chars=1885 user_chars=2050
+2026-09-01 19:33:03,258 INFO LLM response entity=__init__.py::Job.run status=parsed chars=846 duration_ms=3045
+2026-09-01 19:33:04,545 INFO LLM response entity=__init__.py::Job.do status=parsed chars=1044 duration_ms=4334
+2026-09-01 19:33:04,546 INFO Generating class:ScheduleError (__init__.py::ScheduleError)
+2026-09-01 19:33:04,546 INFO LLM request entity=__init__.py::ScheduleError system_chars=1713 user_chars=418
+2026-09-01 19:33:04,546 INFO Generating class:ScheduleValueError (__init__.py::ScheduleValueError)
+2026-09-01 19:33:04,546 INFO LLM request entity=__init__.py::ScheduleValueError system_chars=1713 user_chars=434
+2026-09-01 19:33:05,460 INFO LLM response entity=__init__.py::ScheduleValueError status=parsed chars=229 duration_ms=913
+2026-09-01 19:33:05,461 INFO Generating class:IntervalError (__init__.py::IntervalError)
+2026-09-01 19:33:05,461 INFO LLM request entity=__init__.py::IntervalError system_chars=1713 user_chars=433
+2026-09-01 19:33:05,471 INFO LLM response entity=__init__.py::ScheduleError status=parsed chars=184 duration_ms=925
+2026-09-01 19:33:05,472 INFO Generating class:CancelJob (__init__.py::CancelJob)
+2026-09-01 19:33:05,472 INFO LLM request entity=__init__.py::CancelJob system_chars=1713 user_chars=424
+2026-09-01 19:33:06,187 INFO LLM response entity=__init__.py::CancelJob status=parsed chars=126 duration_ms=716
+2026-09-01 19:33:06,189 INFO Generating class:Scheduler (__init__.py::Scheduler)
+2026-09-01 19:33:06,189 INFO LLM request entity=__init__.py::Scheduler system_chars=1713 user_chars=1909
+2026-09-01 19:33:06,283 INFO LLM response entity=__init__.py::IntervalError status=parsed chars=252 duration_ms=822
+2026-09-01 19:33:06,284 INFO Generating class:Job (__init__.py::Job)
+2026-09-01 19:33:06,285 INFO LLM request entity=__init__.py::Job system_chars=1713 user_chars=5399
+2026-09-01 19:33:07,858 INFO LLM response entity=__init__.py::Scheduler status=parsed chars=432 duration_ms=1669
+2026-09-01 19:33:08,040 INFO LLM response entity=__init__.py::Job status=parsed chars=430 duration_ms=1756
+2026-09-01 19:33:08,042 INFO Generating module:__init__.py (__init__.py::module)
+2026-09-01 19:33:08,042 INFO LLM request entity=__init__.py::module system_chars=1384 user_chars=4044
+2026-09-01 19:33:17,634 INFO LLM response entity=__init__.py::module status=parsed chars=3184 duration_ms=9592
+2026-09-01 19:33:17,635 INFO [generate] done 61 entities (91053ms)
+2026-09-01 19:33:17,635 INFO [validate] start
+2026-09-01 19:33:17,641 INFO [validate] done (6ms)
+2026-09-01 19:33:17,641 INFO Validation: 10 warnings, 0 errors
+2026-09-01 19:33:17,641 INFO [write] start
+2026-09-01 19:33:17,642 INFO [write] done (1ms)
+2026-09-01 19:33:17,642 INFO Wrote 2 output files
+2026-09-01 19:33:17,642 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/schedule/generated_docs_yandexgpt5-lite/__init__.py.md
+2026-09-01 19:33:17,642 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/schedule/generated_docs_yandexgpt5-lite/README.md
+2026-09-01 19:33:17,645 INFO Pipeline finished in 91.07s

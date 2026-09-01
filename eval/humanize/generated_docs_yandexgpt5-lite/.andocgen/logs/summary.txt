@@ -1,0 +1,16 @@
+AnDocGen run summary
+Timestamp: 2026-09-01T19:25:23.044944
+Processed files: 6
+Skipped files: 0
+Parse errors: 0
+Generation errors: 0
+Fallback generated: 0
+Validation warnings: 11
+Validation errors: 0
+Output files: 8
+Elapsed seconds: 106.37
+
+Log files:
+  trace: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/.andocgen/logs/trace.log
+  llm_responses: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/.andocgen/logs/llm_responses.jsonl
+  detail: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/.andocgen/logs/detail.json

@@ -1,14 +1,14 @@
 AnDocGen run summary
-Timestamp: 2026-08-30T00:00:28.248211
+Timestamp: 2026-09-01T19:18:41.032346
 Processed files: 12
 Skipped files: 0
 Parse errors: 0
 Generation errors: 0
 Fallback generated: 0
-Validation warnings: 0
+Validation warnings: 3
 Validation errors: 0
 Output files: 15
-Elapsed seconds: 146.76
+Elapsed seconds: 168.92
 
 Log files:
   trace: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_library/generated_docs/.andocgen/logs/trace.log

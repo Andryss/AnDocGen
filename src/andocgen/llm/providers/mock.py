@@ -97,6 +97,8 @@ def _function_doc(ctx: dict[str, str], language: str) -> str:
                     "name": param["name"],
                     "type": param["type"],
                     "description": "параметр функции",
+                    "optional": False,
+                    "default": None,
                 }
                 for param in params
             ],

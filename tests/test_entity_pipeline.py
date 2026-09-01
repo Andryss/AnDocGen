@@ -71,6 +71,8 @@ def _valid_response(examples: str) -> str:
                     "name": "customer",
                     "type": "str",
                     "description": "customer name",
+                    "optional": False,
+                    "default": None,
                 }
             ],
             "returns": {"type": "Order", "description": "created order"},

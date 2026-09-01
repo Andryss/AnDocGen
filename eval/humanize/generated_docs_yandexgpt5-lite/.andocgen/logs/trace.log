@@ -1,0 +1,169 @@
+2026-09-01 19:23:36,673 INFO AnDocGen run: project=/Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/humanize provider=openai dry_run=False
+2026-09-01 19:23:36,673 INFO Output directory: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite
+2026-09-01 19:23:36,673 INFO [scan] start
+2026-09-01 19:23:36,676 INFO [scan] done (3ms)
+2026-09-01 19:23:36,676 INFO Found 6 files
+2026-09-01 19:23:36,676 INFO [parse] start 6 files
+2026-09-01 19:23:36,676 DEBUG Parsing: src/humanize/__init__.py
+2026-09-01 19:23:36,676 DEBUG   parsed src/humanize/__init__.py: 0 functions, 0 classes
+2026-09-01 19:23:36,676 DEBUG Parsing: src/humanize/filesize.py
+2026-09-01 19:23:36,677 DEBUG   parsed src/humanize/filesize.py: 1 functions, 0 classes
+2026-09-01 19:23:36,677 DEBUG Parsing: src/humanize/i18n.py
+2026-09-01 19:23:36,678 DEBUG   parsed src/humanize/i18n.py: 11 functions, 0 classes
+2026-09-01 19:23:36,678 DEBUG Parsing: src/humanize/lists.py
+2026-09-01 19:23:36,678 DEBUG   parsed src/humanize/lists.py: 1 functions, 0 classes
+2026-09-01 19:23:36,678 DEBUG Parsing: src/humanize/number.py
+2026-09-01 19:23:36,680 DEBUG   parsed src/humanize/number.py: 9 functions, 0 classes
+2026-09-01 19:23:36,680 DEBUG Parsing: src/humanize/time.py
+2026-09-01 19:23:36,685 DEBUG   parsed src/humanize/time.py: 13 functions, 1 classes
+2026-09-01 19:23:36,685 INFO [parse] done 6 files (9ms)
+2026-09-01 19:23:36,685 INFO [call_graph] start
+2026-09-01 19:23:36,685 INFO [call_graph] done (0ms)
+2026-09-01 19:23:36,685 DEBUG Call graph: 36 nodes, 170 edges
+2026-09-01 19:23:36,686 INFO Generating documentation for 43 entities
+2026-09-01 19:23:36,686 INFO [generate] start 43 entities
+2026-09-01 19:23:36,686 INFO Generating function:naturalsize (src/humanize/filesize.py::naturalsize)
+2026-09-01 19:23:36,686 INFO LLM request entity=src/humanize/filesize.py::naturalsize system_chars=1885 user_chars=5640
+2026-09-01 19:23:36,686 INFO Generating function:_get_default_locale_path (src/humanize/i18n.py::_get_default_locale_path)
+2026-09-01 19:23:36,686 INFO LLM request entity=src/humanize/i18n.py::_get_default_locale_path system_chars=1885 user_chars=2602
+2026-09-01 19:23:39,774 INFO LLM response entity=src/humanize/i18n.py::_get_default_locale_path status=parsed chars=520 duration_ms=3088
+2026-09-01 19:23:39,775 INFO Generating function:_gettext_noop (src/humanize/i18n.py::_gettext_noop)
+2026-09-01 19:23:39,776 INFO LLM request entity=src/humanize/i18n.py::_gettext_noop system_chars=1885 user_chars=3052
+2026-09-01 19:23:41,972 INFO LLM response entity=src/humanize/i18n.py::_gettext_noop status=parsed chars=506 duration_ms=2196
+2026-09-01 19:23:41,974 INFO Generating function:_ngettext_noop (src/humanize/i18n.py::_ngettext_noop)
+2026-09-01 19:23:41,974 INFO LLM request entity=src/humanize/i18n.py::_ngettext_noop system_chars=1885 user_chars=3295
+2026-09-01 19:23:45,584 INFO LLM response entity=src/humanize/i18n.py::_ngettext_noop status=parsed chars=859 duration_ms=3610
+2026-09-01 19:23:45,585 INFO Generating function:deactivate (src/humanize/i18n.py::deactivate)
+2026-09-01 19:23:45,585 INFO LLM request entity=src/humanize/i18n.py::deactivate system_chars=1885 user_chars=2446
+2026-09-01 19:23:46,287 INFO LLM response entity=src/humanize/filesize.py::naturalsize status=parsed chars=2014 duration_ms=9601
+2026-09-01 19:23:46,287 INFO Generating function:decimal_separator (src/humanize/i18n.py::decimal_separator)
+2026-09-01 19:23:46,288 INFO LLM request entity=src/humanize/i18n.py::decimal_separator system_chars=1885 user_chars=2649
+2026-09-01 19:23:47,389 INFO LLM response entity=src/humanize/i18n.py::deactivate status=parsed chars=333 duration_ms=1804
+2026-09-01 19:23:47,390 INFO Generating function:get_translation (src/humanize/i18n.py::get_translation)
+2026-09-01 19:23:47,390 INFO LLM request entity=src/humanize/i18n.py::get_translation system_chars=1885 user_chars=2454
+2026-09-01 19:23:48,547 INFO LLM response entity=src/humanize/i18n.py::decimal_separator status=parsed chars=418 duration_ms=2260
+2026-09-01 19:23:48,548 INFO Generating function:thousands_separator (src/humanize/i18n.py::thousands_separator)
+2026-09-01 19:23:48,548 INFO LLM request entity=src/humanize/i18n.py::thousands_separator system_chars=1885 user_chars=2667
+2026-09-01 19:23:49,610 INFO LLM response entity=src/humanize/i18n.py::get_translation status=parsed chars=493 duration_ms=2221
+2026-09-01 19:23:49,611 INFO Generating function:natural_list (src/humanize/lists.py::natural_list)
+2026-09-01 19:23:49,611 INFO LLM request entity=src/humanize/lists.py::natural_list system_chars=1885 user_chars=3402
+2026-09-01 19:23:50,502 INFO LLM response entity=src/humanize/i18n.py::thousands_separator status=parsed chars=444 duration_ms=1954
+2026-09-01 19:23:50,503 INFO Generating function:_format_not_finite (src/humanize/number.py::_format_not_finite)
+2026-09-01 19:23:50,504 INFO LLM request entity=src/humanize/number.py::_format_not_finite system_chars=1885 user_chars=2805
+2026-09-01 19:23:53,123 INFO LLM response entity=src/humanize/lists.py::natural_list status=parsed chars=889 duration_ms=3512
+2026-09-01 19:23:53,124 INFO Generating method:Unit.__lt__ (src/humanize/time.py::Unit.__lt__)
+2026-09-01 19:23:53,125 INFO LLM request entity=src/humanize/time.py::Unit.__lt__ system_chars=1885 user_chars=2536
+2026-09-01 19:23:53,711 INFO LLM response entity=src/humanize/number.py::_format_not_finite status=parsed chars=847 duration_ms=3207
+2026-09-01 19:23:53,712 INFO Generating function:_convert_aware_datetime (src/humanize/time.py::_convert_aware_datetime)
+2026-09-01 19:23:53,712 INFO LLM request entity=src/humanize/time.py::_convert_aware_datetime system_chars=1885 user_chars=2870
+2026-09-01 19:23:55,075 INFO LLM response entity=src/humanize/time.py::Unit.__lt__ status=parsed chars=487 duration_ms=1950
+2026-09-01 19:23:55,075 INFO Generating function:_now (src/humanize/time.py::_now)
+2026-09-01 19:23:55,075 INFO LLM request entity=src/humanize/time.py::_now system_chars=1885 user_chars=2463
+2026-09-01 19:23:56,187 INFO LLM response entity=src/humanize/time.py::_convert_aware_datetime status=parsed chars=608 duration_ms=2475
+2026-09-01 19:23:56,188 INFO Generating function:_rounding_by_fmt (src/humanize/time.py::_rounding_by_fmt)
+2026-09-01 19:23:56,188 INFO LLM request entity=src/humanize/time.py::_rounding_by_fmt system_chars=1885 user_chars=3319
+2026-09-01 19:23:56,779 INFO LLM response entity=src/humanize/time.py::_now status=parsed chars=401 duration_ms=1704
+2026-09-01 19:23:56,780 INFO Generating function:_suitable_minimum_unit (src/humanize/time.py::_suitable_minimum_unit)
+2026-09-01 19:23:56,781 INFO LLM request entity=src/humanize/time.py::_suitable_minimum_unit system_chars=1885 user_chars=3703
+2026-09-01 19:23:59,451 INFO LLM response entity=src/humanize/time.py::_rounding_by_fmt status=parsed chars=834 duration_ms=3264
+2026-09-01 19:23:59,453 INFO Generating function:_suppress_lower_units (src/humanize/time.py::_suppress_lower_units)
+2026-09-01 19:23:59,453 INFO LLM request entity=src/humanize/time.py::_suppress_lower_units system_chars=1885 user_chars=3175
+2026-09-01 19:24:01,144 INFO LLM response entity=src/humanize/time.py::_suitable_minimum_unit status=parsed chars=1432 duration_ms=4364
+2026-09-01 19:24:01,145 INFO Generating function:naturalday (src/humanize/time.py::naturalday)
+2026-09-01 19:24:01,145 INFO LLM request entity=src/humanize/time.py::naturalday system_chars=1885 user_chars=3707
+2026-09-01 19:24:02,845 INFO LLM response entity=src/humanize/time.py::_suppress_lower_units status=parsed chars=888 duration_ms=3392
+2026-09-01 19:24:06,625 INFO LLM response entity=src/humanize/time.py::naturalday status=parsed chars=1499 duration_ms=5480
+2026-09-01 19:24:06,626 INFO Generating function:activate (src/humanize/i18n.py::activate)
+2026-09-01 19:24:06,626 INFO LLM request entity=src/humanize/i18n.py::activate system_chars=1885 user_chars=4106
+2026-09-01 19:24:06,627 INFO Generating function:_gettext (src/humanize/i18n.py::_gettext)
+2026-09-01 19:24:06,627 INFO LLM request entity=src/humanize/i18n.py::_gettext system_chars=1885 user_chars=2768
+2026-09-01 19:24:08,866 INFO LLM response entity=src/humanize/i18n.py::_gettext status=parsed chars=541 duration_ms=2239
+2026-09-01 19:24:08,867 INFO Generating function:_ngettext (src/humanize/i18n.py::_ngettext)
+2026-09-01 19:24:08,867 INFO LLM request entity=src/humanize/i18n.py::_ngettext system_chars=1885 user_chars=3179
+2026-09-01 19:24:10,065 INFO LLM response entity=src/humanize/i18n.py::activate status=parsed chars=898 duration_ms=3439
+2026-09-01 19:24:10,065 INFO Generating function:_pgettext (src/humanize/i18n.py::_pgettext)
+2026-09-01 19:24:10,065 INFO LLM request entity=src/humanize/i18n.py::_pgettext system_chars=1885 user_chars=3122
+2026-09-01 19:24:12,878 INFO LLM response entity=src/humanize/i18n.py::_ngettext status=parsed chars=948 duration_ms=4011
+2026-09-01 19:24:12,879 INFO Generating function:apnumber (src/humanize/number.py::apnumber)
+2026-09-01 19:24:12,880 INFO LLM request entity=src/humanize/number.py::apnumber system_chars=1885 user_chars=4049
+2026-09-01 19:24:13,004 INFO LLM response entity=src/humanize/i18n.py::_pgettext status=parsed chars=666 duration_ms=2939
+2026-09-01 19:24:13,005 INFO Generating function:clamp (src/humanize/number.py::clamp)
+2026-09-01 19:24:13,005 INFO LLM request entity=src/humanize/number.py::clamp system_chars=1885 user_chars=6193
+2026-09-01 19:24:16,964 INFO LLM response entity=src/humanize/number.py::apnumber status=parsed chars=1239 duration_ms=4085
+2026-09-01 19:24:16,965 INFO Generating function:fractional (src/humanize/number.py::fractional)
+2026-09-01 19:24:16,965 INFO LLM request entity=src/humanize/number.py::fractional system_chars=1885 user_chars=5435
+2026-09-01 19:24:21,867 INFO LLM response entity=src/humanize/number.py::fractional status=parsed chars=1125 duration_ms=4901
+2026-09-01 19:24:21,868 INFO Generating function:intcomma (src/humanize/number.py::intcomma)
+2026-09-01 19:24:21,868 INFO LLM request entity=src/humanize/number.py::intcomma system_chars=1885 user_chars=5533
+2026-09-01 19:24:22,314 INFO LLM response entity=src/humanize/number.py::clamp status=parsed chars=2235 duration_ms=9309
+2026-09-01 19:24:22,315 INFO Generating function:ordinal (src/humanize/number.py::ordinal)
+2026-09-01 19:24:22,316 INFO LLM request entity=src/humanize/number.py::ordinal system_chars=1885 user_chars=4714
+2026-09-01 19:24:28,537 INFO LLM response entity=src/humanize/number.py::intcomma status=parsed chars=1838 duration_ms=6668
+2026-09-01 19:24:28,538 INFO Generating function:scientific (src/humanize/number.py::scientific)
+2026-09-01 19:24:28,538 INFO LLM request entity=src/humanize/number.py::scientific system_chars=1885 user_chars=4504
+2026-09-01 19:24:28,557 INFO LLM response entity=src/humanize/number.py::ordinal status=parsed chars=1682 duration_ms=6241
+2026-09-01 19:24:28,557 INFO Generating function:_abs_timedelta (src/humanize/time.py::_abs_timedelta)
+2026-09-01 19:24:28,557 INFO LLM request entity=src/humanize/time.py::_abs_timedelta system_chars=1885 user_chars=3074
+2026-09-01 19:24:31,446 INFO LLM response entity=src/humanize/time.py::_abs_timedelta status=parsed chars=782 duration_ms=2889
+2026-09-01 19:24:31,447 INFO Generating function:_quotient_and_remainder (src/humanize/time.py::_quotient_and_remainder)
+2026-09-01 19:24:31,448 INFO LLM request entity=src/humanize/time.py::_quotient_and_remainder system_chars=1885 user_chars=5167
+2026-09-01 19:24:35,963 INFO LLM response entity=src/humanize/number.py::scientific status=parsed chars=1617 duration_ms=7425
+2026-09-01 19:24:40,475 INFO LLM response entity=src/humanize/time.py::_quotient_and_remainder status=parsed chars=2295 duration_ms=9028
+2026-09-01 19:24:40,476 INFO Generating function:intword (src/humanize/number.py::intword)
+2026-09-01 19:24:40,476 INFO LLM request entity=src/humanize/number.py::intword system_chars=1885 user_chars=6027
+2026-09-01 19:24:40,476 INFO Generating function:metric (src/humanize/number.py::metric)
+2026-09-01 19:24:40,476 INFO LLM request entity=src/humanize/number.py::metric system_chars=1885 user_chars=5561
+2026-09-01 19:24:46,381 INFO LLM response entity=src/humanize/number.py::metric status=parsed chars=1597 duration_ms=5905
+2026-09-01 19:24:46,382 INFO Generating function:_date_and_delta (src/humanize/time.py::_date_and_delta)
+2026-09-01 19:24:46,382 INFO LLM request entity=src/humanize/time.py::_date_and_delta system_chars=1885 user_chars=3496
+2026-09-01 19:24:48,247 INFO LLM response entity=src/humanize/number.py::intword status=parsed chars=1779 duration_ms=7771
+2026-09-01 19:24:48,248 INFO Generating function:naturaldate (src/humanize/time.py::naturaldate)
+2026-09-01 19:24:48,248 INFO LLM request entity=src/humanize/time.py::naturaldate system_chars=1885 user_chars=3780
+2026-09-01 19:24:51,657 INFO LLM response entity=src/humanize/time.py::_date_and_delta status=parsed chars=1267 duration_ms=5275
+2026-09-01 19:24:51,659 INFO Generating function:naturaldelta (src/humanize/time.py::naturaldelta)
+2026-09-01 19:24:51,659 INFO LLM request entity=src/humanize/time.py::naturaldelta system_chars=1885 user_chars=8748
+2026-09-01 19:24:53,115 INFO LLM response entity=src/humanize/time.py::naturaldate status=parsed chars=1119 duration_ms=4867
+2026-09-01 19:24:57,863 INFO LLM response entity=src/humanize/time.py::naturaldelta status=parsed chars=1801 duration_ms=6205
+2026-09-01 19:24:57,865 INFO Generating function:naturaltime (src/humanize/time.py::naturaltime)
+2026-09-01 19:24:57,866 INFO LLM request entity=src/humanize/time.py::naturaltime system_chars=1885 user_chars=5882
+2026-09-01 19:24:57,865 INFO Generating function:precisedelta (src/humanize/time.py::precisedelta)
+2026-09-01 19:24:57,866 INFO LLM request entity=src/humanize/time.py::precisedelta system_chars=1885 user_chars=11891
+2026-09-01 19:25:05,866 INFO LLM response entity=src/humanize/time.py::naturaltime status=parsed chars=1843 duration_ms=8000
+2026-09-01 19:25:06,198 INFO LLM response entity=src/humanize/time.py::precisedelta status=parsed chars=2069 duration_ms=8332
+2026-09-01 19:25:06,200 INFO Generating class:Unit (src/humanize/time.py::Unit)
+2026-09-01 19:25:06,200 INFO LLM request entity=src/humanize/time.py::Unit system_chars=1713 user_chars=2493
+2026-09-01 19:25:07,471 INFO LLM response entity=src/humanize/time.py::Unit status=parsed chars=357 duration_ms=1271
+2026-09-01 19:25:07,472 INFO Generating module:src/humanize/__init__.py (src/humanize/__init__.py::module)
+2026-09-01 19:25:07,473 INFO LLM request entity=src/humanize/__init__.py::module system_chars=1384 user_chars=2956
+2026-09-01 19:25:07,473 INFO Generating module:src/humanize/filesize.py (src/humanize/filesize.py::module)
+2026-09-01 19:25:07,473 INFO LLM request entity=src/humanize/filesize.py::module system_chars=1384 user_chars=2582
+2026-09-01 19:25:09,378 INFO LLM response entity=src/humanize/filesize.py::module status=parsed chars=331 duration_ms=1905
+2026-09-01 19:25:09,379 INFO Generating module:src/humanize/i18n.py (src/humanize/i18n.py::module)
+2026-09-01 19:25:09,379 INFO LLM request entity=src/humanize/i18n.py::module system_chars=1384 user_chars=3117
+2026-09-01 19:25:13,174 INFO LLM response entity=src/humanize/i18n.py::module status=parsed chars=729 duration_ms=3795
+2026-09-01 19:25:13,175 INFO Generating module:src/humanize/lists.py (src/humanize/lists.py::module)
+2026-09-01 19:25:13,175 INFO LLM request entity=src/humanize/lists.py::module system_chars=1384 user_chars=2501
+2026-09-01 19:25:15,702 INFO LLM response entity=src/humanize/lists.py::module status=parsed chars=322 duration_ms=2527
+2026-09-01 19:25:15,704 INFO Generating module:src/humanize/number.py (src/humanize/number.py::module)
+2026-09-01 19:25:15,704 INFO LLM request entity=src/humanize/number.py::module system_chars=1384 user_chars=4170
+2026-09-01 19:25:16,106 INFO LLM response entity=src/humanize/__init__.py::module status=parsed chars=2033 duration_ms=8633
+2026-09-01 19:25:16,108 INFO Generating module:src/humanize/time.py (src/humanize/time.py::module)
+2026-09-01 19:25:16,108 INFO LLM request entity=src/humanize/time.py::module system_chars=1384 user_chars=4174
+2026-09-01 19:25:19,655 INFO LLM response entity=src/humanize/time.py::module status=parsed chars=1084 duration_ms=3547
+2026-09-01 19:25:23,026 INFO LLM response entity=src/humanize/number.py::module status=parsed chars=1248 duration_ms=7323
+2026-09-01 19:25:23,028 INFO [generate] done 43 entities (106342ms)
+2026-09-01 19:25:23,028 INFO [validate] start
+2026-09-01 19:25:23,035 INFO [validate] done (7ms)
+2026-09-01 19:25:23,035 INFO Validation: 11 warnings, 0 errors
+2026-09-01 19:25:23,035 INFO [write] start
+2026-09-01 19:25:23,039 INFO [write] done (4ms)
+2026-09-01 19:25:23,039 INFO Wrote 8 output files
+2026-09-01 19:25:23,039 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/src/humanize/__init__.py.md
+2026-09-01 19:25:23,039 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/src/humanize/filesize.py.md
+2026-09-01 19:25:23,039 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/src/humanize/i18n.py.md
+2026-09-01 19:25:23,039 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/src/humanize/lists.py.md
+2026-09-01 19:25:23,039 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/src/humanize/number.py.md
+2026-09-01 19:25:23,039 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/src/humanize/time.py.md
+2026-09-01 19:25:23,039 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/README.md
+2026-09-01 19:25:23,039 DEBUG   output: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/eval/humanize/generated_docs_yandexgpt5-lite/src/humanize/README.md
+2026-09-01 19:25:23,044 INFO Pipeline finished in 106.37s

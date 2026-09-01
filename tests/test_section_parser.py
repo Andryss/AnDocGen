@@ -22,8 +22,8 @@ def test_parse_valid_function_response() -> None:
 {
   "summary": "Adds numbers.",
   "parameters": [
-    {"name": "a", "type": "float", "description": "first operand"},
-    {"name": "b", "type": "float", "description": "second operand"}
+    {"name": "a", "type": "float", "description": "first operand", "optional": false, "default": null},
+    {"name": "b", "type": "float", "description": "second operand", "optional": false, "default": null}
   ],
   "returns": {"type": "float", "description": "sum"},
   "raises": "N/A",
@@ -52,7 +52,7 @@ def test_parse_json_parameters_with_optional_metadata() -> None:
 {
   "summary": "Adds numbers.",
   "parameters": [
-    {"name": "a", "type": "float", "description": "first operand", "optional": false},
+    {"name": "a", "type": "float", "description": "first operand", "optional": false, "default": null},
     {"name": "b", "type": "float", "description": "second operand", "optional": true, "default": "0"}
   ],
   "returns": {"type": "float", "description": "sum of operands"},
@@ -77,7 +77,7 @@ def test_parse_na_with_extra_text_treated_as_empty() -> None:
     raw = """
 {
   "summary": "Adds numbers.",
-  "parameters": [{"name": "a", "type": "float", "description": "first operand"}],
+  "parameters": [{"name": "a", "type": "float", "description": "first operand", "optional": false, "default": null}],
   "returns": {"type": "float", "description": "sum"},
   "raises": "N/A — no exceptions",
   "edge_cases": "N/A",

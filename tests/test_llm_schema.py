@@ -32,11 +32,20 @@ def test_function_schema_contains_typed_examples() -> None:
     assert example["additionalProperties"] is False
 
 
+def test_function_parameter_schema_requires_all_declared_properties() -> None:
+    schema = docblock_schema("function")
+    parameter = schema["properties"]["parameters"]["items"]
+
+    assert set(parameter["properties"]) == {"name", "type", "description", "optional", "default"}
+    assert parameter["required"] == ["name", "type", "description", "optional", "default"]
+    assert parameter["additionalProperties"] is False
+
+
 def test_provider_schema_omits_pydantic_metadata() -> None:
     schema = doc_response_schema("function")
 
     assert "title" not in schema
-    assert "default" not in str(schema)
+    assert '"default":' not in str(schema)
 
 
 def test_module_schema_uses_export_objects() -> None:

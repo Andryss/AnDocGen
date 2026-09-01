@@ -1,5 +1,33 @@
 {
   "parse_errors": [],
   "generation_errors": [],
-  "validation_issues": []
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example instantiates `Order` without constructor arguments",
+      "module_path": "models.py",
+      "entity_type": "method",
+      "entity_name": "Order.total",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Example code must be valid Python",
+      "module_path": "utils/formatting.py",
+      "entity_type": "function",
+      "entity_name": "format_items",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Function appears to perform I/O or other side effects but side_effects is empty",
+      "module_path": "cli.py",
+      "entity_type": "function",
+      "entity_name": "main",
+      "detail": null
+    }
+  ]
 }

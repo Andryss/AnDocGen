@@ -26,10 +26,8 @@ def validate_text_language(block: DocBlock, ctx: EntityContext) -> list[RuleIssu
         return []
     fields = [
         ("summary", block.summary),
-        ("raises", block.raises),
         ("edge_cases", block.edge_cases),
         ("side_effects", block.side_effects),
-        ("see_also", block.see_also),
         ("purpose", block.purpose),
         ("usage_notes", block.usage_notes),
         ("methods_overview", block.methods_overview),
@@ -122,4 +120,3 @@ def _validate_python_examples(block: DocBlock) -> list[RuleIssue]:
                 )
             )
     return issues
-

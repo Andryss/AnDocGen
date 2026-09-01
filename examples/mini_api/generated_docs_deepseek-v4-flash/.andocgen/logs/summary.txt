@@ -1,5 +1,5 @@
 AnDocGen run summary
-Timestamp: 2026-08-29T23:55:22.279596
+Timestamp: 2026-09-01T18:01:55.856135
 Processed files: 3
 Skipped files: 0
 Parse errors: 0
@@ -8,7 +8,7 @@ Fallback generated: 0
 Validation warnings: 0
 Validation errors: 0
 Output files: 4
-Elapsed seconds: 61.54
+Elapsed seconds: 121.05
 
 Log files:
   trace: /Users/andryssssss/IdeaProjects/ITMO/AnDocGen/examples/mini_api/generated_docs_deepseek-v4-flash/.andocgen/logs/trace.log

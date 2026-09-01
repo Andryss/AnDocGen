@@ -24,8 +24,8 @@ def test_parse_sections_accepts_json_docblock() -> None:
 {
   "summary": "Складывает два числа.",
   "parameters": [
-    {"name": "a", "type": "int", "description": "первое число"},
-    {"name": "b", "type": "int", "description": "второе число"}
+    {"name": "a", "type": "int", "description": "первое число", "optional": false, "default": null},
+    {"name": "b", "type": "int", "description": "второе число", "optional": false, "default": null}
   ],
   "returns": {"type": "int", "description": "сумма"},
   "raises": "N/A",
@@ -109,7 +109,7 @@ def test_parse_sections_rejects_wrong_nested_type() -> None:
 {
   "summary": "Складывает два числа.",
   "parameters": [
-    {"name": "a", "type": 123, "description": "первое число"}
+    {"name": "a", "type": 123, "description": "первое число", "optional": false, "default": null}
   ],
   "returns": null,
   "raises": "N/A",
@@ -128,8 +128,8 @@ def test_parse_sections_deduplicates_parameters_after_contract_validation() -> N
 {
   "summary": "Складывает два числа.",
   "parameters": [
-    {"name": "a", "type": "int", "description": "первое число"},
-    {"name": "a", "type": "int", "description": "дубликат"}
+    {"name": "a", "type": "int", "description": "первое число", "optional": false, "default": null},
+    {"name": "a", "type": "int", "description": "дубликат", "optional": false, "default": null}
   ],
   "returns": null,
   "raises": "N/A",

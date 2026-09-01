@@ -1,0 +1,1476 @@
+{
+  "files": {
+    "qrcode/LUT.py": {
+      "source_hash": "6a748ca4187b47a3a3a3b1413e2d0b6c38fab098f83d344837a840a9e505d863",
+      "doc_hash": "30902175bcaed10560b8e13f9f837ab1f5c10ee39dfbd78eedd954766bf00271"
+    },
+    "qrcode/__init__.py": {
+      "source_hash": "4bdc75a0c765ba77ec95c99b9465a0583c5e26b250f2b2bc58529135922cf94e",
+      "doc_hash": "67be91a8f6eccc3dfee26cbebf4b049ab48de5b067900d2c1d0317195eb5e313"
+    },
+    "qrcode/__main__.py": {
+      "source_hash": "4c98a15f63db2eabf2dfe9c3267ca3a6094c98c5ec607338803609cd5007eb5c",
+      "doc_hash": "8f12b7b9b9b85472caf1245d9911c9026cf3d52a0fba61a745f512eb3f98af39"
+    },
+    "qrcode/base.py": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "75ad7151f20446ce42d2cd844f31e291c5ace59bed03d68d125e8a5eee54b7eb"
+    },
+    "qrcode/compat/__init__.py": {
+      "source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "doc_hash": "23ca17af3ee74d7cc9b654f0bb6566a0d84cdf1212d7584a4b47f0f226df9ea0"
+    },
+    "qrcode/compat/etree.py": {
+      "source_hash": "8d08d95b0d2ad8650b9147321c5feec6a40ad9fc1465a37360226565fe7c29ca",
+      "doc_hash": "9d0070d74d932991f4f690fca7a18955fc9e16c748b72c362674b07e85f8b649"
+    },
+    "qrcode/compat/png.py": {
+      "source_hash": "73b0867982f2808c817aeae008a28c0cb32836e97cb06de7721ee682eb268df0",
+      "doc_hash": "ade309140c85360685be43046e0b01b488a9c5ce549e5b67d397a7bff004a31b"
+    },
+    "qrcode/console_scripts.py": {
+      "source_hash": "958b105efaf99f94e506fc1698e95fdb6cfe6ec1d36073e3251d87507da4c0c4",
+      "doc_hash": "02ba09af8f7f047e09e3599737572b594fecc0a576f1bc34be15086bc40838cb"
+    },
+    "qrcode/constants.py": {
+      "source_hash": "e77789d71da4e98f479ceecf8fa7494378a0637d3902c370d34e28d3af42ee5b",
+      "doc_hash": "50bf2d001a12c51619ff757779b4c8e24138de11706f86f660cdffc7eb58dfea"
+    },
+    "qrcode/exceptions.py": {
+      "source_hash": "2f67d9b9838ab1cbdd9fbdab6bec05f06c2caf6641f5e4595aba757f4203c781",
+      "doc_hash": "0556bf634c33a4f3c9fd68877a37e06fc08cbaba678755d6f6ad4a662f5fd48b"
+    },
+    "qrcode/image/__init__.py": {
+      "source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "doc_hash": "d4a5f9aae3b32c6194957207deebfe77c39a559bf36f2e6cf4fc858039773638"
+    },
+    "qrcode/image/base.py": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "b3d15374cbf941f92ea3321462438de11f7431b94383f9296688f726bc982b8d"
+    },
+    "qrcode/image/pil.py": {
+      "source_hash": "f033932c8544094b350a9f61790b6c7e70c61c964a830cef7d50e20d89cdcee9",
+      "doc_hash": "24f8a6124f63b5330dd98f79ae1bc4b665866964682a2455a12213a7fe817a6a"
+    },
+    "qrcode/image/pure.py": {
+      "source_hash": "e0d0a2092a5cb8e033dc4dfc1e89ae7e823b767ce6f1363ee915318082a22155",
+      "doc_hash": "fbd33706141d19c39be38cbeda2ed5ce3cf753e5da188a113614d59ce2f580fe"
+    },
+    "qrcode/image/styledpil.py": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "13f97621159832fb62eb94d59b76224cda65de9db969947298a72e67c340ba4c"
+    },
+    "qrcode/image/styles/__init__.py": {
+      "source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "doc_hash": "14a0f3a756e926b6a2d478c67c9264bed529b60fc98f0a5c47329d05a6b96b3f"
+    },
+    "qrcode/image/styles/colormasks.py": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "98b79633e2dc45d0ac2be4aa4812afef39fadf7d1047c2ab22790997ab392942"
+    },
+    "qrcode/image/styles/moduledrawers/__init__.py": {
+      "source_hash": "4cbbe092deab2595cbe2e5e3bc00683433ca1ad9cb6aedcf0d3044c198242b14",
+      "doc_hash": "89c0fda6fc8ef9cab49a92a72fd90c3298b03fa92bd67fab8e9972211ffc54f6"
+    },
+    "qrcode/image/styles/moduledrawers/base.py": {
+      "source_hash": "c2958ff0096db0fa9fda9cc9fa75be1b2a64a11b2c12608426aebd369afbe8ab",
+      "doc_hash": "8cfcbef4230369705dd76c3ff1132ed0868ceef07b8d99b3a8bbeebb52dc0769"
+    },
+    "qrcode/image/styles/moduledrawers/pil.py": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "1bcd4618a172f9b9adfa4c27a4d0a91f8eb90936e38616f4ccafdf6177b2fe0e"
+    },
+    "qrcode/image/styles/moduledrawers/svg.py": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "70e5bbf5af14c2892faf1cf085bf659570c53c5f1d3eaac70c45f68ad7479f95"
+    },
+    "qrcode/image/svg.py": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "c77076d902ce536632af6a015a225d06a911bcd4105843990d1a0832ad3f82c6"
+    },
+    "qrcode/main.py": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "43aa92a1faf96acf926bba035a5b2b1d5661d2efb7d6867f034a58d0c6954a8b"
+    },
+    "qrcode/release.py": {
+      "source_hash": "6419d1acfc0968412c628851e1e73d7f0a167bbb1a4cf14781796dd509e302b3",
+      "doc_hash": "74f60bdfc8778649c290e2b45bcf437b425fc179119a5b251babfa428e8b7c0d"
+    },
+    "qrcode/util.py": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "2063783e69018d92b59835e251d5c43ca9c1a48e4ceb26dbc4d5fac73f206888"
+    }
+  },
+  "entities": {
+    "qrcode/LUT.py::module": {
+      "source_hash": "6a748ca4187b47a3a3a3b1413e2d0b6c38fab098f83d344837a840a9e505d863",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/__init__.py::module": {
+      "source_hash": "4bdc75a0c765ba77ec95c99b9465a0583c5e26b250f2b2bc58529135922cf94e",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/__init__.py::run_example": {
+      "source_hash": "4bdc75a0c765ba77ec95c99b9465a0583c5e26b250f2b2bc58529135922cf94e",
+      "doc_hash": "6e6a1128a0c4b5f210bc450ea885a6f49bbecf1e20aea7814317fe4f1ec05845",
+      "dependency_hash": ""
+    },
+    "qrcode/__main__.py::module": {
+      "source_hash": "4c98a15f63db2eabf2dfe9c3267ca3a6094c98c5ec607338803609cd5007eb5c",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::module": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::glog": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "73024ad6da47663603622d91e88231ea699a64b69ebfca1ce085d245ac76dc1d",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::gexp": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "16a6d3c86d1529c599413d314db861237e2f0208a62bed28d5c55ff8459ba4d5",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::rs_blocks": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "5f94dc86bced73fd19695888f59cec03b16edea0508a5a7becbf6cab20bf32dd",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::Polynomial": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "44b19d1728ba4b85225a2d6a70db6b3495e5f3ad36b2c4215871c8cd8d9c3dad",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::Polynomial.__init__": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "12f30b2e2f02253d3f381867711c3c45ff4a84dcaaecfed3e5ba5ce46e4fb59f",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::Polynomial.__getitem__": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "8c7ec08406dc8fb262545b44c09e011c85de40420b98e2f7af43f7613f5c4342",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::Polynomial.__iter__": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "4c16a84e3f6e0ba60fec21d20df231d24d8bc82609d33089865faecc8da63866",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::Polynomial.__len__": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "8bd012a32296b7c4c2010579dcb11402b0c38c6c6a04a8f5965803b9b99ac085",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::Polynomial.__mul__": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "fd2d91b4262617b153b5df67e7e59cdcc042f5560e5ca5b8f5c9f126e075ec59",
+      "dependency_hash": "df92579d1b225f2f8c788bc3adf49f0613e44287db901ab2d3fe93568aa07b7b"
+    },
+    "qrcode/base.py::Polynomial.__mod__": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "46cd1f36039a188b8a2ee494322df3168c2a0529ca298fce6f6e67d6a4671e46",
+      "dependency_hash": "df92579d1b225f2f8c788bc3adf49f0613e44287db901ab2d3fe93568aa07b7b"
+    },
+    "qrcode/base.py::RSBlock": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "0f75cab234677e6d1151c3b9bf59d30d564338aee53a52c2cfb76df0396c19c2",
+      "dependency_hash": ""
+    },
+    "qrcode/compat/__init__.py::module": {
+      "source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/compat/etree.py::module": {
+      "source_hash": "8d08d95b0d2ad8650b9147321c5feec6a40ad9fc1465a37360226565fe7c29ca",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/compat/png.py::module": {
+      "source_hash": "73b0867982f2808c817aeae008a28c0cb32836e97cb06de7721ee682eb268df0",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/console_scripts.py::module": {
+      "source_hash": "958b105efaf99f94e506fc1698e95fdb6cfe6ec1d36073e3251d87507da4c0c4",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/console_scripts.py::main": {
+      "source_hash": "958b105efaf99f94e506fc1698e95fdb6cfe6ec1d36073e3251d87507da4c0c4",
+      "doc_hash": "da7607b9059fddf0b04fe581c09f5289b94578f171eed16fea12e92b5a6978d1",
+      "dependency_hash": "92133c462ab7a35c201ec7c039b0cdfe95e5ba109d7cf715a763999c2f5bf8d2"
+    },
+    "qrcode/console_scripts.py::get_factory": {
+      "source_hash": "958b105efaf99f94e506fc1698e95fdb6cfe6ec1d36073e3251d87507da4c0c4",
+      "doc_hash": "eb9ad9644021d9ab1474dab94b0470e66286156fdb153ae19d595eb034390788",
+      "dependency_hash": ""
+    },
+    "qrcode/console_scripts.py::get_drawer_help": {
+      "source_hash": "958b105efaf99f94e506fc1698e95fdb6cfe6ec1d36073e3251d87507da4c0c4",
+      "doc_hash": "e108992f8504e65b2dab584b45db1087f64dab3f3b79c5eeeff46235b29eaeb7",
+      "dependency_hash": "4b6090b21becddd14960123288815ab8874b3632626960caf4628df87c06fbbb"
+    },
+    "qrcode/console_scripts.py::commas": {
+      "source_hash": "958b105efaf99f94e506fc1698e95fdb6cfe6ec1d36073e3251d87507da4c0c4",
+      "doc_hash": "bcb9b22823ea7ada6e8708d1657634abfc7808b4e0fbe3160948f13706f9201f",
+      "dependency_hash": ""
+    },
+    "qrcode/constants.py::module": {
+      "source_hash": "e77789d71da4e98f479ceecf8fa7494378a0637d3902c370d34e28d3af42ee5b",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/exceptions.py::module": {
+      "source_hash": "2f67d9b9838ab1cbdd9fbdab6bec05f06c2caf6641f5e4595aba757f4203c781",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/exceptions.py::DataOverflowError": {
+      "source_hash": "2f67d9b9838ab1cbdd9fbdab6bec05f06c2caf6641f5e4595aba757f4203c781",
+      "doc_hash": "9fe0c4edc50683449725b5305da615b1ec48e1868d68cbe91c0cc6f47114fcbe",
+      "dependency_hash": ""
+    },
+    "qrcode/image/__init__.py::module": {
+      "source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::module": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "a8a3ed0b53ef98aab6f0333c9b7bae1076be198210c000e1b58cd6344221463f",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage.__init__": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "8093f934480ebf6cc1eaba73081e5071c7add07d89c729f92c55494dbb4ac08b",
+      "dependency_hash": "b3921acdd0889d00f6185170d487f18f75fbe6dcd85c43860e8e3f457056b0ac"
+    },
+    "qrcode/image/base.py::BaseImage.drawrect": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "b4c856a5df8315e6b552978b9b8d33c534b4dd4c9681f20c0aa9d8eb8a50c80c",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage.drawrect_context": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "0ab5f39ad7ba1328cf4d1a7a7294edc1132761355ae314d0a9db5bbed30f4a55",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage.process": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "1a3c7c67f3f423e6ba951a7dc0a74f9affbb696e71b9edc99920137f3a0b813a",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage.save": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "0814ca9c68f6bda21257464fc01bf98c77df854141c814b7eb158ecc9cea5c2b",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage.pixel_box": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "791359f43d10789bf80381370ce19c8c060de5b2d0c49d55241ccf52dc940dc5",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage.new_image": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "b9fec8622b857b1552e4244a2893aaa134ef3d624e458f754971d658357aba51",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage.init_new_image": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "7ba1df97f53cca55ae553777b35c20d50a2997c61d5bd430c551ca034a36180c",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage.get_image": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "2dad06baec223dda014a6836deade9fd9ae50610fc65814f00a34a443ec13681",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage.check_kind": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "94b94b23ef26d676f46bb5eff46306a3f07c91f4caea269b685c6b596dc4183d",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImage.is_eye": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "a06e972039f2c0cd5cf7273e6155d1ab70c1fb78a87c91636acc85f74a9c9f02",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImageWithDrawer": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "5c7e0c56a3e6732e37484f43620417b792e596a5dfaa265c61fbba3249608102",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImageWithDrawer.get_default_module_drawer": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "b5b3f900182dc2a20989f220f4f626175192d93782a10b6a6bb490411953f7a3",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImageWithDrawer.get_default_eye_drawer": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "927b5b0b409c03ca532247ad2239918a37dc24661e19a54dca0f3b84f0a2e46e",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImageWithDrawer.__init__": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "3de800f29f9d1a96dc8fe832d34056a6d41b4acb9e191de36a5211257c6fcb2f",
+      "dependency_hash": "d6e71327c11e45c8842ec4fd315b7e9240895a123c8b8f3a422a307a3348b948"
+    },
+    "qrcode/image/base.py::BaseImageWithDrawer.get_drawer": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "205683dd1157160e50cea1356c7cb55f3a3a1f9a31170cc9863d3906885f80f4",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImageWithDrawer.init_new_image": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "c15b53ade40773c4afee444d9f96ac0d9980cee5afa308d176c447859ee38e80",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::BaseImageWithDrawer.drawrect_context": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "347951a540eb55bb63d2b7ae78680271ca974e4de657eb73f0c3287cc841878c",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pil.py::module": {
+      "source_hash": "f033932c8544094b350a9f61790b6c7e70c61c964a830cef7d50e20d89cdcee9",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pil.py::PilImage": {
+      "source_hash": "f033932c8544094b350a9f61790b6c7e70c61c964a830cef7d50e20d89cdcee9",
+      "doc_hash": "d2a717568b9fea5640c0e8a6487cbf002b5d79e8cce464818f3f4daf2567c096",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pil.py::PilImage.new_image": {
+      "source_hash": "f033932c8544094b350a9f61790b6c7e70c61c964a830cef7d50e20d89cdcee9",
+      "doc_hash": "67760b66aeaab1848dd7eac67014b58810b0d9ff9895a5b722114c4ca1a17177",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pil.py::PilImage.drawrect": {
+      "source_hash": "f033932c8544094b350a9f61790b6c7e70c61c964a830cef7d50e20d89cdcee9",
+      "doc_hash": "ab4ec49815939cc56551b770f781da5b8ee38a595d3fb0ce2141732655435c8f",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pil.py::PilImage.save": {
+      "source_hash": "f033932c8544094b350a9f61790b6c7e70c61c964a830cef7d50e20d89cdcee9",
+      "doc_hash": "94131f2407da8d4e8c77cbeb457439e1aa698cd1f3acedbc657053a602105985",
+      "dependency_hash": "dbf91e97df1583343f99ffe591fd043c1d47e78ffef1fe910e6048144fd51c34"
+    },
+    "qrcode/image/pil.py::PilImage.__getattr__": {
+      "source_hash": "f033932c8544094b350a9f61790b6c7e70c61c964a830cef7d50e20d89cdcee9",
+      "doc_hash": "2084f53d5b56dd4c351a357d56cf9e79df97d45dfc0f7029d200820158a219af",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pure.py::module": {
+      "source_hash": "e0d0a2092a5cb8e033dc4dfc1e89ae7e823b767ce6f1363ee915318082a22155",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pure.py::PyPNGImage": {
+      "source_hash": "e0d0a2092a5cb8e033dc4dfc1e89ae7e823b767ce6f1363ee915318082a22155",
+      "doc_hash": "dd0680ff9376ee028059ac7acd3c68aa20fa0abe64932fa802d34bb739931e7f",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pure.py::PyPNGImage.new_image": {
+      "source_hash": "e0d0a2092a5cb8e033dc4dfc1e89ae7e823b767ce6f1363ee915318082a22155",
+      "doc_hash": "a1ff771ae89f74bb9b713859dcbfe8ef1cf8404234469ab3991f56b306adbc60",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pure.py::PyPNGImage.drawrect": {
+      "source_hash": "e0d0a2092a5cb8e033dc4dfc1e89ae7e823b767ce6f1363ee915318082a22155",
+      "doc_hash": "98f946cae9d6aabed0686479f02544f01a1874bce864b13731d791ad9832de72",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pure.py::PyPNGImage.save": {
+      "source_hash": "e0d0a2092a5cb8e033dc4dfc1e89ae7e823b767ce6f1363ee915318082a22155",
+      "doc_hash": "d48888fdcbe7a831df4ebadff52725b12478706c89a73b6cb9a041c6bda030f0",
+      "dependency_hash": "b3cf0770801aa991fe1973d6cc006b0d8fe52cf690745b964a46f70ad13921c5"
+    },
+    "qrcode/image/pure.py::PyPNGImage.rows_iter": {
+      "source_hash": "e0d0a2092a5cb8e033dc4dfc1e89ae7e823b767ce6f1363ee915318082a22155",
+      "doc_hash": "74feb79c4cf9be454550af2166de66b687e568c049f0bcbfe8474d3f26e6cf74",
+      "dependency_hash": "6e49cd6333aab8d5340d077ccf92525528baee42618ecf1dfa88286872e08874"
+    },
+    "qrcode/image/pure.py::PyPNGImage.border_rows_iter": {
+      "source_hash": "e0d0a2092a5cb8e033dc4dfc1e89ae7e823b767ce6f1363ee915318082a22155",
+      "doc_hash": "89635574ae5f19354c3a8c2b304fae41de05a41e8a8f3fc3b65ed2ed61e32f81",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styledpil.py::module": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styledpil.py::StyledPilImage": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "5909441628be94b675aac991199a1ff842ef1dfc936af0a93484ac05cedd0405",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styledpil.py::StyledPilImage.__init__": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "c35647469eb944b2388c8f61c6ec5770167f2069ffbaf52fa34c7e06ac5f9f19",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styledpil.py::StyledPilImage.drawrect": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "83c17ca4c5cd302d42a3cdb2048e0132cd2d754c5f640ed8ff5eea750dcd66f3",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styledpil.py::StyledPilImage.new_image": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "8552a1d1561bdbcd7a999b96541a809e18f6d8b5a761e54f24ca6682c7189d3b",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styledpil.py::StyledPilImage.init_new_image": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "2a092ac67dc75bff3458c5ee4505b7d1045f770bf912053339d6db6b3158dfb0",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styledpil.py::StyledPilImage.process": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "be318b048d29741686b6f0072a4f703f2ec47194ccd2474f781659bda8c4737f",
+      "dependency_hash": "1bedc356b5dd760d2ad1b6b6e72eb8eef5617a462042c7e752751ce0aebd731f"
+    },
+    "qrcode/image/styledpil.py::StyledPilImage.draw_embeded_image": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "ba316cbfe0cb3b717eff1edf6134c222b5f9c98a40c0808fab3b71ad67dfa174",
+      "dependency_hash": "1bedc356b5dd760d2ad1b6b6e72eb8eef5617a462042c7e752751ce0aebd731f"
+    },
+    "qrcode/image/styledpil.py::StyledPilImage.draw_embedded_image": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "9e38a3f6081d08f74b5a7d8fca3ce9cbefee2017b634b905feae379069365a7b",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styledpil.py::StyledPilImage.save": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "963a60488f6a33ad51c332a12ccefce9ea59b7927e9d8107dc2cddc66aaf8679",
+      "dependency_hash": "60849c2692cec93648fa896d54c45454e2bd67883513a386aba18b687be4d385"
+    },
+    "qrcode/image/styledpil.py::StyledPilImage.__getattr__": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "76ba0e03fc6e686238262f884fa54aeeace404d833cc3845d3d10c16123d69df",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/__init__.py::module": {
+      "source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::module": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::QRColorMask": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "62b9ce036f3d920f7d3661d036e7e4b499ad0509f1c955f8367fa5354ce5ad80",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::QRColorMask.initialize": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "900fb60ac35d9eb5b103bbcfe70a0c4e9557b58d209d1230c91fa07d21ee5279",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::QRColorMask.apply_mask": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "a4dc4e94cc3c2575054eaee3c1529d693f2e94fe475ec980b33aaf077691fb8f",
+      "dependency_hash": "8faba6e64c75741a653d4a81f997c679247e3702fd3d72a526395277050711ec"
+    },
+    "qrcode/image/styles/colormasks.py::QRColorMask.get_fg_pixel": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "5e4e424ce66faf5d95d7995f902893262dc50108b2e5b00eb89e1d7b882025fa",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::QRColorMask.get_bg_pixel": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "c0c49851d660fb2fa08bdd37ea4bafeed38f64f22908eb4fa0c81722292b6853",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::QRColorMask.interp_num": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "1705e0485d64d9333cc4a76b251818d3bbc15736a6b7d695c6d966bf9ccdce87",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::QRColorMask.interp_color": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "e0d7365d77b9857695988b954008a48079353eaf0f2def100855d69cde52153f",
+      "dependency_hash": "6ad376786a4bbd4afeec1548a01f96450db0c08b06b678d0743da14a44d86d3e"
+    },
+    "qrcode/image/styles/colormasks.py::QRColorMask.extrap_num": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "67af9b37e4547e765c7103433dd97d9e4aada5bf88a66c5a32771dda56f7cf4b",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::QRColorMask.extrap_color": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "8767c7be2cf53cbb651196fefb8fda6701e85347b9ba587e3c635fced165083a",
+      "dependency_hash": "66d8aecb3b350945447692f49eb2e4a23479bdd369d9ceeeae8a347a16e6555b"
+    },
+    "qrcode/image/styles/colormasks.py::SolidFillColorMask": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "aed8db129a8b734e7ef02c2a2d5a2c8fe717963ea6638f5528ba2e63dbb7fb36",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::SolidFillColorMask.__init__": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "c34247febb4fbde9a21454a50b13f05c242c85b07939a01e0d6238b3f5620e39",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::SolidFillColorMask.apply_mask": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "bf617aaf3fd34c5568e28ad339b739b7eddd1cfb80b8b4e32ac4d3b7183a4492",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::SolidFillColorMask.get_fg_pixel": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "049f6218e7b053edd248969b6a58c433ea67ee67272c8aa761d55685d37cef64",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::RadialGradiantColorMask": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "af75c79fdeeb543b7cc82f39e1e71c682c3177c457bc176ca6146737b3c9044e",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::RadialGradiantColorMask.__init__": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "718653ad5b583053ae6e3b072b2d433095a3d056dde7c44009cb2f3f950cf75e",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::RadialGradiantColorMask.get_fg_pixel": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "f68001a97d1e058e1b4a621d77731c92b428c053f1cc252e36a5657f3f3c716a",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::SquareGradiantColorMask": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "968c8d633bb45083bb8ce03010b8375fd31afa8952f9a1429f6e6bda7116d716",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::SquareGradiantColorMask.__init__": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "26936f2838762293c34d744675825bab3bd80fc22a8f0d93e647c8a224444927",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::SquareGradiantColorMask.get_fg_pixel": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "8245a17136fe42006ea9661de07894f82e3571b56086c7121b0e30be22cbdc10",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "b70c34d48fba5b3766c988d47fb9779716c0fcbe2024b79a1e1582eb8fcfaba0",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask.__init__": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "961c8e9815f3194a548130e187e01386c5255101889782bbd828299e92bbb8c7",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::HorizontalGradiantColorMask.get_fg_pixel": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "4f8e388c0f7225b85c5607e86f764320f5b67cb51e0ac7d784e681c8b9b7f22c",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::VerticalGradiantColorMask": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "c347f9a0e9e14332f984b44331573730106af8dca79b23c1d9840319d6692480",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::VerticalGradiantColorMask.__init__": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "74233fbb4c4ff3171e37be9757df61e25065de8236ca01e10857d8b39cdbd7b4",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::VerticalGradiantColorMask.get_fg_pixel": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "fdfc5f04d2cfd954f5cb3c000e334e314ac74593a17f2c381d23c4b4aea7791e",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::ImageColorMask": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "62a3112aee6cbebbb2506181555c62913dd32891583028974a21a5310aea28bf",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::ImageColorMask.__init__": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "079a3b48a06d9a0888998fbf28e8c8a44c58757a13b975398da9ba10eab95a0a",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::ImageColorMask.initialize": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "3d4684b56f3faa289a8b76139f921df7fff7420eea1f7dc910755cb8281fe7e4",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::ImageColorMask.get_fg_pixel": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "a5cda6d45cc824c17b15b8655227696ccaaba44e6867b3922a893d3baece9b1b",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/__init__.py::module": {
+      "source_hash": "4cbbe092deab2595cbe2e5e3bc00683433ca1ad9cb6aedcf0d3044c198242b14",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/__init__.py::__getattr__": {
+      "source_hash": "4cbbe092deab2595cbe2e5e3bc00683433ca1ad9cb6aedcf0d3044c198242b14",
+      "doc_hash": "cf266ec36296ae876b61c2f13d3c1ae351261063bad73996f4674ffcae321960",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/base.py::module": {
+      "source_hash": "c2958ff0096db0fa9fda9cc9fa75be1b2a64a11b2c12608426aebd369afbe8ab",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer": {
+      "source_hash": "c2958ff0096db0fa9fda9cc9fa75be1b2a64a11b2c12608426aebd369afbe8ab",
+      "doc_hash": "c9734589cfbc9962b6f0fe6d4292299bbe7b0c331e231f61d97a8dde418084aa",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.__init__": {
+      "source_hash": "c2958ff0096db0fa9fda9cc9fa75be1b2a64a11b2c12608426aebd369afbe8ab",
+      "doc_hash": "a17d07719f0d9ac56d8650c2bbe618c024ee50cd8d37aea240558914a6bff56b",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.initialize": {
+      "source_hash": "c2958ff0096db0fa9fda9cc9fa75be1b2a64a11b2c12608426aebd369afbe8ab",
+      "doc_hash": "c54cf5b448d4e2b6243318db573929a260cc717a8636a19a3e5e1925d4c48d05",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/base.py::QRModuleDrawer.drawrect": {
+      "source_hash": "c2958ff0096db0fa9fda9cc9fa75be1b2a64a11b2c12608426aebd369afbe8ab",
+      "doc_hash": "44b060d536272b8584f8fec90dcf4f77ef2fa865d76c58b34a9b53b9bbf55e52",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::module": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::StyledPilQRModuleDrawer": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "39e26f57e26c00b5460592a1a9f2e536c22329dd9d190af5adc5322f1ff218ea",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "0c36edef909e862f4bfe25fcdbdf67902876907d5adec02125c249b96bf08ec3",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer.initialize": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "4860e7c7c30c42bcb5f9374d5651b97a210b39b66c9718c4a709f634d9c8a5b5",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::SquareModuleDrawer.drawrect": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "4729a67cb9a1f29b13baaa1627bd8f9dcd2b66827b54514c59d1417380313dff",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "35c33d05ce1f51509eee26f0fef9b6d649a9ccf02e479d7ea4a08bf741ff00f2",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.__init__": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "24c7118205c3e9271d5198ec56bd7d95f963a9c6afd9844b736cad8c3a2e7725",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.initialize": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "7e2d03f502ebc3c423c86db00aee622e6c9ecc93e8bc020f29fbda75e614f3cc",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::GappedSquareModuleDrawer.drawrect": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "f4c185b6b218aa059e8f3e9a5897d5f218732d1d25387da887aadf655fd3b7e8",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "6579feeb5596f5af97df546cd234c0c1a13d132527684615c9199ef0a9ee01f5",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer.initialize": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "39119dc810445b451aca6348709e1c113ad366c3007adeee52a83a7ce90300bb",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::CircleModuleDrawer.drawrect": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "2df940608af127f6793abb98d2ced87c2f27ed0b7a94361337408776b2ad82c4",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "05f804658ceffca45152a936fa8179090d2ca3ed9646ea73cee4aed09b50558f",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.__init__": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "29d84e7f38bc23bdde5ffb876852a6d6f933b49d0168bce275050dc443a950eb",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.initialize": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "09398f388e4576e681571c58086cda759eb4d71fadf44d1461c7102718123eb6",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::GappedCircleModuleDrawer.drawrect": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "1f6cdaea5f6b5a9987f1006523ae838e13501c3cddcde9b02c8877b1b6986cf8",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "6715ef04c4e13bf5f62ebd79dc1297b0f158b76edc6ccfdc68dfae9e2bf1ea38",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.__init__": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "de6159c16191332f7d1062f2c4c47149a04502c4521473dad8c852e52a3fb97d",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.initialize": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "3e461333dced1296b07043c8e65bf3f76571d45fdcac533583a3421b702d6e23",
+      "dependency_hash": "fe5d1f71850e05fd7fb9326e902e49770b2586829906cbff3b2efbde1c5331fc"
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.setup_corners": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "f1152ade1f8dd1a085c834d303408120812a12949b7704eac85d0acfbc638324",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::RoundedModuleDrawer.drawrect": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "d80f0f8b209f39e885cdd8038a1317a0751f7cce52e629a758a62b44f3c6787b",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "d5e687cb5370e1f116d0fc6006073603f07771dc26753b97e67d952f1159d190",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.__init__": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "ed18d3e2f40c99b363d3831bb0778f48c1268179d0db4850cb55cf79f39f9a2f",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.initialize": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "47648cdb2e73ddfbdd556844ac69e9dbba895610b26095e1720f95be177e97ce",
+      "dependency_hash": "3a5b73e5af35352ad533b1b79ee0c2cf70038e838dcfe515187b10e98e48bf6e"
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.setup_edges": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "54336c54d1389384891edc676b90bcbf8ef33fd06c5257a0d5b35d9a05b62c00",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::VerticalBarsDrawer.drawrect": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "e66b6388ecbb5ea24944fb97ea13ad368e4bff0107bb7780f36fe57d7cc331bf",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "8e3a85741e1cd65126b3f5278df9c2387b82042d8dd58cf5544ccc7bd4795690",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.__init__": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "1a33cbd1f128a67c731c25677d9895cc1ce382d52f4e5f9dffa47b812804cd2f",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.initialize": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "16016f7cd1b1466f27471edb6e68bd96bdedcb4005e72703b6ecf9a03d5dcdc9",
+      "dependency_hash": "0ae3205c22209a88f098b4863678e33fad7a40a1e20ad9fed56690e0532f0808"
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.setup_edges": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "6979b497a344c38fdaadd2dd77058bd0eaea829df9c600427edc6c13ac86bafd",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::HorizontalBarsDrawer.drawrect": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "a3968c36c7a4a0127ffa31117c31eadd83062aa0aac5324864d76ec1683b1047",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::module": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::Coords": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "fc599c7c3ff38a2fb91292a54c2d7c499ba96fc7adf77fe00d22eac762a63cc9",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "a97e1245dcc449e877346cfdb35d8e669b0126032943c7166b2cd547dbf1d109",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.__init__": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "04d9d2064f2950d7be59ebef84d14f6e8c1eb78280ce3d8a01a7f0e4b49c8d77",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.initialize": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "ca6f1caaa48e392557be5b90d63b9b1685360bbd16e33c680d094efc3a25ccba",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::BaseSvgQRModuleDrawer.coords": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "4ff66c87882cd4cdae6cf3f8ad17dc3166d425faa27af9354c30c31f67c360d4",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "eb575765f47343eb250005e37e9ec90a9b46354d6851d66222e615aa07a9f9fb",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.initialize": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "4c0f51c81017dd5210ecf09b429023fd66b96e325ed8d2a17447dcb9dea828ec",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.drawrect": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "35b1fc75e82f85c057b6c15d1fd24519d4247be8084d035f14b58ed75baa27dd",
+      "dependency_hash": "c8b1990f6a57f31213ca9415b1d2056c30f954df3e20b9bdb6774c8618803464"
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgQRModuleDrawer.el": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "fada1e92e77a5aaa606b1aa7d6036ba700d6b5b067b361114958a1eb1936da05",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "50dfc42ca14777bf4aba8594da7c24ab13bdf4fa63ad645348367ef1636062d1",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer.initialize": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "b37275e19974454dd5da71db058fa7e83eb6d6b9740c8c8b9e6ca0e9c74813d0",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgSquareDrawer.el": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "bdfe95f579fa7a68ed035c312dd9b3aa59e1fd29bc6e8cb01595fccbe7a3af92",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "6df3ee60c901b69ba9a6a57b15aeca353d8497e01ff970f24242d2b416c82c6e",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer.initialize": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "c72c6862c049e11afe021a3fc530160356bc66b87e046aee720d416d3ed56ae1",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgCircleDrawer.el": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "72f9ccaca35554ef39609eae8d7ce5ddaf2cd7512fd52cffc087a9a04a03167b",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "4af4126068b7399da143110da5eb756461c8fced2020285b1cc6fdaaf55dfaee",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer.drawrect": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "cd58ee050bffc470d9fa6e7eb3547251d87a0d567e353be9d6d1965727d73e07",
+      "dependency_hash": "caa8a66474443d826073936f586820dfdd28042cef3885b829c35577f87bcf3e"
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgPathQRModuleDrawer.subpath": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "371645f98fe6a73811cb56b65b2b69c18e2320ff816966c221dddd1563eeca11",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgPathSquareDrawer": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "beb3b5455565dba0e4358866e8e6361e2e2743403a67f56f2bc054413915db48",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgPathSquareDrawer.subpath": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "175f007904f5a646223f5a9f2c6021279a35d195dd18eb14078450f7ee4608ad",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "9a886c80b349bda6fbe82a0a2d0cd9f845777a9c1a6d7113a435450be91b9091",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer.initialize": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "db375aa0a4c8047f8b939179760f24ecb30983ebab9be6c311e365086529a440",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::SvgPathCircleDrawer.subpath": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "c946ac5d5fa5e4d6219cb73584eab0da2916b37093673849434ba846759029fc",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::module": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgFragmentImage": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "25a6654fdd0ee635a57f9f43d0aaed5448a73ac81d987261486842f310378405",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgFragmentImage.__init__": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "1bf0073d9ea088093005bdd3864685aa649a1d983163679bf18bbfb42d2b83a8",
+      "dependency_hash": "8375af3e90a89998b7b3a00db865b48dbee4cf57661d2f4595addffff37c87f5"
+    },
+    "qrcode/image/svg.py::SvgFragmentImage.drawrect": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "21f7beee938287b8ef6d850210a98194c6cbe6a4a71ad4629941499e290cbff6",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgFragmentImage.units": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "4579e25a185ecce84f30a53f6ca6f67e9260d7e5be878ddb16ff2084f1cad1d7",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgFragmentImage.save": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "0a0ae81b53869f3ac608f87320f97f1890d49bee91d87c50173381c2576971ce",
+      "dependency_hash": "27f73f246497a06b8f08ab84c9a62b4cc5d3fa84e6e33a669c3add1d3bae9d77"
+    },
+    "qrcode/image/svg.py::SvgFragmentImage.to_string": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "9874a9ddd5e91844fa554cd00961ab4bcdda75c183cbf88aef8f2f34bfef5d6a",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgFragmentImage.new_image": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "51486482e9284168c7daa0dd2c8539852dc275ac95c345953ef49903ea89f788",
+      "dependency_hash": "7ed5e6482033fa91b3c130f3e114ee24b6026e0f1896035fb860d44271fc6cdc"
+    },
+    "qrcode/image/svg.py::SvgFragmentImage._svg": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "c6ddf8550aefc6f3ae9f5474219a761eb039b6fd037b0093f54bfb450f150bbb",
+      "dependency_hash": "8375af3e90a89998b7b3a00db865b48dbee4cf57661d2f4595addffff37c87f5"
+    },
+    "qrcode/image/svg.py::SvgFragmentImage._write": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "45c594b69935fcb746a771ff27f0bd53b365175376a579dfb820be3b4f735244",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgImage": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "8337e04aa9c6fa59382a39360e18dbefd22ce418ab8bae203c6a93e44ebc15a9",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgImage._svg": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "c1fabdc825af10313b8cfef324db0ecb9cb5232e9a3202b831a489151aab3fdf",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgImage._write": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "daf12d25a870ee97540f6a8500b5b588ee1262d2803f68c2d20b5fda31fc7c8b",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgPathImage": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "b61a3c225e602d0231e3219fb0f4ae8aaf826ef19128a3d00180873d77487e56",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgPathImage.__init__": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "1493f86c3d9e710c0cdc0be9293de0b38363cdf5c10a2c122d8171fc86492eec",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgPathImage._svg": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "be1535c3e449bd724215d347bd30f5cf3cc76bb8aea98e645af90b9075c2f111",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgPathImage.process": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "7aa75524d4c2f83afe0cbaf67e47e0047d0703aca89d5b6168875fe5f91f1378",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgFillImage": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "0764b72923342803a04876389e5432e7c128d5da6599b878bd6a80521e3751e2",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::SvgPathFillImage": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "ed8ae3786317827c35fefb7f6afddeb87418865522fcbf1632a15775cd354d40",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::module": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::make": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "14bf6c05945bd58e0d2b87c118efd0a07d8d39db1cacd476e4c43601ada6d42b",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::_check_box_size": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "06cf463bba34bcf1becb3c77d0a9ca496aa832743c53e468088d860c2d850db8",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::_check_border": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "1ba50d1cfe787a91bd36067dd55f722faf68d7312ece57e44ac6d25aca5a7a95",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::_check_mask_pattern": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "189504e2e8f94029d311a55119dc1329d35999a0fbf618ae4362db3d27acfc8c",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::copy_2d_array": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "d72b989bf832a5b2542149e95a40ab039afdc22c4c2cf8fed13f9bb3d2e92958",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::ActiveWithNeighbors": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "2b3558ebf3193879aa80b5f8cbf98fb49570d7387c817acb0b8177f66ea0ce37",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::ActiveWithNeighbors.__bool__": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "76bf9685ac2c0df0ea9137c4cbe4da48f3b5993a4ec2d4f3f0bbd57320a4b76e",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "a10e6050e13b6d3b53fc8ab809c0c4e594211bddd70601c135854e31521133d0",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode.__init__": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "cb373d45f4c1883fa1357ed325e2aa8c4a4542147ecca2b8987893f5775b0141",
+      "dependency_hash": "625bbdd9a70c7e351927bb5ba750f4bf7b1114fe5d70887a62646a9bde0fea96"
+    },
+    "qrcode/main.py::QRCode.version": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "0e8287f5da12c51b5b30480034304d52907738e1556a8ae1434d45e8e35e4281",
+      "dependency_hash": "ee274828890d569cb266f68c1074c366b7e19da1624ac23fdedaa55721138e9c"
+    },
+    "qrcode/main.py::QRCode.mask_pattern": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "fb80c053ae61e4ee7d6c3e11fc3089a0fe8429c999c58e27b67c7f232ceb4ea3",
+      "dependency_hash": "1aec0539ea901e1692bea312df48876b86731ea490bbec6b039463c380870c27"
+    },
+    "qrcode/main.py::QRCode.clear": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "f5ffb7724c7571b303c713bb86c06505a64aacbbcd7be5525640aa7126067f92",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode.add_data": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "0526ff86943687d4fdf11bb39181115f0b442b7f3ce4cbb73a49afce40827c9a",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode.make": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "d3802493d9835efe308f897d4d9609fb4e9f20de297b04da88fb11ce813ada93",
+      "dependency_hash": "135d69b1f3a0ea2cc55dd57f1d7462abbb8d3726bbcb0671da573cb2b15b536c"
+    },
+    "qrcode/main.py::QRCode.makeImpl": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "217003368f45ae34391e9dddb5c8c6c9c10da3c9aa0d912dd6af791e721c6a7b",
+      "dependency_hash": "396fe2c4768288d292179f3070de456ce7576b1a8dcbf113390208b1d68733ef"
+    },
+    "qrcode/main.py::QRCode.setup_position_probe_pattern": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "efd6560768eb6d78975ec03e97897c0313704fe1360c54460f67af486f159c1a",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode.best_fit": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "57c766f4c4e6841e82eba7c4cce51860c7e4c022d0d6ae0809a39230ee23f86a",
+      "dependency_hash": "ee274828890d569cb266f68c1074c366b7e19da1624ac23fdedaa55721138e9c"
+    },
+    "qrcode/main.py::QRCode.best_mask_pattern": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "a73f778f590c9f21bcc563d286a192737b1feb71aa976899cf9fba34e1ab1ccf",
+      "dependency_hash": "9184a0635a9936f5610bb2784be1416439497558ec72319e502e57858b53c2b6"
+    },
+    "qrcode/main.py::QRCode.print_tty": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "8ffa9a120ca2b83d0415ff1a078bf225089c351317f53dc2a2692d783876cf33",
+      "dependency_hash": "fd9059d71323b3422cf85b86b2c93e0c948cb9d5015c833a20d74d752c5f9373"
+    },
+    "qrcode/main.py::QRCode.print_ascii": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "c225102ec5d60ddba220ef33627c40d496145a1ee05aeeec6a3acb14e57d197c",
+      "dependency_hash": "fd9059d71323b3422cf85b86b2c93e0c948cb9d5015c833a20d74d752c5f9373"
+    },
+    "qrcode/main.py::QRCode.make_image": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "c715efd4f82e563e15e9a3fbc6d4f9be2054b0a735eea5828dd909ce2bee9af6",
+      "dependency_hash": "ff7b1e395acb745bf6973d64d5e9b49955d1121ce6b59db211e9362e7cf277b6"
+    },
+    "qrcode/main.py::QRCode.is_constrained": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "fcd34bba67a79c0fe7b02f82f0a083d2b9cd093182edbbb74d82e6ee417314b7",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode.setup_timing_pattern": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "46f7fc1d0e1ebbe207f58054d8e2b033462936b2a96909c26372fa2388cd1f0c",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode.setup_position_adjust_pattern": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "91030336db76aa4ce87871abbdfbcff0d37001161f1f63fad2dababf54b9cf9a",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode.setup_type_number": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "61106faf1b40d32433e3ceb724f10309cf13add5df51e54b0cf906bccb086450",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode.setup_type_info": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "e9c033c917e74412d68f9268567362c6c50299584948a43defe11eda37007b29",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode.map_data": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "619b0306f6ff86f0f3a6adb82af0f125b2ffe24b18b872956803caf9624f5f7b",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::QRCode.get_matrix": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "5fd9f5a70003b02c98db834d6750ecffcc26fbfb9697ee8672338a463ac5aec1",
+      "dependency_hash": "fd9059d71323b3422cf85b86b2c93e0c948cb9d5015c833a20d74d752c5f9373"
+    },
+    "qrcode/main.py::QRCode.active_with_neighbors": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "b092a8f182fe13e1ec3e744405f8236267a73728196723a14d586b62f9ad733a",
+      "dependency_hash": "595cc5ebf7ebb129b16c5168b7316e5d851911fc9507779628c7af1822f254e0"
+    },
+    "qrcode/release.py::module": {
+      "source_hash": "6419d1acfc0968412c628851e1e73d7f0a167bbb1a4cf14781796dd509e302b3",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/release.py::update_manpage": {
+      "source_hash": "6419d1acfc0968412c628851e1e73d7f0a167bbb1a4cf14781796dd509e302b3",
+      "doc_hash": "8bc8c1cd50a78a4a226167e291c0218f4d6ad223d8c24a2527866ccbd352f1d4",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::module": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::_data_count": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "15653aa5942a0c0b863044038fd76e0317498214e8745306c2954b546586f375",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::BCH_type_info": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "c8ab98683973650739108a3f24750cbd3704fd9de7ea6e60df0d72f4c7201f11",
+      "dependency_hash": "dd31cf92f481f2c35266d27f7f7aa250c1481eccbe9fab3a50b90eb1ec4de819"
+    },
+    "qrcode/util.py::BCH_type_number": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "c747804f8d9d2f16aa3f985595b4d3194c2ed8629dbc08f05a929b6eb75a4ab1",
+      "dependency_hash": "dd31cf92f481f2c35266d27f7f7aa250c1481eccbe9fab3a50b90eb1ec4de819"
+    },
+    "qrcode/util.py::BCH_digit": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "08456c846e311a426fad7d369cc83b1e90efa79ba69caa60d4d4fdbfc1956683",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::pattern_position": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "cc87516f3dfd1e17e92ba96acdce9ae7b436b2f774ac3444fdccab65f06daf04",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::mask_func": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "857a7731dc353a16dbb104b4481e3d9bebc6120217ed5967eb6c81df8e90685f",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::mode_sizes_for_version": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "b02624cdb9f835bf3ec4d421afcb9d7b7f14fcd1c37d82dd366b4ce7ffc2e623",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::length_in_bits": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "e005e811d8033bd000ccd18213afe25c08023dd579a72b7a843ae60c0bfebea8",
+      "dependency_hash": "e72f78af86bdc95dc3961aa0f80ee2aae8dad5957db0021e7d6c0c528a32f8e7"
+    },
+    "qrcode/util.py::check_version": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "e6b3f90fe6a034be14cccb79ad4a7e5b99ef511b8c25b1ad34087f33b8799824",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::lost_point": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "3434e7ddc6588639004a3b6753e11db0d16125b987000546aae74bd325c9dc14",
+      "dependency_hash": "4767d2628140fa0ee3cc82607ecea2bd239ea8ef1325663807eb696dfea6f08b"
+    },
+    "qrcode/util.py::_lost_point_level1": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "6ca51b7f28eede4cdb962da58aeb7082a243cbb8d99db64c7d781079e186c11d",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::_lost_point_level2": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "2325fba0ed03267a0be2afe3e7b40d39aef7dae595ef4e1ee112752858f617b9",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::_lost_point_level3": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "a1ec0ee7a7150e77fcdc5520d2cde13b2c07881fc893dd76ba80d74b14ac7bf1",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::_lost_point_level4": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "cd81b425c25f67c081739608d94a6afa4ba780b61f22768fce8a3dc5371e9f4a",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::optimal_data_chunks": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "ee011fd32b46fd5e8a3a3a67668d2c901ef271b087e28d4f6e0f40147addde1c",
+      "dependency_hash": "fcc627049390594f4cc92290d37ddc716efa792c67a1840691758d2a58fc2965"
+    },
+    "qrcode/util.py::_optimal_split": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "bab1f6112f0e6addff6fe5fc7519a345360a5a3460b5368e5ea587b5aa5077c6",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::to_bytestring": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "a622c0afeb9d39011ebeabbce6992cd4252949dea9f7f54104c1ce9eac43e2a6",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::optimal_mode": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "af31d1375d27ccd03d5b47032575770544683853de098cd5dfac57d6e3b98a83",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::create_bytes": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "5afaaf0a455a0672bc88929679a48503f524e3d7d1a8b00106c5936712d489e6",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::create_data": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "f1048c70e90c44a09e0825b6cff2dbb40c1054e1fd68cf625d73d4804d12239e",
+      "dependency_hash": "a3d07b3fda0c7e29513bb65f8a8eaaaf39d487dd7a1d6be3e91a09fcab64118b"
+    },
+    "qrcode/util.py::QRData": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "675569c8d0166effad1422411f62d5902d188b839d8ce45eac9d93afe40493a3",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::QRData.__init__": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "25a16f71563a6f0b22b209266ed9007693233818965afdf500ae02f8c9cb5c9e",
+      "dependency_hash": "599b04bc420a753320cf74a6888379c7ec42213ceae554feaf7e944566b6cf03"
+    },
+    "qrcode/util.py::QRData.__len__": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "e0be2fc94a38ff1efd3d4e33cc9504a8c0c2910bd2aa297eb0b44439dbdf44c1",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::QRData.write": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "5f809374e0ef6fd5458b15682e019b021adc6bd562b12dbfbffe197b9cd5fafd",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::QRData.__repr__": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "c86caaa665d774f1d4ecdfd1473496fbfaa33984545a26a3ab724db68ece19cc",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::BitBuffer": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "837f78355423a886f771a2f3873f57f94506d517c946ac20d934968cde4a6194",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::BitBuffer.__init__": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "687b68ba8406f4811d3874adb1f479ddc91ac03980065eb6451bed420ea9cbdc",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::BitBuffer.__repr__": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "9cb5be961b77c9f90aff4453570b4431b42522e1aee4eb520a7f1cabcd52f643",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::BitBuffer.get": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "820308a1fe76369c3a1e93e8389cad922497edc5d30d8aa3911bcbb8b13c37fe",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::BitBuffer.put": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "e30c3f4cecf1887b8f085765e3b7d224d013d557af46a5bc1b4dd7d80311ee09",
+      "dependency_hash": "7045f54e07190f205252e290369dfaa98f3fb96611bd3a5f231eb63ccbc4309d"
+    },
+    "qrcode/util.py::BitBuffer.__len__": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "8cb0cc8266b8b4a545af2e02d6dc4482bfa8a71db96e28380fafb0aa5053590a",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::BitBuffer.put_bit": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "195d2f051d9fc872a8341b9f3c40bed52c77ee288a3012827afe1a88e67953ec",
+      "dependency_hash": ""
+    },
+    "qrcode/LUT.py::qrcode/LUT.py": {
+      "source_hash": "6a748ca4187b47a3a3a3b1413e2d0b6c38fab098f83d344837a840a9e505d863",
+      "doc_hash": "1c6b2dd23257411d7e74bc4a30aba1c3ef41f445c0579ee6b4539e96017ff509",
+      "dependency_hash": ""
+    },
+    "qrcode/__init__.py::qrcode/__init__.py": {
+      "source_hash": "4bdc75a0c765ba77ec95c99b9465a0583c5e26b250f2b2bc58529135922cf94e",
+      "doc_hash": "2ef812fd725de697b76fa3c6ec3462839cc565d12b0bc7721eb2b13d7bfa1d6d",
+      "dependency_hash": ""
+    },
+    "qrcode/__main__.py::qrcode/__main__.py": {
+      "source_hash": "4c98a15f63db2eabf2dfe9c3267ca3a6094c98c5ec607338803609cd5007eb5c",
+      "doc_hash": "2e132635a159b080cf9e0b1beb50b26793beefe10ad70c9b228def23ef166407",
+      "dependency_hash": ""
+    },
+    "qrcode/compat/__init__.py::qrcode/compat/__init__.py": {
+      "source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "doc_hash": "90866ba401cfa0906ef2ef461ea57e02bb783817e7d317c25481a90ab2bc5607",
+      "dependency_hash": ""
+    },
+    "qrcode/base.py::qrcode/base.py": {
+      "source_hash": "9cf829dcc2a86781cbc75837cd494163154abffbe4c3c82d2ef946b24cfa157f",
+      "doc_hash": "4844c2e880916524fe6040728910f67908dcf124eb4f2b08262dd4b562c2823b",
+      "dependency_hash": ""
+    },
+    "qrcode/compat/etree.py::qrcode/compat/etree.py": {
+      "source_hash": "8d08d95b0d2ad8650b9147321c5feec6a40ad9fc1465a37360226565fe7c29ca",
+      "doc_hash": "907973d1f16301ea94a5368f026da648758bdd96f33a9077ebd8112bf6bb0545",
+      "dependency_hash": ""
+    },
+    "qrcode/compat/png.py::qrcode/compat/png.py": {
+      "source_hash": "73b0867982f2808c817aeae008a28c0cb32836e97cb06de7721ee682eb268df0",
+      "doc_hash": "ea7cacbc1e3f9bf2dc18e845c15451b3a5c2126cdfeff54acbe6ede120a1308b",
+      "dependency_hash": ""
+    },
+    "qrcode/constants.py::qrcode/constants.py": {
+      "source_hash": "e77789d71da4e98f479ceecf8fa7494378a0637d3902c370d34e28d3af42ee5b",
+      "doc_hash": "1884f501e01a55e0184567828d65cd2f6994910bb6d34f747e1ac03e0230f677",
+      "dependency_hash": ""
+    },
+    "qrcode/console_scripts.py::qrcode/console_scripts.py": {
+      "source_hash": "958b105efaf99f94e506fc1698e95fdb6cfe6ec1d36073e3251d87507da4c0c4",
+      "doc_hash": "928cdb092b227dc3c0f2ab8a6d9baa06422d5c71cd7006c1f788ad7fb090e7a7",
+      "dependency_hash": ""
+    },
+    "qrcode/exceptions.py::qrcode/exceptions.py": {
+      "source_hash": "2f67d9b9838ab1cbdd9fbdab6bec05f06c2caf6641f5e4595aba757f4203c781",
+      "doc_hash": "4f917e5ea14a43137be610fdaadc2292a407511847f6ff788902bc0c336d1c55",
+      "dependency_hash": ""
+    },
+    "qrcode/image/__init__.py::qrcode/image/__init__.py": {
+      "source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "doc_hash": "510fde2cd78d3fff7c6fc61588473f737d8f86fdb5651148bbfb16fb65f81eff",
+      "dependency_hash": ""
+    },
+    "qrcode/image/base.py::qrcode/image/base.py": {
+      "source_hash": "49d10f8193baace69c1897998510450ef407d71badf39347a08b3a707f283ca2",
+      "doc_hash": "d1b0ab1aeaf208ba4e0eff6d3582b08abf3e1ef4326676d7db2cd98cae22c4d5",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pil.py::qrcode/image/pil.py": {
+      "source_hash": "f033932c8544094b350a9f61790b6c7e70c61c964a830cef7d50e20d89cdcee9",
+      "doc_hash": "15a127fae8ad1e3339bd256bdac03ee6d5a1ef3b882f6198804df4e21034d63e",
+      "dependency_hash": ""
+    },
+    "qrcode/image/pure.py::qrcode/image/pure.py": {
+      "source_hash": "e0d0a2092a5cb8e033dc4dfc1e89ae7e823b767ce6f1363ee915318082a22155",
+      "doc_hash": "ab4ae2ed3042ed5cc1b3cabe8a929cb3c9049a881f9335b2404d818e3f04418c",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styledpil.py::qrcode/image/styledpil.py": {
+      "source_hash": "45137cd2d74b72962994398ac83bcf4588f62d808651108e182e41c372dd150b",
+      "doc_hash": "c06fef151e29424386dba3e174c3c181236c13adf65fe94fa9d781db9484b1d0",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/__init__.py::qrcode/image/styles/__init__.py": {
+      "source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "doc_hash": "9bd7aa7f5373f98525ec87e31fbf612883b438d42ebff4aa12aa2acc050170f9",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/__init__.py::qrcode/image/styles/moduledrawers/__init__.py": {
+      "source_hash": "4cbbe092deab2595cbe2e5e3bc00683433ca1ad9cb6aedcf0d3044c198242b14",
+      "doc_hash": "261af0d7a2cfd455cd33dcd9b9b360585468796ec00fe46bf238232b95f63407",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/base.py::qrcode/image/styles/moduledrawers/base.py": {
+      "source_hash": "c2958ff0096db0fa9fda9cc9fa75be1b2a64a11b2c12608426aebd369afbe8ab",
+      "doc_hash": "d0ccd31acf528df1ee71f7302a433b45d77ddf8ac35b454e12166c291ec8487c",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/colormasks.py::qrcode/image/styles/colormasks.py": {
+      "source_hash": "d391853215a924b7f4e72ecfb81ff15ccbc30c9437867f0e5c65a6b547cdb5fc",
+      "doc_hash": "636d29b3ecc2ec3081e85d3334ad3b8be63f6b38d01accd2d4ab9ab5cded883f",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/pil.py::qrcode/image/styles/moduledrawers/pil.py": {
+      "source_hash": "2b8978ab02754b04856e338e0c4fbe9bb17e79953812d4b34fdf497217388270",
+      "doc_hash": "2fbf9034e14e499cec7f99150c84cbff4d485d9bb7dc4284184c2a90d1956bed",
+      "dependency_hash": ""
+    },
+    "qrcode/image/styles/moduledrawers/svg.py::qrcode/image/styles/moduledrawers/svg.py": {
+      "source_hash": "0350120ac8a96368b3cba78f6afb28327268e3057f4c0ca46f109953b53901a7",
+      "doc_hash": "a2a8fa8a545d72675073225336b5c71f2f184a9a681faaea6b3f54caaedd11a2",
+      "dependency_hash": ""
+    },
+    "qrcode/image/svg.py::qrcode/image/svg.py": {
+      "source_hash": "9d06e70129ac35daff8f0a4cc71ee8d75ba5b34934fe8942c29f5edb3f7d9c1c",
+      "doc_hash": "2024aa33ed3bfe086736fdf9caac79cccf10ab687af03e2f0234930eeb9c79a8",
+      "dependency_hash": ""
+    },
+    "qrcode/release.py::qrcode/release.py": {
+      "source_hash": "6419d1acfc0968412c628851e1e73d7f0a167bbb1a4cf14781796dd509e302b3",
+      "doc_hash": "7cb407d3593623024c63719b1a3c3dfaafc9508da23be71d4896cea0f9cd34bb",
+      "dependency_hash": ""
+    },
+    "qrcode/main.py::qrcode/main.py": {
+      "source_hash": "1ad6a4769ab4ed433d9a1a980ccd6fe929ad78238096b241893dd0bb22a433ff",
+      "doc_hash": "c53adfb29638d864e014b27951e44f00f760a89e9d7221122ec6d514655969e2",
+      "dependency_hash": ""
+    },
+    "qrcode/util.py::qrcode/util.py": {
+      "source_hash": "e157030227ac23e7448b580b408b3e306d9c12a4ee6200b2a05af700d5f1daf1",
+      "doc_hash": "044b0d7bb4d476781d7f65f2b91a72b65e452595b07001feec4e7607b6d00095",
+      "dependency_hash": ""
+    }
+  }
+}

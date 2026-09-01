@@ -1,0 +1,96 @@
+{
+  "parse_errors": [],
+  "generation_errors": [],
+  "validation_issues": [
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.day",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "High cyclomatic complexity (25)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.at",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `raises` appears to be in a different language than configured (ru)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.minute",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job._move_to_at_time",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.until",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Scheduler.run_pending",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Scheduler.run_all",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job._schedule_next_run",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.run",
+      "detail": null
+    },
+    {
+      "level": "warning",
+      "category": "validation",
+      "message": "Field `see_also` appears to be in a different language than configured (ru)",
+      "module_path": "__init__.py",
+      "entity_type": "method",
+      "entity_name": "Job.do",
+      "detail": null
+    }
+  ]
+}
