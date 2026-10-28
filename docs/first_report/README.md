@@ -1,6 +1,8 @@
-# Документация AnDocGen
+# Документация AnDocGen: первый отчёт
 
-Каталог `docs/` содержит проектную документацию системы автоматической генерации технической документации из исходного кода на основе больших языковых моделей. Документы соответствуют этапам индивидуального задания (см. [individual_assignment.md](individual_assignment.md)) и оформлены для конвертации в DOCX через Pandoc.
+Каталог `docs/first_report/` содержит материалы первого отчёта по теме «Разработка прототипа системы автоматической генерации технической документации из исходного кода на основе больших языковых моделей».
+
+Документы соответствуют этапам [индивидуального задания](individual_assignment.md) и оформлены в Markdown для конвертации в DOCX через Pandoc.
 
 ## Соответствие этапам задания
 
@@ -12,34 +14,36 @@
 | 5 | [prototype.md](prototype.md) | Реализация прототипа: стек, модули, примеры генерации, ограничения, запуск |
 | 6 | [evaluation.md](evaluation.md) | Апробация: успешные и неуспешные примеры, анализ ошибок, ограничения подхода, развитие |
 
-Все перечисленные документы — **готовы**.
-
 ## Рекомендуемый порядок чтения
 
-1. [individual_assignment.md](individual_assignment.md) — тема и график работ
+1. [individual_assignment.md](individual_assignment.md) — тема и рабочий план-график.
 2. [requirements.md](requirements.md)
 3. [architecture.md](architecture.md)
 4. [input_preparation.md](input_preparation.md)
 5. [prototype.md](prototype.md)
 6. [evaluation.md](evaluation.md)
-7. [README.md](../README.md) — установка и быстрый старт
+7. [README проекта](../../README.md) — установка и быстрый старт.
 
 ## Конвертация в DOCX
 
-```bash 
-pandoc docs/requirements.md -o requirements.docx
-pandoc docs/architecture.md -o architecture.docx
-pandoc docs/input_preparation.md -o input_preparation.docx
-pandoc docs/prototype.md -o prototype.docx
-pandoc docs/evaluation.md -o evaluation.docx
+Команды выполняются из корня репозитория:
+
+```bash
+pandoc docs/first_report/individual_assignment.md -o individual_assignment.docx
+pandoc docs/first_report/requirements.md -o requirements.docx
+pandoc docs/first_report/architecture.md -o architecture.docx
+pandoc docs/first_report/input_preparation.md -o input_preparation.docx
+pandoc docs/first_report/prototype.md -o prototype.docx
+pandoc docs/first_report/evaluation.md -o evaluation.docx
 ```
 
 ## Связанные материалы в репозитории
 
-| Путь | Описание                                                        |
-|------|-----------------------------------------------------------------|
-| [../README.md](../README.md) | Установка, запуск `andocgen`, обзор структуры кода              |
-| [../src/andocgen/](../src/andocgen/) | Исходный код                                                    |
-| [../config.example.yaml](../config.example.yaml) | Пример конфигурации                                             |
-| [../config.schema.yaml](../config.schema.yaml) | JSON Schema спецификация конфигурации (source of truth)         |
-| [../examples/](../examples/) | Примеры для генерации и апробации                               |
+| Путь | Описание |
+|------|----------|
+| [../../README.md](../../README.md) | Установка, запуск `andocgen`, обзор структуры кода |
+| [../README.md](../README.md) | Общий указатель документации проекта |
+| [../../src/andocgen/](../../src/andocgen/) | Исходный код системы |
+| [../../config.example.yaml](../../config.example.yaml) | Пример конфигурации |
+| [../../config.schema.yaml](../../config.schema.yaml) | Спецификация конфигурации |
+| [../../examples/](../../examples/) | Примеры для генерации и апробации |
