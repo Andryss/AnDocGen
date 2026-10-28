@@ -1,18 +1,46 @@
-# AnDocGen Docs
+# Исторические отчёты AnDocGen
 
-This directory contains project documentation for the AnDocGen codebase.
+Каталог `docs/` содержит материалы двух исторических отчётов. Каждый отчёт
+фиксирует состояние проекта и результаты работы на определённую дату.
+Дата фиксации указывается при завершении подготовки отчёта. После фиксации
+материалы отчёта не изменяются и не обновляются вслед за развитием проекта.
+Результаты последующих работ оформляются в новых отчётах.
 
-Historical assignment/report materials are archived under
-[`first_report/`](first_report/) and should not be edited. When a report needs
-to reference the original project write-up, link to files inside that archive.
+Актуальная информация об установке и использовании системы находится в
+[README проекта](../README.md), правила работы ИИ-агентов — в
+[AGENTS.md](../AGENTS.md).
 
-AI-agent workflow rules live in one place: [`../AGENTS.md`](../AGENTS.md).
+## Первый исторический отчёт
 
-## Historical Report
+**Тема:** разработка прототипа системы автоматической генерации технической
+документации из исходного кода на основе больших языковых моделей.
 
-- [First report index](first_report/README.md)
-- [Requirements](first_report/requirements.md)
-- [Architecture](first_report/architecture.md)
-- [Input preparation](first_report/input_preparation.md)
-- [Prototype](first_report/prototype.md)
-- [Evaluation](first_report/evaluation.md)
+- **Каталог:** [`first_report/`](first_report/).
+- **Статус:** архив; материалы не изменяются.
+- **Дата фиксации:** не указана.
+
+Отчёт описывает требования к системе, её архитектуру, подготовку входных
+данных, реализацию прототипа и первичную апробацию.
+
+- [Состав отчёта](first_report/README.md)
+- [Индивидуальное задание и план-график](first_report/individual_assignment.md)
+- [Требования к системе](first_report/requirements.md)
+- [Архитектура](first_report/architecture.md)
+- [Подготовка входных данных](first_report/input_preparation.md)
+- [Реализация прототипа](first_report/prototype.md)
+- [Первичная апробация](first_report/evaluation.md)
+
+## Второй исторический отчёт
+
+**Тема:** реализация метода оценки качества сгенерированной технической
+документации из исходного кода.
+
+- **Каталог:** [`second_report/`](second_report/).
+- **Статус:** архив; материалы не изменяются.
+- **Дата фиксации:** не указана.
+
+Отчёт посвящён анализу методов оценки качества документации, разработке и
+реализации собственного метода, формированию набора проектов и апробации.
+
+- [Состав отчёта](second_report/README.md)
+- [Индивидуальное задание и план-график](second_report/individual_assignment.md)
